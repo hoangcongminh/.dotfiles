@@ -32,7 +32,7 @@ keymap("n", "<A-k>", "<Esc>:m .-2<CR>==gi", opts)
 -- Update (:w if has edit)
 keymap('n','<space>s',':update<CR>',opts)
 
-- Insert --
+-- Insert --
 
 -- Press jk fast to exit insert mode
 keymap("i", "jk", "<ESC>", opts)
@@ -60,4 +60,4 @@ keymap("v", "p", '"_dP', opts)
 keymap("x", "J", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
 keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
-keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)-
+keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
