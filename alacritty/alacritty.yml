@@ -30,11 +30,17 @@ colors:
   indexed_colors:
     - { index: 16, color: "0xff9e64" }
     - { index: 17, color: "0xdb4b4b" }
+font:
+  size: 11.0
+  normal:
+    family: SFMono Nerd Font
 
-opacity: 0.8
-window_opacity: 0.8
+window:
+  padding:
+    x: 5
+    y: 5
 
-save_to_clipboard: true
+  opacity: 0.7
 
 working_directory: ~
 
@@ -46,7 +52,7 @@ key_bindings:
   - { key: Equals, mods: Control, action: IncreaseFontSize }
   - { key: Plus, mods: Control, action: IncreaseFontSize }
   - { key: Minus, mods: Control, action: DecreaseFontSize }
-  - { key: F11, mods: None, action: ToggleFullscreen }
+  - { key: F10, mods: None, action: ToggleFullscreen }
   - { key: Paste, mods: None, action: Paste }
   - { key: Copy, mods: None, action: Copy }
   - { key: L, mods: Control, action: ClearLogNotice }

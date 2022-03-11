@@ -92,7 +92,11 @@ export PATH="$PATH:$HOME/fvm/versions/stable/bin/cache/dart-sdk/bin"
 #
 alias flutter='fvm flutter'
 alias dart='fvm dart'
+alias fd='fvm flutter doctor'
 alias fl='fvm flutter clean'
 alias fpg='fvm flutter pub get'
 alias fr='fvm flutter run'
 alias fb='fvm flutter pub run build_runner build --delete-conflicting-outputs'
+
+alias wp='cd ~/Documents/Workspace'
+alias h='cd ~'
