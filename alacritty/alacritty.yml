@@ -30,10 +30,15 @@ colors:
   indexed_colors:
     - { index: 16, color: "0xff9e64" }
     - { index: 17, color: "0xdb4b4b" }
+
+cursor:
+  style: Block
+
 font:
   size: 11.0
   normal:
     family: SFMono Nerd Font
+  use_thin_strokes: true
 
 window:
   padding:
@@ -41,23 +46,12 @@ window:
     y: 5
 
   opacity: 0.7
+  startup_mode: Maximized
+  decorations: None
 
-working_directory: ~
+selection:
+  semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
 
-key_bindings:
-  - { key: V, mods: Control|Shift, action: Paste }
-  - { key: C, mods: Control|Shift, action: Copy }
-  - { key: Insert, mods: Shift, action: PasteSelection }
-  - { key: Key0, mods: Control, action: ResetFontSize }
-  - { key: Equals, mods: Control, action: IncreaseFontSize }
-  - { key: Plus, mods: Control, action: IncreaseFontSize }
-  - { key: Minus, mods: Control, action: DecreaseFontSize }
-  - { key: F10, mods: None, action: ToggleFullscreen }
-  - { key: Paste, mods: None, action: Paste }
-  - { key: Copy, mods: None, action: Copy }
-  - { key: L, mods: Control, action: ClearLogNotice }
-  - { key: L, mods: Control, chars: "\x0c" }
-  - { key: PageUp, mods: None, action: ScrollPageUp, mode: ~Alt }
-  - { key: PageDown, mods: None, action: ScrollPageDown, mode: ~Alt }
-  - { key: Home, mods: Shift, action: ScrollToTop, mode: ~Alt }
-  - { key: End, mods: Shift, action: ScrollToBottom, mode: ~Alt }
+  save_to_clipboard: true
+
+working_directory: None
