@@ -4,8 +4,11 @@ ZSH_THEME="robbyrussell"
 
 plugins=(
   git
+  fzf
+  tmux
   zsh-autosuggestions
   zsh-syntax-highlighting
+  web-search
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -16,6 +19,12 @@ export PATH="$PATH:$HOME/fvm/versions/stable/bin/cache/dart-sdk/bin"
 bindkey '^n' autosuggest-accept
 
 alias v="nvim"
+
+alias lg="lazygit"
+
+alias t="tmux"
+
+alias ws="web-search"
 
 alias flutter='fvm flutter'
 alias dart='fvm dart'

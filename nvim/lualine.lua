@@ -73,11 +73,11 @@ local function ins_right(component)
   table.insert(config.sections.lualine_x, component)
 end
 
-ins_left {
-  function() return '▊' end,
-  color = {fg = colors.blue}, -- Sets highlighting of component
-  left_padding = 0 -- We don't need space before this
-}
+-- ins_left {
+--   function() return '▊' end,
+--   color = {fg = colors.blue}, -- Sets highlighting of component
+--   left_padding = 0 -- We don't need space before this
+-- }
 
 ins_left {
   -- mode component
@@ -210,11 +210,11 @@ ins_right {
   condition = conditions.hide_in_width
 }
 
-ins_right {
-  function() return '▊' end,
-  color = {fg = colors.blue},
-  right_padding = 0
-}
+-- ins_right {
+--   function() return '▊' end,
+--   color = {fg = colors.blue},
+--   right_padding = 0
+-- }
 
 -- Now don't forget to initialize lualine
 lualine.setup(config)

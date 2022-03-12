@@ -42,6 +42,8 @@ Plug 'nvim-lualine/lualine.nvim'
 Plug 'tpope/vim-commentary'
 " Copilot
 Plug 'github/copilot.vim'
+" Multiple Cursors
+Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 
 "Other
 Plug 'tpope/vim-surround'
