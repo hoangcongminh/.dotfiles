@@ -7,11 +7,11 @@ let g:tokyonight_transparent_sidebar = 'true'
 " colorscheme vscode
 " colorscheme gruvbox
 " colorscheme gruvbox-flat
-colorscheme tokyonight
+" colorscheme tokyonight
 " colorscheme spaceduck
 " colorscheme dawnfox
-"
- let g:tokyonight_colors = {
+colorscheme dracula 
+let g:tokyonight_colors = {
    \ 'hint': 'orange',
    \ 'error': '#ff0000'
  \ }

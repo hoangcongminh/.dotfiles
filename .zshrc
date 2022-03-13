@@ -4,12 +4,13 @@ ZSH_THEME="robbyrussell"
 
 plugins=(
   git
-  fzf
   tmux
   zsh-autosuggestions
   zsh-syntax-highlighting
   web-search
 )
+
+ZSH_TMUX_AUTOSTART=true
 
 source $ZSH/oh-my-zsh.sh
 

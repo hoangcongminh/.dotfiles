@@ -28,6 +28,7 @@ Plug 'morhetz/gruvbox'
 Plug 'Mofiqul/vscode.nvim'
 Plug 'eddyekofo94/gruvbox-flat.nvim'
 Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
+Plug 'Mofiqul/dracula.nvim'
 " Icons
 Plug 'ryanoasis/vim-devicons'
 Plug 'kyazdani42/nvim-web-devicons'
@@ -61,6 +62,7 @@ luafile ~/.dotfiles/nvim/toggleterm.lua
 luafile ~/.dotfiles/nvim/nvimtree.lua
 luafile ~/.dotfiles/nvim/gitsigns.lua
 luafile ~/.dotfiles/nvim/lualine.lua
+luafile ~/.dotfiles/nvim/dracula.lua
 
 so ~/.dotfiles/nvim/color-scheme.vim
 so ~/.dotfiles/nvim/coc-config.vim
