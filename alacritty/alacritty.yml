@@ -35,16 +35,12 @@ cursor:
   style: Block
 
 font:
-  size: 11.0
+  size: 12.0
   normal:
     family: SFMono Nerd Font
   use_thin_strokes: true
 
 window:
-  padding:
-    x: 5
-    y: 5
-
   opacity: 0.8
   startup_mode: Maximized
   decorations: None
