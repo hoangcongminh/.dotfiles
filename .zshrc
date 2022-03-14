@@ -5,6 +5,7 @@ ZSH_THEME="robbyrussell"
 plugins=(
   git
   tmux
+  fzf
   zsh-autosuggestions
   zsh-syntax-highlighting
   web-search
@@ -16,6 +17,9 @@ source $ZSH/oh-my-zsh.sh
 
 export PATH="$PATH:$HOME/fvm/versions/stable/bin"
 export PATH="$PATH:$HOME/fvm/versions/stable/bin/cache/dart-sdk/bin"
+
+export FZF_BASE=~/.fzf.zsh
+export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'
 
 bindkey '^n' autosuggest-accept
 
@@ -29,7 +33,7 @@ alias ws="web-search"
 
 alias flutter='fvm flutter'
 alias dart='fvm dart'
-alias fd='fvm flutter doctor'
+alias fdoc='fvm flutter doctor'
 alias fl='fvm flutter clean'
 alias fpg='fvm flutter pub get'
 alias fr='fvm flutter run'
