@@ -4,13 +4,13 @@ let g:vscode_transparent = 0.8
 let g:tokyonight_transparent = 'true'
 let g:tokyonight_transparent_sidebar = 'true'
 
-" colorscheme vscode
+colorscheme vscode
 " colorscheme gruvbox
 " colorscheme gruvbox-flat
 " colorscheme tokyonight
 " colorscheme spaceduck
 " colorscheme dawnfox
-colorscheme dracula 
+" colorscheme dracula 
 let g:tokyonight_colors = {
    \ 'hint': 'orange',
    \ 'error': '#ff0000'

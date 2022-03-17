@@ -46,6 +46,8 @@ Plug 'github/copilot.vim'
 " Multiple Cursors
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 
+Plug 'phaazon/hop.nvim'
+
 "Other
 Plug 'tpope/vim-surround'
 call plug#end()
