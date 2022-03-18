@@ -19,7 +19,7 @@ plugins=(
   web-search
 )
 
-ZSH_TMUX_AUTOSTART=true
+# ZSH_TMUX_AUTOSTART=true
 
 source $ZSH/oh-my-zsh.sh
 
