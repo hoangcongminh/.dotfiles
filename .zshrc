@@ -13,6 +13,7 @@ plugins=(
   git
   tmux
   fzf
+  z
   zsh-autosuggestions
   zsh-syntax-highlighting
   web-search
