@@ -18,9 +18,19 @@ Plug 'honza/vim-snippets'
 Plug 'natebosch/dartlang-snippets'
 " Language support
 Plug 'jiangmiao/auto-pairs'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-" Dart
-Plug 'dart-lang/dart-vim-plugin'
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Lsp
+Plug 'neovim/nvim-lspconfig'
+Plug 'akinsho/flutter-tools.nvim'
+" Completion
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/cmp-path'
+Plug 'hrsh7th/cmp-cmdline'
+Plug 'hrsh7th/nvim-cmp'
+
+Plug 'L3MON4D3/LuaSnip'
+Plug 'saadparwaiz1/cmp_luasnip'
 " Color Scheme 
 Plug 'pineapplegiant/spaceduck', { 'branch': 'main' }
 Plug 'EdenEast/nightfox.nvim'
@@ -65,6 +75,9 @@ luafile ~/.dotfiles/nvim/nvimtree.lua
 luafile ~/.dotfiles/nvim/gitsigns.lua
 luafile ~/.dotfiles/nvim/lualine.lua
 luafile ~/.dotfiles/nvim/dracula.lua
+luafile ~/.dotfiles/nvim/lsp-config.lua
+luafile ~/.dotfiles/nvim/cmp.lua
+luafile ~/.dotfiles/nvim/flutter.lua
 
 so ~/.dotfiles/nvim/color-scheme.vim
-so ~/.dotfiles/nvim/coc-config.vim
+" so ~/.dotfiles/nvim/coc-config.vim
