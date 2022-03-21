@@ -59,12 +59,15 @@ use 'hrsh7th/nvim-cmp'
 
 use 'hrsh7th/cmp-vsnip'
 use 'hrsh7th/vim-vsnip'
+use {'tzachar/cmp-tabnine', run='./install.sh', requires = 'hrsh7th/nvim-cmp'}
 
 -- flutter
+use 'Nash0x7E2/awesome-flutter-snippets'
 use {
   "akinsho/flutter-tools.nvim",
   requires = "nvim-lua/plenary.nvim",
 }
+use 'windwp/lsp-fastaction.nvim'
 
 -- copilot
 use 'github/copilot.vim'

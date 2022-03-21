@@ -69,6 +69,11 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
+  ["awesome-flutter-snippets"] = {
+    loaded = true,
+    path = "/Users/congminh/.local/share/nvim/site/pack/packer/start/awesome-flutter-snippets",
+    url = "https://github.com/Nash0x7E2/awesome-flutter-snippets"
+  },
   ["cmp-buffer"] = {
     loaded = true,
     path = "/Users/congminh/.local/share/nvim/site/pack/packer/start/cmp-buffer",
@@ -88,6 +93,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/congminh/.local/share/nvim/site/pack/packer/start/cmp-path",
     url = "https://github.com/hrsh7th/cmp-path"
+  },
+  ["cmp-tabnine"] = {
+    loaded = true,
+    path = "/Users/congminh/.local/share/nvim/site/pack/packer/start/cmp-tabnine",
+    url = "https://github.com/tzachar/cmp-tabnine"
   },
   ["cmp-vsnip"] = {
     loaded = true,
@@ -109,10 +119,20 @@ _G.packer_plugins = {
     path = "/Users/congminh/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
     url = "https://github.com/lewis6991/gitsigns.nvim"
   },
+  ["lsp-fastaction.nvim"] = {
+    loaded = true,
+    path = "/Users/congminh/.local/share/nvim/site/pack/packer/start/lsp-fastaction.nvim",
+    url = "https://github.com/windwp/lsp-fastaction.nvim"
+  },
   ["lualine.nvim"] = {
     loaded = true,
     path = "/Users/congminh/.local/share/nvim/site/pack/packer/start/lualine.nvim",
     url = "https://github.com/nvim-lualine/lualine.nvim"
+  },
+  ["null-ls.nvim"] = {
+    loaded = true,
+    path = "/Users/congminh/.local/share/nvim/site/pack/packer/start/null-ls.nvim",
+    url = "https://github.com/jose-elias-alvarez/null-ls.nvim"
   },
   ["nvim-autopairs"] = {
     config = { "\27LJ\2\nt\0\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\2B\0\2\1K\0\1\0\21disable_filetype\1\0\0\1\3\0\0\20TelescopePrompt\bvim\nsetup\19nvim-autopairs\frequire\0" },
