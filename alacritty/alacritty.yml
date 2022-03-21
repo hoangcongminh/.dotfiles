@@ -1,38 +1,68 @@
-import:
-  - ~/.dotfiles/alacritty/dracula.yml
+# import:
+#   - ~/.dotfiles/alacritty/dracula.yml
 
-# TokyoNight
-# colors:
-#   # Default colors
-#   primary:
-#     background: "0x1a1b26"
-#     foreground: "0xc0caf5"
+# vscode
+schemes:
+  codelight: &light
+    primary:
+      background: '#ffffff'
+      foreground: '#1e1e1e'
 
-#   # Normal colors
-#   normal:
-#     black: "0x15161E"
-#     red: "0xf7768e"
-#     green: "0x9ece6a"
-#     yellow: "0xe0af68"
-#     blue: "0x7aa2f7"
-#     magenta: "0xbb9af7"
-#     cyan: "0x7dcfff"
-#     white: "0xa9b1d6"
+    cursor:
+      text: '#d4d4d4'
+      cursor: '#d4d4d4'
 
-#   # Bright colors
-#   bright:
-#     black: "0x414868"
-#     red: "0xf7768e"
-#     green: "0x9ece6a"
-#     yellow: "0xe0af68"
-#     blue: "0x7aa2f7"
-#     magenta: "0xbb9af7"
-#     cyan: "0x7dcfff"
-#     white: "0xc0caf5"
+    normal:
+      black:   '#1e1e1e'
+      red:     '#c72e0f'
+      green:   '#009000'
+      yellow:  '#795e25'
+      blue:    '#007acc'
+      magenta: '#af00db'
+      cyan:    '#56b6c2'
+      white:   '#d4d4d4'
 
-#   indexed_colors:
-#     - { index: 16, color: "0xff9e64" }
-#     - { index: 17, color: "0xdb4b4b" }
+    bright:
+      black:   '#1e1e1e'
+      red:     '#c72e0f'
+      green:   '#009000'
+      yellow:  '#795e25'
+      blue:    '#007acc'
+      magenta: '#af00db'
+      cyan:    '#56b6c2'
+      white:   '#d4d4d4'
+
+  codedark: &dark
+
+    primary:
+      background: '#1e1e1e'
+      foreground: '#d4d4d4'
+
+    cursor:
+      text: '#d4d4d4'
+      cursor: '#d4d4d4'
+
+    normal:
+      black:   '#1e1e1e'
+      red:     '#f44747'
+      green:   '#608b4e'
+      yellow:  '#dcdcaa'
+      blue:    '#569cd6'
+      magenta: '#c678dd'
+      cyan:    '#56b6c2'
+      white:   '#d4d4d4'
+
+    bright:
+      black:   '#545454'
+      red:     '#f44747'
+      green:   '#608b4e'
+      yellow:  '#dcdcaa'
+      blue:    '#569cd6'
+      magenta: '#c678dd'
+      cyan:    '#56b6c2'
+      white:   '#d4d4d4'
+
+colors: *dark
 
 cursor:
   style: Block
@@ -49,7 +79,7 @@ window:
     x: 5
     y: 5
 
-  opacity: 0.95
+  opacity: 0.8
   startup_mode: Maximized
   decorations: None
 

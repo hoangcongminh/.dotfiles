@@ -48,7 +48,10 @@ use 'kyazdani42/nvim-web-devicons'
 use 'tpope/vim-commentary'
 
 -- lsp 
-use 'neovim/nvim-lspconfig'
+use {
+    'neovim/nvim-lspconfig',
+    'williamboman/nvim-lsp-installer',
+}
 
 -- completion
 use 'hrsh7th/cmp-nvim-lsp'
