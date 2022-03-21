@@ -1,3 +1,4 @@
+vim.cmd([[
 let g:vscode_style = "dark"
 let g:vscode_transparent = 0.8
 
@@ -39,3 +40,4 @@ let g:tokyonight_colors = {
  set cursorline
  hi clear CursorLine
  hi! CursorLine gui=underline cterm=underline
+]])

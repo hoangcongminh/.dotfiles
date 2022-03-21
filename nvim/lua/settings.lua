@@ -19,6 +19,4 @@ vim.cmd([[
   set cursorline 
   set noswapfile 
   set mouse=a "enable mouse for all mode
-
-  so ~/.dotfiles/nvim/color-scheme.vim
 ]])
