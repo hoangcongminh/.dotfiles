@@ -1,68 +1,7 @@
-# import:
+import:
 #   - ~/.dotfiles/alacritty/dracula.yml
+  - ~/.dotfiles/alacritty/gruvbox_dark.yaml
 
-# vscode
-schemes:
-  codelight: &light
-    primary:
-      background: '#ffffff'
-      foreground: '#1e1e1e'
-
-    cursor:
-      text: '#d4d4d4'
-      cursor: '#d4d4d4'
-
-    normal:
-      black:   '#1e1e1e'
-      red:     '#c72e0f'
-      green:   '#009000'
-      yellow:  '#795e25'
-      blue:    '#007acc'
-      magenta: '#af00db'
-      cyan:    '#56b6c2'
-      white:   '#d4d4d4'
-
-    bright:
-      black:   '#1e1e1e'
-      red:     '#c72e0f'
-      green:   '#009000'
-      yellow:  '#795e25'
-      blue:    '#007acc'
-      magenta: '#af00db'
-      cyan:    '#56b6c2'
-      white:   '#d4d4d4'
-
-  codedark: &dark
-
-    primary:
-      background: '#1e1e1e'
-      foreground: '#d4d4d4'
-
-    cursor:
-      text: '#d4d4d4'
-      cursor: '#d4d4d4'
-
-    normal:
-      black:   '#1e1e1e'
-      red:     '#f44747'
-      green:   '#608b4e'
-      yellow:  '#dcdcaa'
-      blue:    '#569cd6'
-      magenta: '#c678dd'
-      cyan:    '#56b6c2'
-      white:   '#d4d4d4'
-
-    bright:
-      black:   '#545454'
-      red:     '#f44747'
-      green:   '#608b4e'
-      yellow:  '#dcdcaa'
-      blue:    '#569cd6'
-      magenta: '#c678dd'
-      cyan:    '#56b6c2'
-      white:   '#d4d4d4'
-
-colors: *dark
 
 cursor:
   style: Block
@@ -80,7 +19,7 @@ window:
     x: 5
     y: 5
 
-  opacity: 0.8
+  opacity: 0.93
   startup_mode: Maximized
   decorations: None
 

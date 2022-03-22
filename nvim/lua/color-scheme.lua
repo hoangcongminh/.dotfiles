@@ -5,8 +5,8 @@ let g:vscode_transparent = 0.8
 let g:tokyonight_transparent = 'true'
 let g:tokyonight_transparent_sidebar = 'true'
 
-colorscheme vscode
-" colorscheme gruvbox
+" colorscheme vscode
+colorscheme gruvbox
 " colorscheme gruvbox-flat
 " colorscheme tokyonight
 " colorscheme spaceduck
