@@ -228,11 +228,6 @@ ins_right {
 }
 
 ins_right {
-  'filetype',
-  color = {fg = colors.magenta, gui = 'bold'}
-}
-
-ins_right {
   'branch',
   icon = '',
   condition = conditions.check_git_workspace,
@@ -250,8 +245,8 @@ ins_right {
 }
 
 ins_right {
-  function() return 'Minh^^' end,
-  color = {fg = colors.yellow},
+  function() return 'ᕙ(▀̿ĺ̯▀̿ ̿)ᕗ' end,
+  color = {fg = colors.white},
   right_padding = 0
 }
 

@@ -52,6 +52,7 @@ use {
     'neovim/nvim-lspconfig',
     'williamboman/nvim-lsp-installer',
 }
+use 'j-hui/fidget.nvim'
 
 -- completion
 use 'hrsh7th/cmp-nvim-lsp'

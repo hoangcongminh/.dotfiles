@@ -109,6 +109,11 @@ _G.packer_plugins = {
     path = "/Users/congminh/.local/share/nvim/site/pack/packer/start/copilot.vim",
     url = "https://github.com/github/copilot.vim"
   },
+  ["fidget.nvim"] = {
+    loaded = true,
+    path = "/Users/congminh/.local/share/nvim/site/pack/packer/start/fidget.nvim",
+    url = "https://github.com/j-hui/fidget.nvim"
+  },
   ["flutter-tools.nvim"] = {
     loaded = true,
     path = "/Users/congminh/.local/share/nvim/site/pack/packer/start/flutter-tools.nvim",
@@ -144,6 +149,16 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/congminh/.local/share/nvim/site/pack/packer/start/nvim-cmp",
     url = "https://github.com/hrsh7th/nvim-cmp"
+  },
+  ["nvim-dap"] = {
+    loaded = true,
+    path = "/Users/congminh/.local/share/nvim/site/pack/packer/start/nvim-dap",
+    url = "https://github.com/mfussenegger/nvim-dap"
+  },
+  ["nvim-dap-ui"] = {
+    loaded = true,
+    path = "/Users/congminh/.local/share/nvim/site/pack/packer/start/nvim-dap-ui",
+    url = "https://github.com/rcarriga/nvim-dap-ui"
   },
   ["nvim-lsp-installer"] = {
     loaded = true,

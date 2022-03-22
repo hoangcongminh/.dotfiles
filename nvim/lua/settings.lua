@@ -1,7 +1,6 @@
 vim.cmd([[
   set completeopt=menu,menuone,noselect
   set signcolumn=yes
-  set numberwidth=4
   set clipboard+=unnamedplus 
   set cmdheight=2 
   set noshowmode 
