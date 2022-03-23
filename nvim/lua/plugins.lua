@@ -87,8 +87,5 @@ use {
   end
 }
 use {'mg979/vim-visual-multi', branch = 'master'}
--- Is using a standard Neovim install, i.e. built from source or using a
--- provided appimage.
-use 'lewis6991/impatient.nvim'
 
 end)

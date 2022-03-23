@@ -20,7 +20,7 @@ window:
     x: 5
     y: 5
 
-  opacity: 0.93
+  opacity: 0.8
   startup_mode: Maximized
   decorations: None
 
