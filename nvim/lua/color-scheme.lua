@@ -2,24 +2,7 @@ vim.cmd([[
 let g:vscode_style = "dark"
 let g:vscode_transparent = 0.8
 
-let g:tokyonight_transparent = 'true'
-let g:tokyonight_transparent_sidebar = 'true'
-
-" colorscheme vscode
-colorscheme gruvbox
-" colorscheme gruvbox-flat
-" colorscheme tokyonight
-" colorscheme spaceduck
-" colorscheme dawnfox
-" colorscheme dracula 
-let g:tokyonight_colors = {
-   \ 'hint': 'orange',
-   \ 'error': '#ff0000'
- \ }
- let g:tokyonight_transparent = 1 "1 mean true
- let g:tokyonight_transparent_sidebar = 1
-
- let g:rainbow_active = 1
+colorscheme vscode
 
 " custom style
  highlight Normal guibg=NONE ctermbg=NONE

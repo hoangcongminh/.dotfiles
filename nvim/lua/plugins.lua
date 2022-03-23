@@ -6,7 +6,6 @@ use 'wbthomason/packer.nvim'
 
 -- color Theme
 use {'Mofiqul/vscode.nvim', branch = 'main'}
-use 'morhetz/gruvbox'
   
 -- treesitter
 use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
