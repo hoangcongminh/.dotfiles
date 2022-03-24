@@ -19,6 +19,7 @@ function on_attach(_,bufnr)
   buf_set_keymap('n','<space>o' ,':FlutterOutlineToggle<CR>',opts)
   buf_set_keymap('n','<Space>rl',':FlutterReload<CR>',opts)
   buf_set_keymap('n','<space>fR',':FlutterRestart<CR>',opts)
+  buf_set_keymap('n','<space>fpg',':FlutterPubGet<CR>',opts)
 
   require'lsp-keymaps'.map(_,bufnr)
 end

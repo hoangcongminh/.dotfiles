@@ -10,8 +10,8 @@ cursor:
 font:
   size: 11.0
   normal:
-    family: SFMono Nerd Font
-    # family: Monaco NF
+    # family: SFMono Nerd Font
+    family: Monaco Nerd Font
     # family: FiraCode Nerd Font
   use_thin_strokes: true
 

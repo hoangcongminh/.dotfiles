@@ -78,6 +78,11 @@ use 'github/copilot.vim'
 
 -- other
 use 'tpope/vim-surround'
+use {'norcalli/nvim-colorizer.lua',
+  config = function()
+    require'colorizer'.setup()
+  end
+}
 use {
   'windwp/nvim-autopairs', 
   config = function()
