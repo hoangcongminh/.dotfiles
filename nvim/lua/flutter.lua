@@ -57,7 +57,7 @@ require("flutter-tools").setup {
     open_cmd = "vnew", -- command to use to open the log buffer
   },
   dev_tools = {
-    autostart = false, -- autostart devtools server if not detected
+    autostart = true, -- autostart devtools server if not detected
     auto_open_browser = false, -- Automatically opens devtools in the browser
   },
   outline = {
