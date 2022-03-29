@@ -22,6 +22,8 @@ keymap("n", "<C-Up>", ":resize -2<CR>", opts)
 keymap("n", "<C-Down>", ":resize +2<CR>", opts)
 keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
 keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
+keymap("n", "<leader>+", ":vertical resize +5<CR>", opts)
+keymap("n", "<leader>-", ":vertical resize -5<CR>", opts)
 -- quickfix
 keymap('n','<leader>co',':copen<CR>',opts)
 keymap('n','<leader>cc',':ccl<CR>',opts)
