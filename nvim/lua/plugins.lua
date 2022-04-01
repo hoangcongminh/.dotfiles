@@ -1,5 +1,8 @@
 vim.cmd [[packadd packer.nvim]]
 
+vim.api.nvim_set_keymap('n','<leader>ps',"<cmd>PackerSync<cr>",{ noremap=true, silent=true })
+vim.api.nvim_set_keymap('n','<leader>pc',"<cmd>PackerClean<cr>",{ noremap=true, silent=true })
+
 return require('packer').startup(function()
 
 use 'wbthomason/packer.nvim'
@@ -25,7 +28,7 @@ use 'akinsho/toggleterm.nvim'
 -- File and folder management
 use 'kyazdani42/nvim-tree.lua'
 
--- git 
+-- git
 use 'tpope/vim-fugitive'
 use {
   'lewis6991/gitsigns.nvim',

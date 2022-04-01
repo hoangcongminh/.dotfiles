@@ -12,8 +12,6 @@ vim.g.maplocalleader = " "
 
 -- Normal --
 
--- keymap("n", "<leader>p", ":FZF<CR>", opts)
-keymap("n", "<leader>p", ":Files<CR>", opts)
 keymap("n", "<leader>/", ":Commentary<CR>", opts)
 keymap("v", "<leader>/", ":Commentary<CR>", opts)
 
