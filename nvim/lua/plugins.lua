@@ -68,6 +68,9 @@ use 'hrsh7th/cmp-vsnip'
 use 'hrsh7th/vim-vsnip'
 use {'tzachar/cmp-tabnine', run='./install.sh', requires = 'hrsh7th/nvim-cmp'}
 
+-- snippets
+use 'rafamadriz/friendly-snippets'
+
 -- flutter
 use 'Nash0x7E2/awesome-flutter-snippets'
 use {
