@@ -74,6 +74,11 @@ _G.packer_plugins = {
     path = "/Users/congminh/.local/share/nvim/site/pack/packer/start/awesome-flutter-snippets",
     url = "https://github.com/Nash0x7E2/awesome-flutter-snippets"
   },
+  ["barbar.nvim"] = {
+    loaded = true,
+    path = "/Users/congminh/.local/share/nvim/site/pack/packer/start/barbar.nvim",
+    url = "https://github.com/romgrk/barbar.nvim"
+  },
   ["cmp-buffer"] = {
     loaded = true,
     path = "/Users/congminh/.local/share/nvim/site/pack/packer/start/cmp-buffer",
@@ -230,6 +235,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/congminh/.local/share/nvim/site/pack/packer/start/vim-fugitive",
     url = "https://github.com/tpope/vim-fugitive"
+  },
+  ["vim-sensible"] = {
+    loaded = true,
+    path = "/Users/congminh/.local/share/nvim/site/pack/packer/start/vim-sensible",
+    url = "https://github.com/tpope/vim-sensible"
   },
   ["vim-surround"] = {
     loaded = true,

@@ -37,10 +37,14 @@ use {
   },
 }
 
--- lualine
+-- lualine & tabline
 use {
   'nvim-lualine/lualine.nvim',
   requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+}
+use {
+  'romgrk/barbar.nvim',
+  requires = {'kyazdani42/nvim-web-devicons'}
 }
 
 -- icons
@@ -83,6 +87,7 @@ use 'windwp/lsp-fastaction.nvim'
 use 'github/copilot.vim'
 
 -- other
+use 'tpope/vim-sensible'
 use 'tpope/vim-surround'
 use {'norcalli/nvim-colorizer.lua',
   config = function()
