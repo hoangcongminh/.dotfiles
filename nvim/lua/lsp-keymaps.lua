@@ -7,10 +7,10 @@ function map(_,bufnr)
   buf_set_keymap('n', '<space>e', '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>', opts)
   buf_set_keymap('n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
   buf_set_keymap('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
-  -- buf_set_keymap('n', '<space>la', '<cmd>lua vim.diagnostic.setloclist()<CR>', opts)
-  -- buf_set_keymap('n', '<space>qa', '<cmd>lua vim.diagnostic.setqflist({title="warnings",severity=vim.diagnostic.severity.WARN})<CR>', opts)
-  -- buf_set_keymap('n', '<space>qe', '<cmd>lua vim.diagnostic.setqflist({severity=vim.diagnostic.severity.ERROR})<CR> <cmd>silent cr<CR>', opts)
-  -- buf_set_keymap('n', '<space>a', '<cmd>lua vim.diagnostic.setqflist()<CR>', opts)
+  buf_set_keymap('n', '<space>la', '<cmd>lua vim.diagnostic.setloclist()<CR>', opts)
+  buf_set_keymap('n', '<space>qa', '<cmd>lua vim.diagnostic.setqflist({title="warnings",severity=vim.diagnostic.severity.WARN})<CR>', opts)
+  buf_set_keymap('n', '<space>qe', '<cmd>lua vim.diagnostic.setqflist({severity=vim.diagnostic.severity.ERROR})<CR> <cmd>silent cr<CR>', opts)
+  buf_set_keymap('n', '<space>a', '<cmd>lua vim.diagnostic.setqflist()<CR>', opts)
 
 
   -- Enable completion triggered by <c-x><c-o>
@@ -34,8 +34,8 @@ function map(_,bufnr)
   buf_set_keymap('n','<space>wl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>',opts)
   buf_set_keymap('n','<space>D', '<cmd>lua vim.lsp.buf.type_definition()<CR>',opts)
   -- lsp-fastaction
-  buf_set_keymap('n', '<space>a', '<cmd>lua require("lsp-fastaction").code_action()<CR>', opts)
-  buf_set_keymap('v', '<space>a', '<esc><cmd>lua require("lsp-fastaction").range_code_action()<CR>', opts)
+  buf_set_keymap('n', '<space>aw', '<cmd>lua require("lsp-fastaction").code_action()<CR>', opts)
+  buf_set_keymap('v', '<space>ca', '<esc><cmd>lua require("lsp-fastaction").range_code_action()<CR>', opts)
 end
 
 return {map = map}

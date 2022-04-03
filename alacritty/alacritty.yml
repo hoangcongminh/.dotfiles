@@ -8,7 +8,7 @@ cursor:
   style: Block
 
 font:
-  size: 11.0
+  size: 12.0
   normal:
     # family: SFMono Nerd Font
     family: Monaco Nerd Font
