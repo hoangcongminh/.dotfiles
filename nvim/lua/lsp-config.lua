@@ -28,6 +28,15 @@ local enhance_server_opts = {
       },
     }
   end,
+  ["sumneko_lua"] = function(opts)
+    opts.settings = {
+	Lua = {
+	  diagnostics = {
+	      globals = { 'vim','use' }
+	  }
+	}
+    }
+  end,
 }
 
   vim.diagnostic.config({
@@ -51,20 +60,3 @@ lsp_installer.on_server_ready(function(server)
 
   server:setup(opts)
 end)
-
--- for _, lsp in ipairs(servers) do
---    nvim_lsp[lsp].setup {
---      on_attach = lsp_mapping,
---      flags = {
---        debounce_text_changes = 150,
---      },
---     settings = {
--- 	  Lua = {
--- 	      diagnostics = {
--- 		  globals = { 'vim','use' }
--- 	      }
--- 	  }
---       }
---    }
---  end
-

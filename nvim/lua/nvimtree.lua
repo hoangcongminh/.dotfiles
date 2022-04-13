@@ -1,5 +1,4 @@
 vim.cmd([[
-let g:nvim_tree_indent_markers = 0 "0 by default, this option shows indent markers when folders are open
 let g:nvim_tree_git_hl = 1 "0 by default, will enable file highlight for git attributes (can be used without the icons).
 let g:nvim_tree_highlight_opened_files = 1 "0 by default, will enable folder and file icon highlight for opened files/directories.
 let g:nvim_tree_root_folder_modifier = ':~' "This is the default. See :help filename-modifiers for more options
@@ -58,6 +57,7 @@ highlight NvimTreeFolderIcon guibg=blue
 ]])
 
 require'nvim-tree'.setup {
+  nvim_tree_indent_markers = 0,
   nvim_tree_window_picker_exclude = {
 		buftype = {
 			'terminal'
