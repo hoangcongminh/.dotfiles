@@ -36,10 +36,17 @@ vim.api.nvim_set_keymap('n','<space>fo',"<cmd>lua require('telescope.builtin').o
 vim.api.nvim_set_keymap('n','<space>qf',"<cmd>lua require('telescope.builtin').quickfix()<cr>",opts)
 vim.api.nvim_set_keymap('n','<space>fr',"<cmd>lua require('telescope.builtin').resume()<cr>",opts)
 vim.api.nvim_set_keymap('n','<space>lj',"<cmd>lua require('telescope.builtin').jumplist()<jr>",opts)
+vim.api.nvim_set_keymap('n','<space>qf',string.format("<cmd>lua require('telescope.builtin').quickfix(%s)<cr>",dropdown_theme_string),opts)
+
 
 vim.api.nvim_set_keymap('n','<space>gr',string.format("<cmd>lua require('telescope.builtin').lsp_references(%s)<cr>",dropdown_theme_string),opts)
 vim.api.nvim_set_keymap('n','<space>gd',string.format("<cmd>lua require('telescope.builtin').lsp_definitions(%s)<cr>",dropdown_theme_string),opts)
 vim.api.nvim_set_keymap('n','<space>fd',string.format("<cmd>lua require('telescope.builtin').diagnostics(%s)<cr>",dropdown_theme_string),opts)
+
+-- vim.api.nvim_set_keymap('n','<space>la',"<cmd>lua require('telescope.builtin').lsp_code_actions()<cr>",opts)
+-- vim.api.nvim_set_keymap('n','<space>lw',"<cmd>lua require('telescope.builtin').lsp_workspace_diagnostics()<cr>",opts)
+-- vim.api.nvim_set_keymap('n','<space>ld',"<cmd>lua require('telescope.builtin').lsp_document_diagnostics()<cr>",opts)
+
 
 vim.api.nvim_set_keymap('n','<space>t',":Telescope<cr>",opts)
 

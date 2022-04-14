@@ -1,6 +1,7 @@
 vim.cmd([[
 let g:vscode_style = "dark"
 let g:vscode_transparent = 0.8
+let g:vscode_italic_comment = 1
 
 colorscheme vscode
 

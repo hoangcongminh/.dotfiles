@@ -241,6 +241,11 @@ _G.packer_plugins = {
     path = "/Users/congminh/.local/share/nvim/site/pack/packer/start/vim-sensible",
     url = "https://github.com/tpope/vim-sensible"
   },
+  ["vim-sleuth"] = {
+    loaded = true,
+    path = "/Users/congminh/.local/share/nvim/site/pack/packer/start/vim-sleuth",
+    url = "https://github.com/tpope/vim-sleuth"
+  },
   ["vim-surround"] = {
     loaded = true,
     path = "/Users/congminh/.local/share/nvim/site/pack/packer/start/vim-surround",

@@ -84,6 +84,7 @@ use 'dart-lang/dart-vim-plugin'
 use 'github/copilot.vim'
 
 -- other
+use 'tpope/vim-sleuth'
 use 'tpope/vim-sensible'
 use 'tpope/vim-surround'
 use {'norcalli/nvim-colorizer.lua', config = function() require'colorizer'.setup() end}
