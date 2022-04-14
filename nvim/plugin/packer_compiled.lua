@@ -114,6 +114,11 @@ _G.packer_plugins = {
     path = "/Users/congminh/.local/share/nvim/site/pack/packer/start/copilot.vim",
     url = "https://github.com/github/copilot.vim"
   },
+  ["dart-vim-plugin"] = {
+    loaded = true,
+    path = "/Users/congminh/.local/share/nvim/site/pack/packer/start/dart-vim-plugin",
+    url = "https://github.com/dart-lang/dart-vim-plugin"
+  },
   ["fidget.nvim"] = {
     loaded = true,
     path = "/Users/congminh/.local/share/nvim/site/pack/packer/start/fidget.nvim",
@@ -133,11 +138,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/congminh/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
     url = "https://github.com/lewis6991/gitsigns.nvim"
-  },
-  ["lsp-fastaction.nvim"] = {
-    loaded = true,
-    path = "/Users/congminh/.local/share/nvim/site/pack/packer/start/lsp-fastaction.nvim",
-    url = "https://github.com/windwp/lsp-fastaction.nvim"
   },
   ["lualine.nvim"] = {
     loaded = true,

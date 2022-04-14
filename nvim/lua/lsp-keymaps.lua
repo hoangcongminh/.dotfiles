@@ -25,7 +25,7 @@ function map(_,bufnr)
   buf_set_keymap('n', '<space>wr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', opts)
   buf_set_keymap('n', '<space>wl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', opts)
   buf_set_keymap('n', '<space>D', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
-  -- buf_set_keymap('n', '<space>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
+  buf_set_keymap('n', '<space>aw', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
   buf_set_keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references({includeDeclaration=false})<CR>', opts)
   buf_set_keymap('n', "<space>fm", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
   buf_set_keymap('n', "<space>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
@@ -33,9 +33,6 @@ function map(_,bufnr)
   buf_set_keymap('n', "<space>ds", "<cmd>lua vim.lsp.buf.document_symbol()<CR>", opts)
   buf_set_keymap('n','<space>wl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>',opts)
   buf_set_keymap('n','<space>D', '<cmd>lua vim.lsp.buf.type_definition()<CR>',opts)
-  -- lsp-fastaction
-  buf_set_keymap('n', '<space>aw', '<cmd>lua require("lsp-fastaction").code_action()<CR>', opts)
-  buf_set_keymap('v', '<space>ca', '<esc><cmd>lua require("lsp-fastaction").range_code_action()<CR>', opts)
 end
 
 return {map = map}

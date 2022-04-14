@@ -39,13 +39,13 @@ local enhance_server_opts = {
   end,
 }
 
-  vim.diagnostic.config({
-    virtual_text = true,
-    signs = false,
-    underline = true,
-    update_in_insert = false,
-    severity_sort = false,
-  })
+vim.diagnostic.config({
+  virtual_text = true,
+  signs = false,
+  underline = true,
+  update_in_insert = false,
+  severity_sort = false,
+})
 
 lsp_installer.on_server_ready(function(server)
   -- Specify the default options which we'll use to setup all servers

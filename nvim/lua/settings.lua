@@ -25,5 +25,6 @@ augroup highlight_yank
     autocmd TextYankPost * silent! lua require'vim.highlight'.on_yank({timeout = 100})
 augroup END
 
-autocmd BufWritePre * lua vim.lsp.buf.formatting_sync()
+let g:dart_style_guide = 2
+let g:dart_format_on_save = 1
 ]])

@@ -9,7 +9,7 @@ use 'wbthomason/packer.nvim'
 
 -- color Theme
 use {'Mofiqul/vscode.nvim', branch = 'main'}
-  
+
 -- treesitter
 use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
 use 'nvim-treesitter/nvim-treesitter-textobjects'
@@ -54,7 +54,7 @@ use 'kyazdani42/nvim-web-devicons'
 -- comment
 use 'tpope/vim-commentary'
 
--- lsp 
+-- lsp
 use {
     'neovim/nvim-lspconfig',
     'williamboman/nvim-lsp-installer',
@@ -77,11 +77,8 @@ use 'rafamadriz/friendly-snippets'
 
 -- flutter
 use 'Nash0x7E2/awesome-flutter-snippets'
-use {
-  "akinsho/flutter-tools.nvim",
-  requires = "nvim-lua/plenary.nvim",
-}
-use 'windwp/lsp-fastaction.nvim'
+use {"akinsho/flutter-tools.nvim", requires = "nvim-lua/plenary.nvim",}
+use 'dart-lang/dart-vim-plugin'
 
 -- copilot
 use 'github/copilot.vim'
@@ -89,19 +86,8 @@ use 'github/copilot.vim'
 -- other
 use 'tpope/vim-sensible'
 use 'tpope/vim-surround'
-use {'norcalli/nvim-colorizer.lua',
-  config = function()
-    require'colorizer'.setup()
-  end
-}
-use {
-  'windwp/nvim-autopairs', 
-  config = function()
-    require('nvim-autopairs').setup({
-      disable_filetype = { "TelescopePrompt" , "vim" },
-    })
-  end
-}
+use {'norcalli/nvim-colorizer.lua', config = function() require'colorizer'.setup() end}
+use {'windwp/nvim-autopairs', config = function() require('nvim-autopairs').setup({disable_filetype = { "TelescopePrompt" , "vim" },}) end}
 use {'mg979/vim-visual-multi', branch = 'master'}
 
 end)
