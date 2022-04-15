@@ -28,6 +28,11 @@ source $ZSH/oh-my-zsh.sh
 export PATH="$PATH:$HOME/fvm/versions/stable/bin"
 export PATH="$PATH:$HOME/fvm/versions/stable/bin/cache/dart-sdk/bin"
 export PATH="$PATH":"$HOME/.pub-cache/bin"
+export ANDROID_HOME=$HOME/Library/Android/sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/tools/bin
 
 export FZF_BASE=~/.fzf.zsh
 export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'

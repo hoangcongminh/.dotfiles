@@ -52,8 +52,9 @@ let g:nvim_tree_icons = {
 nnoremap <leader>b :NvimTreeToggle<CR>
 nnoremap <leader>n :NvimTreeFindFile<CR>
 nnoremap <leader>r :NvimTreeRefresh<CR>
+
 " a list of groups can be found at `:help nvim_tree_highlight`
-highlight NvimTreeFolderIcon guibg=blue
+" highlight NvimTreeFolderIcon guibg=blue
 ]])
 
 require'nvim-tree'.setup {

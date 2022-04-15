@@ -19,7 +19,6 @@ colorscheme vscode
  highlight NvimTreeCursorline gui=underline cterm=underline guibg=NONE
  highlight Comment gui=italic
  highlight link GitSignsCurrentLineBlame Comment
- highlight NvimTreeFolderIcon guibg=blue
 
  set cursorline
  hi clear CursorLine
