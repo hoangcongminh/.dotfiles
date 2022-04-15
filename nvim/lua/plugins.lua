@@ -1,7 +1,7 @@
 vim.cmd [[packadd packer.nvim]]
 
-vim.api.nvim_set_keymap('n','<leader>ps',"<cmd>PackerSync<cr>",{ noremap=true, silent=true })
-vim.api.nvim_set_keymap('n','<leader>pc',"<cmd>PackerClean<cr>",{ noremap=true, silent=true })
+vim.api.nvim_set_keymap('n','<leader>sy',"<cmd>PackerSync<cr>",{ noremap=true, silent=true })
+vim.api.nvim_set_keymap('n','<leader>cl',"<cmd>PackerClean<cr>",{ noremap=true, silent=true })
 
 return require('packer').startup(function()
 
@@ -59,7 +59,19 @@ use {
     'neovim/nvim-lspconfig',
     'williamboman/nvim-lsp-installer',
 }
-use 'j-hui/fidget.nvim'
+use {'j-hui/fidget.nvim', config = function ()
+  require"fidget".setup{
+    text = {
+      spinner = "pipe",         -- animation shown when tasks are ongoing
+      done = "✔",               -- character shown when all tasks are complete
+      commenced = "Started",    -- message shown when task starts
+      completed = "Completed",  -- message shown when task completes
+    },
+    window = {
+      blend = 0,              -- &winblend for the window
+    },
+  }
+end}
 
 -- completion
 use 'hrsh7th/cmp-nvim-lsp'
@@ -87,8 +99,14 @@ use 'github/copilot.vim'
 use 'tpope/vim-sleuth'
 use 'tpope/vim-sensible'
 use 'tpope/vim-surround'
-use {'norcalli/nvim-colorizer.lua', config = function() require'colorizer'.setup() end}
-use {'windwp/nvim-autopairs', config = function() require('nvim-autopairs').setup({disable_filetype = { "TelescopePrompt" , "vim" },}) end}
+use {'norcalli/nvim-colorizer.lua', config = function()
+  require'colorizer'.setup()
+end}
+use {'windwp/nvim-autopairs', config = function()
+  require('nvim-autopairs').setup({
+    disable_filetype = { "TelescopePrompt" , "vim" },
+  })
+end}
 use {'mg979/vim-visual-multi', branch = 'master'}
 
 end)
