@@ -4,7 +4,7 @@ vim.g.dart_format_on_save = 1
 
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 
-local function on_attach(_,bufnr)
+local function on_attach(client,bufnr)
   require("telescope").load_extension("flutter")
 
   local opts = { noremap=true, silent=true }
@@ -26,7 +26,7 @@ local function on_attach(_,bufnr)
   buf_set_keymap('n','<space>fpg',':FlutterPubGet<CR>',opts)
   buf_set_keymap('n','<space>fm',':DartFmt<CR>',opts)
 
-  require'lsp-keymaps'.map(_,bufnr)
+  require'lsp-keymaps'.map(client,bufnr)
 end
 
 require("flutter-tools").setup {
