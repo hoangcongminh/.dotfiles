@@ -36,6 +36,7 @@ export PATH=$PATH:$ANDROID_HOME/tools/bin
 
 export FZF_BASE=~/.fzf.zsh
 export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'
+export EDITOR='nvim'
 
 bindkey '^n' autosuggest-accept
 
@@ -58,6 +59,8 @@ alias fb='fvm flutter pub run build_runner build --delete-conflicting-outputs'
 alias wp='cd ~/Documents/Workspace'
 alias h='cd ~'
 alias df='cd ~/.dotfiles'
+
+alias gu='git add .; git commit -m "update"; git push;'
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
