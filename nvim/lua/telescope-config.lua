@@ -24,7 +24,6 @@ require('telescope').setup{
     }
   }
 }
-require('telescope').load_extension('fzf')
 
 local dropdown_theme_string = "require('telescope.themes').get_dropdown({})";
 

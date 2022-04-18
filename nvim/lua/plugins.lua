@@ -8,43 +8,79 @@ return require('packer').startup(function()
 use 'wbthomason/packer.nvim'
 
 -- color Theme
-use {'Mofiqul/vscode.nvim', branch = 'main'}
-use { "ellisonleao/gruvbox.nvim" }
+use {'Mofiqul/vscode.nvim', branch = 'main', config = function ()
+ require'color-scheme'
+end}
 
 -- treesitter
-use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
-use 'nvim-treesitter/nvim-treesitter-textobjects'
-use 'p00f/nvim-ts-rainbow'
-
+use {
+  'nvim-treesitter/nvim-treesitter',
+  run = ':TSUpdate',
+  event = "BufWinEnter",
+  config = function ()
+    require'treesitter'
+  end,
+  requires = {
+      {'nvim-treesitter/nvim-treesitter-textobjects',after = 'nvim-treesitter'},
+      {'p00f/nvim-ts-rainbow', after = 'nvim-treesitter'}
+  },
+}
 -- telescope
 use {
   'nvim-telescope/telescope.nvim',
-  requires = { {'nvim-lua/plenary.nvim'} },
+  requires = {
+    'nvim-lua/plenary.nvim',
+    {'nvim-telescope/telescope-fzf-native.nvim', run = 'make', after = 'telescope.nvim' ,config = function ()
+	require('telescope').load_extension('fzf')
+    end}
+  },
+  event = "BufRead",
+  config = function ()
+    require'telescope-config'
+  end,
 }
-use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
 
 -- floatTerm
-use 'akinsho/toggleterm.nvim'
+use {'akinsho/toggleterm.nvim', config = function ()
+  require'toggleterm-config'
+end}
 
 -- File and folder management
-use 'kyazdani42/nvim-tree.lua'
+use {
+  'kyazdani42/nvim-tree.lua',
+  requires = 'kyazdani42/nvim-web-devicons',
+  config = function ()
+    require'nvimtree'
+  end,
+}
 
 -- git
 use 'tpope/vim-fugitive'
 use {
   'lewis6991/gitsigns.nvim',
+  config = function ()
+    require'gitsigns-config'
+  end,
   requires = {
     'nvim-lua/plenary.nvim'
-  },
+  }
 }
 
 -- lualine & tabline
 use {
   'nvim-lualine/lualine.nvim',
+  event = "BufWinEnter",
+  config = function ()
+    require'lualine-config'
+  end,
   requires = { 'kyazdani42/nvim-web-devicons', opt = true }
 }
 use {
   'romgrk/barbar.nvim',
+  event = "BufWinEnter",
+  config = function ()
+    require'barbar-config'
+  end,
   requires = {'kyazdani42/nvim-web-devicons'}
 }
 
@@ -58,8 +94,11 @@ use 'tpope/vim-commentary'
 -- lsp
 use {
     'neovim/nvim-lspconfig',
-    'williamboman/nvim-lsp-installer',
+    config = function ()
+      require'lsp-config'
+    end,
 }
+use {'williamboman/nvim-lsp-installer'}
 use {'j-hui/fidget.nvim', config = function ()
   require"fidget".setup{
     text = {
@@ -74,27 +113,49 @@ use {'j-hui/fidget.nvim', config = function ()
   }
 end}
 
--- completion
-use 'hrsh7th/cmp-nvim-lsp'
-use 'hrsh7th/cmp-buffer'
-use 'hrsh7th/cmp-path'
-use 'hrsh7th/cmp-cmdline'
-use 'hrsh7th/nvim-cmp'
+-- flutter
+use 'Nash0x7E2/awesome-flutter-snippets'
+use {
+  "akinsho/flutter-tools.nvim",
+  requires = {
+    "nvim-lua/plenary.nvim",
+    'Nash0x7E2/awesome-flutter-snippets',
+    'hrsh7th/cmp-nvim-lsp'
+  },
+  config = function ()
+    require'flutter'
+  end
+}
+use 'dart-lang/dart-vim-plugin'
 
-use 'hrsh7th/cmp-vsnip'
-use 'hrsh7th/vim-vsnip'
+-- completion
+use {
+  'hrsh7th/nvim-cmp',
+  config = function ()
+    require'cmp-config'
+  end,
+  requires = {
+     {'hrsh7th/cmp-nvim-lsp', after='nvim-cmp'},
+     {'hrsh7th/cmp-buffer', after='nvim-cmp'},
+     {'hrsh7th/cmp-path', after='nvim-cmp'},
+     {'hrsh7th/cmp-cmdline', after='nvim-cmp'},
+     {'hrsh7th/cmp-vsnip', after='nvim-cmp'},
+     {'hrsh7th/vim-vsnip', after='nvim-cmp'},
+  }
+}
 use {'tzachar/cmp-tabnine', run='./install.sh', requires = 'hrsh7th/nvim-cmp'}
 
 -- snippets
 use 'rafamadriz/friendly-snippets'
 
--- flutter
-use 'Nash0x7E2/awesome-flutter-snippets'
-use {"akinsho/flutter-tools.nvim", requires = "nvim-lua/plenary.nvim",}
-use 'dart-lang/dart-vim-plugin'
-
 -- copilot
-use 'github/copilot.vim'
+use {
+  'github/copilot.vim',
+  event = "BufWinEnter",
+  config = function ()
+    require'copilot'
+  end
+}
 
 -- other
 use 'tpope/vim-sleuth'

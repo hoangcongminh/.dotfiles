@@ -75,18 +75,27 @@ _G.packer_plugins = {
     url = "https://github.com/Nash0x7E2/awesome-flutter-snippets"
   },
   ["barbar.nvim"] = {
-    loaded = true,
-    path = "/Users/congminh/.local/share/nvim/site/pack/packer/start/barbar.nvim",
+    config = { "\27LJ\2\n-\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\18barbar-config\frequire\0" },
+    loaded = false,
+    needs_bufread = false,
+    only_cond = false,
+    path = "/Users/congminh/.local/share/nvim/site/pack/packer/opt/barbar.nvim",
     url = "https://github.com/romgrk/barbar.nvim"
   },
   ["cmp-buffer"] = {
+    after_files = { "/Users/congminh/.local/share/nvim/site/pack/packer/opt/cmp-buffer/after/plugin/cmp_buffer.lua" },
+    load_after = {},
     loaded = true,
-    path = "/Users/congminh/.local/share/nvim/site/pack/packer/start/cmp-buffer",
+    needs_bufread = false,
+    path = "/Users/congminh/.local/share/nvim/site/pack/packer/opt/cmp-buffer",
     url = "https://github.com/hrsh7th/cmp-buffer"
   },
   ["cmp-cmdline"] = {
+    after_files = { "/Users/congminh/.local/share/nvim/site/pack/packer/opt/cmp-cmdline/after/plugin/cmp_cmdline.lua" },
+    load_after = {},
     loaded = true,
-    path = "/Users/congminh/.local/share/nvim/site/pack/packer/start/cmp-cmdline",
+    needs_bufread = false,
+    path = "/Users/congminh/.local/share/nvim/site/pack/packer/opt/cmp-cmdline",
     url = "https://github.com/hrsh7th/cmp-cmdline"
   },
   ["cmp-nvim-lsp"] = {
@@ -95,8 +104,11 @@ _G.packer_plugins = {
     url = "https://github.com/hrsh7th/cmp-nvim-lsp"
   },
   ["cmp-path"] = {
+    after_files = { "/Users/congminh/.local/share/nvim/site/pack/packer/opt/cmp-path/after/plugin/cmp_path.lua" },
+    load_after = {},
     loaded = true,
-    path = "/Users/congminh/.local/share/nvim/site/pack/packer/start/cmp-path",
+    needs_bufread = false,
+    path = "/Users/congminh/.local/share/nvim/site/pack/packer/opt/cmp-path",
     url = "https://github.com/hrsh7th/cmp-path"
   },
   ["cmp-tabnine"] = {
@@ -105,13 +117,19 @@ _G.packer_plugins = {
     url = "https://github.com/tzachar/cmp-tabnine"
   },
   ["cmp-vsnip"] = {
+    after_files = { "/Users/congminh/.local/share/nvim/site/pack/packer/opt/cmp-vsnip/after/plugin/cmp_vsnip.vim" },
+    load_after = {},
     loaded = true,
-    path = "/Users/congminh/.local/share/nvim/site/pack/packer/start/cmp-vsnip",
+    needs_bufread = false,
+    path = "/Users/congminh/.local/share/nvim/site/pack/packer/opt/cmp-vsnip",
     url = "https://github.com/hrsh7th/cmp-vsnip"
   },
   ["copilot.vim"] = {
-    loaded = true,
-    path = "/Users/congminh/.local/share/nvim/site/pack/packer/start/copilot.vim",
+    config = { "\27LJ\2\n'\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\fcopilot\frequire\0" },
+    loaded = false,
+    needs_bufread = false,
+    only_cond = false,
+    path = "/Users/congminh/.local/share/nvim/site/pack/packer/opt/copilot.vim",
     url = "https://github.com/github/copilot.vim"
   },
   ["dart-vim-plugin"] = {
@@ -120,12 +138,13 @@ _G.packer_plugins = {
     url = "https://github.com/dart-lang/dart-vim-plugin"
   },
   ["fidget.nvim"] = {
-    config = { "\27LJ\2\n｡\1\0\0\4\0\b\0\v6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\0025\3\6\0=\3\a\2B\0\2\1K\0\1\0\vwindow\1\0\1\nblend\3\0\ttext\1\0\0\1\0\4\fspinner\tpipe\14commenced\fStarted\14completed\14Completed\tdone\b笨能nsetup\vfidget\frequire\0" },
+    config = { "\27LJ\2\n｡\1\0\0\4\0\b\0\v6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\0025\3\6\0=\3\a\2B\0\2\1K\0\1\0\vwindow\1\0\1\nblend\3\0\ttext\1\0\0\1\0\4\tdone\b笨能fspinner\tpipe\14commenced\fStarted\14completed\14Completed\nsetup\vfidget\frequire\0" },
     loaded = true,
     path = "/Users/congminh/.local/share/nvim/site/pack/packer/start/fidget.nvim",
     url = "https://github.com/j-hui/fidget.nvim"
   },
   ["flutter-tools.nvim"] = {
+    config = { "\27LJ\2\n'\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\fflutter\frequire\0" },
     loaded = true,
     path = "/Users/congminh/.local/share/nvim/site/pack/packer/start/flutter-tools.nvim",
     url = "https://github.com/akinsho/flutter-tools.nvim"
@@ -136,18 +155,17 @@ _G.packer_plugins = {
     url = "https://github.com/rafamadriz/friendly-snippets"
   },
   ["gitsigns.nvim"] = {
+    config = { "\27LJ\2\n/\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\20gitsigns-config\frequire\0" },
     loaded = true,
     path = "/Users/congminh/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
     url = "https://github.com/lewis6991/gitsigns.nvim"
   },
-  ["gruvbox.nvim"] = {
-    loaded = true,
-    path = "/Users/congminh/.local/share/nvim/site/pack/packer/start/gruvbox.nvim",
-    url = "https://github.com/ellisonleao/gruvbox.nvim"
-  },
   ["lualine.nvim"] = {
-    loaded = true,
-    path = "/Users/congminh/.local/share/nvim/site/pack/packer/start/lualine.nvim",
+    config = { "\27LJ\2\n.\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\19lualine-config\frequire\0" },
+    loaded = false,
+    needs_bufread = false,
+    only_cond = false,
+    path = "/Users/congminh/.local/share/nvim/site/pack/packer/opt/lualine.nvim",
     url = "https://github.com/nvim-lualine/lualine.nvim"
   },
   ["nvim-autopairs"] = {
@@ -157,9 +175,9 @@ _G.packer_plugins = {
     url = "https://github.com/windwp/nvim-autopairs"
   },
   ["nvim-cmp"] = {
+    after = { "vim-vsnip", "cmp-buffer", "cmp-cmdline", "cmp-path", "cmp-vsnip" },
     loaded = true,
-    path = "/Users/congminh/.local/share/nvim/site/pack/packer/start/nvim-cmp",
-    url = "https://github.com/hrsh7th/nvim-cmp"
+    only_config = true
   },
   ["nvim-colorizer.lua"] = {
     config = { "\27LJ\2\n7\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\14colorizer\frequire\0" },
@@ -173,28 +191,42 @@ _G.packer_plugins = {
     url = "https://github.com/williamboman/nvim-lsp-installer"
   },
   ["nvim-lspconfig"] = {
+    config = { "\27LJ\2\n*\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\15lsp-config\frequire\0" },
     loaded = true,
     path = "/Users/congminh/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
   },
   ["nvim-tree.lua"] = {
+    config = { "\27LJ\2\n(\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\rnvimtree\frequire\0" },
     loaded = true,
     path = "/Users/congminh/.local/share/nvim/site/pack/packer/start/nvim-tree.lua",
     url = "https://github.com/kyazdani42/nvim-tree.lua"
   },
   ["nvim-treesitter"] = {
-    loaded = true,
-    path = "/Users/congminh/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
+    after = { "nvim-ts-rainbow", "nvim-treesitter-textobjects" },
+    config = { "\27LJ\2\n*\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\15treesitter\frequire\0" },
+    loaded = false,
+    needs_bufread = true,
+    only_cond = false,
+    path = "/Users/congminh/.local/share/nvim/site/pack/packer/opt/nvim-treesitter",
     url = "https://github.com/nvim-treesitter/nvim-treesitter"
   },
   ["nvim-treesitter-textobjects"] = {
-    loaded = true,
-    path = "/Users/congminh/.local/share/nvim/site/pack/packer/start/nvim-treesitter-textobjects",
+    load_after = {
+      ["nvim-treesitter"] = true
+    },
+    loaded = false,
+    needs_bufread = false,
+    path = "/Users/congminh/.local/share/nvim/site/pack/packer/opt/nvim-treesitter-textobjects",
     url = "https://github.com/nvim-treesitter/nvim-treesitter-textobjects"
   },
   ["nvim-ts-rainbow"] = {
-    loaded = true,
-    path = "/Users/congminh/.local/share/nvim/site/pack/packer/start/nvim-ts-rainbow",
+    load_after = {
+      ["nvim-treesitter"] = true
+    },
+    loaded = false,
+    needs_bufread = false,
+    path = "/Users/congminh/.local/share/nvim/site/pack/packer/opt/nvim-ts-rainbow",
     url = "https://github.com/p00f/nvim-ts-rainbow"
   },
   ["nvim-web-devicons"] = {
@@ -213,16 +245,26 @@ _G.packer_plugins = {
     url = "https://github.com/nvim-lua/plenary.nvim"
   },
   ["telescope-fzf-native.nvim"] = {
-    loaded = true,
-    path = "/Users/congminh/.local/share/nvim/site/pack/packer/start/telescope-fzf-native.nvim",
+    config = { "\27LJ\2\nH\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0'\2\3\0B\0\2\1K\0\1\0\bfzf\19load_extension\14telescope\frequire\0" },
+    load_after = {
+      ["telescope.nvim"] = true
+    },
+    loaded = false,
+    needs_bufread = false,
+    path = "/Users/congminh/.local/share/nvim/site/pack/packer/opt/telescope-fzf-native.nvim",
     url = "https://github.com/nvim-telescope/telescope-fzf-native.nvim"
   },
   ["telescope.nvim"] = {
-    loaded = true,
-    path = "/Users/congminh/.local/share/nvim/site/pack/packer/start/telescope.nvim",
+    after = { "telescope-fzf-native.nvim" },
+    config = { "\27LJ\2\n0\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\21telescope-config\frequire\0" },
+    loaded = false,
+    needs_bufread = true,
+    only_cond = false,
+    path = "/Users/congminh/.local/share/nvim/site/pack/packer/opt/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
   },
   ["toggleterm.nvim"] = {
+    config = { "\27LJ\2\n1\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\22toggleterm-config\frequire\0" },
     loaded = true,
     path = "/Users/congminh/.local/share/nvim/site/pack/packer/start/toggleterm.nvim",
     url = "https://github.com/akinsho/toggleterm.nvim"
@@ -263,11 +305,14 @@ _G.packer_plugins = {
     url = "https://github.com/mg979/vim-visual-multi"
   },
   ["vim-vsnip"] = {
+    load_after = {},
     loaded = true,
-    path = "/Users/congminh/.local/share/nvim/site/pack/packer/start/vim-vsnip",
+    needs_bufread = false,
+    path = "/Users/congminh/.local/share/nvim/site/pack/packer/opt/vim-vsnip",
     url = "https://github.com/hrsh7th/vim-vsnip"
   },
   ["vscode.nvim"] = {
+    config = { "\27LJ\2\n,\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\17color-scheme\frequire\0" },
     loaded = true,
     path = "/Users/congminh/.local/share/nvim/site/pack/packer/start/vscode.nvim",
     url = "https://github.com/Mofiqul/vscode.nvim"
@@ -275,18 +320,62 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
+-- Config for: nvim-tree.lua
+time([[Config for nvim-tree.lua]], true)
+try_loadstring("\27LJ\2\n(\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\rnvimtree\frequire\0", "config", "nvim-tree.lua")
+time([[Config for nvim-tree.lua]], false)
+-- Config for: fidget.nvim
+time([[Config for fidget.nvim]], true)
+try_loadstring("\27LJ\2\n｡\1\0\0\4\0\b\0\v6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\0025\3\6\0=\3\a\2B\0\2\1K\0\1\0\vwindow\1\0\1\nblend\3\0\ttext\1\0\0\1\0\4\tdone\b笨能fspinner\tpipe\14commenced\fStarted\14completed\14Completed\nsetup\vfidget\frequire\0", "config", "fidget.nvim")
+time([[Config for fidget.nvim]], false)
+-- Config for: nvim-cmp
+time([[Config for nvim-cmp]], true)
+try_loadstring("\27LJ\2\n*\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\15cmp-config\frequire\0", "config", "nvim-cmp")
+time([[Config for nvim-cmp]], false)
 -- Config for: nvim-colorizer.lua
 time([[Config for nvim-colorizer.lua]], true)
 try_loadstring("\27LJ\2\n7\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\14colorizer\frequire\0", "config", "nvim-colorizer.lua")
 time([[Config for nvim-colorizer.lua]], false)
+-- Config for: flutter-tools.nvim
+time([[Config for flutter-tools.nvim]], true)
+try_loadstring("\27LJ\2\n'\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\fflutter\frequire\0", "config", "flutter-tools.nvim")
+time([[Config for flutter-tools.nvim]], false)
+-- Config for: vscode.nvim
+time([[Config for vscode.nvim]], true)
+try_loadstring("\27LJ\2\n,\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\17color-scheme\frequire\0", "config", "vscode.nvim")
+time([[Config for vscode.nvim]], false)
 -- Config for: nvim-autopairs
 time([[Config for nvim-autopairs]], true)
 try_loadstring("\27LJ\2\nt\0\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\2B\0\2\1K\0\1\0\21disable_filetype\1\0\0\1\3\0\0\20TelescopePrompt\bvim\nsetup\19nvim-autopairs\frequire\0", "config", "nvim-autopairs")
 time([[Config for nvim-autopairs]], false)
--- Config for: fidget.nvim
-time([[Config for fidget.nvim]], true)
-try_loadstring("\27LJ\2\n｡\1\0\0\4\0\b\0\v6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\0025\3\6\0=\3\a\2B\0\2\1K\0\1\0\vwindow\1\0\1\nblend\3\0\ttext\1\0\0\1\0\4\fspinner\tpipe\14commenced\fStarted\14completed\14Completed\tdone\b笨能nsetup\vfidget\frequire\0", "config", "fidget.nvim")
-time([[Config for fidget.nvim]], false)
+-- Config for: nvim-lspconfig
+time([[Config for nvim-lspconfig]], true)
+try_loadstring("\27LJ\2\n*\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\15lsp-config\frequire\0", "config", "nvim-lspconfig")
+time([[Config for nvim-lspconfig]], false)
+-- Config for: gitsigns.nvim
+time([[Config for gitsigns.nvim]], true)
+try_loadstring("\27LJ\2\n/\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\20gitsigns-config\frequire\0", "config", "gitsigns.nvim")
+time([[Config for gitsigns.nvim]], false)
+-- Config for: toggleterm.nvim
+time([[Config for toggleterm.nvim]], true)
+try_loadstring("\27LJ\2\n1\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\22toggleterm-config\frequire\0", "config", "toggleterm.nvim")
+time([[Config for toggleterm.nvim]], false)
+-- Load plugins in order defined by `after`
+time([[Sequenced loading]], true)
+vim.cmd [[ packadd cmp-path ]]
+vim.cmd [[ packadd vim-vsnip ]]
+vim.cmd [[ packadd cmp-buffer ]]
+vim.cmd [[ packadd cmp-cmdline ]]
+vim.cmd [[ packadd cmp-vsnip ]]
+time([[Sequenced loading]], false)
+vim.cmd [[augroup packer_load_aucmds]]
+vim.cmd [[au!]]
+  -- Event lazy-loads
+time([[Defining lazy-load event autocommands]], true)
+vim.cmd [[au BufWinEnter * ++once lua require("packer.load")({'lualine.nvim', 'barbar.nvim', 'copilot.vim', 'nvim-treesitter'}, { event = "BufWinEnter *" }, _G.packer_plugins)]]
+vim.cmd [[au BufRead * ++once lua require("packer.load")({'telescope.nvim'}, { event = "BufRead *" }, _G.packer_plugins)]]
+time([[Defining lazy-load event autocommands]], false)
+vim.cmd("augroup END")
 if should_profile then save_profiles() end
 
 end)
