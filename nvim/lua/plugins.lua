@@ -34,7 +34,7 @@ use {
 	require('telescope').load_extension('fzf')
     end}
   },
-  event = "BufRead",
+  event = "BufEnter",
   config = function ()
     require'telescope-config'
   end,
@@ -112,6 +112,16 @@ use {'j-hui/fidget.nvim', config = function ()
     },
   }
 end}
+require('packer').use({
+  'weilbith/nvim-code-action-menu',
+  event = "BufWinEnter",
+  cmd = 'CodeActionMenu',
+  config = function ()
+    vim.g.code_action_menu_window_border = 'none'
+    vim.g.code_action_menu_show_details = false
+    vim.g.code_action_menu_show_diff = false
+  end,
+})
 
 -- flutter
 use 'Nash0x7E2/awesome-flutter-snippets'
