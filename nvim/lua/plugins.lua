@@ -181,4 +181,7 @@ use {'windwp/nvim-autopairs', config = function()
 end}
 use {'mg979/vim-visual-multi', branch = 'master'}
 
+-- game??
+use 'alec-gibson/nvim-tetris'
+
 end)
