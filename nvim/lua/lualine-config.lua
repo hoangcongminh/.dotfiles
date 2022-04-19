@@ -73,6 +73,38 @@ local function ins_right(component)
   table.insert(config.sections.lualine_x, component)
 end
 
+-- Inserts a component in lualine_c at left inactive_sections
+local function ins_left_inactive_section(component)
+  table.insert(config.inactive_sections.lualine_c, component)
+end
+
+-- Inserts a component in lualine_c at left inactive_sections
+local function ins_right_inactive_section(component)
+  table.insert(config.inactive_sections.lualine_x, component)
+end
+
+
+ins_left_inactive_section {
+  'filename',
+  condition = conditions.buffer_not_empty,
+  path = 1,
+  color = {fg = colors.magenta, gui = 'bold'}
+}
+
+ins_right_inactive_section {
+  'o:encoding', -- option component same as &encoding in viml
+  upper = true, -- I'm not sure why it's upper case either ;)
+  condition = conditions.hide_in_width,
+  color = {fg = colors.green, gui = 'bold'}
+}
+
+ins_right_inactive_section {
+  'fileformat',
+  upper = true,
+  icons_enabled = false, -- I think icons are cool but Eviline doesn't have them. sigh
+  color = {fg = colors.green, gui = 'bold'}
+}
+
 ins_left {
   function() return '▊' end,
   color = {fg = colors.blue}, -- Sets highlighting of component
