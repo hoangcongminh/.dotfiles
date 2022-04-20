@@ -41,6 +41,19 @@ use {
   end,
 }
 
+use {
+  'phaazon/hop.nvim',
+  branch = 'v1', -- optional but strongly recommended
+  event = "BufEnter",
+  config = function()
+    require'hop'.setup (
+      { keys = 'etovxqpdygfblzhckisuran' },
+      vim.api.nvim_set_keymap('n', 'fw', "<cmd>lua require'hop'.hint_words()<cr>", {}),
+      vim.api.nvim_set_keymap('n', 'fl', "<cmd>lua require'hop'.hint_lines()<cr>", {})
+    )
+  end
+}
+
 -- floatTerm
 use {'akinsho/toggleterm.nvim', config = function ()
   require'toggleterm-config'

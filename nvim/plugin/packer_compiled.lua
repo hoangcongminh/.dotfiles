@@ -160,6 +160,14 @@ _G.packer_plugins = {
     path = "/Users/congminh/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
     url = "https://github.com/lewis6991/gitsigns.nvim"
   },
+  ["hop.nvim"] = {
+    config = { "\27LJ\2\nƒ\2\0\0\n\0\f\0\0236\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0006\3\4\0009\3\5\0039\3\6\3'\5\a\0'\6\b\0'\a\t\0004\b\0\0B\3\5\0026\4\4\0009\4\5\0049\4\6\4'\6\a\0'\a\n\0'\b\v\0004\t\0\0B\4\5\0A\0\2\1K\0\1\0+<cmd>lua require'hop'.hint_lines()<cr>\afl+<cmd>lua require'hop'.hint_words()<cr>\afw\6n\20nvim_set_keymap\bapi\bvim\1\0\1\tkeys\28etovxqpdygfblzhckisuran\nsetup\bhop\frequire\0" },
+    loaded = false,
+    needs_bufread = false,
+    only_cond = false,
+    path = "/Users/congminh/.local/share/nvim/site/pack/packer/opt/hop.nvim",
+    url = "https://github.com/phaazon/hop.nvim"
+  },
   ["lualine.nvim"] = {
     config = { "\27LJ\2\n.\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\19lualine-config\frequire\0" },
     loaded = false,
@@ -175,7 +183,7 @@ _G.packer_plugins = {
     url = "https://github.com/windwp/nvim-autopairs"
   },
   ["nvim-cmp"] = {
-    after = { "vim-vsnip", "cmp-buffer", "cmp-cmdline", "cmp-path", "cmp-vsnip" },
+    after = { "cmp-buffer", "cmp-cmdline", "cmp-path", "cmp-vsnip", "vim-vsnip" },
     loaded = true,
     only_config = true
   },
@@ -206,7 +214,7 @@ _G.packer_plugins = {
     url = "https://github.com/neovim/nvim-lspconfig"
   },
   ["nvim-notify"] = {
-    config = { "\27LJ\2\nÚ\1\0\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\4\0=\3\5\2B\0\2\1K\0\1\0\nicons\1\0\5\nERROR\6?\tWARN\6?\tINFO\6?\nDEBUG\6?\nTRACE\6?\1\0\6\18minimum_width\0032\nlevel\tinfo\vrender\fdefault\ftimeout\3ˆ'\22background_colour\f#000000\vstages\22fade_in_slide_out\nsetup\vnotify\frequire\0" },
+    config = { "\27LJ\2\nÚ\1\0\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\4\0=\3\5\2B\0\2\1K\0\1\0\nicons\1\0\5\tWARN\6?\tINFO\6?\nDEBUG\6?\nTRACE\6?\nERROR\6?\1\0\6\22background_colour\f#000000\ftimeout\3ˆ'\vstages\22fade_in_slide_out\18minimum_width\0032\vrender\fdefault\nlevel\tinfo\nsetup\vnotify\frequire\0" },
     loaded = true,
     path = "/Users/congminh/.local/share/nvim/site/pack/packer/start/nvim-notify",
     url = "https://github.com/rcarriga/nvim-notify"
@@ -223,7 +231,7 @@ _G.packer_plugins = {
     url = "https://github.com/kyazdani42/nvim-tree.lua"
   },
   ["nvim-treesitter"] = {
-    after = { "nvim-ts-rainbow", "nvim-treesitter-textobjects" },
+    after = { "nvim-treesitter-textobjects", "nvim-ts-rainbow" },
     config = { "\27LJ\2\n*\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\15treesitter\frequire\0" },
     loaded = false,
     needs_bufread = false,
@@ -340,18 +348,18 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: fidget.nvim
-time([[Config for fidget.nvim]], true)
-try_loadstring("\27LJ\2\n¡\1\0\0\4\0\b\0\v6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\0025\3\6\0=\3\a\2B\0\2\1K\0\1\0\vwindow\1\0\1\nblend\3\0\ttext\1\0\0\1\0\4\fspinner\tpipe\14commenced\fStarted\14completed\14Completed\tdone\bâœ”\nsetup\vfidget\frequire\0", "config", "fidget.nvim")
-time([[Config for fidget.nvim]], false)
 -- Config for: nvim-notify
 time([[Config for nvim-notify]], true)
-try_loadstring("\27LJ\2\nÚ\1\0\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\4\0=\3\5\2B\0\2\1K\0\1\0\nicons\1\0\5\nERROR\6?\tWARN\6?\tINFO\6?\nDEBUG\6?\nTRACE\6?\1\0\6\18minimum_width\0032\nlevel\tinfo\vrender\fdefault\ftimeout\3ˆ'\22background_colour\f#000000\vstages\22fade_in_slide_out\nsetup\vnotify\frequire\0", "config", "nvim-notify")
+try_loadstring("\27LJ\2\nÚ\1\0\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\4\0=\3\5\2B\0\2\1K\0\1\0\nicons\1\0\5\tWARN\6?\tINFO\6?\nDEBUG\6?\nTRACE\6?\nERROR\6?\1\0\6\22background_colour\f#000000\ftimeout\3ˆ'\vstages\22fade_in_slide_out\18minimum_width\0032\vrender\fdefault\nlevel\tinfo\nsetup\vnotify\frequire\0", "config", "nvim-notify")
 time([[Config for nvim-notify]], false)
--- Config for: nvim-lspconfig
-time([[Config for nvim-lspconfig]], true)
-try_loadstring("\27LJ\2\n*\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\15lsp-config\frequire\0", "config", "nvim-lspconfig")
-time([[Config for nvim-lspconfig]], false)
+-- Config for: toggleterm.nvim
+time([[Config for toggleterm.nvim]], true)
+try_loadstring("\27LJ\2\n1\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\22toggleterm-config\frequire\0", "config", "toggleterm.nvim")
+time([[Config for toggleterm.nvim]], false)
+-- Config for: gitsigns.nvim
+time([[Config for gitsigns.nvim]], true)
+try_loadstring("\27LJ\2\n/\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\20gitsigns-config\frequire\0", "config", "gitsigns.nvim")
+time([[Config for gitsigns.nvim]], false)
 -- Config for: nvim-cmp
 time([[Config for nvim-cmp]], true)
 try_loadstring("\27LJ\2\n*\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\15cmp-config\frequire\0", "config", "nvim-cmp")
@@ -360,37 +368,37 @@ time([[Config for nvim-cmp]], false)
 time([[Config for nvim-autopairs]], true)
 try_loadstring("\27LJ\2\nt\0\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\2B\0\2\1K\0\1\0\21disable_filetype\1\0\0\1\3\0\0\20TelescopePrompt\bvim\nsetup\19nvim-autopairs\frequire\0", "config", "nvim-autopairs")
 time([[Config for nvim-autopairs]], false)
--- Config for: toggleterm.nvim
-time([[Config for toggleterm.nvim]], true)
-try_loadstring("\27LJ\2\n1\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\22toggleterm-config\frequire\0", "config", "toggleterm.nvim")
-time([[Config for toggleterm.nvim]], false)
--- Config for: nvim-tree.lua
-time([[Config for nvim-tree.lua]], true)
-try_loadstring("\27LJ\2\n(\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\rnvimtree\frequire\0", "config", "nvim-tree.lua")
-time([[Config for nvim-tree.lua]], false)
--- Config for: gitsigns.nvim
-time([[Config for gitsigns.nvim]], true)
-try_loadstring("\27LJ\2\n/\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\20gitsigns-config\frequire\0", "config", "gitsigns.nvim")
-time([[Config for gitsigns.nvim]], false)
--- Config for: vscode.nvim
-time([[Config for vscode.nvim]], true)
-try_loadstring("\27LJ\2\n,\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\17color-scheme\frequire\0", "config", "vscode.nvim")
-time([[Config for vscode.nvim]], false)
+-- Config for: fidget.nvim
+time([[Config for fidget.nvim]], true)
+try_loadstring("\27LJ\2\n¡\1\0\0\4\0\b\0\v6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\0025\3\6\0=\3\a\2B\0\2\1K\0\1\0\vwindow\1\0\1\nblend\3\0\ttext\1\0\0\1\0\4\fspinner\tpipe\14commenced\fStarted\14completed\14Completed\tdone\bâœ”\nsetup\vfidget\frequire\0", "config", "fidget.nvim")
+time([[Config for fidget.nvim]], false)
 -- Config for: nvim-colorizer.lua
 time([[Config for nvim-colorizer.lua]], true)
 try_loadstring("\27LJ\2\n7\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\14colorizer\frequire\0", "config", "nvim-colorizer.lua")
 time([[Config for nvim-colorizer.lua]], false)
+-- Config for: nvim-lspconfig
+time([[Config for nvim-lspconfig]], true)
+try_loadstring("\27LJ\2\n*\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\15lsp-config\frequire\0", "config", "nvim-lspconfig")
+time([[Config for nvim-lspconfig]], false)
+-- Config for: vscode.nvim
+time([[Config for vscode.nvim]], true)
+try_loadstring("\27LJ\2\n,\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\17color-scheme\frequire\0", "config", "vscode.nvim")
+time([[Config for vscode.nvim]], false)
 -- Config for: flutter-tools.nvim
 time([[Config for flutter-tools.nvim]], true)
 try_loadstring("\27LJ\2\n'\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\fflutter\frequire\0", "config", "flutter-tools.nvim")
 time([[Config for flutter-tools.nvim]], false)
+-- Config for: nvim-tree.lua
+time([[Config for nvim-tree.lua]], true)
+try_loadstring("\27LJ\2\n(\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\rnvimtree\frequire\0", "config", "nvim-tree.lua")
+time([[Config for nvim-tree.lua]], false)
 -- Load plugins in order defined by `after`
 time([[Sequenced loading]], true)
+vim.cmd [[ packadd cmp-vsnip ]]
 vim.cmd [[ packadd vim-vsnip ]]
 vim.cmd [[ packadd cmp-buffer ]]
 vim.cmd [[ packadd cmp-cmdline ]]
 vim.cmd [[ packadd cmp-path ]]
-vim.cmd [[ packadd cmp-vsnip ]]
 time([[Sequenced loading]], false)
 
 -- Command lazy-loads
@@ -402,8 +410,8 @@ vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]
   -- Event lazy-loads
 time([[Defining lazy-load event autocommands]], true)
-vim.cmd [[au BufEnter * ++once lua require("packer.load")({'telescope.nvim'}, { event = "BufEnter *" }, _G.packer_plugins)]]
-vim.cmd [[au BufWinEnter * ++once lua require("packer.load")({'lualine.nvim', 'nvim-code-action-menu', 'nvim-treesitter', 'barbar.nvim', 'copilot.vim'}, { event = "BufWinEnter *" }, _G.packer_plugins)]]
+vim.cmd [[au BufEnter * ++once lua require("packer.load")({'telescope.nvim', 'hop.nvim'}, { event = "BufEnter *" }, _G.packer_plugins)]]
+vim.cmd [[au BufWinEnter * ++once lua require("packer.load")({'barbar.nvim', 'nvim-code-action-menu', 'nvim-treesitter', 'copilot.vim', 'lualine.nvim'}, { event = "BufWinEnter *" }, _G.packer_plugins)]]
 time([[Defining lazy-load event autocommands]], false)
 vim.cmd("augroup END")
 if should_profile then save_profiles() end
