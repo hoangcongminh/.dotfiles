@@ -1,3 +1,5 @@
+vim.notify = require("notify")
+
 vim.cmd([[
   set completeopt=menu,menuone,noselect
   set signcolumn=yes
