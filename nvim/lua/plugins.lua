@@ -7,6 +7,9 @@ return require('packer').startup(function()
 
 use 'wbthomason/packer.nvim'
 
+-- dashboard
+use 'mhinz/vim-startify'
+
 -- color Theme
 use {'Mofiqul/vscode.nvim', branch = 'main', config = function ()
  require'color-scheme'
