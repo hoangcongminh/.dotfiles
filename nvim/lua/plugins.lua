@@ -57,11 +57,6 @@ use {
   end
 }
 
--- floatTerm
-use {'akinsho/toggleterm.nvim', config = function ()
-  require'toggleterm-config'
-end}
-
 -- File and folder management
 use {
   'kyazdani42/nvim-tree.lua',
