@@ -107,6 +107,19 @@ use {
 use 'ryanoasis/vim-devicons'
 use 'kyazdani42/nvim-web-devicons'
 
+-- Show indent line
+use {
+  "lukas-reineke/indent-blankline.nvim",
+  event = "BufWinEnter",
+  config = function()
+    require("indent_blankline").setup {
+      char = "▏",
+      show_first_indent_level = false,
+      show_trailing_blankline_indent = false,
+    }
+  end
+}
+
 -- comment
 use 'tpope/vim-commentary'
 
@@ -208,18 +221,17 @@ use {
     require'plugins.cmp-config'
   end,
   requires = {
-     {'hrsh7th/cmp-nvim-lsp', after='nvim-cmp'},
-     {'hrsh7th/cmp-buffer', after='nvim-cmp'},
-     {'hrsh7th/cmp-path', after='nvim-cmp'},
-     {'hrsh7th/cmp-cmdline', after='nvim-cmp'},
-     {'hrsh7th/cmp-vsnip', after='nvim-cmp'},
-     {'hrsh7th/vim-vsnip', after='nvim-cmp'},
+     {'hrsh7th/cmp-nvim-lsp'},
+     {'hrsh7th/cmp-buffer'},
+     {'hrsh7th/cmp-path'},
+     {'hrsh7th/cmp-cmdline'},
+     {'hrsh7th/cmp-vsnip'},
+     {'hrsh7th/vim-vsnip'},
+     {'rafamadriz/friendly-snippets'},
+     {'onsails/lspkind-nvim'},
   }
 }
 use {'tzachar/cmp-tabnine', run='./install.sh', requires = 'hrsh7th/nvim-cmp'}
-
--- snippets
-use 'rafamadriz/friendly-snippets'
 
 -- copilot
 use {

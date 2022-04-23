@@ -28,6 +28,8 @@ local enhance_server_opts = {
       },
     }
   end,
+  ["tsserver"] = function()
+  end,
   ["sumneko_lua"] = function(opts)
     opts.settings = {
 	Lua = {
