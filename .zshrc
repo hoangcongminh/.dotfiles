@@ -40,27 +40,8 @@ export EDITOR='nvim'
 
 bindkey '^n' autosuggest-accept
 
-alias v="nvim"
-
-alias lg="lazygit"
-
-alias t="tmux"
-
-alias ws="web-search"
-
-alias flutter='fvm flutter'
-alias dart='fvm dart'
-alias fdoc='fvm flutter doctor'
-alias fl='fvm flutter clean'
-alias fpg='fvm flutter pub get'
-alias fr='fvm flutter run'
-alias fb='fvm flutter pub run build_runner build --delete-conflicting-outputs'
-
-alias wp='cd ~/Documents/Workspace'
-alias h='cd ~'
-alias df='cd ~/.dotfiles'
-
-alias gu='git add .; git commit -m "update"; git push;'
+# Aliases
+source $HOME/.dotfiles/.aliases
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
