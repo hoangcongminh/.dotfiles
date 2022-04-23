@@ -3,16 +3,22 @@ vim.cmd [[packadd packer.nvim]]
 vim.api.nvim_set_keymap('n','<leader>sy',"<cmd>PackerSync<cr>",{ noremap=true, silent=true })
 vim.api.nvim_set_keymap('n','<leader>cl',"<cmd>PackerClean<cr>",{ noremap=true, silent=true })
 
-return require('packer').startup(function()
-
-use 'wbthomason/packer.nvim'
+return require('packer').startup(
+  function(use)
+    -- Let packer manage itself
+    use {
+      'wbthomason/packer.nvim',
+      config = function()
+        vim.cmd "autocmd BufWritePost init.lua source <afile> | PackerCompile"
+      end
+    }
 
 -- dashboard
 use 'mhinz/vim-startify'
 
 -- color Theme
 use {'Mofiqul/vscode.nvim', branch = 'main', config = function ()
- require'color-scheme'
+ require'plugins.color-scheme'
 end}
 
 -- treesitter
@@ -21,7 +27,7 @@ use {
   run = ':TSUpdate',
   event = "BufWinEnter",
   config = function ()
-    require'treesitter'
+    require'plugins.treesitter'
   end,
   requires = {
       {'nvim-treesitter/nvim-treesitter-textobjects',after = 'nvim-treesitter'},
@@ -40,7 +46,7 @@ use {
   },
   event = "BufEnter",
   config = function ()
-    require'telescope-config'
+    require'plugins.telescope-config'
   end,
 }
 
@@ -62,7 +68,7 @@ use {
   'kyazdani42/nvim-tree.lua',
   requires = 'kyazdani42/nvim-web-devicons',
   config = function ()
-    require'nvimtree'
+    require'plugins.nvimtree'
   end,
 }
 
@@ -71,7 +77,7 @@ use 'tpope/vim-fugitive'
 use {
   'lewis6991/gitsigns.nvim',
   config = function ()
-    require'gitsigns-config'
+    require'plugins.gitsigns-config'
   end,
   requires = {
     'nvim-lua/plenary.nvim'
@@ -83,7 +89,7 @@ use {
   'nvim-lualine/lualine.nvim',
   event = "BufWinEnter",
   config = function ()
-    require'lualine-config'
+    require'plugins.lualine-config'
     vim.opt.laststatus = 3
   end,
   requires = { 'kyazdani42/nvim-web-devicons', opt = true }
@@ -92,7 +98,7 @@ use {
   'romgrk/barbar.nvim',
   event = "BufWinEnter",
   config = function ()
-    require'barbar-config'
+    require'plugins.barbar-config'
   end,
   requires = {'kyazdani42/nvim-web-devicons'}
 }
@@ -152,7 +158,7 @@ end}
 use {
     'neovim/nvim-lspconfig',
     config = function ()
-      require'lsp-config'
+      require'plugins.lsp-config'
     end,
 }
 use {'williamboman/nvim-lsp-installer'}
@@ -190,7 +196,7 @@ use {
     'hrsh7th/cmp-nvim-lsp'
   },
   config = function ()
-    require'flutter'
+    require'plugins.flutter'
   end
 }
 use 'dart-lang/dart-vim-plugin'
@@ -199,7 +205,7 @@ use 'dart-lang/dart-vim-plugin'
 use {
   'hrsh7th/nvim-cmp',
   config = function ()
-    require'cmp-config'
+    require'plugins.cmp-config'
   end,
   requires = {
      {'hrsh7th/cmp-nvim-lsp', after='nvim-cmp'},
@@ -220,7 +226,7 @@ use {
   'github/copilot.vim',
   event = "BufWinEnter",
   config = function ()
-    require'copilot'
+    require'plugins.copilot'
   end
 }
 
