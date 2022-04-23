@@ -84,6 +84,7 @@ use {
   event = "BufWinEnter",
   config = function ()
     require'lualine-config'
+    vim.opt.laststatus = 3
   end,
   requires = { 'kyazdani42/nvim-web-devicons', opt = true }
 }
