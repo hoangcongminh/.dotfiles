@@ -9,7 +9,8 @@ vim.cmd([[
 " custom style
  highlight Normal guibg=NONE ctermbg=NONE
  highlight LineNr guibg=NONE ctermbg=NONE
- highlight SignColumn guibg=NONE ctermbg=NONE
+ highlight WinSeparator guibg=NONE ctermbg=NONE
+ highlight SignColumn guibg=None ctermbg=NONE
  highlight EndOfBuffer guibg=NONE ctermbg=NONE
  highlight BufferTabpageFill guibg=none
  highlight! CursorLine gui=underline cterm=underline guibg=none
