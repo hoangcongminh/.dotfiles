@@ -26,7 +26,7 @@ local function on_attach(client,bufnr)
   buf_set_keymap('n','<space>fpg',':FlutterPubGet<CR>',opts)
   buf_set_keymap('n','<space>fm',':DartFmt<CR>',opts)
 
-  require'lsp-keymaps'.map(client,bufnr)
+  require'plugins.configs.lsp-keymaps'.map(client,bufnr)
 end
 
 require("flutter-tools").setup {

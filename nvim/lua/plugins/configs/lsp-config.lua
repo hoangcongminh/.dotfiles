@@ -1,5 +1,5 @@
 local lsp_installer = require('nvim-lsp-installer')
-local lsp_mapping = require'plugins.lsp-keymaps'.map
+local lsp_mapping = require'plugins.configs.lsp-keymaps'.map
 
 -- Include the servers you want to have installed by default below
 local servers = {

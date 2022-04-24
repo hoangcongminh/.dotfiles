@@ -18,7 +18,7 @@ use 'mhinz/vim-startify'
 
 -- color Theme
 use {'Mofiqul/vscode.nvim', branch = 'main', config = function ()
- require'plugins.color-scheme'
+ require'plugins.configs.color-scheme'
 end}
 
 -- treesitter
@@ -27,7 +27,7 @@ use {
   run = ':TSUpdate',
   event = "BufWinEnter",
   config = function ()
-    require'plugins.treesitter'
+    require'plugins.configs.treesitter'
   end,
   requires = {
       {'nvim-treesitter/nvim-treesitter-textobjects',after = 'nvim-treesitter'},
@@ -46,7 +46,7 @@ use {
   },
   event = "BufEnter",
   config = function ()
-    require'plugins.telescope-config'
+    require'plugins.configs.telescope-config'
   end,
 }
 
@@ -68,7 +68,7 @@ use {
   'kyazdani42/nvim-tree.lua',
   requires = 'kyazdani42/nvim-web-devicons',
   config = function ()
-    require'plugins.nvimtree'
+    require'plugins.configs.nvimtree'
   end,
 }
 
@@ -77,7 +77,7 @@ use 'tpope/vim-fugitive'
 use {
   'lewis6991/gitsigns.nvim',
   config = function ()
-    require'plugins.gitsigns-config'
+    require'plugins.configs.gitsigns-config'
   end,
   requires = {
     'nvim-lua/plenary.nvim'
@@ -89,7 +89,7 @@ use {
   'nvim-lualine/lualine.nvim',
   event = "BufWinEnter",
   config = function ()
-    require'plugins.lualine-config'
+    require'plugins.configs.lualine-config'
     vim.opt.laststatus = 3
   end,
   requires = { 'kyazdani42/nvim-web-devicons', opt = true }
@@ -98,7 +98,7 @@ use {
   'romgrk/barbar.nvim',
   event = "BufWinEnter",
   config = function ()
-    require'plugins.barbar-config'
+    require'plugins.configs.barbar-config'
   end,
   requires = {'kyazdani42/nvim-web-devicons'}
 }
@@ -171,7 +171,7 @@ end}
 use {
     'neovim/nvim-lspconfig',
     config = function ()
-      require'plugins.lsp-config'
+      require'plugins.configs.lsp-config'
     end,
 }
 use {'williamboman/nvim-lsp-installer'}
@@ -209,7 +209,7 @@ use {
     'hrsh7th/cmp-nvim-lsp'
   },
   config = function ()
-    require'plugins.flutter'
+    require'plugins.configs.flutter'
   end
 }
 use 'dart-lang/dart-vim-plugin'
@@ -218,7 +218,7 @@ use 'dart-lang/dart-vim-plugin'
 use {
   'hrsh7th/nvim-cmp',
   config = function ()
-    require'plugins.cmp-config'
+    require'plugins.configs.cmp-config'
   end,
   requires = {
      {'hrsh7th/cmp-nvim-lsp'},
@@ -238,7 +238,7 @@ use {
   'github/copilot.vim',
   event = "BufWinEnter",
   config = function ()
-    require'plugins.copilot'
+    require'plugins.configs.copilot'
   end
 }
 
