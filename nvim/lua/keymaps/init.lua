@@ -25,8 +25,8 @@ keymap("n", "<leader>-", ":vertical resize -5<CR>", opts)
 -- quickfix
 keymap('n','<leader>co',':copen<CR>',opts)
 keymap('n','<leader>cc',':ccl<CR>',opts)
-keymap('n','<C-k>',':cp<CR>',opts)
-keymap('n','<C-j>',':cn<CR>',opts)
+keymap('n','<leader>k',':cp<CR>',opts)
+keymap('n','<leader>j',':cn<CR>',opts)
 -- Move text up and down
 keymap("n", "<A-j>", "<Esc>:m .+1<CR>==gi", opts)
 keymap("n", "<A-k>", "<Esc>:m .-2<CR>==gi", opts)
