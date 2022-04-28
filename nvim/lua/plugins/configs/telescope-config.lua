@@ -28,7 +28,7 @@ require('telescope').setup{
 local dropdown_theme_string = "require('telescope.themes').get_dropdown({})";
 
 local opts = { noremap=true, silent=true }
-vim.api.nvim_set_keymap('n','<space>p',"<cmd>lua require('telescope.builtin').find_files()<cr>",opts)
+vim.api.nvim_set_keymap('n','<space>p',"<cmd>lua require('telescope.builtin').find_files({ find_command = {'rg', '--files', '--hidden', '-g', '!.git' }})<cr>",opts)
 vim.api.nvim_set_keymap('n','<space>fg',"<cmd>lua require('telescope.builtin').live_grep()<cr>",opts)
 vim.api.nvim_set_keymap('n','<space>fb',"<cmd>lua require('telescope.builtin').buffers()<cr>",opts)
 vim.api.nvim_set_keymap('n','<space>fo',"<cmd>lua require('telescope.builtin').oldfiles()<cr>",opts)
