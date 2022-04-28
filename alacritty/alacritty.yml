@@ -1,5 +1,6 @@
 import:
-  - ~/.dotfiles/alacritty/vscode.yml
+  #- ~/.dotfiles/alacritty/vscode.yml
+  - ~/.dotfiles/alacritty/onedark.yml
 
 
 cursor:
@@ -18,7 +19,7 @@ window:
     x: 5
     y: 5
 
-  opacity: 0.8
+  opacity: 0.9
   startup_mode: Maximized
   decorations: None
 

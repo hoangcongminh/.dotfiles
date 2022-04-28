@@ -279,12 +279,6 @@ ins_right {
 }
 
 ins_right {
-  function() return 'ᕙ(▀̿ĺ̯▀̿ ̿)ᕗ' end,
-  color = {fg = colors.white},
-  right_padding = 0
-}
-
-ins_right {
   function() return '▊' end,
   color = {fg = colors.blue},
   right_padding = 0

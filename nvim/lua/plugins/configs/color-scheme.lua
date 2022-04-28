@@ -1,9 +1,13 @@
-vim.g.vscode_style = "dark"
-vim.g.vscode_transparent = 0.8
-vim.g.vscode_italic_comment = 1
+-- vim.g.vscode_style = "dark"
+-- vim.g.vscode_transparent = 0.8
+-- vim.g.vscode_italic_comment = 1
+require'onedark'.setup {
+  transparent = true
+}
+require'onedark'.load()
 
 vim.cmd([[
- colorscheme vscode
+ colorscheme onedark
  set cursorline
  hi clear CursorLine
 " custom style
@@ -22,6 +26,6 @@ vim.cmd([[
  highlight LspDiagnosticsUnderlineError guifg=NONE
  highlight Comment gui=italic
  highlight link GitSignsCurrentLineBlame Comment
- highlight FidgetTitle ctermfg=110 guifg=#6cb6eb
+ highlight FidgetTitle ctermfg=110 guifg=#61afef
  highlight FidgetTask guibg=NONE guifg=#FFFFFF cterm=bold
 ]])

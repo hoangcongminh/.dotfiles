@@ -17,9 +17,17 @@ return require('packer').startup(
 use 'mhinz/vim-startify'
 
 -- color Theme
-use {'Mofiqul/vscode.nvim', branch = 'main', config = function ()
- require'plugins.configs.color-scheme'
-end}
+-- use {'Mofiqul/vscode.nvim', branch = 'main', config = function ()
+--  require'plugins.configs.color-scheme'
+-- end}
+
+use {
+  'navarasu/onedark.nvim',
+  as = 'theme',
+  config = function()
+    require'plugins.configs.color-scheme'
+  end
+}
 
 -- treesitter
 use {
