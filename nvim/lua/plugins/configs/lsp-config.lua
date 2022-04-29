@@ -4,8 +4,8 @@ local lsp_mapping = require'plugins.configs.lsp-keymaps'.map
 -- Include the servers you want to have installed by default below
 local servers = {
   "bashls",
+  "diagnosticls",
   "pyright",
-  "vuels",
   "yamlls",
   "tsserver",
   "sumneko_lua",

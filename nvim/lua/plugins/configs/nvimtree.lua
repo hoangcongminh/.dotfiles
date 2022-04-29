@@ -1,6 +1,7 @@
-vim.api.nvim_set_keymap('n','<leader>b',":NvimTreeToggle<CR>", {})
-vim.api.nvim_set_keymap('n','<leader>n',":NvimTreeFindFile<CR>", {})
-vim.api.nvim_set_keymap('n','<leader>r',":NvimTreeRefresh<CR>", {})
+local opts = { noremap=true, silent=true }
+vim.api.nvim_set_keymap('n','<leader>b',":NvimTreeToggle<CR>", opts)
+vim.api.nvim_set_keymap('n','<leader>n',":NvimTreeFindFile<CR>", opts)
+vim.api.nvim_set_keymap('n','<leader>r',":NvimTreeRefresh<CR>", opts)
 
 vim.cmd([[
   let g:nvim_tree_git_hl = 1 "0 by default, will enable file highlight for git attributes (can be used without the icons).
