@@ -5,6 +5,9 @@ require'nvim-treesitter.configs'.setup {
     disable = {},
     additional_vim_regex_highlighting = true
   },
+  autopairs = {
+    enable = true,
+  },
   indent = {
     enable = true,
     disable = { "yaml" },
@@ -28,6 +31,9 @@ require'nvim-treesitter.configs'.setup {
     max_file_lines = nil, -- Do not enable for files with more than n lines, int
     -- colors = {}, -- table of hex strings
     -- termcolors = {} -- table of colour name strings
+  },
+  autotag = {
+    enable = true,
   },
   textobjects = {
     select = {

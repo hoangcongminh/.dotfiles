@@ -65,8 +65,16 @@ vim.diagnostic.config({
   virtual_text = true,
   signs = false,
   underline = true,
-  update_in_insert = false,
-  severity_sort = false,
+  update_in_insert = true,
+  severity_sort = true,
+  float = {
+    focusable = false,
+    style = "minimal",
+    border = "rounded",
+    source = "always",
+    header = "",
+    prefix = "",
+  },
 })
 
 lsp_installer.on_server_ready(function(server)
