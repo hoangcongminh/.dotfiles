@@ -50,6 +50,27 @@ require("flutter-tools").setup {
       device = true,
     }
   },
+  debugger = { -- integrate with nvim dap + install dart code debugger
+    enabled = true,
+    run_via_dap = false, -- use dap instead of a plenary job to run flutter apps
+    register_configurations = function(paths)
+      local dap = require('dap')
+      dap.configurations.dart = {
+        {
+          type = "dart",
+          request = "launch",
+          name = "Launch Flutter Program",
+          dartSdkPath = paths.dart_sdk,
+          flutterSdkPath = paths.flutter_sdk,
+          -- The nvim-dap plugin populates this variable with the filename of the current buffer
+          program = "${file}",
+          -- The nvim-dap plugin populates this variable with the editor's current working directory
+          cwd = "${workspaceFolder}",
+          args = {"-d", "4E47B768-FFF5-4394-ADB3-D773194A8CEF"}
+        },
+      }
+    end,
+  },
   -- flutter_path = "<full/path/if/needed>", -- <-- this takes priority over the lookup
   flutter_lookup_cmd = nil, -- example "dirname $(which flutter)" or "asdf where flutter"
   fvm = true, -- takes priority over path, uses <workspace>/.fvm/flutter_sdk if enabled

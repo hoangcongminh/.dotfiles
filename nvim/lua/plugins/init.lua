@@ -207,6 +207,16 @@ require('packer').use({
   end,
 })
 
+-- debugger
+use {
+  "rcarriga/nvim-dap-ui",
+  requires = {"mfussenegger/nvim-dap"},
+  after = 'nvim-dap',
+  config = function ()
+    require'plugins.configs.dap-config'
+  end
+}
+
 -- flutter
 use 'Nash0x7E2/awesome-flutter-snippets'
 use {
@@ -214,13 +224,14 @@ use {
   requires = {
     "nvim-lua/plenary.nvim",
     'Nash0x7E2/awesome-flutter-snippets',
-    'hrsh7th/cmp-nvim-lsp'
+    'hrsh7th/cmp-nvim-lsp',
+    'dart-lang/dart-vim-plugin'
   },
   config = function ()
     require'plugins.configs.flutter'
   end
 }
-use 'dart-lang/dart-vim-plugin'
+
 
 -- completion
 use {
