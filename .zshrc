@@ -16,7 +16,6 @@ plugins=(
   z
   zsh-autosuggestions
   zsh-syntax-highlighting
-  web-search
 )
 
 # ZSH_TMUX_AUTOSTART=true
