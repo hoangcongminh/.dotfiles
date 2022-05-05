@@ -1,4 +1,4 @@
-local map = vim.api.nvim_set_keymap
+local map = vim.keymap.set
 local opts = { noremap = true, silent = true }
 
 -- Move to previous/next
@@ -72,12 +72,11 @@ vim.g.bufferline = {
   icon_custom_colors = false,
 
   -- Configure icons on the bufferline.
-  icon_separator_active = '',
-  icon_separator_inactive = '',
+  icon_separator_active = '▎',
+  icon_separator_inactive = '▎',
   icon_close_tab = '',
   icon_close_tab_modified = '●',
   icon_pinned = '車',
-
   -- If true, new buffers will be inserted at the start/end of the list.
   -- Default is to insert after current buffer.
   insert_at_end = false,

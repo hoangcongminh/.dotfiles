@@ -9,22 +9,23 @@ local function on_attach(client,bufnr)
 
   local opts = { noremap=true, silent=true }
 
-  local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
+  -- local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
+  local keymap = vim.keymap.set
 
-  buf_set_keymap("n", "<space>vs", ":Telescope flutter fvm<CR>", opts)
-  buf_set_keymap("n", "<space>cm", ":Telescope flutter commands<CR>", opts)
+  keymap("n", "<space>vs", ":Telescope flutter fvm<CR>", opts)
+  keymap("n", "<space>cm", ":Telescope flutter commands<CR>", opts)
 
-  buf_set_keymap('n','<space>fa',':FlutterRun<CR>',opts)
+  keymap('n','<space>fa',':FlutterRun<CR>',opts)
 
-  buf_set_keymap('n','<space>fq',':FlutterQuit<CR>',opts)
-  buf_set_keymap('n','<space>fp',':FlutterCopyProfilerUrl<CR>',opts)
-  buf_set_keymap('n','<space>dv',':FlutterDevices<CR>',opts)
-  buf_set_keymap('n','<space>fl',':FlutterLogClear<CR>',opts)
-  buf_set_keymap('n','<space>o' ,':FlutterOutlineToggle<CR>',opts)
-  buf_set_keymap('n','<Space>rl',':FlutterReload<CR>',opts)
-  buf_set_keymap('n','<space>fR',':FlutterRestart<CR>',opts)
-  buf_set_keymap('n','<space>fpg',':FlutterPubGet<CR>',opts)
-  buf_set_keymap('n','<space>fm',':DartFmt<CR>',opts)
+  keymap('n','<space>fq',':FlutterQuit<CR>',opts)
+  keymap('n','<space>fp',':FlutterCopyProfilerUrl<CR>',opts)
+  keymap('n','<space>dv',':FlutterDevices<CR>',opts)
+  keymap('n','<space>fl',':FlutterLogClear<CR>',opts)
+  keymap('n','<space>o' ,':FlutterOutlineToggle<CR>',opts)
+  keymap('n','<Space>rl',':FlutterReload<CR>',opts)
+  keymap('n','<space>fR',':FlutterRestart<CR>',opts)
+  keymap('n','<space>fpg',':FlutterPubGet<CR>',opts)
+  keymap('n','<space>fm',':DartFmt<CR>',opts)
 
   require'plugins.configs.lsp-keymaps'.map(client,bufnr)
 end
@@ -100,7 +101,7 @@ require("flutter-tools").setup {
       background = false, -- highlight the background
       foreground = false, -- highlight the foreground
       virtual_text = true, -- show the highlight using virtual text
-      virtual_text_str = "?", -- the virtual text character to highlight
+      virtual_text_str = "■", -- the virtual text character to highlight
     },
     on_attach = on_attach,
     capabilities = capabilities, -- e.g. lsp_status capabilities
