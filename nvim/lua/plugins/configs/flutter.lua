@@ -4,10 +4,10 @@ vim.g.dart_format_on_save = 1
 
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 
-local function on_attach(client,bufnr)
+local function on_attach(client, bufnr)
   require("telescope").load_extension("flutter")
 
-  local opts = { noremap=true, silent=true }
+  local opts = { noremap = true, silent = true }
 
   -- local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
   local keymap = vim.keymap.set
@@ -15,19 +15,19 @@ local function on_attach(client,bufnr)
   keymap("n", "<space>vs", ":Telescope flutter fvm<CR>", opts)
   keymap("n", "<space>cm", ":Telescope flutter commands<CR>", opts)
 
-  keymap('n','<space>fa',':FlutterRun<CR>',opts)
+  keymap('n', '<space>fa', ':FlutterRun<CR>', opts)
 
-  keymap('n','<space>fq',':FlutterQuit<CR>',opts)
-  keymap('n','<space>fp',':FlutterCopyProfilerUrl<CR>',opts)
-  keymap('n','<space>dv',':FlutterDevices<CR>',opts)
-  keymap('n','<space>fl',':FlutterLogClear<CR>',opts)
-  keymap('n','<space>o' ,':FlutterOutlineToggle<CR>',opts)
-  keymap('n','<Space>rl',':FlutterReload<CR>',opts)
-  keymap('n','<space>fR',':FlutterRestart<CR>',opts)
-  keymap('n','<space>fpg',':FlutterPubGet<CR>',opts)
-  keymap('n','<space>fm',':DartFmt<CR>',opts)
+  keymap('n', '<space>fq', ':FlutterQuit<CR>', opts)
+  keymap('n', '<space>fp', ':FlutterCopyProfilerUrl<CR>', opts)
+  keymap('n', '<space>dv', ':FlutterDevices<CR>', opts)
+  keymap('n', '<space>fl', ':FlutterLogClear<CR>', opts)
+  keymap('n', '<space>o', ':FlutterOutlineToggle<CR>', opts)
+  keymap('n', '<Space>rl', ':FlutterReload<CR>', opts)
+  keymap('n', '<space>fR', ':FlutterRestart<CR>', opts)
+  keymap('n', '<space>fpg', ':FlutterPubGet<CR>', opts)
+  keymap('n', '<space>fm', ':DartFmt<CR>', opts)
 
-  require'plugins.configs.lsp-keymaps'.map(client,bufnr)
+  require 'plugins.configs.lsp-keymaps'.map(client, bufnr)
 end
 
 require("flutter-tools").setup {
@@ -67,7 +67,7 @@ require("flutter-tools").setup {
           program = "${file}",
           -- The nvim-dap plugin populates this variable with the editor's current working directory
           cwd = "${workspaceFolder}",
-          args = {"-d", "4E47B768-FFF5-4394-ADB3-D773194A8CEF"}
+          args = { "-d", "4E47B768-FFF5-4394-ADB3-D773194A8CEF" }
         },
       }
     end,

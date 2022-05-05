@@ -1,10 +1,10 @@
 -- vim.g.vscode_style = "dark"
 -- vim.g.vscode_transparent = 0.8
 -- vim.g.vscode_italic_comment = 1
-require'onedark'.setup {
+require 'onedark'.setup {
   transparent = true
 }
-require'onedark'.load()
+require 'onedark'.load()
 
 vim.cmd([[
  colorscheme onedark

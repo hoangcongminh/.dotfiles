@@ -1,9 +1,9 @@
-local function map(_,bufnr)
+local function map(_, bufnr)
 
   -- Enable completion triggered by <c-x><c-o>
   vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 
-  local opts = { noremap=true, silent=true }
+  local opts = { noremap = true, silent = true }
   local keymap = vim.keymap.set
 
   keymap('n', '<space>e', '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>', opts)
@@ -31,8 +31,8 @@ local function map(_,bufnr)
   keymap('n', "<space>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
   keymap('n', "<space>ws", "<cmd>lua vim.lsp.buf.workspace_symbol()<CR>", opts)
   keymap('n', "<space>ds", "<cmd>lua vim.lsp.buf.document_symbol()<CR>", opts)
-  keymap('n','<space>wl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>',opts)
-  keymap('n','<space>D', '<cmd>lua vim.lsp.buf.type_definition()<CR>',opts)
+  keymap('n', '<space>wl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', opts)
+  keymap('n', '<space>D', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
 end
 
-return {map = map}
+return { map = map }

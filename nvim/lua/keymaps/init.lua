@@ -21,15 +21,15 @@ keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 keymap("n", "<leader>+", ":vertical resize +5<CR>", opts)
 keymap("n", "<leader>-", ":vertical resize -5<CR>", opts)
 -- quickfix
-keymap('n','<leader>co',':copen<CR>',opts)
-keymap('n','<leader>cc',':ccl<CR>',opts)
-keymap('n','<leader>k',':cp<CR>',opts)
-keymap('n','<leader>j',':cn<CR>',opts)
+keymap('n', '<leader>co', ':copen<CR>', opts)
+keymap('n', '<leader>cc', ':ccl<CR>', opts)
+keymap('n', '<leader>k', ':cp<CR>', opts)
+keymap('n', '<leader>j', ':cn<CR>', opts)
 -- Move text up and down
 keymap("n", "<A-j>", "<Esc>:m .+1<CR>==gi", opts)
 keymap("n", "<A-k>", "<Esc>:m .-2<CR>==gi", opts)
 -- Update (:w if has edit)
-keymap('n','<space>s',':update<CR>',opts)
+keymap('n', '<space>s', ':update<CR>', opts)
 
 -- Insert --
 
@@ -38,8 +38,8 @@ keymap("i", "jk", "<ESC>", opts)
 -- Map Emacs like movement in Insert mode
 -- keymap('i','<C-p>','<Up>',opts)
 -- keymap('i','<C-n>','<Down>',opts)
-keymap('i','<C-f>','<Right>',opts)
-keymap('i','<C-b>','<Left>',opts)
+keymap('i', '<C-f>', '<Right>', opts)
+keymap('i', '<C-b>', '<Left>', opts)
 -- keymap('i','<C-e>','<C-o>$',opts)
 -- keymap('i','<C-a>','<C-o>^',opts)
 

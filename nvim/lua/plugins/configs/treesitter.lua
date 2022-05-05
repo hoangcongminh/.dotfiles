@@ -1,6 +1,6 @@
-require'nvim-treesitter.configs'.setup {
-  ensure_installed = {'vim','lua','http','json','dart','javascript','yaml'},
-   highlight = {
+require 'nvim-treesitter.configs'.setup {
+  ensure_installed = { 'vim', 'lua', 'http', 'json', 'dart', 'javascript', 'yaml' },
+  highlight = {
     enable = true,
     disable = {},
     additional_vim_regex_highlighting = true
@@ -12,16 +12,16 @@ require'nvim-treesitter.configs'.setup {
     enable = true,
     disable = { "yaml" },
   },
-   incremental_selection={
+  incremental_selection = {
     enable = true,
     keymaps = {
-     init_selection = "gnn",
-     node_incremental = "grn",
-     scope_incremental = "grc",
-     node_decremental = "grm",
+      init_selection = "gnn",
+      node_incremental = "grn",
+      scope_incremental = "grc",
+      node_decremental = "grm",
     },
   },
-  query_linter={
+  query_linter = {
     enable = true,
   },
   rainbow = {
