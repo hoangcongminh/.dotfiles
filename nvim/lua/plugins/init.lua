@@ -1,8 +1,16 @@
+-- Auto install plugin manager
+local fn = vim.fn
+local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
+if fn.empty(fn.glob(install_path)) > 0 then
+  packer_bootstrap = fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
+end
+
 vim.cmd [[packadd packer.nvim]]
 
-vim.api.nvim_set_keymap('n','<leader>sy',"<cmd>PackerSync<cr>",{ noremap=true, silent=true })
-vim.api.nvim_set_keymap('n','<leader>cl',"<cmd>PackerClean<cr>",{ noremap=true, silent=true })
+vim.keymap.set('n','<leader>sy',"<cmd>PackerSync<cr>",{ noremap=true, silent=true })
+vim.keymap.set('n','<leader>cl',"<cmd>PackerClean<cr>",{ noremap=true, silent=true })
 
+-- Plugins configurations
 return require('packer').startup(
   function(use)
     -- Let packer manage itself
@@ -85,8 +93,8 @@ use {
   config = function()
     require'hop'.setup (
       { keys = 'etovxqpdygfblzhckisuran' },
-      vim.api.nvim_set_keymap('n', 'fw', "<cmd>lua require'hop'.hint_words()<cr>", {silent = true}),
-      vim.api.nvim_set_keymap('n', 'fl', "<cmd>lua require'hop'.hint_lines()<cr>", {silent = true})
+      vim.keymap.set('n', 'fw', "<cmd>lua require'hop'.hint_words()<cr>", {silent = true}),
+      vim.keymap.set('n', 'fl', "<cmd>lua require'hop'.hint_lines()<cr>", {silent = true})
     )
   end
 }
@@ -299,4 +307,11 @@ use {'mg979/vim-visual-multi', branch = 'master'}
 -- game??
 use 'alec-gibson/nvim-tetris'
 
-end)
+-- Automatically set up your configuration after cloning packer.nvim
+-- Put this at the end after all plugins
+if packer_bootstrap then
+  require('packer').sync()
+end
+
+end
+)
