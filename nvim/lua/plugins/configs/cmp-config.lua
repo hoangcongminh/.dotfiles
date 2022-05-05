@@ -61,11 +61,12 @@ cmp.setup({
     with_text = true,
   },
   sources = cmp.config.sources({
+    { name = 'vsnip' }, -- For vsnip users.
     { name = 'nvim_lsp' },
     { name = 'buffer' },
-    { name = 'vsnip' }, -- For vsnip users.
-    { name = 'cmp_tabnine' },
     { name = 'path' },
+    { name = 'cmp_tabnine' },
+    { name = 'copilot' },
   }, {
     { name = 'buffer' },
   })
