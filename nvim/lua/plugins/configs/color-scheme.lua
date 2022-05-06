@@ -1,13 +1,11 @@
--- vim.g.vscode_style = "dark"
--- vim.g.vscode_transparent = 0.8
--- vim.g.vscode_italic_comment = 1
-require 'onedark'.setup {
-  transparent = true
-}
-require 'onedark'.load()
+--dracula
+vim.g.dracula_show_end_of_buffer = 1
+vim.g.dracula_transparent_bg = 0.7
+vim.g.dracula_italic_comment = 1
+
 
 vim.cmd([[
- colorscheme onedark
+ colorscheme dracula
  set cursorline
  hi clear CursorLine
 " custom style

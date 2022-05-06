@@ -4,21 +4,31 @@
 local lualine = require 'lualine'
 
 -- Color table for highlights
+-- local colors = {
+--   bg = '#202328',
+--   fg = '#bbc2cf',
+--   yellow = '#ECBE7B',
+--   cyan = '#008080',
+--   darkblue = '#081633',
+--   green = '#98be65',
+--   orange = '#FF8800',
+--   violet = '#a9a1e1',
+--   magenta = '#c678dd',
+--   blue = '#51afef',
+--   red = '#ec5f67'
+-- }
+-- dracula colors
 local colors = {
-  -- bg = '#202328',
-  -- fg = '#bbc2cf',
-  bg = '#282c34',
-  fg = '#abb2bf',
-  yellow = '#ECBE7B',
-  cyan = '#008080',
-  darkblue = '#081633',
-  green = '#98be65',
-  orange = '#FF8800',
-  violet = '#a9a1e1',
-  magenta = '#c678dd',
-  -- blue = '#51afef',
-  blue = '#61afef',
-  red = '#ec5f67'
+  bg = '#282A36',
+  fg = '#F8F8F2',
+  yellow = '#F1FA8C',
+  cyan = '#8BE9FD',
+  green = '#50fa7b',
+  orange = '#FFB86C',
+  violet = '#BD93F9',
+  magenta = '#FF79C6',
+  blue = '#6272A4',
+  red = '#FF6E6E'
 }
 
 local conditions = {

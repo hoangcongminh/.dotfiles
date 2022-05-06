@@ -24,14 +24,8 @@ return require('packer').startup(
 	-- dashboard
 	use 'mhinz/vim-startify'
 
-	-- color Theme
-	-- use {'Mofiqul/vscode.nvim', branch = 'main', config = function ()
-	--  require'plugins.configs.color-scheme'
-	-- end}
-
 	use {
-		'navarasu/onedark.nvim',
-		as = 'theme',
+		'Mofiqul/dracula.nvim',
 		config = function()
 			require 'plugins.configs.color-scheme'
 		end
