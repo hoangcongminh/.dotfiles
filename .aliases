@@ -3,6 +3,11 @@ alias wp='cd ~/Documents/Workspace'
 alias h='cd ~'
 alias df='cd ~/.dotfiles'
 
+# mv, rm, cp
+alias mv='mv -v'
+alias rm='rm -i -v'
+alias cp='cp -v'
+
 # Git
 alias g='git'
 alias gs='git status --short'
@@ -32,4 +37,3 @@ alias fb='fvm flutter pub run build_runner build --delete-conflicting-outputs'
 
 # Another
 alias lg="lazygit"
-alias ws="web-search"
