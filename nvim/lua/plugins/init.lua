@@ -21,9 +21,6 @@ return require('packer').startup(
 		end
 	}
 
-	-- dashboard
-	use 'mhinz/vim-startify'
-
 	use {
 		'Mofiqul/dracula.nvim',
 		config = function()
