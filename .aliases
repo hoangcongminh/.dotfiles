@@ -3,6 +3,10 @@ alias wp='cd ~/Documents/Workspace'
 alias h='cd ~'
 alias df='cd ~/.dotfiles'
 
+# ls
+alias l='ls -Flh'
+alias ll='ls -Flha'
+
 # mv, rm, cp
 alias mv='mv -v'
 alias rm='rm -i -v'
