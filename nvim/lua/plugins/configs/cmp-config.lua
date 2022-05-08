@@ -66,7 +66,7 @@ cmp.setup({
     { name = 'buffer' },
     { name = 'path' },
     { name = 'cmp_tabnine' },
-    { name = 'copilot' },
+    -- { name = 'copilot' },
   }, {
     { name = 'buffer' },
   })

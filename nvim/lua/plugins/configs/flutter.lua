@@ -67,7 +67,7 @@ require("flutter-tools").setup {
           program = "${file}",
           -- The nvim-dap plugin populates this variable with the editor's current working directory
           cwd = "${workspaceFolder}",
-          args = { "-d", "4E47B768-FFF5-4394-ADB3-D773194A8CEF" }
+          -- args = { "-d", "4E47B768-FFF5-4394-ADB3-D773194A8CEF" }
         },
       }
     end,
