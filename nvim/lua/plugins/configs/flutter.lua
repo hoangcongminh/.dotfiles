@@ -84,7 +84,7 @@ require("flutter-tools").setup {
     enabled = true -- set to false to disable
   },
   dev_log = {
-    enabled = true,
+    enabled = false,
     open_cmd = "vnew", -- command to use to open the log buffer
   },
   dev_tools = {
