@@ -38,7 +38,7 @@ require("flutter-tools").setup {
     -- This determines whether notifications are show with `vim.notify` or with the plugin's custom UI
     -- please note that this option is eventually going to be deprecated and users will need to
     -- depend on plugins like `nvim-notify` instead.
-    notification_style = 'native'
+    notification_style = 'plugin'
   },
   decorations = {
     statusline = {
@@ -84,7 +84,7 @@ require("flutter-tools").setup {
     enabled = true -- set to false to disable
   },
   dev_log = {
-    enabled = false,
+    enabled = true,
     open_cmd = "vnew", -- command to use to open the log buffer
   },
   dev_tools = {

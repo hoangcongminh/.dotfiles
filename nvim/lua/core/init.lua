@@ -1,4 +1,4 @@
-vim.notify = require("notify")
+-- vim.notify = require("notify")
 
 vim.cmd([[
   set completeopt=menu,menuone,noselect
