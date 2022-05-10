@@ -37,6 +37,7 @@ return require('packer').startup(
 			require 'plugins.configs.treesitter'
 		end,
 		requires = {
+			{ 'nvim-treesitter/playground', after = 'nvim-treesitter' },
 			{ 'nvim-treesitter/nvim-treesitter-textobjects', after = 'nvim-treesitter' },
 			{ 'p00f/nvim-ts-rainbow', after = 'nvim-treesitter' }
 		},

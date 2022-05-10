@@ -37,9 +37,10 @@ keymap('n', '<space>fb', "<cmd>lua require('telescope.builtin').buffers()<cr>", 
 keymap('n', '<space>fo', "<cmd>lua require('telescope.builtin').oldfiles()<cr>", opts)
 keymap('n', '<space>qf', "<cmd>lua require('telescope.builtin').quickfix()<cr>", opts)
 keymap('n', '<space>fr', "<cmd>lua require('telescope.builtin').resume()<cr>", opts)
-keymap('n', '<space>lj', "<cmd>lua require('telescope.builtin').jumplist()<jr>", opts)
-keymap('n', '<space>qf', string.format("<cmd>lua require('telescope.builtin').quickfix(%s)<cr>", dropdown_theme_string), opts)
+keymap('n', '<space>lj', "<cmd>lua require('telescope.builtin').jumplist()<cr>", opts)
+keymap('n', '<space>ts', "<cmd>lua require('telescope.builtin').treesitter()<cr>", opts)
 
+keymap('n', '<space>qf', string.format("<cmd>lua require('telescope.builtin').quickfix(%s)<cr>", dropdown_theme_string), opts)
 
 keymap('n', '<space>gr', string.format("<cmd>lua require('telescope.builtin').lsp_references(%s)<cr>", dropdown_theme_string), opts)
 keymap('n', '<space>gd', string.format("<cmd>lua require('telescope.builtin').lsp_definitions(%s)<cr>", dropdown_theme_string), opts)
