@@ -8,11 +8,10 @@ keymap("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
--- Normal --
-
 keymap("n", "<leader>/", ":Commentary<CR>", opts)
 keymap("v", "<leader>/", ":Commentary<CR>", opts)
 
+-- Normal --
 -- Resize with arrows
 keymap("n", "<C-Up>", ":resize -2<CR>", opts)
 keymap("n", "<C-Down>", ":resize +2<CR>", opts)
@@ -32,7 +31,6 @@ keymap("n", "<A-k>", "<Esc>:m .-2<CR>==gi", opts)
 keymap('n', '<space>s', ':update<CR>', opts)
 
 -- Insert --
-
 -- Press jk fast to exit insert mode
 keymap("i", "jk", "<ESC>", opts)
 -- Map Emacs like movement in Insert mode
@@ -44,17 +42,14 @@ keymap('i', '<C-b>', '<Left>', opts)
 -- keymap('i','<C-a>','<C-o>^',opts)
 
 -- Visual --
-
 -- Stay in indent mode
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
 -- Move text up and down
 keymap("v", "<A-j>", ":m .+1<CR>==", opts)
 keymap("v", "<A-k>", ":m .-2<CR>==", opts)
-keymap("v", "p", '"_dP', opts)
 
 -- Visual Block --
-
 -- Move text up and down
 keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
@@ -63,4 +58,12 @@ keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 keymap("n", "Y", "yg$", opts)
 keymap("n", "n", "nzzzv", opts)
 keymap("n", "N", "Nzzzv", opts)
--- keymap("n", "J", "mzJ`z", opts)
+keymap("n", "J", "mzJ`z", opts)
+
+keymap("v", "p", '"_dP', opts)
+keymap("x", "p", '"_dP', opts)
+
+keymap("x", "y", '"+y', opts)
+keymap("v", "y", '"+y', opts)
+keymap("n", "d", '"_d', opts)
+keymap("v", "d", '"_d', opts)
