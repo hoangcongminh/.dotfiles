@@ -34,7 +34,8 @@ return require('packer').startup(
 		requires = {
 			{ 'nvim-treesitter/playground', after = 'nvim-treesitter' },
 			{ 'nvim-treesitter/nvim-treesitter-textobjects', after = 'nvim-treesitter' },
-			{ 'p00f/nvim-ts-rainbow', after = 'nvim-treesitter' }
+			{ 'p00f/nvim-ts-rainbow', after = 'nvim-treesitter' },
+			{ 'lewis6991/spellsitter.nvim', after = 'nvim-treesitter' }
 		},
 		run = ':TSUpdate',
 		event = "BufWinEnter",
@@ -42,6 +43,7 @@ return require('packer').startup(
 			require 'plugins.configs.treesitter'
 		end,
 	}
+
 	-- telescope
 	use {
 		'nvim-telescope/telescope.nvim',
@@ -58,6 +60,7 @@ return require('packer').startup(
 		end,
 	}
 
+	-- type something badddd
 	use {
 		'phaazon/hop.nvim',
 		branch = 'v1', -- optional but strongly recommended
@@ -127,14 +130,21 @@ return require('packer').startup(
 		end,
 		requires = { 'kyazdani42/nvim-web-devicons', opt = true }
 	}
-	use {
-		'romgrk/barbar.nvim',
-		event = "BufWinEnter",
+	use { 'akinsho/bufferline.nvim',
+		tag = "v2.*",
+		requires = 'kyazdani42/nvim-web-devicons',
 		config = function()
-			require 'plugins.configs.barbar-config'
-		end,
-		requires = { 'kyazdani42/nvim-web-devicons' }
+			require 'plugins.configs.bufferline-config'
+		end
 	}
+	-- use {
+	-- 	'romgrk/barbar.nvim',
+	-- 	event = "BufWinEnter",
+	-- 	config = function()
+	-- 		require 'plugins.configs.barbar-config'
+	-- 	end,
+	-- 	requires = { 'kyazdani42/nvim-web-devicons' }
+	-- }
 
 	-- icons
 	use 'ryanoasis/vim-devicons'
@@ -223,7 +233,7 @@ return require('packer').startup(
 	end }
 	require('packer').use({
 		'weilbith/nvim-code-action-menu',
-		event = "BufWinEnter",
+		event = "BufEnter",
 		cmd = 'CodeActionMenu',
 		config = function()
 			vim.g.code_action_menu_window_border = 'none'
@@ -288,6 +298,25 @@ return require('packer').startup(
 	}
 
 	-- other
+	use { 'xiyaowong/nvim-transparent',
+		config = function()
+			require("transparent").setup({
+				enable = true, -- boolean: enable transparent
+				extra_groups = { -- table/string: additional groups that should be cleared
+					-- In particular, when you set it to 'all', that means all available groups
+
+					-- example of akinsho/nvim-bufferline.lua
+					"BufferLineTabClose",
+					"BufferlineBufferSelected",
+					"BufferLineFill",
+					"BufferLineBackground",
+					"BufferLineSeparator",
+					"BufferLineIndicatorSelected",
+				},
+				exclude = {}, -- table: groups you don't want to clear
+			})
+		end,
+	}
 	use 'tpope/vim-sleuth'
 	use 'tpope/vim-sensible'
 	use 'tpope/vim-surround'
@@ -299,7 +328,16 @@ return require('packer').startup(
 		require('nvim-autopairs').setup({
 			disable_filetype = { "TelescopePrompt", "vim" },
 		})
-	end }
+		-- If you want insert `(` after select function or method item
+		local cmp_autopairs = require('nvim-autopairs.completion.cmp')
+		local cmp = require('cmp')
+		cmp.event:on('confirm_done', cmp_autopairs.on_confirm_done({ map_char = { tex = '' } }))
+
+
+		-- add a lisp filetype (wrap my-function), FYI: Hardcoded = { "clojure", "clojurescript", "fennel", "janet" }
+		cmp_autopairs.lisp[#cmp_autopairs.lisp + 1] = "racket"
+	end
+	}
 	use { 'mg979/vim-visual-multi', branch = 'master' }
 	use { 'szw/vim-maximizer',
 		event = "BufWinEnter",
