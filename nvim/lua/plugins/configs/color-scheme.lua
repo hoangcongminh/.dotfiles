@@ -26,4 +26,7 @@ vim.cmd([[
  highlight link GitSignsCurrentLineBlame Comment
  highlight FidgetTitle ctermfg=110 guifg=#61afef
  highlight FidgetTask guibg=NONE guifg=#FFFFFF cterm=bold
+ 
+ highlight BufferLineFill guifg=#44475a guibg=#44475a
+ highlight BufferLineTabClose guifg=#44475a guibg=#44475a
 ]])
