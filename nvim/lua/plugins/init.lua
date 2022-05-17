@@ -60,6 +60,13 @@ return require('packer').startup(
 		end,
 	}
 
+	-- dashboard
+	use { 'glepnir/dashboard-nvim',
+		config = function()
+			require 'plugins.configs.dashboard-config'
+		end,
+	}
+
 	-- type something badddd
 	use {
 		'phaazon/hop.nvim',
