@@ -4,8 +4,8 @@ alias h='cd ~'
 alias df='cd ~/.dotfiles'
 
 # ls
-alias l='ls -Flh'
-alias ll='ls -Flha'
+# alias l='ls -Flh'
+# alias ll='ls -Flha'
 
 # mv, rm, cp
 alias mv='mv -v'

@@ -16,6 +16,7 @@ plugins=(
   z
   zsh-autosuggestions
   zsh-syntax-highlighting
+  zsh-aliases-exa
 )
 
 # ZSH_TMUX_AUTOSTART=true
