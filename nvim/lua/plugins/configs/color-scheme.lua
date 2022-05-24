@@ -1,11 +1,7 @@
---dracula
-vim.g.dracula_show_end_of_buffer = 1
-vim.g.dracula_transparent_bg = 0.7
-vim.g.dracula_italic_comment = 1
-
+vim.opt.background = "dark" -- or "light" for light mode
 
 vim.cmd([[
- colorscheme dracula
+ colorscheme gruvbox
  set cursorline
  hi clear CursorLine
 " custom style
@@ -26,7 +22,4 @@ vim.cmd([[
  highlight link GitSignsCurrentLineBlame Comment
  highlight FidgetTitle ctermfg=110 guifg=#61afef
  highlight FidgetTask guibg=NONE guifg=#FFFFFF cterm=bold
- 
- highlight BufferLineFill guifg=#44475a guibg=#44475a
- highlight BufferLineTabClose guifg=#44475a guibg=#44475a
 ]])

@@ -17,18 +17,19 @@ local lualine = require 'lualine'
 --   blue = '#51afef',
 --   red = '#ec5f67'
 -- }
--- dracula colors
+
+-- gruvbox colors
 local colors = {
-  bg = '#282A36',
-  fg = '#F8F8F2',
-  yellow = '#F1FA8C',
-  cyan = '#8BE9FD',
-  green = '#50fa7b',
-  orange = '#FFB86C',
-  violet = '#BD93F9',
-  magenta = '#FF79C6',
-  blue = '#6272A4',
-  red = '#FF6E6E'
+  bg = '#282828',
+  fg = '#EBDBB2',
+  yellow = '#d79921',
+  cyan = '#83a598',
+  green = '#98971a',
+  orange = '#fe8019',
+  violet = '#b16286',
+  magenta = '#d3869b',
+  blue = '#458588',
+  red = '#cc241d'
 }
 
 local conditions = {

@@ -21,8 +21,7 @@ return require('packer').startup(
 			end
 		}
 
-		use {
-			'Mofiqul/dracula.nvim',
+		use { "ellisonleao/gruvbox.nvim",
 			config = function()
 				require 'plugins.configs.color-scheme'
 			end
