@@ -59,11 +59,3 @@ keymap("n", "Y", "yg$", opts)
 keymap("n", "n", "nzzzv", opts)
 keymap("n", "N", "Nzzzv", opts)
 keymap("n", "J", "mzJ`z", opts)
-
-keymap("v", "p", '"_dP', opts)
-keymap("x", "p", '"_dP', opts)
-
-keymap("x", "y", '"+y', opts)
-keymap("v", "y", '"+y', opts)
-keymap("n", "d", '"_d', opts)
-keymap("v", "d", '"_d', opts)
