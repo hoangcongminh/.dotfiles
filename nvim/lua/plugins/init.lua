@@ -295,6 +295,7 @@ return require('packer').startup(
 			end
 		}
 
+		-- other
 		use 'tpope/vim-sleuth'
 		use 'tpope/vim-sensible'
 		use 'tpope/vim-surround'
