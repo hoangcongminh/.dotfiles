@@ -262,6 +262,14 @@ ins_left {
 
 -- Add components to right sections
 ins_right {
+  function()
+    return vim.g.flutter_tools_decorations.app_version
+  end,
+  icon = 'version:',
+  color = { fg = colors.orange, gui = 'bold' },
+}
+
+ins_right {
   'o:encoding', -- option component same as &encoding in viml
   upper = true, -- I'm not sure why it's upper case either ;)
   condition = conditions.hide_in_width,

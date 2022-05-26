@@ -72,7 +72,7 @@ require("flutter-tools").setup {
   flutter_lookup_cmd = nil, -- example "dirname $(which flutter)" or "asdf where flutter"
   fvm = true, -- takes priority over path, uses <workspace>/.fvm/flutter_sdk if enabled
   widget_guides = {
-    enabled = false,
+    enabled = true,
   },
   closing_tags = {
     -- highlight = "ErrorMsg", -- highlight for the closing tag
@@ -105,6 +105,8 @@ require("flutter-tools").setup {
       showTodos = true,
       completeFunctionCalls = true,
       -- analysisExcludedFolders = {<path-to-flutter-sdk-packages>}
+      renameFilesWithClasses = "prompt", -- "always"
+      enableSnippets = true,
     }
   }
 }
