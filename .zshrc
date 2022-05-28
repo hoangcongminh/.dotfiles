@@ -14,6 +14,7 @@ plugins=(
   tmux
   fzf
   z
+  fd
   zsh-autosuggestions
   zsh-syntax-highlighting
   zsh-aliases-exa
