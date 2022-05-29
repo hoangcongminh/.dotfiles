@@ -232,12 +232,15 @@ return require('packer').startup(
 				{ 'hrsh7th/cmp-buffer' },
 				{ 'hrsh7th/cmp-path' },
 				{ 'hrsh7th/cmp-cmdline' },
-				{ 'hrsh7th/cmp-vsnip' },
-				{ 'hrsh7th/vim-vsnip' },
+				{ 'saadparwaiz1/cmp_luasnip' },
 				{ 'hrsh7th/cmp-copilot' },
-				{ 'rafamadriz/friendly-snippets' },
 				{ 'onsails/lspkind-nvim' },
 			}
+		}
+		use { 'L3MON4D3/LuaSnip', config = function()
+			require("luasnip.loaders.from_vscode").lazy_load()
+		end, requires = { 'rafamadriz/friendly-snippets' }
+
 		}
 		use { 'tzachar/cmp-tabnine', run = './install.sh', requires = 'hrsh7th/nvim-cmp' }
 
