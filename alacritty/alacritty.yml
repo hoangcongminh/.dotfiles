@@ -15,7 +15,7 @@ font:
   use_thin_strokes: true
 
 window:
-  opacity: 0.8
+  opacity: 0.7
   startup_mode: simplefullscreen
   decorations: None
   # padding: 

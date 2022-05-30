@@ -121,44 +121,45 @@ ins_right_inactive_section {
 
 ins_left {
   function() return '▊' end,
-  color = { fg = colors.blue }, -- Sets highlighting of component
+  -- color = { fg = colors.blue }, -- Sets highlighting of component
+  color = { fg = colors.orange }, -- Sets highlighting of component
   left_padding = 0 -- We don't need space before this
 }
 
-ins_left {
-  -- mode component
-  function()
-    -- auto change color according to neovims mode
-    local mode_color = {
-      n = colors.red,
-      i = colors.green,
-      v = colors.blue,
-      [''] = colors.blue,
-      V = colors.blue,
-      c = colors.magenta,
-      no = colors.red,
-      s = colors.orange,
-      S = colors.orange,
-      [''] = colors.orange,
-      ic = colors.yellow,
-      R = colors.violet,
-      Rv = colors.violet,
-      cv = colors.red,
-      ce = colors.red,
-      r = colors.cyan,
-      rm = colors.cyan,
-      ['r?'] = colors.cyan,
-      ['!'] = colors.red,
-      t = colors.red
-    }
-    vim.api.nvim_command(
-      'hi! LualineMode guifg=' .. mode_color[vim.fn.mode()] .. " guibg=" ..
-      colors.bg)
-    return vim.fn.mode()
-  end,
-  color = "LualineMode",
-  left_padding = 0
-}
+-- ins_left {
+--   -- mode component
+--   function()
+--     -- auto change color according to neovims mode
+--     local mode_color = {
+--       n = colors.red,
+--       i = colors.green,
+--       v = colors.blue,
+--       [''] = colors.blue,
+--       V = colors.blue,
+--       c = colors.magenta,
+--       no = colors.red,
+--       s = colors.orange,
+--       S = colors.orange,
+--       [''] = colors.orange,
+--       ic = colors.yellow,
+--       R = colors.violet,
+--       Rv = colors.violet,
+--       cv = colors.red,
+--       ce = colors.red,
+--       r = colors.cyan,
+--       rm = colors.cyan,
+--       ['r?'] = colors.cyan,
+--       ['!'] = colors.red,
+--       t = colors.red
+--     }
+--     vim.api.nvim_command(
+--       'hi! LualineMode guifg=' .. mode_color[vim.fn.mode()] .. " guibg=" ..
+--       colors.bg)
+--     return vim.fn.mode()
+--   end,
+--   color = "LualineMode",
+--   left_padding = 0
+-- }
 
 ins_left {
   -- mode component
@@ -295,14 +296,15 @@ ins_right {
   -- Is it me or the symbol for modified us really weird
   symbols = { added = ' ', modified = '柳 ', removed = ' ' },
   color_added = colors.green,
-  color_modified = colors.orange,
+  color_modified = colors.blue,
   color_removed = colors.red,
   condition = conditions.hide_in_width
 }
 
 ins_right {
   function() return '▊' end,
-  color = { fg = colors.blue },
+  -- color = { fg = colors.blue },
+  color = { fg = colors.orange },
   right_padding = 0
 }
 
