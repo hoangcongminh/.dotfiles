@@ -30,17 +30,17 @@ return require('packer').startup(
 		-- treesitter
 		use {
 			'nvim-treesitter/nvim-treesitter',
+			config = function()
+				require 'plugins.configs.treesitter'
+			end,
+			run = ':TSUpdate',
+			-- event = "BufWinEnter",
 			requires = {
 				{ 'nvim-treesitter/playground', after = 'nvim-treesitter' },
 				{ 'nvim-treesitter/nvim-treesitter-textobjects', after = 'nvim-treesitter' },
 				{ 'p00f/nvim-ts-rainbow', after = 'nvim-treesitter' },
 				{ 'lewis6991/spellsitter.nvim', after = 'nvim-treesitter' }
 			},
-			run = ':TSUpdate',
-			event = "BufWinEnter",
-			config = function()
-				require 'plugins.configs.treesitter'
-			end,
 		}
 
 		-- telescope

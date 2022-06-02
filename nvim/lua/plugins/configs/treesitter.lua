@@ -1,5 +1,14 @@
 require 'nvim-treesitter.configs'.setup {
-  ensure_installed = { 'vim', 'lua', 'http', 'json', 'javascript', 'yaml' },
+  ensure_installed = {
+    'vim',
+    'lua',
+    'http',
+    'json',
+    'javascript',
+    'yaml',
+    'bash',
+    'dart'
+  },
   highlight = {
     enable = true,
     disable = {},
@@ -37,7 +46,8 @@ require 'nvim-treesitter.configs'.setup {
   },
   textobjects = {
     select = {
-      enable = true,
+      --conflitc with dart
+      enable = false,
 
       -- Automatically jump forward to textobj, similar to targets.vim
       lookahead = true,
