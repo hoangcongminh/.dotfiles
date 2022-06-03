@@ -20,7 +20,8 @@ local lualine = require 'lualine'
 
 -- gruvbox colors
 local colors = {
-  bg = '#282828',
+  -- bg = '#282828',
+  bg = 'none',
   fg = '#EBDBB2',
   yellow = '#d79921',
   cyan = '#83a598',
