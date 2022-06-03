@@ -7,7 +7,8 @@ require 'nvim-treesitter.configs'.setup {
     'javascript',
     'yaml',
     'bash',
-    'dart'
+    --treesitter conflict with dart
+    -- 'dart'
   },
   highlight = {
     enable = true,
@@ -46,8 +47,7 @@ require 'nvim-treesitter.configs'.setup {
   },
   textobjects = {
     select = {
-      --conflitc with dart
-      enable = false,
+      enable = true,
 
       -- Automatically jump forward to textobj, similar to targets.vim
       lookahead = true,
