@@ -7,8 +7,7 @@ require 'nvim-treesitter.configs'.setup {
     'javascript',
     'yaml',
     'bash',
-    --treesitter conflict with dart
-    -- 'dart'
+    'dart'
   },
   highlight = {
     enable = true,
