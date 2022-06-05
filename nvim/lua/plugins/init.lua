@@ -34,7 +34,7 @@ return require('packer').startup(
 				require 'plugins.configs.treesitter'
 			end,
 			run = ':TSUpdate',
-			-- event = "BufWinEnter",
+			event = "BufWinEnter",
 			requires = {
 				{ 'nvim-treesitter/playground', after = 'nvim-treesitter' },
 				{ 'nvim-treesitter/nvim-treesitter-textobjects', after = 'nvim-treesitter' },
@@ -57,14 +57,7 @@ return require('packer').startup(
 			end,
 		}
 
-		-- dashboard
-		use { 'glepnir/dashboard-nvim',
-			config = function()
-				require 'plugins.configs.dashboard-config'
-			end,
-		}
-
-		-- type something badddd
+		-- navigate
 		use {
 			'phaazon/hop.nvim',
 			branch = 'v1', -- optional but strongly recommended
@@ -205,7 +198,6 @@ return require('packer').startup(
 		}
 
 		-- flutter
-		use 'Nash0x7E2/awesome-flutter-snippets'
 		use {
 			"akinsho/flutter-tools.nvim",
 			requires = {
