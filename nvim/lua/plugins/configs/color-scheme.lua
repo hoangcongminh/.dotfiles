@@ -11,7 +11,8 @@ vim.cmd([[
  highlight EndOfBuffer guibg=NONE ctermbg=NONE
  highlight BufferTabpageFill guibg=none
 
- highlight! CursorLine gui=underline cterm=underline guibg=none
+ "highlight! CursorLine gui=underline cterm=underline guibg=none
+ highlight! CursorLine guibg=#7c6f64
  highlight CursorLineNr guibg=NONE 
  highlight CursorColumn guibg=#7c6f64
 
