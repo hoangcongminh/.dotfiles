@@ -18,7 +18,7 @@ vim.cmd([[
   set shiftwidth=2 
   set shiftround 
   set cursorline 
-  set cursorcolumn
+ "" set cursorcolumn
   set noswapfile 
   set incsearch
   set mouse=a "enable mouse for all mode
