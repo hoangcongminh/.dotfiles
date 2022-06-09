@@ -8,6 +8,13 @@ require('nvim-lsp-setup').setup({
 		pyright = {},
 		yamlls = {},
 		tsserver = {},
+		eslint = {
+			settings = {
+				format = {
+					enable = true,
+				},
+			}
+		},
 		jsonls = {},
 		sumneko_lua = {
 			settings = {
