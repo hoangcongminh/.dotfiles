@@ -211,7 +211,6 @@ return require('packer').startup(
 			end
 		}
 
-
 		-- completion
 		use {
 			'hrsh7th/nvim-cmp',
@@ -224,7 +223,6 @@ return require('packer').startup(
 				{ 'hrsh7th/cmp-path' },
 				{ 'hrsh7th/cmp-cmdline' },
 				{ 'saadparwaiz1/cmp_luasnip' },
-				{ 'hrsh7th/cmp-copilot' },
 				{ 'onsails/lspkind-nvim' },
 			}
 		}
@@ -233,7 +231,6 @@ return require('packer').startup(
 		end, requires = { 'rafamadriz/friendly-snippets' }
 
 		}
-		use { 'tzachar/cmp-tabnine', run = './install.sh', requires = 'hrsh7th/nvim-cmp' }
 
 		-- copilot
 		use {

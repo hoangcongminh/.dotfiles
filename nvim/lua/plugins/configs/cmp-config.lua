@@ -66,8 +66,6 @@ cmp.setup({
     { name = 'nvim_lsp' },
     { name = 'buffer' },
     { name = 'path' },
-    { name = 'cmp_tabnine' },
-    -- { name = 'copilot' },
   }, {
     { name = 'buffer' },
   })
