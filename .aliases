@@ -21,7 +21,6 @@ alias gD='git diff --staged'
 alias ga='git add'
 alias gc='git commit'
 alias gp='git push'
-alias gu='git add .; git commit -m "$1"; git push;'
 
 # Nvim
 alias v="nvim"
