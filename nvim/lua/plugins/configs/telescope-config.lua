@@ -2,6 +2,11 @@ local actions = require('telescope.actions')
 
 require('telescope').setup {
   igfile_ignore_patterns = { "node_modules" },
+  pickers = {
+    find_files = {
+      hidden = true
+    }
+  },
   defaults = {
     mappings = {
       i = {
@@ -24,30 +29,40 @@ require('telescope').setup {
     }
   }
 }
-
-local dropdown_theme_string = "require('telescope.themes').get_dropdown({})";
+local dropdown_theme = require('telescope.themes').get_dropdown();
+local telescope_builtin = require 'telescope.builtin'
+local keymap = vim.keymap.set
 
 local opts = { noremap = true, silent = true }
 
-local keymap = vim.keymap.set
+keymap('n', '<space>p', function()
+  telescope_builtin.find_files({ find_command = { 'rg', '--files', '--hidden', '-g', '!.git' }, previewer = false })
+end, opts)
 
-keymap('n', '<space>p', "<cmd>lua require('telescope.builtin').find_files({ find_command = {'rg', '--files', '--hidden', '-g', '!.git' }})<cr>", opts)
-keymap('n', '<space>fg', "<cmd>lua require('telescope.builtin').live_grep()<cr>", opts)
-keymap('n', '<space>fb', "<cmd>lua require('telescope.builtin').buffers()<cr>", opts)
-keymap('n', '<space>fo', "<cmd>lua require('telescope.builtin').oldfiles()<cr>", opts)
-keymap('n', '<space>qf', "<cmd>lua require('telescope.builtin').quickfix()<cr>", opts)
-keymap('n', '<space>fr', "<cmd>lua require('telescope.builtin').resume()<cr>", opts)
-keymap('n', '<space>lj', "<cmd>lua require('telescope.builtin').jumplist()<cr>", opts)
-keymap('n', '<space>ts', "<cmd>lua require('telescope.builtin').treesitter()<cr>", opts)
+keymap('n', '<space>fg', telescope_builtin.live_grep, opts)
+keymap('n', '<space>fb', telescope_builtin.buffers, opts)
+keymap('n', '<space>fo', telescope_builtin.oldfiles, opts)
+keymap('n', '<space>qf', telescope_builtin.quickfix, opts)
+keymap('n', '<space>fr', telescope_builtin.resume, opts)
+keymap('n', '<space>lj', telescope_builtin.jumplist, opts)
+keymap('n', '<space>ts', telescope_builtin.treesitter, opts)
 
-keymap('n', '<space>qf', string.format("<cmd>lua require('telescope.builtin').quickfix(%s)<cr>", dropdown_theme_string), opts)
-keymap('n', '<space>gr', string.format("<cmd>lua require('telescope.builtin').lsp_references(%s)<cr>", dropdown_theme_string), opts)
-keymap('n', '<space>gd', string.format("<cmd>lua require('telescope.builtin').lsp_definitions(%s)<cr>", dropdown_theme_string), opts)
-keymap('n', '<space>fd', string.format("<cmd>lua require('telescope.builtin').diagnostics(%s)<cr>", dropdown_theme_string), opts)
+keymap('n', '<space>qf', function()
+  telescope_builtin.quickfix(dropdown_theme)
+end, opts)
 
--- keymap('n','<space>la',"<cmd>lua require('telescope.builtin').lsp_code_actions()<cr>",opts)
--- keymap('n','<space>lw',"<cmd>lua require('telescope.builtin').lsp_workspace_diagnostics()<cr>",opts)
--- keymap('n','<space>ld',"<cmd>lua require('telescope.builtin').lsp_document_diagnostics()<cr>",opts)
+keymap('n', '<space>gr', function()
+  telescope_builtin.lsp_references(dropdown_theme)
+end, opts)
 
+keymap('n', '<space>gd', function()
+  telescope_builtin.lsp_definitions(dropdown_theme)
+end, opts)
 
-keymap('n', '<space>t', ":Telescope<cr>", opts)
+keymap('n', '<space>fd', function()
+  telescope_builtin.diagnostics(dropdown_theme)
+end, opts)
+
+keymap('n', '<space>t', function()
+  vim.cmd 'Telescope'
+end, opts)

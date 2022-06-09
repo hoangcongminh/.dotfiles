@@ -88,7 +88,7 @@ require("flutter-tools").setup {
     auto_open_browser = false, -- Automatically opens devtools in the browser
   },
   outline = {
-    open_cmd = "30vnew", -- command to use to open the outline buffer
+    open_cmd = "vnew", -- command to use to open the outline buffer
     auto_open = false -- if true this will open the outline automatically when it is first populated
   },
   lsp = {
