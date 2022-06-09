@@ -157,12 +157,15 @@ return require('packer').startup(
 
 		-- lsp
 		use {
-			'neovim/nvim-lspconfig',
+			'junnplus/nvim-lsp-setup',
+			requires = {
+				'neovim/nvim-lspconfig',
+				'williamboman/nvim-lsp-installer',
+			},
 			config = function()
 				require 'plugins.configs.lsp-config'
-			end,
+			end
 		}
-		use { 'williamboman/nvim-lsp-installer' }
 		use { 'j-hui/fidget.nvim', config = function()
 			require "fidget".setup {
 				text = {
