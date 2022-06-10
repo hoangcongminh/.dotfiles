@@ -145,7 +145,7 @@ return require('packer').startup(
 			event = "BufWinEnter",
 			config = function()
 				require("indent_blankline").setup {
-					char = "▏",
+					char = "┊",
 					show_first_indent_level = false,
 					show_trailing_blankline_indent = false,
 				}
@@ -166,6 +166,9 @@ return require('packer').startup(
 				require 'plugins.configs.lsp-config'
 			end
 		}
+		use { 'antoinemadec/FixCursorHold.nvim', config = function()
+			vim.g.cursorhold_updatetime = 100
+		end }
 		use { 'j-hui/fidget.nvim', config = function()
 			require "fidget".setup {
 				text = {

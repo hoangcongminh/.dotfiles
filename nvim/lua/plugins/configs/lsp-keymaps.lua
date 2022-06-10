@@ -1,4 +1,4 @@
-local function map(_, bufnr)
+local function map(client, bufnr)
 
   -- Enable completion triggered by <c-x><c-o>
   vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
@@ -39,6 +39,37 @@ local function map(_, bufnr)
   keymap('v', '<space>ca', vim.lsp.buf.range_code_action, opts)
   keymap('n', "<space>fm", vim.lsp.buf.formatting, opts)
   keymap('n', '<space>aw', ':CodeActionMenu<CR>', opts)
+
+  if client.server_capabilities.document_highlight then
+    vim.cmd 'autocmd CursorHold  <buffer> lua vim.lsp.buf.document_highlight'
+    vim.cmd 'autocmd CursorHoldI <buffer> lua vim.lsp.buf.document_highlight'
+    vim.cmd 'autocmd CursorMoved <buffer> lua vim.lsp.buf.clear_references'
+  end
+
+  if client.resolved_capabilities.document_highlight then
+    vim.cmd [[
+    hi! LspReferenceRead cterm=bold ctermbg=red guibg=#7c6f64
+    hi! LspReferenceText cterm=bold ctermbg=red guibg=#7c6f64
+    hi! LspReferenceWrite cterm=bold ctermbg=red guibg=#7c6f64
+    augroup lsp_document_highlight
+      autocmd! * <buffer>
+      autocmd! CursorHold <buffer> lua vim.lsp.buf.document_highlight()
+      autocmd! CursorHoldI <buffer> lua vim.lsp.buf.document_highlight()
+      autocmd! CursorMoved <buffer> lua vim.lsp.buf.clear_references()
+    augroup END
+  ]]
+  end
 end
 
+vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
+  vim.lsp.handlers.hover, {
+  border = "rounded"
+}
+)
+
+vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(
+  vim.lsp.handlers.signature_help, {
+  border = "rounded"
+}
+)
 return { map = map }
