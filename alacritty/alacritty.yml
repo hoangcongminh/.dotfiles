@@ -9,13 +9,13 @@ cursor:
 font:
   size: 11.0
   normal:
-    # family: SFMono Nerd Font
-    family: Monaco Nerd Font
+    family: SFMono Nerd Font
+    # family: Monaco Nerd Font
     # family: FiraCode Nerd Font
   use_thin_strokes: true
 
 window:
-  opacity: 0.7
+  opacity: 0.8
   startup_mode: simplefullscreen
   decorations: None
   # padding: 
