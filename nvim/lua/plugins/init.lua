@@ -81,31 +81,7 @@ return require('packer').startup(
 		}
 
 		-- git
-		-- use 'tpope/vim-fugitive'
-		use {
-			'TimUntersberger/neogit',
-			requires = {
-				'nvim-lua/plenary.nvim',
-				'sindrets/diffview.nvim'
-			},
-			keys = {
-				'<LEADER>gg'
-			},
-			cmd = {
-				'Neogit'
-			},
-			config = function()
-				require('neogit').setup {
-					disable_commit_confirmation = true,
-					disable_context_highlighting = true,
-					integrations = {
-						diffview = true
-					},
-				}
-
-				vim.keymap.set('n', '<leader>gg', ':Neogit kind=split<CR>', { noremap = true })
-			end
-		}
+		use 'tpope/vim-fugitive'
 		use {
 			'lewis6991/gitsigns.nvim',
 			config = function()
