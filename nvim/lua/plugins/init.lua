@@ -193,6 +193,17 @@ return require('packer').startup(
 			end
 		}
 
+		--rust
+		use { 'simrat39/rust-tools.nvim',
+			require = {
+				'nvim-lua/plenary.nvim',
+				"nvim-lua/plenary.nvim",
+			},
+			config = function()
+				require 'plugins.configs.rust-config'
+			end
+		}
+
 		-- completion
 		use {
 			'hrsh7th/nvim-cmp',
