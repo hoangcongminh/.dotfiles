@@ -37,8 +37,11 @@ export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH="$PATH:$HOME/.cargo/bin/"
 
+export DOTFILES_DIR="$HOME/.dotfiles"
+
 export FZF_BASE=~/.fzf.zsh
 export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'
+
 export EDITOR='nvim'
 
 bindkey '^n' autosuggest-accept
