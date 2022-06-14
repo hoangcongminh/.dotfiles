@@ -105,8 +105,9 @@ require("flutter-tools").setup {
       showTodos = true,
       completeFunctionCalls = true,
       -- analysisExcludedFolders = {<path-to-flutter-sdk-packages>}
-      renameFilesWithClasses = "prompt", -- "always"
+      renameFilesWithClasses = "always", -- "always"
       enableSnippets = true,
+      updateImportsOnRename = true,
     }
   }
 }
