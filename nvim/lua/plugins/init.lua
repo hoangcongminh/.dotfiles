@@ -235,6 +235,7 @@ return require('packer').startup(
 		}
 
 		-- other
+		use 'szw/vim-g'
 		use 'tpope/vim-sleuth'
 		use 'tpope/vim-sensible'
 		use 'tpope/vim-surround'
