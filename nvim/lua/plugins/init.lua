@@ -29,7 +29,7 @@ return require('packer').startup(
 
 		-- treesitter
 		use {
-			'nvim-treesitter/nvim-treesitter',
+			'hoangcongminh/nvim-treesitter',
 			config = function()
 				require 'plugins.configs.treesitter'
 			end,
