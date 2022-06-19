@@ -240,7 +240,9 @@ return require('packer').startup(
 		use 'tpope/vim-sensible'
 		use 'tpope/vim-surround'
 		use 'tpope/vim-rsi'
-		use { 'romainl/vim-cool' } -- Auto hide search highlight
+		use 'tpope/vim-unimpaired'
+		use 'tpope/vim-eunuch'
+		use 'romainl/vim-cool' -- Auto hide search highlight
 		use { 'norcalli/nvim-colorizer.lua', config = function()
 			require 'colorizer'.setup()
 		end }
@@ -263,7 +265,8 @@ return require('packer').startup(
 			event = "BufWinEnter",
 			config = function()
 				vim.keymap.set('n', 'm', ":MaximizerToggle<CR>", { silent = true })
-			end }
+			end
+		}
 
 		-- game??
 		use 'alec-gibson/nvim-tetris'
