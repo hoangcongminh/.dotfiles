@@ -255,7 +255,7 @@ return require('packer').startup(
 
 
 			-- add a lisp filetype (wrap my-function), FYI: Hardcoded = { "clojure", "clojurescript", "fennel", "janet" }
-			cmp_autopairs.lisp[#cmp_autopairs.lisp + 1] = "racket"
+			-- cmp_autopairs.lisp[#cmp_autopairs.lisp + 1] = "racket"
 		end
 		}
 		use { 'mg979/vim-visual-multi', branch = 'master' }
