@@ -203,7 +203,7 @@ return require('packer').startup(
 				'dart-lang/dart-vim-plugin'
 			},
 			config = function()
-				require 'plugins.configs.flutter'
+				require 'plugins.configs.flutter-tools'
 			end
 		}
 
@@ -214,7 +214,7 @@ return require('packer').startup(
 				"nvim-lua/plenary.nvim",
 			},
 			config = function()
-				require 'plugins.configs.rust-config'
+				require 'plugins.configs.rust-tools'
 			end
 		}
 
