@@ -1,26 +1,30 @@
--- vim.notify = require("notify")
+vim.g.mapleader = " "
+vim.opt.signcolumn = "yes"
+vim.opt.cmdheight = 1
+vim.opt.number = true
+vim.opt.relativenumber = true
+vim.opt.termguicolors = true
+vim.opt.expandtab = true
+vim.opt.smartindent = true
+vim.opt.smartcase = true
+vim.opt.ignorecase = true
+vim.opt.scrolloff = 8
+vim.opt.sidescrolloff = 8
+vim.opt.shiftround = true
+vim.opt.tabstop = 4
+vim.opt.softtabstop = 4
+vim.opt.shiftwidth = 4
+vim.opt.swapfile = false
+vim.opt.incsearch = true
+vim.opt.cursorline = true
+-- vim.opt.showmode = false
+vim.opt.updatetime = 50
+
+vim.opt.colorcolumn = "80"
 
 vim.cmd([[
   set completeopt=menu,menuone,noselect
-  set signcolumn=yes
   set clipboard+=unnamedplus 
-  set cmdheight=2 
-  set noshowmode 
-  set termguicolors 
-  set number 
-  set relativenumber 
-  set smartindent 
-  set smartcase 
-  set ignorecase 
-  set scrolloff=8 
-  set sidescrolloff=8 
-  set softtabstop=2 
-  set shiftwidth=2 
-  set shiftround 
-  set cursorline 
- "" set cursorcolumn
-  set noswapfile 
-  set incsearch
   set mouse=a "enable mouse for all mode
 ]])
 -- Auto commands
