@@ -1,3 +1,12 @@
+local function on_attach(client, bufnr)
+  local opts = { noremap = true, silent = true }
+  local keymap = vim.keymap.set
+
+  keymap("n", "<space>fa", ':RustRun<CR>', opts)
+
+  require 'plugins.configs.lsp-keymaps'.map(client, bufnr)
+end
+
 local opts = {
   tools = { -- rust-tools options
     -- automatically set inlay hints (type hints)
@@ -167,7 +176,7 @@ local opts = {
   -- these override the defaults set by rust-tools.nvim
   -- see https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#rust_analyzer
   server = {
-    on_attach = require 'plugins.configs.lsp-keymaps'.map,
+    on_attach = on_attach,
     -- standalone file support
     -- setting it to false may improve startup time
     standalone = true,
