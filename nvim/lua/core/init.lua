@@ -19,15 +19,16 @@ vim.opt.incsearch = true
 vim.opt.cursorline = true
 -- vim.opt.showmode = false
 vim.opt.updatetime = 50
+vim.opt.mouse = "a"
 
 vim.opt.colorcolumn = "80"
 
-vim.cmd([[
-  set completeopt=menu,menuone,noselect
-  set clipboard+=unnamedplus 
-  set mouse=a "enable mouse for all mode
-]])
--- Auto commands
+vim.opt.clipboard = "unnamedplus"
+vim.opt.completeopt = "menuone,noinsert,noselect"
+
+vim.opt.shortmess:append("c")
+
+-- Highlight on yank
 vim.api.nvim_command('au TextYankPost * silent! lua vim.highlight.on_yank()')
 
 -- Fotmat on save
