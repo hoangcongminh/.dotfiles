@@ -1,4 +1,3 @@
-vim.g.mapleader = " "
 vim.opt.signcolumn = "yes"
 vim.opt.cmdheight = 1
 vim.opt.number = true

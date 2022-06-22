@@ -13,12 +13,11 @@ keymap("v", "<leader>/", ":Commentary<CR>", opts)
 
 -- Normal --
 -- Resize with arrows
-keymap("n", "<C-Up>", ":resize -2<CR>", opts)
-keymap("n", "<C-Down>", ":resize +2<CR>", opts)
-keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
-keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
-keymap("n", "<leader>+", ":vertical resize +5<CR>", opts)
-keymap("n", "<leader>-", ":vertical resize -5<CR>", opts)
+keymap("n", "<M-J>", ":resize -2<CR>", opts)
+keymap("n", "<M-K>", ":resize +2<CR>", opts)
+keymap("n", "<M-H>", ":vertical resize -2<CR>", opts)
+keymap("n", "<M-L>", ":vertical resize +2<CR>", opts)
+
 -- quickfix
 keymap('n', '<leader>co', ':copen<CR>', opts)
 keymap('n', '<leader>cc', ':ccl<CR>', opts)
