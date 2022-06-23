@@ -58,7 +58,15 @@ cmp.setup({
     end, { "i", "s" }),
   },
   formatting = {
-    format = require 'lspkind'.cmp_format(),
+    format = require 'lspkind'.cmp_format({
+      mode = "symbol_text",
+      menu = ({
+        luasnip = "[LuaSnip]",
+        nvim_lsp = "[LSP]",
+        buffer = "[Buffer]",
+        path = "[Path]",
+      })
+    }),
     with_text = true,
   },
   sources = cmp.config.sources({

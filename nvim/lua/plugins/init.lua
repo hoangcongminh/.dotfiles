@@ -240,13 +240,13 @@ return require('packer').startup(
 		}
 
 		-- copilot
-		use {
-			'github/copilot.vim',
-			event = "BufWinEnter",
-			config = function()
-				require 'plugins.configs.copilot'
-			end
-		}
+		-- use {
+		-- 	'github/copilot.vim',
+		-- 	event = "BufWinEnter",
+		-- 	config = function()
+		-- 		require 'plugins.configs.copilot'
+		-- 	end
+		-- }
 
 		-- other
 		use 'szw/vim-g'
