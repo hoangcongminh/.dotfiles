@@ -47,7 +47,7 @@ export EDITOR='nvim'
 bindkey '^n' autosuggest-accept
 
 # Aliases
-source $HOME/.dotfiles/.aliases
+source $HOME/.dotfiles/zsh/.aliases
 
 export NVM_DIR="$HOME/.nvm"
   [ -s "/usr/local/opt/nvm/nvm.sh" ] && \. "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
