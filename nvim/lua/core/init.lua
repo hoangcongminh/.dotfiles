@@ -29,4 +29,7 @@ vim.opt.completeopt = "menuone,noinsert,noselect"
 vim.opt.shortmess:append("c")
 
 -- Highlight on yank
-vim.api.nvim_command('au TextYankPost * silent! lua vim.highlight.on_yank()')
+vim.api.nvim_create_autocmd("TextYankPost", {
+    pattern = "*",
+    callback = vim.highlight.on_yank,
+})
