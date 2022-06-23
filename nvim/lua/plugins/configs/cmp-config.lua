@@ -7,6 +7,18 @@ local has_words_before = function()
   return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
 end
 
+local source_mapping = {
+  luasnip = "[LuaSnip]",
+  nvim_lsp = "[LSP]",
+  buffer = "[Buffer]",
+  path = "[Path]",
+  nvim_lua = "[Lua]",
+  treesitter = "[TS]",
+  cmp_tabnine = "[TN]",
+  cmdline = "[CMD]",
+  cmdline_history = "[History]",
+}
+
 cmp.setup({
   snippet = {
     expand = function(args)
@@ -41,7 +53,7 @@ cmp.setup({
       elseif has_words_before() then
         cmp.complete()
       else
-        fallback() -- The fallback function sends a already mapped key. In this case, it's probably `<Tab>`.
+        fallback()
       end
     end, { "i", "s" }),
 
@@ -50,8 +62,6 @@ cmp.setup({
         cmp.select_prev_item()
       elseif luasnip.jumpable(-1) then
         luasnip.jump(-1)
-      elseif has_words_before() then
-        cmp.complete()
       else
         fallback()
       end
@@ -59,13 +69,26 @@ cmp.setup({
   },
   formatting = {
     format = require 'lspkind'.cmp_format({
-      mode = "symbol_text",
-      menu = ({
-        luasnip = "[LuaSnip]",
-        nvim_lsp = "[LSP]",
-        buffer = "[Buffer]",
-        path = "[Path]",
-      })
+      mode = "symbol_text", -- options: 'text', 'text_symbol', 'symbol_text', 'symbol'
+      maxwidth = 40, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
+
+      -- The function below will be called before any actual modifications from lspkind
+      -- so that you can provide more controls on popup customization. (See [#30](https://github.com/onsails/lspkind-nvim/pull/30))
+      before = function(entry, vim_item)
+        vim_item.kind = require 'lspkind'.presets.default[vim_item.kind]
+
+        local menu = source_mapping[entry.source.name]
+        if entry.source.name == "cmp_tabnine" then
+          if entry.completion_item.data ~= nil and entry.completion_item.data.detail ~= nil then
+            menu = entry.completion_item.data.detail .. " " .. menu
+          end
+          vim_item.kind = ''
+        end
+
+        vim_item.menu = menu
+
+        return vim_item
+      end,
     }),
     with_text = true,
   },
@@ -74,6 +97,10 @@ cmp.setup({
     { name = 'nvim_lsp' },
     { name = 'buffer' },
     { name = 'path' },
+    { name = "nvim_lsp_signature_help" },
+    { name = "nvim_lua" },
+    { name = 'treesitter' },
+    { name = 'cmp_tabnine' },
   }, {
     { name = 'buffer' },
   })
@@ -102,6 +129,7 @@ cmp.setup.cmdline(':', {
   sources = cmp.config.sources({
     { name = 'path' }
   }, {
-    { name = 'cmdline' }
+    { name = 'cmdline' },
+    { name = 'cmdline_history' },
   })
 })
