@@ -23,7 +23,7 @@ return require('packer').startup(
 
 		use { "ellisonleao/gruvbox.nvim",
 			config = function()
-				require 'plugins.configs.color-scheme'
+				require 'plugins.minh.color-scheme'
 			end
 		}
 
@@ -31,7 +31,7 @@ return require('packer').startup(
 		use {
 			'hoangcongminh/nvim-treesitter',
 			config = function()
-				require 'plugins.configs.treesitter'
+				require 'plugins.minh.treesitter'
 			end,
 			run = ':TSUpdate',
 			event = "BufWinEnter",
@@ -53,7 +53,7 @@ return require('packer').startup(
 			},
 			event = "BufEnter",
 			config = function()
-				require 'plugins.configs.telescope-config'
+				require 'plugins.minh.telescope-config'
 			end,
 		}
 
@@ -76,7 +76,7 @@ return require('packer').startup(
 			'kyazdani42/nvim-tree.lua',
 			requires = 'kyazdani42/nvim-web-devicons',
 			config = function()
-				require 'plugins.configs.nvimtree'
+				require 'plugins.minh.nvimtree'
 			end,
 		}
 
@@ -85,7 +85,7 @@ return require('packer').startup(
 		use {
 			'lewis6991/gitsigns.nvim',
 			config = function()
-				require 'plugins.configs.gitsigns-config'
+				require 'plugins.minh.gitsigns-config'
 			end,
 			requires = {
 				'nvim-lua/plenary.nvim'
@@ -98,7 +98,7 @@ return require('packer').startup(
 			'nvim-lualine/lualine.nvim',
 			event = "BufWinEnter",
 			config = function()
-				require 'plugins.configs.lualine-config'
+				require 'plugins.minh.lualine-config'
 				vim.opt.laststatus = 3
 			end,
 			requires = { 'kyazdani42/nvim-web-devicons', opt = true }
@@ -107,7 +107,7 @@ return require('packer').startup(
 			tag = "v2.*",
 			requires = 'kyazdani42/nvim-web-devicons',
 			config = function()
-				require 'plugins.configs.bufferline-config'
+				require 'plugins.minh.bufferline-config'
 			end
 		}
 
@@ -139,7 +139,7 @@ return require('packer').startup(
 				'williamboman/nvim-lsp-installer',
 			},
 			config = function()
-				require 'plugins.configs.lsp-config'
+				require 'plugins.minh.lsp-config'
 			end
 		}
 		use {
@@ -189,7 +189,7 @@ return require('packer').startup(
 			requires = { "mfussenegger/nvim-dap" },
 			after = 'nvim-dap',
 			config = function()
-				require 'plugins.configs.dap-config'
+				require 'plugins.minh.dap-config'
 			end
 		}
 
@@ -203,7 +203,7 @@ return require('packer').startup(
 				'dart-lang/dart-vim-plugin'
 			},
 			config = function()
-				require 'plugins.configs.flutter-tools'
+				require 'plugins.minh.flutter-tools'
 			end
 		}
 
@@ -216,7 +216,7 @@ return require('packer').startup(
 				"nvim-lua/plenary.nvim",
 			},
 			config = function()
-				require 'plugins.configs.rust-tools'
+				require 'plugins.minh.rust-tools'
 			end
 		}
 
@@ -224,7 +224,7 @@ return require('packer').startup(
 		use {
 			'hrsh7th/nvim-cmp',
 			config = function()
-				require 'plugins.configs.cmp-config'
+				require 'plugins.minh.cmp-config'
 			end,
 			requires = {
 				{ 'hrsh7th/cmp-nvim-lsp' },
@@ -269,7 +269,7 @@ return require('packer').startup(
 		-- 	'github/copilot.vim',
 		-- 	event = "BufWinEnter",
 		-- 	config = function()
-		-- 		require 'plugins.configs.copilot'
+		-- 		require 'plugins.minh.copilot'
 		-- 	end
 		-- }
 

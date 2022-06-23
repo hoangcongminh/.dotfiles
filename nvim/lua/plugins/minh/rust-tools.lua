@@ -6,7 +6,7 @@ local function on_attach(client, bufnr)
 
   keymap("n", "<space>fa", ':RustRun<CR>', opts)
 
-  require 'plugins.configs.lsp-keymaps'.map(client, bufnr)
+  require 'plugins.minh.lsp-keymaps'.map(client, bufnr)
 end
 
 local opts = {
