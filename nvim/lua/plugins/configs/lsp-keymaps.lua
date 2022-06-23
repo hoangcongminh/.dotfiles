@@ -59,6 +59,9 @@ local function map(client, bufnr)
     augroup END
   ]]
   end
+
+  -- Fotmat on save
+  vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.formatting_sync()]]
 end
 
 vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(

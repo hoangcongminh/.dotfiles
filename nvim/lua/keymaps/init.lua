@@ -12,6 +12,7 @@ keymap("n", "<leader>/", ":Commentary<CR>", opts)
 keymap("v", "<leader>/", ":Commentary<CR>", opts)
 
 -- Normal --
+keymap("n", "<space-s>", ":update<CR>", opts)
 -- Resize with arrows
 keymap("n", "<M-J>", ":resize -2<CR>", opts)
 keymap("n", "<M-K>", ":resize +2<CR>", opts)
@@ -21,8 +22,13 @@ keymap("n", "<M-L>", ":vertical resize +2<CR>", opts)
 -- quickfix
 keymap('n', '<leader>co', ':copen<CR>', opts)
 keymap('n', '<leader>cc', ':ccl<CR>', opts)
+keymap('n', '<leader>ci', ':cli<CR>', opts)
 keymap('n', '<leader>k', ':cp<CR>', opts)
 keymap('n', '<leader>j', ':cn<CR>', opts)
+
+keymap('n', '<space>lo', ':lopen<CR>', opts)
+keymap('n', '<space>lc', ':lcl<CR>', opts)
+keymap('n', '<space>ll', ':lli<CR>', opts)
 -- Move text up and down
 keymap("n", "<A-j>", "<Esc>:m .+1<CR>==gi", opts)
 keymap("n", "<A-k>", "<Esc>:m .-2<CR>==gi", opts)

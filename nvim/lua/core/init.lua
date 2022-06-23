@@ -29,6 +29,3 @@ vim.opt.shortmess:append("c")
 
 -- Highlight on yank
 vim.api.nvim_command('au TextYankPost * silent! lua vim.highlight.on_yank()')
-
--- Fotmat on save
-vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.formatting_sync()]]

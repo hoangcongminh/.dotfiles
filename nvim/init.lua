@@ -1,13 +1,8 @@
-P = function(v)
-    print(vim.inspect(v))
-    return v
+local ok, reload = pcall(require, 'plenary.reload')
+RELOAD = ok and reload.reload_module or function(...)
+    return ...
 end
-
-RELOAD = function(...)
-    return require("plenary.reload").reload_module(...)
-end
-
-R = function(name)
+function R(name)
     RELOAD(name)
     return require(name)
 end
