@@ -127,41 +127,6 @@ ins_left {
   left_padding = 0 -- We don't need space before this
 }
 
--- ins_left {
---   -- mode component
---   function()
---     -- auto change color according to neovims mode
---     local mode_color = {
---       n = colors.red,
---       i = colors.green,
---       v = colors.blue,
---       [''] = colors.blue,
---       V = colors.blue,
---       c = colors.magenta,
---       no = colors.red,
---       s = colors.orange,
---       S = colors.orange,
---       [''] = colors.orange,
---       ic = colors.yellow,
---       R = colors.violet,
---       Rv = colors.violet,
---       cv = colors.red,
---       ce = colors.red,
---       r = colors.cyan,
---       rm = colors.cyan,
---       ['r?'] = colors.cyan,
---       ['!'] = colors.red,
---       t = colors.red
---     }
---     vim.api.nvim_command(
---       'hi! LualineMode guifg=' .. mode_color[vim.fn.mode()] .. " guibg=" ..
---       colors.bg)
---     return vim.fn.mode()
---   end,
---   color = "LualineMode",
---   left_padding = 0
--- }
-
 ins_left {
   -- mode component
   function()
@@ -191,7 +156,8 @@ ins_left {
     vim.api.nvim_command(
       'hi! LualineMode guifg=' .. mode_color[vim.fn.mode()] .. " guibg=" ..
       colors.bg)
-    return ''
+    -- return ''
+    return vim.fn.mode()
   end,
   color = "LualineMode",
   left_padding = 0
@@ -199,30 +165,15 @@ ins_left {
 
 ins_left {
   -- filesize component
-  function()
-    local function format_file_size(file)
-      local size = vim.fn.getfsize(file)
-      if size <= 0 then return '' end
-      local sufixes = { 'b', 'k', 'm', 'g' }
-      local i = 1
-      while size > 1024 do
-        size = size / 1024
-        i = i + 1
-      end
-      return string.format('%.1f%s', size, sufixes[i])
-    end
-
-    local file = vim.fn.expand('%:p')
-    if string.len(file) == 0 then return '' end
-    return format_file_size(file)
-  end,
-  condition = conditions.buffer_not_empty
+  'filesize',
+  cond = conditions.buffer_not_empty,
 }
 
 ins_left {
   'filename',
   condition = conditions.buffer_not_empty,
-  path = 1,
+  -- path = 1,
+  path = 0,
   color = { fg = colors.magenta, gui = 'bold' }
 }
 
@@ -259,10 +210,12 @@ ins_left {
     return msg
   end,
   icon = ' LSP:',
-  color = { fg = '#ffffff', gui = 'bold' }
+  color = { fg = colors.fg, gui = 'bold' }
 }
 
 -- Add components to right sections
+ins_right { 'lsp_progress', color = { fg = colors.blue, gui = 'bold' } }
+
 ins_right {
   function()
     return vim.g.flutter_tools_decorations.app_version

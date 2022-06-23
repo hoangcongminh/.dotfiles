@@ -15,8 +15,9 @@ vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.swapfile = false
 vim.opt.incsearch = true
+vim.opt.cursorcolumn = true
 vim.opt.cursorline = true
--- vim.opt.showmode = false
+vim.opt.showmode = false
 vim.opt.updatetime = 50
 vim.opt.mouse = "a"
 

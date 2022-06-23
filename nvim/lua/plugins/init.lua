@@ -101,7 +101,9 @@ return require('packer').startup(
 				require 'plugins.minh.lualine-config'
 				vim.opt.laststatus = 3
 			end,
-			requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+			requires = {
+				'arkav/lualine-lsp-progress',
+			}
 		}
 		use { 'akinsho/bufferline.nvim',
 			tag = "v2.*",
@@ -159,20 +161,8 @@ return require('packer').startup(
 		use { 'antoinemadec/FixCursorHold.nvim', config = function()
 			vim.g.cursorhold_updatetime = 100
 		end }
-		use { 'j-hui/fidget.nvim', config = function()
-			require "fidget".setup {
-				text = {
-					spinner = "pipe", -- animation shown when tasks are ongoing
-					done = "✔", -- character shown when all tasks are complete
-					commenced = "Started", -- message shown when task starts
-					completed = "Completed", -- message shown when task completes
-				},
-				window = {
-					blend = 0, -- &winblend for the window
-				},
-			}
-		end }
-		require('packer').use({
+
+		use({
 			'weilbith/nvim-code-action-menu',
 			event = "BufEnter",
 			cmd = 'CodeActionMenu',
