@@ -207,6 +207,8 @@ return require('packer').startup(
 			end
 		}
 
+		use { 'eliasreis54/vim-bloc-plugin' }
+
 		--rust
 		use { 'simrat39/rust-tools.nvim',
 			require = {
