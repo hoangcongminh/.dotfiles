@@ -81,7 +81,7 @@ require("flutter-tools").setup {
   },
   dev_log = {
     enabled = true,
-    open_cmd = "vnew", -- command to use to open the log buffer
+    open_cmd = "tabedit", -- command to use to open the log buffer
   },
   dev_tools = {
     autostart = true, -- autostart devtools server if not detected
