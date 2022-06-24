@@ -46,7 +46,7 @@ export EDITOR='nvim'
 
 bindkey '^n' autosuggest-accept
 
-function gitall() {
+function gpp() {
   git add .
   if [ "$1" != "" ]
   then
