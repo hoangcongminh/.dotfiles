@@ -12,9 +12,9 @@ vim.cmd([[
  highlight BufferTabpageFill guibg=none
 
  "highlight! CursorLine gui=underline cterm=underline guibg=none
- highlight! CursorLine guibg=#7c6f64
+ "highlight! CursorLine guibg=#7c6f64
  highlight CursorLineNr guibg=NONE 
- highlight CursorColumn guibg=#7c6f64
+ "highlight CursorColumn guibg=#7c6f64
 
  highlight SignColumn guibg=NONE ctermbg=NONE
 
@@ -26,6 +26,4 @@ vim.cmd([[
 
  highlight Comment gui=italic
  highlight link GitSignsCurrentLineBlame Comment
- highlight FidgetTitle ctermfg=110 guifg=#61afef
- highlight FidgetTask guibg=NONE guifg=#FFFFFF cterm=bold
 ]])

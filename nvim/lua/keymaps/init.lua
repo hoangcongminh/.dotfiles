@@ -13,6 +13,11 @@ keymap("v", "<leader>/", ":Commentary<CR>", opts)
 
 -- Normal --
 keymap("n", "<space-s>", ":update<CR>", opts)
+
+-- Remap for dealing with word wrap
+keymap('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
+keymap('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
+
 -- Resize with arrows
 keymap("n", "<M-J>", ":resize -2<CR>", opts)
 keymap("n", "<M-K>", ":resize +2<CR>", opts)
