@@ -249,10 +249,22 @@ return require('packer').startup(
 				})
 			end
 		}
-		use { 'L3MON4D3/LuaSnip', config = function()
-			require("luasnip.loaders.from_vscode").lazy_load()
-		end, requires = { 'rafamadriz/friendly-snippets' }
+		use { 'L3MON4D3/LuaSnip',
+			config = function()
+				require("luasnip.loaders.from_vscode").lazy_load()
+			end,
+			requires = { 'rafamadriz/friendly-snippets' }
 
+		}
+
+		use { "akinsho/toggleterm.nvim",
+			tag = 'v1.*',
+			config = function()
+				require("toggleterm").setup({
+					open_mapping = [[<c-\>]],
+					shade_terminals = false,
+				})
+			end
 		}
 
 		-- copilot
