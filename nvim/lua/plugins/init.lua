@@ -11,8 +11,15 @@ end
 vim.keymap.set('n', '<leader>sy', "<cmd>PackerSync<cr>", { noremap = true, silent = true })
 vim.keymap.set('n', '<leader>cl', "<cmd>PackerClean<cr>", { noremap = true, silent = true })
 
+local packer = require('packer')
+packer.init({
+	git = {
+		clone_timeout = 1000, -- Timeout, in seconds, for git clones
+	}
+})
+
 -- Plugins configurations
-return require('packer').startup(
+return packer.startup(
 	function(use)
 		-- Let packer manage itself
 		use {
