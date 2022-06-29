@@ -275,13 +275,13 @@ return packer.startup(
 		}
 
 		-- copilot
-		-- use {
-		-- 	'github/copilot.vim',
-		-- 	event = "BufWinEnter",
-		-- 	config = function()
-		-- 		require 'plugins.minh.copilot'
-		-- 	end
-		-- }
+		use {
+			'github/copilot.vim',
+			event = "BufWinEnter",
+			config = function()
+				require 'plugins.minh.copilot'
+			end
+		}
 
 		-- other
 		use 'szw/vim-g'
