@@ -284,6 +284,7 @@ return packer.startup(
 		}
 
 		-- other
+		use 'mtdl9/vim-log-highlighting'
 		use 'szw/vim-g'
 		use 'tpope/vim-sleuth'
 		use 'tpope/vim-sensible'
