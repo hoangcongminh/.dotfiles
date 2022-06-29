@@ -52,18 +52,24 @@ require("flutter-tools").setup {
     run_via_dap = false, -- use dap instead of a plenary job to run flutter apps
     register_configurations = function(paths)
       local dap = require('dap')
+      dap.adapters.dart = {
+        type = "executable",
+        command = "node",
+        args = { os.getenv('HOME') .. "/.dotfiles/Dart-Code/out/dist/debug.js", "flutter" },
+      }
+      require("dap.ext.vscode").load_launchjs()
       dap.configurations.dart = {
         {
           type = "dart",
           request = "launch",
-          name = "Launch Flutter Program",
+          name = "Launch flutter",
           dartSdkPath = paths.dart_sdk,
           flutterSdkPath = paths.flutter_sdk,
           -- The nvim-dap plugin populates this variable with the filename of the current buffer
-          program = "${file}",
+          program = "${workspaceFolder}/lib/main.dart",
           -- The nvim-dap plugin populates this variable with the editor's current working directory
           cwd = "${workspaceFolder}",
-          -- args = { "-d", "4E47B768-FFF5-4394-ADB3-D773194A8CEF" }
+          args = { '-d', 'chrome' }
         },
       }
     end,
