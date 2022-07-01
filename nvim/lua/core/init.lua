@@ -1,4 +1,5 @@
 vim.opt.signcolumn = "yes"
+vim.opt.laststatus = 3
 vim.opt.cmdheight = 1
 vim.opt.number = true
 vim.opt.relativenumber = true
@@ -22,6 +23,8 @@ vim.opt.updatetime = 50
 vim.opt.mouse = "a"
 
 vim.opt.colorcolumn = "80"
+vim.opt.fillchars = { horiz = '━', horizup = '┻', horizdown = '┳', vert = '┃', vertleft = '┫', vertright = '┣',
+    verthoriz = '╋', }
 
 vim.opt.clipboard = "unnamedplus"
 vim.opt.completeopt = "menuone,noinsert,noselect"

@@ -29,7 +29,7 @@ return packer.startup(
 			end
 		}
 
-		use { "ellisonleao/gruvbox.nvim",
+		use { "bluz71/vim-nightfly-guicolors",
 			config = function()
 				require 'plugins.minh.color-scheme'
 			end
@@ -107,7 +107,6 @@ return packer.startup(
 			event = "BufWinEnter",
 			config = function()
 				require 'plugins.minh.lualine-config'
-				vim.opt.laststatus = 3
 			end,
 			requires = {
 				'arkav/lualine-lsp-progress',

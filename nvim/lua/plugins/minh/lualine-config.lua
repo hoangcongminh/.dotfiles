@@ -18,19 +18,18 @@ local lualine = require 'lualine'
 --   red = '#ec5f67'
 -- }
 
--- gruvbox colors
 local colors = {
-  -- bg = '#282828',
-  bg = 'none',
-  fg = '#EBDBB2',
-  yellow = '#d79921',
-  cyan = '#83a598',
-  green = '#98971a',
-  orange = '#fe8019',
-  violet = '#b16286',
-  magenta = '#d3869b',
-  blue = '#458588',
-  red = '#cc241d'
+  bg       = 'none',
+  fg       = '#acb4c2',
+  yellow   = '#e3d18a',
+  cyan     = '#7fdbca',
+  darkblue = '#081633',
+  green    = '#a1cd5e',
+  orange   = '#FF8800',
+  violet   = '#a9a1e1',
+  magenta  = '#c792ea',
+  blue     = '#82aaff',
+  red      = '#ff5874',
 }
 
 local conditions = {
@@ -122,8 +121,7 @@ ins_right_inactive_section {
 
 ins_left {
   function() return '▊' end,
-  -- color = { fg = colors.blue }, -- Sets highlighting of component
-  color = { fg = colors.orange }, -- Sets highlighting of component
+  color = { fg = colors.blue }, -- Sets highlighting of component
   left_padding = 0 -- We don't need space before this
 }
 
@@ -257,8 +255,7 @@ ins_right {
 
 ins_right {
   function() return '▊' end,
-  -- color = { fg = colors.blue },
-  color = { fg = colors.orange },
+  color = { fg = colors.blue },
   right_padding = 0
 }
 

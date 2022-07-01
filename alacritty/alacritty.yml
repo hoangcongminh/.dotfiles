@@ -1,5 +1,5 @@
 import:
-  - ~/.dotfiles/alacritty/gruvbox_yml
+  - ~/.dotfiles/alacritty/nightfly.yml
 
 
 cursor:
@@ -10,12 +10,12 @@ font:
   size: 11.0
   normal:
     # family: SFMono Nerd Font
-    # family: Monaco Nerd Font
-    family: FiraCode Nerd Font
+    family: Monaco Nerd Font
+    # family: FiraCode Nerd Font
   use_thin_strokes: true
 
 window:
-  opacity: 0.9
+  opacity: 0.83
   startup_mode: simplefullscreen
   decorations: None
   # padding: 

@@ -1,7 +1,12 @@
-vim.opt.background = "dark" -- or "light" for light mode
+vim.g.nightflyCursorColor = 1
+vim.g.nightflyNormalFloat = 1
+vim.g.nightflyTransparent = 1
+vim.g.nightflyUnderlineMatchParen = 1
+vim.g.nightflyWinSeparator = 2
 
 vim.cmd([[
- colorscheme gruvbox
+colorscheme nightfly
+
  hi clear CursorLine
 " custom style
  highlight Normal guibg=NONE ctermbg=NONE
@@ -12,14 +17,16 @@ vim.cmd([[
  highlight BufferTabpageFill guibg=none
 
  highlight! CursorLine gui=underline cterm=underline guibg=none
- "highlight! CursorLine guibg=#7c6f64
+ "highlight! CursorLine guibg=#1d3b53
  highlight CursorLineNr guibg=NONE 
- "highlight CursorColumn guibg=#7c6f64
+ "highlight CursorColumn guibg=#9ca1aa
+ "highlight ColorColumn guibg=#1d3b53
 
  highlight SignColumn guibg=NONE ctermbg=NONE
 
  highlight NvimTreeNormal guibg=NONE
-" highlight NvimTreeCursorline gui=underline cterm=underline guibg=NONE
+ "highlight NvimTreeCursorline guibg=#1d3b53
+
  highlight LspDiagnosticsUnderlineInformation guifg=NONE
  highlight LspDiagnosticsUnderlineError guifg=NONE
 
