@@ -1,11 +1,13 @@
-vim.g.nightflyCursorColor = 1
-vim.g.nightflyNormalFloat = 1
-vim.g.nightflyTransparent = 1
-vim.g.nightflyUnderlineMatchParen = 1
-vim.g.nightflyWinSeparator = 2
+vim.o.background = "dark"
 
 vim.cmd([[
-colorscheme nightfly
+colorscheme vscode
+" Enable transparent background
+let g:vscode_transparency = 1
+" Enable italic comment
+let g:vscode_italic_comment = 1
+" Disable nvim-tree background color
+let g:vscode_disable_nvimtree_bg = v:true
 
  hi clear CursorLine
 " custom style
@@ -17,20 +19,21 @@ colorscheme nightfly
  highlight BufferTabpageFill guibg=none
 
  highlight! CursorLine gui=underline cterm=underline guibg=none
- "highlight! CursorLine guibg=#1d3b53
+ "highlight! CursorLine guibg=grey
  highlight CursorLineNr guibg=NONE 
- "highlight CursorColumn guibg=#9ca1aa
+ "highlight CursorColumn guibg=grey
  highlight ColorColumn guibg=grey
 
  highlight SignColumn guibg=NONE ctermbg=NONE
 
  highlight NvimTreeNormal guibg=NONE
- "highlight NvimTreeCursorline guibg=#1d3b53
-
+ highlight NvimTreeCursorline gui=underline cterm=underline guibg=none
+ "highlight! CursorLine guibg=grey
  highlight LspDiagnosticsUnderlineInformation guifg=NONE
  highlight LspDiagnosticsUnderlineError guifg=NONE
 
 
  highlight Comment gui=italic
  highlight link GitSignsCurrentLineBlame Comment
+
 ]])

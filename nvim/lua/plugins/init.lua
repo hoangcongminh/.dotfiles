@@ -30,7 +30,7 @@ return packer.startup(
 			end
 		}
 
-		use { "bluz71/vim-nightfly-guicolors",
+		use { "Mofiqul/vscode.nvim",
 			config = function()
 				require 'plugins.minh.color-scheme'
 			end
