@@ -10,6 +10,16 @@ local search_dotfiles = function()
   })
 end
 
+local project_files = function()
+  local opts = {
+    previewer = false
+  } -- define here if you want to define something
+  local ok = pcall(require "telescope.builtin".git_files, opts)
+  if not ok then require "telescope.builtin".find_files({ find_command = { 'rg', '--files', '--hidden', '-g', '!.git' },
+      previewer = false })
+  end
+end
+
 require('telescope').setup {
   igfile_ignore_patterns = { "node_modules" },
   pickers = {
@@ -45,9 +55,14 @@ local keymap = vim.keymap.set
 
 local opts = { noremap = true, silent = true }
 
-keymap('n', '<space>p', function()
-  telescope_builtin.find_files({ find_command = { 'rg', '--files', '--hidden', '-g', '!.git' }, previewer = false })
-end, opts)
+-- keymap('n', '<space>P',
+--   function()
+--     telescope_builtin.find_files({ find_command = { 'rg', '--files', '--hidden', '-g', '!.git' }, previewer = false })
+--   end,
+--   opts
+-- )
+-- keymap('n', '<space>p', function() telescope_builtin.git_files({ previewer = false }) end, opts)
+keymap('n', '<leader>p', function() project_files() end, opts)
 
 keymap('n', '<space>fg', telescope_builtin.live_grep, opts)
 keymap('n', '<space>fb', telescope_builtin.buffers, opts)
