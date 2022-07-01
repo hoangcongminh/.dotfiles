@@ -267,10 +267,7 @@ return packer.startup(
 		use { "akinsho/toggleterm.nvim",
 			tag = 'v1.*',
 			config = function()
-				require("toggleterm").setup({
-					open_mapping = [[<c-\>]],
-					shade_terminals = false,
-				})
+				require 'plugins.minh.toggleterm-config'
 			end
 		}
 
