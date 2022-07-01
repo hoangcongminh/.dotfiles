@@ -14,6 +14,7 @@ local source_mapping = {
   path = "[Path]",
   nvim_lua = "[Lua]",
   treesitter = "[TS]",
+  copilot = "[Copilot]",
   cmp_tabnine = "[TN]",
   cmdline = "[CMD]",
   cmdline_history = "[History]",
@@ -100,6 +101,7 @@ cmp.setup({
     { name = "nvim_lsp_signature_help" },
     { name = "nvim_lua" },
     { name = 'treesitter' },
+    { name = 'copilot' },
     { name = 'cmp_tabnine' },
   }, {
     { name = 'buffer' },

@@ -234,6 +234,7 @@ return packer.startup(
 				{ 'saadparwaiz1/cmp_luasnip' },
 				{ 'dmitmel/cmp-cmdline-history' },
 				{ 'ray-x/cmp-treesitter' },
+				{ 'hrsh7th/cmp-copilot' },
 				{ 'onsails/lspkind-nvim' },
 			}
 		}
