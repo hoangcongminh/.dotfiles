@@ -20,7 +20,7 @@ colorscheme nightfly
  "highlight! CursorLine guibg=#1d3b53
  highlight CursorLineNr guibg=NONE 
  "highlight CursorColumn guibg=#9ca1aa
- "highlight ColorColumn guibg=#1d3b53
+ highlight ColorColumn guibg=grey
 
  highlight SignColumn guibg=NONE ctermbg=NONE
 
