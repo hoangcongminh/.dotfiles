@@ -48,9 +48,9 @@ local function map(client, bufnr)
 
   if client.resolved_capabilities.document_highlight then
     vim.cmd [[
-    hi! LspReferenceRead cterm=bold ctermbg=red guibg=#7c6f64
-    hi! LspReferenceText cterm=bold ctermbg=red guibg=#7c6f64
-    hi! LspReferenceWrite cterm=bold ctermbg=red guibg=#7c6f64
+    hi! LspReferenceRead cterm=bold ctermbg=red guibg=grey
+    hi! LspReferenceText cterm=bold ctermbg=red guibg=grey
+    hi! LspReferenceWrite cterm=bold ctermbg=red guibg=grey
     augroup lsp_document_highlight
       autocmd! * <buffer>
       autocmd! CursorHold <buffer> lua vim.lsp.buf.document_highlight()
