@@ -329,12 +329,6 @@ return packer.startup(
 		end
 		}
 		use { 'mg979/vim-visual-multi', branch = 'master' }
-		use { 'szw/vim-maximizer',
-			event = "BufWinEnter",
-			config = function()
-				vim.keymap.set('n', 'm', ":MaximizerToggle<CR>", { silent = true })
-			end
-		}
 
 		-- game??
 		use 'alec-gibson/nvim-tetris'
