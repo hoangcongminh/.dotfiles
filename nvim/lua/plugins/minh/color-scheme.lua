@@ -35,5 +35,4 @@ let g:vscode_disable_nvimtree_bg = v:true
 
  highlight Comment gui=italic
  highlight link GitSignsCurrentLineBlame Comment
-
 ]])
