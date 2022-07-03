@@ -23,6 +23,18 @@ local function on_attach(client, bufnr)
   keymap('n', '<space>fpg', ':FlutterPubGet<CR>', opts)
   keymap('n', '<space>fm', ':DartFmt<CR>', opts)
 
+  vim.api.nvim_buf_create_user_command(bufnr, 'FlutterBuildRunner', function()
+    vim.cmd 'Dispatch flutter pub get; flutter pub run build_runner build --delete-conflicting-outputs'
+  end, { force = true })
+
+  vim.api.nvim_buf_create_user_command(bufnr, 'FlutterCLean', function()
+    vim.cmd 'Dispatch flutter clean'
+  end, { force = true })
+
+  vim.api.nvim_buf_create_user_command(bufnr, 'FlutterRunRelease', function()
+    vim.cmd 'Dispatch flutter clean; flutter pub get; flutter run --release'
+  end, { force = true })
+
   require 'plugins.minh.lsp-keymaps'.map(client, bufnr)
 end
 
@@ -69,7 +81,7 @@ require("flutter-tools").setup {
           program = "${workspaceFolder}/lib/main.dart",
           -- The nvim-dap plugin populates this variable with the editor's current working directory
           cwd = "${workspaceFolder}",
-          args = { '-d', 'chrome' }
+          args = { '-d', '9FD96D5D-AC98-4D5A-8E73-802707579F42' }
         },
       }
     end,

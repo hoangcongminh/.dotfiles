@@ -310,6 +310,7 @@ return packer.startup(
 		use 'tpope/vim-rsi'
 		use 'tpope/vim-unimpaired'
 		use 'tpope/vim-eunuch'
+		use 'tpope/vim-dispatch'
 		use 'romainl/vim-cool' -- Auto hide search highlight
 		use { 'norcalli/nvim-colorizer.lua', config = function()
 			require 'colorizer'.setup()
