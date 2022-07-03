@@ -186,6 +186,7 @@ return packer.startup(
 				})
 			end,
 		}
+
 		use { 'antoinemadec/FixCursorHold.nvim', config = function()
 			vim.g.cursorhold_updatetime = 100
 		end }
@@ -200,6 +201,15 @@ return packer.startup(
 				vim.g.code_action_menu_show_diff = false
 			end,
 		})
+
+		use {
+			"folke/trouble.nvim",
+			requires = "kyazdani42/nvim-web-devicons",
+			config = function()
+				vim.keymap.set('n', '<leader>xx', "<cmd>TroubleToggle<cr>", keymap_opts)
+				require("trouble").setup {}
+			end
+		}
 
 		-- debugger
 		use {
