@@ -8,8 +8,8 @@ local has_words_before = function()
 end
 
 local source_mapping = {
-  luasnip = "[LuaSnip]",
   nvim_lsp = "[LSP]",
+  luasnip = "[LuaSnip]",
   buffer = "[Buffer]",
   path = "[Path]",
   nvim_lua = "[Lua]",
@@ -98,8 +98,8 @@ cmp.setup({
     with_text = true,
   },
   sources = cmp.config.sources({
-    { name = 'luasnip' }, -- For luasnip users.
     { name = 'nvim_lsp' },
+    { name = 'luasnip' }, -- For luasnip users.
     { name = 'buffer' },
     { name = 'path' },
     { name = "nvim_lsp_signature_help" },
