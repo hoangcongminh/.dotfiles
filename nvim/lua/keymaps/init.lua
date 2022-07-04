@@ -12,7 +12,9 @@ keymap("n", "<leader>/", ":Commentary<CR>", opts)
 keymap("v", "<leader>/", ":Commentary<CR>", opts)
 
 -- Normal --
-keymap("n", "<space-s>", ":update<CR>", opts)
+keymap("n", "<C-s>", ":write<CR>", opts)
+keymap("n", "<C-q>", ":quit<CR>", opts)
+keymap("n", "<leader>r", ":%s///g<LEFT><LEFT>", opts) -- replace
 
 -- Remap for dealing with word wrap
 keymap('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })

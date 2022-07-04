@@ -4,6 +4,7 @@ require 'nvim-treesitter.configs'.setup {
     'lua',
     'http',
     'json',
+    'json5',
     'javascript',
     'yaml',
     'bash',
