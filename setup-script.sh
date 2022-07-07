@@ -37,6 +37,9 @@ echo "Installing rust..."
 brew install rustup
 rustup-init
 
+echo "Installing flutter..."
+fvm install stable
+
 echo "Installing cask..."
 CASKS=(
     alacritty
@@ -54,5 +57,8 @@ brew install ${CASKS[@]} --cask
 
 echo "Cleaning up..."
 brew cleanup
+
+echo "Installing oh-my-zsh..."
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 echo "Macbook setup completed!"
