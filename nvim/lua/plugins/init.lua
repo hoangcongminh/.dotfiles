@@ -210,15 +210,6 @@ return packer.startup(
 			end,
 		})
 
-		use {
-			"folke/trouble.nvim",
-			requires = "kyazdani42/nvim-web-devicons",
-			config = function()
-				vim.keymap.set('n', '<leader>xx', "<cmd>TroubleToggle<cr>", keymap_opts)
-				require("trouble").setup {}
-			end
-		}
-
 		-- debugger
 		use {
 			"rcarriga/nvim-dap-ui",
