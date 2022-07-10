@@ -17,7 +17,7 @@ env:
   TERM: xterm-256color
 
 window:
-  opacity: 0.8
+  opacity: 0.93
   startup_mode: simplefullscreen
   decorations: None
   # padding: 
