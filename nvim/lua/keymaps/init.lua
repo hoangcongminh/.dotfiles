@@ -14,7 +14,7 @@ keymap("v", "<leader>/", ":Commentary<CR>", opts)
 -- Normal --
 keymap("n", "<C-s>", ":write<CR>", opts)
 keymap("n", "<C-q>", ":quit<CR>", opts)
-keymap("n", "<C-r>", ":%s///g<L, optsEFT><LEFT>", opts) -- replace
+keymap("n", "<space>r>", ":%s///g<L, optsEFT><LEFT>", opts) -- replace
 keymap("n", "<C-d>", "<C-d>zz", opts)
 keymap("n", "<C-u>", "<C-u>zz", opts)
 
