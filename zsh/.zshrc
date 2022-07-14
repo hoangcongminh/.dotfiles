@@ -42,10 +42,11 @@ export DOTFILES_DIR="$HOME/.dotfiles"
 export FZF_BASE=~/.fzf.zsh
 export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'
 
+export MACOSX_DEPLOYMENT_TARGET=10.15
+
 export EDITOR='nvim'
 
 bindkey '^n' autosuggest-accept
-
 function gpp() {
   git add .
   if [ "$1" != "" ]
