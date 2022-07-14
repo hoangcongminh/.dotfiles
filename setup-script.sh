@@ -28,6 +28,8 @@ PACKAGES=(
     lazygit
     nvm
     wget
+    libyaml
+    rust-analyzer
 )
 
 echo "Installing packages..."
