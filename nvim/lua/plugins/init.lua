@@ -416,30 +416,30 @@ return packer.startup(
 				{ 'saadparwaiz1/cmp_luasnip' },
 				{ 'dmitmel/cmp-cmdline-history' },
 				{ 'ray-x/cmp-treesitter' },
-				-- { 'hrsh7th/cmp-copilot' },
+				{ 'hrsh7th/cmp-copilot' },
 				{ 'onsails/lspkind-nvim' },
 			}
 		}
 
-		use { 'tzachar/cmp-tabnine',
-			run = './install.sh',
-			requires = 'hrsh7th/nvim-cmp',
-			config = function()
-				local tabnine = require('cmp_tabnine.config')
-				tabnine:setup({
-					max_lines = 1000;
-					max_num_results = 20;
-					sort = true;
-					run_on_every_keystroke = true;
-					snippet_placeholder = '..';
-					ignored_file_types = { -- default is not to ignore
-						-- uncomment to ignore in lua:
-						-- lua = true
-					};
-					show_prediction_strength = false;
-				})
-			end
-		}
+		-- use { 'tzachar/cmp-tabnine',
+		-- 	run = './install.sh',
+		-- 	requires = 'hrsh7th/nvim-cmp',
+		-- 	config = function()
+		-- 		local tabnine = require('cmp_tabnine.config')
+		-- 		tabnine:setup({
+		-- 			max_lines = 1000;
+		-- 			max_num_results = 20;
+		-- 			sort = true;
+		-- 			run_on_every_keystroke = true;
+		-- 			snippet_placeholder = '..';
+		-- 			ignored_file_types = { -- default is not to ignore
+		-- 				-- uncomment to ignore in lua:
+		-- 				-- lua = true
+		-- 			};
+		-- 			show_prediction_strength = false;
+		-- 		})
+		-- 	end
+		-- }
 
 		use { 'L3MON4D3/LuaSnip',
 			config = function()
@@ -457,13 +457,13 @@ return packer.startup(
 		}
 
 		-- copilot
-		-- use {
-		-- 	'github/copilot.vim',
-		-- 	event = "BufWinEnter",
-		-- 	config = function()
-		-- 		require 'plugins.minh.copilot'
-		-- 	end
-		-- }
+		use {
+			'github/copilot.vim',
+			event = "BufWinEnter",
+			config = function()
+				require 'plugins.minh.copilot'
+			end
+		}
 
 		-- other
 		use 'mtdl9/vim-log-highlighting'
