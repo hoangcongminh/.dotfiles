@@ -116,7 +116,43 @@ return packer.startup(
 			'kyazdani42/nvim-tree.lua',
 			requires = 'kyazdani42/nvim-web-devicons',
 			config = function()
-				require 'plugins.minh.nvimtree'
+
+				vim.keymap.set('n', '<leader>b', ":NvimTreeToggle<CR>", keymap_opts)
+				vim.keymap.set('n', '<leader>n', ":NvimTreeFindFile<CR>", keymap_opts)
+				vim.keymap.set('n', '<leader>r', ":NvimTreeRefresh<CR>", keymap_opts)
+				require("nvim-tree").setup({
+					sort_by = "case_sensitive",
+					view = {
+						adaptive_size = true,
+						mappings = {
+							list = {
+								{ key = "u", action = "dir_up" },
+							},
+						},
+					},
+					renderer = {
+						add_trailing = true,
+						group_empty = true,
+						highlight_git = true,
+						full_name = true,
+						-- indent_markers = {
+						-- 	enable = true,
+						-- },
+						symlink_destination = true,
+					},
+					diagnostics = {
+						enable = true,
+						show_on_dirs = true,
+					},
+					filters = {
+						dotfiles = true,
+					},
+					actions = {
+						open_file = {
+							quit_on_open = true,
+						},
+					}
+				})
 			end,
 		}
 
@@ -476,9 +512,11 @@ return packer.startup(
 		use 'tpope/vim-eunuch'
 		use 'tpope/vim-dispatch'
 		use 'romainl/vim-cool' -- Auto hide search highlight
+
 		use { 'norcalli/nvim-colorizer.lua', config = function()
 			require 'colorizer'.setup()
 		end }
+
 		use { 'windwp/nvim-autopairs', config = function()
 			require('nvim-autopairs').setup({
 				disable_filetype = { "TelescopePrompt", "vim" },
@@ -491,6 +529,7 @@ return packer.startup(
 			-- cmp_autopairs.lisp[#cmp_autopairs.lisp + 1] = "racket"
 		end
 		}
+
 		use { 'mg979/vim-visual-multi', branch = 'master' }
 
 		-- game??
