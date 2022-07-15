@@ -40,3 +40,6 @@ vim.api.nvim_create_autocmd('TextYankPost', {
     group = highlight_group,
     pattern = '*',
 })
+
+-- Set colorscheme
+require 'plugins.minh.onedark-config'
