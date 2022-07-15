@@ -63,7 +63,7 @@ local opts = { noremap = true, silent = true }
 -- )
 -- keymap('n', '<space>p', function() telescope_builtin.git_files({ previewer = false }) end, opts)
 keymap('n', '<leader>p', function() project_files() end, opts)
-keymap('n', '<leader>pf',
+keymap('n', '<leader>ff',
   function() require "telescope.builtin".find_files({ find_command = { 'rg', '--files', '--hidden', '-g', '!.git' },
       previewer = false })
   end, opts)
