@@ -347,7 +347,7 @@ return packer.startup(
 				{ 'saadparwaiz1/cmp_luasnip' },
 				{ 'dmitmel/cmp-cmdline-history' },
 				{ 'ray-x/cmp-treesitter' },
-				{ 'hrsh7th/cmp-copilot' },
+				-- { 'hrsh7th/cmp-copilot' },
 				{ 'onsails/lspkind-nvim' },
 			}
 		}
@@ -368,13 +368,12 @@ return packer.startup(
 		}
 
 		-- copilot
-		use {
-			'github/copilot.vim',
-			event = "BufWinEnter",
-			config = function()
-				require 'plugins.minh.copilot'
-			end
-		}
+		-- use {
+		-- 	'github/copilot.vim',
+		-- 	config = function()
+		-- 		require 'plugins.minh.copilot'
+		-- 	end
+		-- }
 
 		-- other
 		use 'mtdl9/vim-log-highlighting'
