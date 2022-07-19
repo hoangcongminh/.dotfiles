@@ -57,12 +57,16 @@ return packer.startup(
 			'nvim-telescope/telescope.nvim',
 			requires = {
 				'nvim-lua/plenary.nvim',
-				{
-					'nvim-telescope/telescope-fzf-native.nvim', run = 'make', after = 'telescope.nvim',
+				{ 'nvim-telescope/telescope-fzf-native.nvim', run = 'make', after =
+				'telescope.nvim', config = function()
+					require('telescope').load_extension('fzf')
+				end
+				},
+				{ 'nvim-telescope/telescope-ui-select.nvim', after = 'telescope.nvim',
 					config = function()
-						require('telescope').load_extension('fzf')
+						require('telescope').load_extension('ui-select')
 					end
-				}
+				},
 			},
 			event = "BufEnter",
 			config = function()
@@ -260,7 +264,7 @@ return packer.startup(
 		}
 
 		use { 'antoinemadec/FixCursorHold.nvim', config = function()
-			vim.g.cursorhold_updatetime = 100
+			vim.g.cursorhold_updatetime = 1000
 		end }
 
 		use({
@@ -273,12 +277,6 @@ return packer.startup(
 				vim.g.code_action_menu_show_diff = false
 			end,
 		})
-
-
-		use { 'stevearc/dressing.nvim', config = function()
-			require('dressing').setup()
-		end,
-		}
 
 		-- debugger
 		use {
@@ -293,6 +291,7 @@ return packer.startup(
 		-- flutter
 		use {
 			"akinsho/flutter-tools.nvim",
+			ft = { 'flutter', 'dart', 'yaml' },
 			requires = {
 				"nvim-lua/plenary.nvim",
 				'Nash0x7E2/awesome-flutter-snippets',
@@ -401,7 +400,10 @@ return packer.startup(
 		use { 'mg979/vim-visual-multi', branch = 'master' }
 
 		-- game??
-		use 'alec-gibson/nvim-tetris'
+		use {
+			'alec-gibson/nvim-tetris',
+			cmd = "Tetris",
+		}
 
 		-- Automatically set up your configuration after cloning packer.nvim
 		-- Put this at the end after all plugins

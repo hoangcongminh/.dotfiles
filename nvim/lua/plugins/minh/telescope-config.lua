@@ -41,6 +41,9 @@ require('telescope').setup {
     },
   },
   extensions = {
+    ["ui-select"] = {
+      require("telescope.themes").get_cursor()
+    },
     fzf = {
       fuzzy = true, -- false will only do exact matching
       override_generic_sorter = false, -- override the generic sorter
@@ -49,6 +52,7 @@ require('telescope').setup {
     }
   }
 }
+
 local dropdown_theme = require('telescope.themes').get_dropdown();
 local telescope_builtin = require 'telescope.builtin'
 local keymap = vim.keymap.set
