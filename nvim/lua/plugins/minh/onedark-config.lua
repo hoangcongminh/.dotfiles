@@ -25,6 +25,7 @@ require('onedark').setup {
   colors = {}, -- Override default colors
   highlights = {
     Cursorline = { bg = 'none', fmt = 'underline' },
+    ColorColumn = { bg = 'grey' }
   }, -- Override highlight groups
 
   -- Plugins Config --
