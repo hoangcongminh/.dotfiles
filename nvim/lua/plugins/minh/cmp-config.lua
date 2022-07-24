@@ -15,6 +15,7 @@ local source_mapping = {
   nvim_lua = "[Lua]",
   treesitter = "[TS]",
   -- copilot = "[Copilot]",
+  tmux = "[Tmux]",
   cmdline = "[CMD]",
   cmdline_history = "[History]",
 }
@@ -95,6 +96,15 @@ cmp.setup({
     { name = "nvim_lsp_signature_help" },
     { name = "nvim_lua" },
     { name = 'treesitter' },
+    {
+      name = 'tmux',
+      option = {
+        all_panes = false,
+        label = '[tmux]',
+        trigger_characters = { '.' },
+        trigger_characters_ft = {} -- { filetype = { '.' } }
+      }
+    }
     -- { name = 'copilot' },
     -- { name = 'cmp_tabnine' },
   }, {

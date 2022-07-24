@@ -347,6 +347,7 @@ return packer.startup(
 				{ 'dmitmel/cmp-cmdline-history' },
 				{ 'ray-x/cmp-treesitter' },
 				-- { 'hrsh7th/cmp-copilot' },
+				{ 'andersevenrud/cmp-tmux' },
 				{ 'onsails/lspkind-nvim' },
 			}
 		}
