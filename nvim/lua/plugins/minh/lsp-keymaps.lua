@@ -1,5 +1,4 @@
 local function map(client, bufnr)
-
   -- Enable completion triggered by <c-x><c-o>
   vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 
@@ -62,6 +61,7 @@ local function map(client, bufnr)
 
   -- Fotmat on save
   vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.formatting_sync()]]
+  require('nvim-lsp-setup.utils').format_on_save(client)
 end
 
 vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
