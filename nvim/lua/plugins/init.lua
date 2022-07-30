@@ -250,6 +250,19 @@ return packer.startup(
 				require 'plugins.minh.lsp-config'
 			end
 		}
+
+		use({
+			"glepnir/lspsaga.nvim",
+			branch = "main",
+			config = function()
+				local saga = require("lspsaga")
+
+				saga.init_lsp_saga({
+					-- your configuration
+				})
+			end,
+		})
+
 		use {
 			'ray-x/lsp_signature.nvim',
 			config = function()
