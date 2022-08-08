@@ -36,6 +36,7 @@ return packer.startup(
 		--colorscheme
 		use { "navarasu/onedark.nvim" }
 		use { "Mofiqul/vscode.nvim" }
+		use { "bluz71/vim-nightfly-guicolors" }
 
 		-- treesitter
 		use {

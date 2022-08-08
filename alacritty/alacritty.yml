@@ -1,5 +1,5 @@
 import:
-  - ~/.dotfiles/alacritty/onedark.yml
+  - ~/.dotfiles/alacritty/nightfly.yml
 
 cursor:
   style:
