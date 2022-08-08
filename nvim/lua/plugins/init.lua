@@ -244,7 +244,6 @@ return packer.startup(
 				'neovim/nvim-lspconfig',
 				'williamboman/mason.nvim',
 				'williamboman/mason-lspconfig.nvim',
-				'williamboman/nvim-lsp-installer',
 			},
 			config = function()
 				require 'plugins.minh.lsp-config'
