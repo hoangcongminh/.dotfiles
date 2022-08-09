@@ -1,8 +1,14 @@
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+local rt = require("rust-tools")
 
 local function on_attach(client, bufnr)
   local opts = { noremap = true, silent = true }
   local keymap = vim.keymap.set
+
+  -- Hover actions
+  vim.keymap.set("n", "<C-space>", rt.hover_actions.hover_actions, { buffer = bufnr })
+  -- Code action groups
+  vim.keymap.set("n", "<Leader>a", rt.code_action_group.code_action_group, { buffer = bufnr })
 
   keymap("n", "<space>fa", ':RustRun<CR>', opts)
 
@@ -11,17 +17,6 @@ end
 
 local opts = {
   tools = { -- rust-tools options
-    -- automatically set inlay hints (type hints)
-    -- There is an issue due to which the hints are not applied on the first
-    -- opened file. For now, write to the file to trigger a reapplication of
-    -- the hints or just run :RustSetInlayHints.
-    -- default: true
-    autoSetHints = true,
-
-    -- whether to show hover actions inside the hover window
-    -- this overrides the default hover handler so something like lspsaga.nvim's hover would be overriden by this
-    -- default: true
-    hover_with_actions = true,
 
     -- how to execute terminal commands
     -- options right now: termopen / quickfix
@@ -33,24 +28,16 @@ local opts = {
 
     -- These apply to the default RustSetInlayHints command
     inlay_hints = {
+      -- automatically set inlay hints (type hints)
+      -- default: true
+      auto = true,
 
       -- Only show inlay hints for the current line
       only_current_line = false,
 
-      -- Event which triggers a refersh of the inlay hints.
-      -- You can make this "CursorMoved" or "CursorMoved,CursorMovedI" but
-      -- not that this may cause higher CPU usage.
-      -- This option is only respected when only_current_line and
-      -- autoSetHints both are true.
-      only_current_line_autocmd = "CursorHold",
-
       -- whether to show parameter hints with the inlay hints or not
       -- default: true
       show_parameter_hints = true,
-
-      -- whether to show variable name before type hints with the inlay hints or not
-      -- default: false
-      show_variable_name = false,
 
       -- prefix for parameter hints
       -- default: "<-"
@@ -78,6 +65,7 @@ local opts = {
 
     -- options same as lsp hover / vim.lsp.util.open_floating_preview()
     hover_actions = {
+
       -- the border that is used for the hover window
       -- see vim.api.nvim_open_win()
       border = {
@@ -178,7 +166,7 @@ local opts = {
   -- these override the defaults set by rust-tools.nvim
   -- see https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#rust_analyzer
   server = {
-    capabilities = capabilities,
+    apabilities = capabilities,
     on_attach = on_attach,
     -- standalone file support
     -- setting it to false may improve startup time
