@@ -19,7 +19,7 @@ local function map(client, bufnr)
   keymap('n', '<space>a', vim.diagnostic.setqflist, opts)
   keymap('n', 'gD', vim.lsp.buf.declaration, opts)
   keymap('n', 'gd', vim.lsp.buf.definition, opts)
-  keymap('n', 'K', vim.lsp.buf.hover, opts)
+  -- keymap('n', 'K', vim.lsp.buf.hover, opts)
   keymap('n', 'gi', vim.lsp.buf.implementation, opts)
   keymap('n', '<C-k>', vim.lsp.buf.signature_help, opts)
   keymap('n', '<space>wa', vim.lsp.buf.add_workspace_folder, opts)
@@ -33,11 +33,22 @@ local function map(client, bufnr)
   keymap('n', "<space>ws", vim.lsp.buf.workspace_symbol, opts)
   keymap('n', "<space>ds", vim.lsp.buf.document_symbol, opts)
   keymap('n', '<space>wl', vim.lsp.buf.list_workspace_folders, opts)
-  keymap('n', "<space>rn", vim.lsp.buf.rename, opts)
+  -- keymap('n', "<space>rn", vim.lsp.buf.rename, opts)
   keymap('n', '<space>ca', vim.lsp.buf.code_action, opts)
   keymap('v', '<space>ca', vim.lsp.buf.range_code_action, opts)
   keymap('n', "<space>fm", vim.lsp.buf.formatting, opts)
-  keymap('n', '<space>aw', ':CodeActionMenu<CR>', opts)
+
+  local action = require("lspsaga.action")
+  keymap("n", "<leader>aw", "<cmd>Lspsaga code_action<CR>", opts)
+  keymap("v", "<leader>aw", "<cmd><C-U>Lspsaga range_code_action<CR>", opts)
+  keymap("n", "K", "<cmd>Lspsaga hover_doc<CR>", opts)
+  -- scroll down hover doc or scroll in definition preview
+  keymap("n", "<C-f>", function() action.smart_scroll_with_saga(1) end, opts)
+  -- scroll up hover doc
+  keymap("n", "<C-b>", function() action.smart_scroll_with_saga(-1) end, opts)
+  keymap("n", "gs", "<Cmd>Lspsaga signature_help<CR>", opts)
+  keymap("n", "<leader>rn", "<cmd>Lspsaga rename<CR>", opts)
+  keymap("n", "<leader>gd", "<cmd>Lspsaga preview_definition<CR>", opts)
 
   if client.server_capabilities.document_highlight then
     vim.cmd 'autocmd CursorHold  <buffer> lua vim.lsp.buf.document_highlight'

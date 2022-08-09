@@ -282,17 +282,6 @@ return packer.startup(
 			vim.g.cursorhold_updatetime = 1000
 		end }
 
-		use({
-			'weilbith/nvim-code-action-menu',
-			event = "BufEnter",
-			cmd = 'CodeActionMenu',
-			config = function()
-				vim.g.code_action_menu_window_border = 'none'
-				vim.g.code_action_menu_show_details = false
-				vim.g.code_action_menu_show_diff = false
-			end,
-		})
-
 		-- debugger
 		use {
 			"rcarriga/nvim-dap-ui",
