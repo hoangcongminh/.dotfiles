@@ -22,11 +22,12 @@ vim.opt.showmode = false
 vim.opt.updatetime = 50
 vim.opt.mouse = "a"
 
-vim.opt.colorcolumn = "80"
+-- vim.opt.colorcolumn = "80"
 vim.opt.fillchars = { horiz = '━', horizup = '┻', horizdown = '┳', vert = '┃', vertleft = '┫', vertright = '┣',
     verthoriz = '╋', }
 
-vim.opt.clipboard = "unnamedplus"
+-- vim.opt.clipboard = "unnamedplus"
+vim.opt.clipboard:append { 'unnamedplus' }
 vim.opt.completeopt = "menuone,noinsert,noselect"
 
 vim.opt.shortmess:append("c")
@@ -42,4 +43,4 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 })
 
 -- Set colorscheme
-require 'plugins.minh.nightfly-config'
+require 'plugins.minh.vscode-config'
