@@ -1,3 +1,10 @@
+-- Unset relativenumber in insert mode
+vim.cmd("au InsertEnter * set norelativenumber")
+vim.cmd("au InsertLeave * set relativenumber")
+
+-- Unset paste mode when leaving insert mode
+vim.cmd("au InsertLeave * set nopaste")
+
 vim.opt.signcolumn = "yes"
 vim.opt.laststatus = 3
 vim.opt.cmdheight = 1
