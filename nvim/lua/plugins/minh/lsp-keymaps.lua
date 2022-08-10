@@ -71,7 +71,7 @@ local function map(client, bufnr)
   end
 
   -- Fotmat on save
-  vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.formatting_sync()]]
+  -- vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.formatting_sync()]]
   require('nvim-lsp-setup.utils').format_on_save(client)
 end
 
