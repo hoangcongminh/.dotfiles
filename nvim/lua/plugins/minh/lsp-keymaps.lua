@@ -39,6 +39,7 @@ local function map(client, bufnr)
   keymap('n', "<space>fm", vim.lsp.buf.formatting, opts)
 
   local action = require("lspsaga.action")
+  keymap("n", "<leader>gh", "<cmd>Lspsaga lsp_finder<CR>", opts)
   keymap("n", "<leader>aw", "<cmd>Lspsaga code_action<CR>", opts)
   keymap("v", "<leader>aw", "<cmd><C-U>Lspsaga range_code_action<CR>", opts)
   keymap("n", "K", "<cmd>Lspsaga hover_doc<CR>", opts)
