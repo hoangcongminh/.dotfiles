@@ -358,8 +358,10 @@ return packer.startup(
 				-- { 'hrsh7th/cmp-copilot' },
 				{ 'andersevenrud/cmp-tmux' },
 				{ 'onsails/lspkind-nvim' },
+				{ 'tzachar/cmp-tabnine', run = './install.sh', requires = 'hrsh7th/nvim-cmp' }
 			}
 		}
+
 
 		use { 'L3MON4D3/LuaSnip',
 			config = function()
@@ -379,6 +381,7 @@ return packer.startup(
 		-- copilot
 		-- use {
 		-- 	'github/copilot.vim',
+		-- 	event = "BufWinEnter",
 		-- 	config = function()
 		-- 		require 'plugins.minh.copilot'
 		-- 	end
