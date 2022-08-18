@@ -17,9 +17,9 @@ packer.init({
 	git = {
 		clone_timeout = 1000, -- Timeout, in seconds, for git clones
 	},
-	luarocks = {
-		python_cmd = 'python3' -- Set the python command to use for running hererocks
-	},
+	-- luarocks = {
+	-- 	python_cmd = 'python3' -- Set the python command to use for running hererocks
+	-- },
 })
 
 -- Plugins configurations
@@ -37,6 +37,7 @@ return packer.startup(
 		use { "navarasu/onedark.nvim" }
 		use { "Mofiqul/vscode.nvim" }
 		use { "bluz71/vim-nightfly-guicolors" }
+		use { "catppuccin/nvim", as = "catppuccin" }
 
 		-- treesitter
 		use {
@@ -314,20 +315,20 @@ return packer.startup(
 
 		use { 'eliasreis54/vim-bloc-plugin' }
 
-		use {
-			'akinsho/pubspec-assist.nvim',
-			requires = 'plenary.nvim',
-			rocks = {
-				{
-					'lyaml',
-					server = 'http://rocks.moonscript.org',
-					env = { YAML_DIR = '/usr/local/Cellar/libyaml/0.2.5/' },
-				},
-			},
-			config = function()
-				require('pubspec-assist').setup()
-			end,
-		}
+		-- use {
+		-- 	'akinsho/pubspec-assist.nvim',
+		-- 	requires = 'plenary.nvim',
+		-- 	rocks = {
+		-- 		{
+		-- 			'lyaml',
+		-- 			server = 'http://rocks.moonscript.org',
+		-- 			env = { YAML_DIR = '/usr/local/Cellar/libyaml/0.2.5/' },
+		-- 		},
+		-- 	},
+		-- 	config = function()
+		-- 		require('pubspec-assist').setup()
+		-- 	end,
+		-- }
 		--rust
 		use { 'simrat39/rust-tools.nvim',
 			require = {
