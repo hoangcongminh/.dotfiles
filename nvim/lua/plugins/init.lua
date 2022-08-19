@@ -15,7 +15,7 @@ vim.keymap.set('n', '<leader>cl', "<cmd>PackerClean<cr>", keymap_opts)
 local packer = require('packer')
 packer.init({
 	git = {
-		clone_timeout = 1000, -- Timeout, in seconds, for git clones
+		clone_timeout = 600, -- Timeout, in seconds, for git clones
 	},
 	-- luarocks = {
 	-- 	python_cmd = 'python3' -- Set the python command to use for running hererocks
