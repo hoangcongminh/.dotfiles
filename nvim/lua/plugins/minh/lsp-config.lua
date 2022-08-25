@@ -5,7 +5,6 @@ require('nvim-lsp-setup').setup({
 	capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities()),
 	servers = {
 		bashls = {},
-		diagnosticls = {},
 		pyright = {},
 		yamlls = {},
 		tsserver = {},
