@@ -23,6 +23,11 @@ local function on_attach(client, bufnr)
   keymap('n', '<space>fpg', ':FlutterPubGet<CR>', opts)
   keymap('n', '<space>fm', ':DartFmt<CR>', opts)
 
+  vim.api.nvim_buf_create_user_command(bufnr, 'FlutterOpenLog', function()
+    vim.cmd 'vsplit'
+    vim.cmd 'buffer __FLUTTER_DEV_LOG__'
+  end, { force = true })
+
   vim.api.nvim_buf_create_user_command(bufnr, 'FlutterBuildRunner', function()
     vim.cmd 'Dispatch flutter pub get; flutter pub run build_runner build --delete-conflicting-outputs'
   end, { force = true })
