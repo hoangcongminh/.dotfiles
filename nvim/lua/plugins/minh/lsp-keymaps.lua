@@ -38,15 +38,10 @@ local function map(client, bufnr)
   keymap('v', '<space>ca', vim.lsp.buf.range_code_action, opts)
   keymap('n', "<space>fm", vim.lsp.buf.formatting, opts)
 
-  local action = require("lspsaga.action")
   keymap("n", "<leader>gh", "<cmd>Lspsaga lsp_finder<CR>", opts)
   keymap("n", "<leader>aw", "<cmd>Lspsaga code_action<CR>", opts)
   keymap("v", "<leader>aw", "<cmd><C-U>Lspsaga range_code_action<CR>", opts)
   keymap("n", "K", "<cmd>Lspsaga hover_doc<CR>", opts)
-  -- scroll down hover doc or scroll in definition preview
-  keymap("n", "<C-f>", function() action.smart_scroll_with_saga(1) end, opts)
-  -- scroll up hover doc
-  keymap("n", "<C-b>", function() action.smart_scroll_with_saga(-1) end, opts)
   keymap("n", "gs", "<Cmd>Lspsaga signature_help<CR>", opts)
   keymap("n", "<leader>rn", "<cmd>Lspsaga rename<CR>", opts)
   keymap("n", "<leader>gd", "<cmd>Lspsaga preview_definition<CR>", opts)
