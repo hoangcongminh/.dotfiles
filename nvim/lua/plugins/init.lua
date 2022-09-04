@@ -301,12 +301,14 @@ return packer.startup(
 		-- flutter
 		use {
 			"akinsho/flutter-tools.nvim",
+			commit = '6b13345dd7ffe3b0a08536b8fadfa288af137616',
 			ft = { 'flutter', 'dart', 'yaml' },
 			requires = {
 				"nvim-lua/plenary.nvim",
 				'Nash0x7E2/awesome-flutter-snippets',
 				'hrsh7th/cmp-nvim-lsp',
-				'dart-lang/dart-vim-plugin'
+				'dart-lang/dart-vim-plugin',
+				'github/copilot.vim',
 			},
 			config = function()
 				require 'plugins.minh.flutter-tools'
@@ -356,7 +358,7 @@ return packer.startup(
 				{ 'saadparwaiz1/cmp_luasnip' },
 				{ 'dmitmel/cmp-cmdline-history' },
 				{ 'ray-x/cmp-treesitter' },
-				-- { 'hrsh7th/cmp-copilot' },
+				{ 'hrsh7th/cmp-copilot' },
 				{ 'andersevenrud/cmp-tmux' },
 				{ 'onsails/lspkind-nvim' },
 				{ 'tzachar/cmp-tabnine', run = './install.sh', requires = 'hrsh7th/nvim-cmp' }
@@ -380,13 +382,13 @@ return packer.startup(
 		}
 
 		-- copilot
-		-- use {
-		-- 	'github/copilot.vim',
-		-- 	event = "BufWinEnter",
-		-- 	config = function()
-		-- 		require 'plugins.minh.copilot'
-		-- 	end
-		-- }
+		use {
+			'github/copilot.vim',
+			event = "BufWinEnter",
+			config = function()
+				require 'plugins.minh.copilot'
+			end
+		}
 
 		-- other
 		use 'mtdl9/vim-log-highlighting'
