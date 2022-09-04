@@ -17,9 +17,10 @@ packer.init({
 	git = {
 		clone_timeout = 600, -- Timeout, in seconds, for git clones
 	},
-	-- luarocks = {
-	-- 	python_cmd = 'python3' -- Set the python command to use for running hererocks
-	-- },
+	max_jobs = 10,
+	luarocks = {
+		python_cmd = 'python3' -- Set the python command to use for running hererocks
+	},
 })
 
 -- Plugins configurations
@@ -317,20 +318,21 @@ return packer.startup(
 
 		use { 'eliasreis54/vim-bloc-plugin' }
 
-		-- use {
-		-- 	'akinsho/pubspec-assist.nvim',
-		-- 	requires = 'plenary.nvim',
-		-- 	rocks = {
-		-- 		{
-		-- 			'lyaml',
-		-- 			server = 'http://rocks.moonscript.org',
-		-- 			env = { YAML_DIR = '/usr/local/Cellar/libyaml/0.2.5/' },
-		-- 		},
-		-- 	},
-		-- 	config = function()
-		-- 		require('pubspec-assist').setup()
-		-- 	end,
-		-- }
+		use {
+			'akinsho/pubspec-assist.nvim',
+			requires = 'plenary.nvim',
+			rocks = {
+				{
+					'lyaml',
+					server = 'http://rocks.moonscript.org',
+					env = { YAML_DIR = '/usr/local/Cellar/libyaml/0.2.5/' },
+				},
+			},
+			config = function()
+				require('pubspec-assist').setup()
+			end,
+		}
+
 		--rust
 		use { 'simrat39/rust-tools.nvim',
 			require = {
