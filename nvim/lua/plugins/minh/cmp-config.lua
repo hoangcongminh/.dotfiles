@@ -15,7 +15,7 @@ local source_mapping = {
   nvim_lua = "[Lua]",
   treesitter = "[TS]",
   copilot = "[Copilot]",
-  cmp_tabnine = "[TN]",
+  -- cmp_tabnine = "[TN]",
   tmux = "[Tmux]",
   cmdline = "[CMD]",
   cmdline_history = "[History]",
@@ -115,7 +115,7 @@ cmp.setup({
       }
     },
     { name = 'copilot' },
-    { name = 'cmp_tabnine' },
+    -- { name = 'cmp_tabnine' },
   }, {
     { name = 'buffer' },
   })

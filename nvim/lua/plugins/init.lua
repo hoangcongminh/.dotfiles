@@ -363,7 +363,7 @@ return packer.startup(
 				{ 'hrsh7th/cmp-copilot' },
 				{ 'andersevenrud/cmp-tmux' },
 				{ 'onsails/lspkind-nvim' },
-				{ 'tzachar/cmp-tabnine', run = './install.sh', requires = 'hrsh7th/nvim-cmp' }
+				-- { 'tzachar/cmp-tabnine', run = './install.sh', requires = 'hrsh7th/nvim-cmp' }
 			}
 		}
 
