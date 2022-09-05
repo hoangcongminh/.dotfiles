@@ -1,5 +1,5 @@
 import:
-  - ~/.dotfiles/alacritty/onedark.yml
+  - ~/.dotfiles/alacritty/tokyo_night.yml
 
 cursor:
   style:
@@ -17,7 +17,7 @@ env:
   TERM: xterm-256color
 
 window:
-  opacity: 0.83
+  opacity: 0.9
   # startup_mode: simplefullscreen
   startup_mode: maximized 
   decorations: None

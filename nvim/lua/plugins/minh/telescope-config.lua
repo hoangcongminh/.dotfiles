@@ -11,10 +11,10 @@ local search_dotfiles = function()
 end
 
 local project_files = function()
-  local opts = {
-    previewer = false
-  } -- define here if you want to define something
-  local ok = pcall(require "telescope.builtin".git_files, opts)
+  -- local opts = {
+  --   previewer = false
+  -- } -- define here if you want to define something
+  local ok = pcall(require "telescope.builtin".git_files)
   if not ok then require "telescope.builtin".find_files({ find_command = { 'rg', '--files', '--hidden', '-g', '!.git' },
       previewer = false })
   end

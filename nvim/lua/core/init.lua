@@ -50,4 +50,4 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 })
 
 -- Set colorscheme
-require 'plugins.minh.catppuccin-config'
+require 'plugins.minh.tokyo-night-config'

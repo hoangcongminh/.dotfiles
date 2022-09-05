@@ -39,6 +39,7 @@ return packer.startup(
 		use { "Mofiqul/vscode.nvim" }
 		use { "bluz71/vim-nightfly-guicolors" }
 		use { "catppuccin/nvim", as = "catppuccin" }
+		use { 'folke/tokyonight.nvim' }
 
 		-- treesitter
 		use {
@@ -113,10 +114,10 @@ return packer.startup(
 			'kyazdani42/nvim-tree.lua',
 			requires = 'kyazdani42/nvim-web-devicons',
 			config = function()
-
 				vim.keymap.set('n', '<leader>b', ":NvimTreeToggle<CR>", keymap_opts)
 				vim.keymap.set('n', '<leader>n', ":NvimTreeFindFile<CR>", keymap_opts)
 				vim.keymap.set('n', '<leader>r', ":NvimTreeRefresh<CR>", keymap_opts)
+
 				require("nvim-tree").setup({
 					sort_by = "case_sensitive",
 					view = {
