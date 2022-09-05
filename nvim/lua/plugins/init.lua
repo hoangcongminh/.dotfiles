@@ -259,6 +259,7 @@ return packer.startup(
 			config = function()
 				local saga = require("lspsaga")
 				saga.init_lsp_saga({
+					border_style = "none",
 					code_action_lightbulb = {
 						enable = false,
 						sign = true,
