@@ -30,6 +30,7 @@ PACKAGES=(
     wget
     libyaml
     rust-analyzer
+    fish
 )
 
 echo "Installing packages..."

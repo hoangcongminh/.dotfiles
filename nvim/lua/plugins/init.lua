@@ -311,7 +311,6 @@ return packer.startup(
 				'Nash0x7E2/awesome-flutter-snippets',
 				'hrsh7th/cmp-nvim-lsp',
 				'dart-lang/dart-vim-plugin',
-				'github/copilot.vim',
 			},
 			config = function()
 				require 'plugins.minh.flutter-tools'
