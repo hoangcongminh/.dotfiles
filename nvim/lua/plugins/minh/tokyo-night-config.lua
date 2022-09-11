@@ -21,22 +21,7 @@ require("tokyonight").setup({
   dim_inactive = false, -- dims inactive windows
   lualine_bold = false, -- When `true`, section headers in the lualine theme will be bold                                                                                                  |
 
-  --- You can override specific color groups to use other groups or a hex color                                                                                       |
-  --- fucntion will be called with a ColorScheme table
-  ---@param colors ColorScheme
-  -- on_colors = function(colors)
-  -- colors.hint = colors.orange
-  -- colors.error = "#ff0000"
-  -- end,
-
-
-  --- You can override specific highlights to use other groups or a hex color                                                                                       |
-  --- fucntion will be called with a Highlights and ColorScheme table
-  ---@param highlights Highlights
-  ---@param colors ColorScheme
-  --jkjkjk
   on_highlights = function(hl, c)
-    local prompt = "#2d3149"
     hl.TelescopeNormal = {
       bg = c.transparent,
       fg = c.transparent,
@@ -48,22 +33,6 @@ require("tokyonight").setup({
     hl.TelescopePromptNormal = {
       bg = c.transparent,
     }
-    -- hl.TelescopePromptBorder = {
-    --   bg = prompt,
-    --   fg = prompt,
-    -- }
-    -- hl.TelescopePromptTitle = {
-    --   bg = prompt,
-    --   fg = prompt,
-    -- }
-    -- hl.TelescopePreviewTitle = {
-    --   bg = c.bg_dark,
-    --   fg = c.bg_dark,
-    -- }
-    -- hl.TelescopeResultsTitle = {
-    --   bg = c.bg_dark,
-    --   fg = c.bg_dark,
-    -- }
   end,
 })
 

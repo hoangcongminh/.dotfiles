@@ -44,9 +44,6 @@ return packer.startup(
 		-- treesitter
 		use {
 			'hoangcongminh/nvim-treesitter',
-			config = function()
-				require 'plugins.minh.treesitter'
-			end,
 			run = ':TSUpdate',
 			event = "BufWinEnter",
 			requires = {
@@ -54,6 +51,9 @@ return packer.startup(
 				{ 'nvim-treesitter/nvim-treesitter-textobjects', after = 'nvim-treesitter' },
 				{ 'p00f/nvim-ts-rainbow', after = 'nvim-treesitter' },
 			},
+			config = function()
+				require 'plugins.minh.treesitter'
+			end
 		}
 
 		-- telescope
@@ -75,7 +75,7 @@ return packer.startup(
 			event = "BufEnter",
 			config = function()
 				require 'plugins.minh.telescope-config'
-			end,
+			end
 		}
 
 		-- ThePrimeagen harpoon
@@ -84,14 +84,9 @@ return packer.startup(
 			requires = {
 				'nvim-lua/plenary.nvim'
 			},
+			event = "BufEnter",
 			config = function()
-				vim.keymap.set('n', "<leader>ha", function() require("harpoon.mark").add_file() end, keymap_opts)
-				vim.keymap.set('n', '<leader>he', function() require("harpoon.ui").toggle_quick_menu() end, keymap_opts)
-
-				vim.keymap.set('n', '<leader>h', function() require("harpoon.ui").nav_file(1) end, keymap_opts)
-				vim.keymap.set('n', '<leader>j', function() require("harpoon.ui").nav_file(2) end, keymap_opts)
-				vim.keymap.set('n', '<leader>k', function() require("harpoon.ui").nav_file(3) end, keymap_opts)
-				vim.keymap.set('n', '<leader>l', function() require("harpoon.ui").nav_file(4) end, keymap_opts)
+				require 'plugins.minh.harpoon-config'
 			end,
 		}
 
@@ -101,11 +96,7 @@ return packer.startup(
 			branch = 'v1', -- optional but strongly recommended
 			event = "BufEnter",
 			config = function()
-				require 'hop'.setup(
-					{ keys = 'etovxqpdygfblzhckisuran' }
-				)
-				vim.keymap.set('n', 'fw', "<cmd>lua require'hop'.hint_words()<cr>", { silent = true })
-				vim.keymap.set('n', 'fl', "<cmd>lua require'hop'.hint_lines()<cr>", { silent = true })
+				require 'plugins.minh.hop-config'
 			end
 		}
 
@@ -114,78 +105,7 @@ return packer.startup(
 			'kyazdani42/nvim-tree.lua',
 			requires = 'kyazdani42/nvim-web-devicons',
 			config = function()
-				vim.keymap.set('n', '<leader>b', ":NvimTreeToggle<CR>", keymap_opts)
-				vim.keymap.set('n', '<leader>n', ":NvimTreeFindFile<CR>", keymap_opts)
-				vim.keymap.set('n', '<leader>r', ":NvimTreeRefresh<CR>", keymap_opts)
-
-				require("nvim-tree").setup({
-					sort_by = "case_sensitive",
-					view = {
-						adaptive_size = true,
-						mappings = {
-							list = {
-								{ key = "u", action = "dir_up" },
-							},
-						},
-					},
-					renderer = {
-						add_trailing = true,
-						group_empty = true,
-						highlight_git = true,
-						full_name = true,
-						indent_markers = {
-							enable = true,
-						},
-						icons = {
-							webdev_colors = true,
-							git_placement = "before",
-							padding = " ",
-							symlink_arrow = " ➛ ",
-							show = {
-								file = true,
-								folder = true,
-								folder_arrow = true,
-								git = true,
-							},
-							glyphs = {
-								default = "",
-								symlink = "",
-								folder = {
-									arrow_closed = "",
-									arrow_open = "",
-									default = "",
-									open = "",
-									empty = "",
-									empty_open = "",
-									symlink = "",
-									symlink_open = "",
-								},
-								git = {
-									unstaged = "",
-									staged = "✓",
-									unmerged = "",
-									renamed = "➜",
-									untracked = "U",
-									deleted = "",
-									ignored = "◌",
-								},
-							},
-						},
-						symlink_destination = true,
-					},
-					diagnostics = {
-						enable = true,
-						show_on_dirs = true,
-					},
-					filters = {
-						dotfiles = false,
-					},
-					actions = {
-						open_file = {
-							quit_on_open = true,
-						},
-					}
-				})
+				require 'plugins.minh.nvim-tree-config'
 			end,
 		}
 
@@ -193,12 +113,13 @@ return packer.startup(
 		use 'tpope/vim-fugitive'
 		use {
 			'lewis6991/gitsigns.nvim',
-			config = function()
-				require 'plugins.minh.gitsigns-config'
-			end,
+			event = "BufWinEnter",
 			requires = {
 				'nvim-lua/plenary.nvim'
-			}
+			},
+			config = function()
+				require 'plugins.minh.gitsigns-config'
+			end
 		}
 		use { 'tpope/vim-rhubarb' } -- open github
 
@@ -206,12 +127,12 @@ return packer.startup(
 		use {
 			'nvim-lualine/lualine.nvim',
 			event = "BufWinEnter",
-			config = function()
-				require 'plugins.minh.lualine-config'
-			end,
 			requires = {
 				'arkav/lualine-lsp-progress',
-			}
+			},
+			config = function()
+				require 'plugins.minh.lualine-config'
+			end
 		}
 		use { 'akinsho/bufferline.nvim',
 			tag = "v2.*",
@@ -230,11 +151,7 @@ return packer.startup(
 			"lukas-reineke/indent-blankline.nvim",
 			event = "BufWinEnter",
 			config = function()
-				require("indent_blankline").setup {
-					char = "┊",
-					show_first_indent_level = false,
-					show_trailing_blankline_indent = false,
-				}
+				require 'plugins.minh.indent-blankline-config'
 			end
 		}
 
@@ -258,38 +175,23 @@ return packer.startup(
 			"glepnir/lspsaga.nvim",
 			branch = "main",
 			config = function()
-				local saga = require("lspsaga")
-				saga.init_lsp_saga({
-					border_style = "none",
-					code_action_lightbulb = {
-						enable = false,
-						sign = true,
-						enable_in_insert = true,
-						sign_priority = 20,
-						virtual_text = true,
-					},
-				})
-			end,
+				require 'plugins.minh.lspsaga-config'
+			end
 		})
 
 		use {
 			'ray-x/lsp_signature.nvim',
 			config = function()
-				require('lsp_signature').setup({
-					bind = true,
-					fix_pos = false,
-					auto_close_after = 15, -- close after 15 seconds
-					hint_enable = false,
-					handler_opts = {
-						border = "none"
-					}
-				})
-			end,
+				require 'plugins.minh.lsp-signature-config'
+			end
 		}
 
-		use { 'antoinemadec/FixCursorHold.nvim', config = function()
-			vim.g.cursorhold_updatetime = 1000
-		end }
+		use {
+			'antoinemadec/FixCursorHold.nvim',
+			config = function()
+				vim.g.cursorhold_updatetime = 1000
+			end
+		}
 
 		-- debugger
 		use {
@@ -331,11 +233,12 @@ return packer.startup(
 			},
 			config = function()
 				require('pubspec-assist').setup()
-			end,
+			end
 		}
 
 		--rust
-		use { 'simrat39/rust-tools.nvim',
+		use {
+			'simrat39/rust-tools.nvim',
 			require = {
 				'nvim-lua/plenary.nvim',
 				"nvim-lua/plenary.nvim",
@@ -369,15 +272,17 @@ return packer.startup(
 		}
 
 
-		use { 'L3MON4D3/LuaSnip',
+		use {
+			'L3MON4D3/LuaSnip',
+			requires = { 'rafamadriz/friendly-snippets' },
 			config = function()
 				require("luasnip.loaders.from_vscode").lazy_load()
-			end,
-			requires = { 'rafamadriz/friendly-snippets' }
+			end
 
 		}
 
-		use { "akinsho/toggleterm.nvim",
+		use {
+			"akinsho/toggleterm.nvim",
 			tag = 'v1.*',
 			config = function()
 				require 'plugins.minh.toggleterm-config'
@@ -404,24 +309,22 @@ return packer.startup(
 		use 'tpope/vim-eunuch'
 		use 'tpope/vim-dispatch'
 		use 'romainl/vim-cool' -- Auto hide search highlight
-
-		use { 'norcalli/nvim-colorizer.lua', config = function()
-			require 'colorizer'.setup()
-		end }
-
-		use { 'windwp/nvim-autopairs', config = function()
-			require('nvim-autopairs').setup({
-				disable_filetype = { "TelescopePrompt", "vim" },
-			})
-		end
-		}
-
 		use { 'mg979/vim-visual-multi', branch = 'master' }
 
-		-- game??
 		use {
-			'alec-gibson/nvim-tetris',
-			cmd = "Tetris",
+			'norcalli/nvim-colorizer.lua',
+			config = function()
+				require 'colorizer'.setup()
+			end
+		}
+
+		use {
+			'windwp/nvim-autopairs',
+			config = function()
+				require('nvim-autopairs').setup({
+					disable_filetype = { "TelescopePrompt", "vim" },
+				})
+			end
 		}
 
 		-- Automatically set up your configuration after cloning packer.nvim
