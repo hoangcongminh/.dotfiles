@@ -31,6 +31,8 @@ PACKAGES=(
     libyaml
     rust-analyzer
     fish
+    yabai
+    skhd
 )
 
 echo "Installing packages..."
@@ -63,5 +65,8 @@ brew cleanup
 
 echo "Installing oh-my-zsh..."
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+brew services start yabai
+brew services start skhd
 
 echo "Macbook setup completed!"
