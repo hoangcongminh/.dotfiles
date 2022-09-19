@@ -20,6 +20,11 @@ require("tokyonight").setup({
   hide_inactive_statusline = false, -- Enabling this option, will hide inactive statuslines and replace them with a thin border instead. Should work with the standard **StatusLine** and **LuaLine**. |
   dim_inactive = false, -- dims inactive windows
   lualine_bold = false, -- When `true`, section headers in the lualine theme will be bold                                                                                                  |
+  on_colors = function(colors)
+    colors.hint = colors.orange
+    colors.error = "#ff0000"
+    colors.border = colors.blue
+  end,
 
   on_highlights = function(hl, c)
     hl.TelescopeNormal = {
@@ -36,4 +41,9 @@ require("tokyonight").setup({
   end,
 })
 
-vim.cmd [[colorscheme tokyonight]]
+
+vim.cmd [[
+colorscheme tokyonight
+hi! CursorLine gui=underline cterm=underline guibg=none
+hi LineNr guibg=bg
+]]

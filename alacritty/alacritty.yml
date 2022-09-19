@@ -1,5 +1,5 @@
 import:
-  - ~/.dotfiles/alacritty/tokyo_night.yml
+  - ~/.dotfiles/alacritty/tokyonight_storm.yml
 
 cursor:
   style:
@@ -17,7 +17,7 @@ env:
   TERM: xterm-256color
 
 window:
-  opacity: 0.8
+  opacity: 0.75
   # startup_mode: simplefullscreen
   startup_mode: maximized 
   decorations: buttonless
