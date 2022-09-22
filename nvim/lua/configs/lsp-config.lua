@@ -1,4 +1,4 @@
-local lsp_mapping = require 'plugins.minh.lsp-keymaps'.map
+local lsp_mapping = require 'configs.lsp-keymaps'.map
 
 require('nvim-lsp-setup').setup({
 	on_attach = lsp_mapping,

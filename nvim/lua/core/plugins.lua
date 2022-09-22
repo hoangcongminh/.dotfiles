@@ -34,6 +34,9 @@ return packer.startup(
 			end
 		}
 
+		-- increase startup speed
+		use { "lewis6991/impatient.nvim" }
+
 		--colorscheme
 		use { "navarasu/onedark.nvim" }
 		use { "Mofiqul/vscode.nvim" }
@@ -50,13 +53,14 @@ return packer.startup(
 				{ 'p00f/nvim-ts-rainbow', after = 'nvim-treesitter' },
 			},
 			config = function()
-				require 'plugins.minh.treesitter'
+				require 'configs.treesitter'
 			end
 		}
 
 		-- telescope
 		use {
 			'nvim-telescope/telescope.nvim',
+			event = "BufEnter",
 			requires = {
 				'nvim-lua/plenary.nvim',
 				{ 'nvim-telescope/telescope-fzf-native.nvim', run = 'make', after =
@@ -70,9 +74,8 @@ return packer.startup(
 					end
 				},
 			},
-			event = "BufEnter",
 			config = function()
-				require 'plugins.minh.telescope-config'
+				require 'configs.telescope-config'
 			end
 		}
 
@@ -84,7 +87,7 @@ return packer.startup(
 			},
 			event = "BufEnter",
 			config = function()
-				require 'plugins.minh.harpoon-config'
+				require 'configs.harpoon'
 			end,
 		}
 
@@ -94,7 +97,7 @@ return packer.startup(
 			branch = 'v1', -- optional but strongly recommended
 			event = "BufEnter",
 			config = function()
-				require 'plugins.minh.hop-config'
+				require 'configs.hop'
 			end
 		}
 
@@ -103,7 +106,7 @@ return packer.startup(
 			'kyazdani42/nvim-tree.lua',
 			requires = 'kyazdani42/nvim-web-devicons',
 			config = function()
-				require 'plugins.minh.nvim-tree-config'
+				require 'configs.nvim-tree'
 			end,
 		}
 
@@ -111,12 +114,12 @@ return packer.startup(
 		use 'tpope/vim-fugitive'
 		use {
 			'lewis6991/gitsigns.nvim',
-			event = "BufWinEnter",
+			event = "BufEnter",
 			requires = {
 				'nvim-lua/plenary.nvim'
 			},
 			config = function()
-				require 'plugins.minh.gitsigns-config'
+				require 'configs.gitsigns'
 			end
 		}
 		use { 'tpope/vim-rhubarb' } -- open github
@@ -129,27 +132,31 @@ return packer.startup(
 				'arkav/lualine-lsp-progress',
 			},
 			config = function()
-				require 'plugins.minh.lualine-config'
+				require 'configs.lualine'
 			end
 		}
 		use { 'akinsho/bufferline.nvim',
 			tag = "v2.*",
 			requires = 'kyazdani42/nvim-web-devicons',
 			config = function()
-				require 'plugins.minh.bufferline-config'
+				require 'configs.bufferline'
 			end
 		}
 
 		-- icons
-		use 'ryanoasis/vim-devicons'
-		use 'kyazdani42/nvim-web-devicons'
+		use { "ryanoasis/vim-devicons",
+			event = "VimEnter",
+		}
+		use { "kyazdani42/nvim-web-devicons",
+			event = "VimEnter",
+		}
 
 		-- Show indent line
 		use {
 			"lukas-reineke/indent-blankline.nvim",
-			event = "BufWinEnter",
+			event = "BufRead",
 			config = function()
-				require 'plugins.minh.indent-blankline-config'
+				require 'configs.indent-blankline'
 			end
 		}
 
@@ -165,7 +172,7 @@ return packer.startup(
 				'williamboman/mason-lspconfig.nvim',
 			},
 			config = function()
-				require 'plugins.minh.lsp-config'
+				require 'configs.lsp-config'
 			end
 		}
 
@@ -173,22 +180,21 @@ return packer.startup(
 			"glepnir/lspsaga.nvim",
 			branch = "main",
 			config = function()
-				require 'plugins.minh.lspsaga-config'
+				require 'configs.lspsaga'
 			end
 		})
 
 		use {
 			'ray-x/lsp_signature.nvim',
 			config = function()
-				require 'plugins.minh.lsp-signature-config'
+				require 'configs.lsp-signature'
 			end
 		}
 
 		use {
-			'antoinemadec/FixCursorHold.nvim',
-			config = function()
-				vim.g.cursorhold_updatetime = 1000
-			end
+			"antoinemadec/FixCursorHold.nvim",
+			event = { "BufRead", "BufNewFile" },
+			config = function() vim.g.cursorhold_updatetime = 100 end,
 		}
 
 		-- debugger
@@ -197,7 +203,7 @@ return packer.startup(
 			requires = { "mfussenegger/nvim-dap" },
 			after = 'nvim-dap',
 			config = function()
-				require 'plugins.minh.dap-config'
+				require 'configs.dap'
 			end
 		}
 
@@ -213,7 +219,7 @@ return packer.startup(
 				'dart-lang/dart-vim-plugin',
 			},
 			config = function()
-				require 'plugins.minh.flutter-tools'
+				require 'configs.flutter-tools'
 			end
 		}
 
@@ -242,7 +248,7 @@ return packer.startup(
 				"nvim-lua/plenary.nvim",
 			},
 			config = function()
-				require 'plugins.minh.rust-tools'
+				require 'configs.rust-tools'
 			end
 		}
 
@@ -250,7 +256,7 @@ return packer.startup(
 		use {
 			'hrsh7th/nvim-cmp',
 			config = function()
-				require 'plugins.minh.cmp-config'
+				require 'configs.cmp'
 			end,
 			requires = {
 				{ 'hrsh7th/cmp-nvim-lsp' },
@@ -281,9 +287,10 @@ return packer.startup(
 
 		use {
 			"akinsho/toggleterm.nvim",
-			tag = 'v1.*',
+			cmd = "ToggleTerm",
+			module = { "toggleterm", "toggleterm.terminal" },
 			config = function()
-				require 'plugins.minh.toggleterm-config'
+				require 'configs.toggleterm'
 			end
 		}
 
@@ -292,7 +299,7 @@ return packer.startup(
 			'github/copilot.vim',
 			event = "BufWinEnter",
 			config = function()
-				require 'plugins.minh.copilot'
+				require 'configs.copilot'
 			end
 		}
 
@@ -311,6 +318,7 @@ return packer.startup(
 
 		use {
 			'norcalli/nvim-colorizer.lua',
+			event = { "BufRead", "BufNewFile" },
 			config = function()
 				require 'colorizer'.setup()
 			end
@@ -318,6 +326,7 @@ return packer.startup(
 
 		use {
 			'windwp/nvim-autopairs',
+			event = "InsertEnter",
 			config = function()
 				require('nvim-autopairs').setup({
 					disable_filetype = { "TelescopePrompt", "vim" },

@@ -40,7 +40,7 @@ local function on_attach(client, bufnr)
     vim.cmd 'Dispatch flutter clean; flutter pub get; flutter run --release'
   end, { force = true })
 
-  require 'plugins.minh.lsp-keymaps'.map(client, bufnr)
+  require 'configs.lsp-keymaps'.map(client, bufnr)
 end
 
 require("flutter-tools").setup {
@@ -68,7 +68,7 @@ require("flutter-tools").setup {
     enabled = true,
     run_via_dap = false, -- use dap instead of a plenary job to run flutter apps
     register_configurations = function(paths)
-      local dap = require('dap')
+      local dap = require('dap-config')
       dap.adapters.dart = {
         type = "executable",
         command = "node",
