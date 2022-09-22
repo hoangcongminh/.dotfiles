@@ -41,6 +41,7 @@ return packer.startup(
 		use { "navarasu/onedark.nvim" }
 		use { "Mofiqul/vscode.nvim" }
 		use { 'folke/tokyonight.nvim' }
+		use { "ellisonleao/gruvbox.nvim" }
 
 		-- treesitter
 		use {

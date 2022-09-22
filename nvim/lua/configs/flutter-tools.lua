@@ -68,7 +68,7 @@ require("flutter-tools").setup {
     enabled = true,
     run_via_dap = false, -- use dap instead of a plenary job to run flutter apps
     register_configurations = function(paths)
-      local dap = require('dap-config')
+      local dap = require('dap')
       dap.adapters.dart = {
         type = "executable",
         command = "node",

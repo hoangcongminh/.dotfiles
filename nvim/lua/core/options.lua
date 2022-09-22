@@ -50,4 +50,4 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 })
 
 -- Set colorscheme
-require 'configs.tokyo-night'
+require 'configs.gruvbox'
