@@ -135,13 +135,6 @@ return packer.startup(
 				require 'configs.lualine'
 			end
 		}
-		use { 'akinsho/bufferline.nvim',
-			tag = "v2.*",
-			requires = 'kyazdani42/nvim-web-devicons',
-			config = function()
-				require 'configs.bufferline'
-			end
-		}
 
 		-- icons
 		use { "ryanoasis/vim-devicons",
@@ -203,7 +196,7 @@ return packer.startup(
 			requires = { "mfussenegger/nvim-dap" },
 			after = 'nvim-dap',
 			config = function()
-				require 'configs.dap'
+				require 'configs.dap-config'
 			end
 		}
 
