@@ -45,7 +45,7 @@ return packer.startup(
 
 		-- treesitter
 		use {
-			'hoangcongminh/nvim-treesitter',
+			'nvim-treesitter/nvim-treesitter',
 			run = ':TSUpdate',
 			event = "BufWinEnter",
 			requires = {
@@ -192,14 +192,14 @@ return packer.startup(
 		}
 
 		-- debugger
-		use {
-			"rcarriga/nvim-dap-ui",
-			requires = { "mfussenegger/nvim-dap" },
-			after = 'nvim-dap',
-			config = function()
-				require 'configs.dap-config'
-			end
-		}
+		-- use {
+		-- 	"rcarriga/nvim-dap-ui",
+		-- 	requires = { "mfussenegger/nvim-dap" },
+		-- 	after = 'nvim-dap',
+		-- 	config = function()
+		-- 		require 'configs.dap-config'
+		-- 	end
+		-- }
 
 		-- flutter
 		use {
@@ -281,7 +281,8 @@ return packer.startup(
 
 		use {
 			"akinsho/toggleterm.nvim",
-			cmd = "ToggleTerm",
+			event = "BufEnter",
+			-- cmd = "ToggleTerm",
 			module = { "toggleterm", "toggleterm.terminal" },
 			config = function()
 				require 'configs.toggleterm'

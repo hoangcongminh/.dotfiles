@@ -14,9 +14,12 @@ require("gruvbox").setup({
   contrast = "", -- can be "hard", "soft" or empty string
   overrides = {
     SignColumn = { bg = "none" },
-    Cursorline = { bg = 'none', underdot = true },
+    Cursorline = { bg = 'none' },
   },
   dim_inactive = false,
   transparent_mode = true,
 })
-vim.cmd("colorscheme gruvbox")
+vim.cmd([[
+colorscheme gruvbox
+highlight! CursorLine gui=underline cterm=underline guibg=none
+]])
