@@ -68,7 +68,7 @@ local function map(client, bufnr)
 
   -- Fotmat on save
   -- vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.formatting_sync()]]
-  require('nvim-lsp-setup.utils').format_on_save(client)
+  require('lsp-setup.utils').format_on_save(client)
 end
 
 vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
