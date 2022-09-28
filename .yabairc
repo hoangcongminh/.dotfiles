@@ -16,7 +16,7 @@ yabai -m config normal_window_opacity        0.9
 yabai -m config window_opacity_duration      0.0
 yabai -m config active_window_opacity        1.0
 yabai -m config normal_window_opacity        0.90
-yabai -m config window_border                on
+yabai -m config window_border                off
 yabai -m config window_border_width          3
 yabai -m config window_border_radius         12
 yabai -m config window_border_blur           off
@@ -32,7 +32,7 @@ yabai -m config mouse_action2                resize
 yabai -m config mouse_drop_action            swap
 
 # general space settings
-gap=10
+gap=0
 yabai -m config layout                       bsp
 yabai -m config top_padding                  $gap
 yabai -m config bottom_padding               $gap

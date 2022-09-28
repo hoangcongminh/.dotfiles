@@ -1,5 +1,5 @@
 import:
-  - ~/.dotfiles/alacritty/gruvbox.yml
+  - ~/.dotfiles/alacritty/catppuccin-mocha.yml
 
 cursor:
   style:
@@ -9,18 +9,17 @@ font:
   size: 11.0
   normal:
     # family: SFMono Nerd Font
-    family: Monaco Nerd Font
-    # family: FiraCode Nerd Font
-    #
+    # family: Monaco Nerd Font
+    family: FiraCode Nerd Font
   bold:
     # family: SFMono Nerd Font
-    family: Monaco Nerd Font
-    # family: FiraCode Nerd Font
+    # family: Monaco Nerd Font
+    family: FiraCode Nerd Font
     #
   italic:
     # family: SFMono Nerd Font
-    family: Monaco Nerd Font
-    # family: FiraCode Nerd Font
+    # family: Monaco Nerd Font
+    family: FiraCode Nerd Font
   use_thin_strokes: true
 
 custom_cursor_colors: true
@@ -29,7 +28,7 @@ env:
   TERM: xterm-256color
 
 window:
-  opacity: 0.83
+  opacity: 0.8
   # startup_mode: simplefullscreen
   startup_mode: maximized 
   decorations: buttonless

@@ -42,6 +42,9 @@ return packer.startup(
 		use { "Mofiqul/vscode.nvim" }
 		use { 'folke/tokyonight.nvim' }
 		use { "ellisonleao/gruvbox.nvim" }
+		use { "catppuccin/nvim",
+			as = "catppuccin",
+			run = ":CatppuccinCompile" }
 
 		-- treesitter
 		use {
