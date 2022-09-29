@@ -40,6 +40,10 @@ local function on_attach(client, bufnr)
     vim.cmd 'Dispatch flutter clean; flutter pub get; flutter run --release'
   end, { force = true })
 
+  vim.api.nvim_buf_create_user_command(bufnr, 'FlutterOpenSimulator', function()
+    vim.cmd 'Dispatch open -a Simulator.app'
+  end, { force = true })
+
   require 'configs.lsp-keymaps'.map(client, bufnr)
 end
 

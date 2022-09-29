@@ -214,6 +214,7 @@ return packer.startup(
 				'Nash0x7E2/awesome-flutter-snippets',
 				'hrsh7th/cmp-nvim-lsp',
 				'dart-lang/dart-vim-plugin',
+				'RobertBrunhage/flutter-riverpod-snippets'
 			},
 			config = function()
 				require 'configs.flutter-tools'
