@@ -1,5 +1,5 @@
 import:
-  - ~/.dotfiles/alacritty/catppuccin-mocha.yml
+  - ~/.dotfiles/alacritty/catppuccin-frappe.yml
 
 cursor:
   style:

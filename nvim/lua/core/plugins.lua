@@ -128,7 +128,7 @@ return packer.startup(
 		}
 		use { 'tpope/vim-rhubarb' } -- open github
 
-		-- lualine & tabline
+		-- lualine
 		use {
 			'nvim-lualine/lualine.nvim',
 			event = "BufWinEnter",

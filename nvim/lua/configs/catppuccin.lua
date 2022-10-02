@@ -1,4 +1,4 @@
-vim.g.catppuccin_flavour = "macchiato" -- latte, frappe, macchiato, mocha
+vim.g.catppuccin_flavour = "frappe" -- latte, frappe, macchiato, mocha
 local colors = require("catppuccin.palettes").get_palette()
 colors.none = "NONE"
 
