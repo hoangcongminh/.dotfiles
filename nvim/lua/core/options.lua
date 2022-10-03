@@ -6,10 +6,10 @@ vim.cmd("au InsertLeave * set relativenumber")
 vim.cmd("au InsertLeave * set nopaste")
 
 vim.opt.signcolumn = "yes"
--- vim.opt.laststatus = 3
--- vim.opt.cmdheight = 1
-vim.opt.laststatus = 0
-vim.opt.cmdheight = 0
+vim.opt.laststatus = 3
+vim.opt.cmdheight = 1
+-- vim.opt.laststatus = 0
+-- vim.opt.cmdheight = 0
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.termguicolors = true
@@ -30,6 +30,7 @@ vim.opt.cursorline = true
 vim.opt.showmode = false
 vim.opt.updatetime = 50
 vim.opt.mouse = "a"
+vim.opt.winbar = "%f"
 
 -- vim.opt.colorcolumn = "80"
 vim.opt.fillchars = { horiz = '━', horizup = '┻', horizdown = '┳', vert = '┃', vertleft = '┫', vertright = '┣',

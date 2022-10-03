@@ -46,25 +46,25 @@ local function map(client, bufnr)
   keymap("n", "<leader>rn", "<cmd>Lspsaga rename<CR>", opts)
   keymap("n", "<leader>gd", "<cmd>Lspsaga preview_definition<CR>", opts)
 
-  if client.server_capabilities.document_highlight then
-    vim.cmd 'autocmd CursorHold  <buffer> lua vim.lsp.buf.document_highlight'
-    vim.cmd 'autocmd CursorHoldI <buffer> lua vim.lsp.buf.document_highlight'
-    vim.cmd 'autocmd CursorMoved <buffer> lua vim.lsp.buf.clear_references'
-  end
+  -- if client.server_capabilities.document_highlight then
+  --   vim.cmd 'autocmd CursorHold  <buffer> lua vim.lsp.buf.document_highlight'
+  --   vim.cmd 'autocmd CursorHoldI <buffer> lua vim.lsp.buf.document_highlight'
+  --   vim.cmd 'autocmd CursorMoved <buffer> lua vim.lsp.buf.clear_references'
+  -- end
 
-  if client.resolved_capabilities.document_highlight then
-    vim.cmd [[
-    hi! LspReferenceRead cterm=bold ctermbg=red guibg=grey
-    hi! LspReferenceText cterm=bold ctermbg=red guibg=grey
-    hi! LspReferenceWrite cterm=bold ctermbg=red guibg=grey
-    augroup lsp_document_highlight
-      autocmd! * <buffer>
-      autocmd! CursorHold <buffer> lua vim.lsp.buf.document_highlight()
-      autocmd! CursorHoldI <buffer> lua vim.lsp.buf.document_highlight()
-      autocmd! CursorMoved <buffer> lua vim.lsp.buf.clear_references()
-    augroup END
-  ]]
-  end
+  -- if client.resolved_capabilities.document_highlight then
+  --   vim.cmd [[
+  --   hi! LspReferenceRead cterm=bold ctermbg=red guibg=grey
+  --   hi! LspReferenceText cterm=bold ctermbg=red guibg=grey
+  --   hi! LspReferenceWrite cterm=bold ctermbg=red guibg=grey
+  --   augroup lsp_document_highlight
+  --     autocmd! * <buffer>
+  --     autocmd! CursorHold <buffer> lua vim.lsp.buf.document_highlight()
+  --     autocmd! CursorHoldI <buffer> lua vim.lsp.buf.document_highlight()
+  --     autocmd! CursorMoved <buffer> lua vim.lsp.buf.clear_references()
+  --   augroup END
+  -- ]]
+  -- end
 
   -- Fotmat on save
   -- vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.formatting_sync()]]
