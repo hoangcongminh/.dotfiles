@@ -66,10 +66,14 @@ local opts = { noremap = true, silent = true }
 --   opts
 -- )
 -- keymap('n', '<space>p', function() telescope_builtin.git_files({ previewer = false }) end, opts)
-keymap('n', '<leader>p', function() project_files() end, opts)
-keymap('n', '<leader>ff',
-  function() require "telescope.builtin".find_files({ find_command = { 'rg', '--files', '--hidden', '-g', '!.git' },
-      previewer = false })
+--
+-- keymap('n', '<leader>p', function() project_files() end, opts)
+-- keymap('n', '<leader>ff',
+--   function() require "telescope.builtin".find_files({ find_command = { 'rg', '--files', '--hidden', '-g', '!.git' },
+--       previewer = false })
+--   end, opts)
+keymap('n', '<leader>p',
+  function() require "telescope.builtin".find_files({ find_command = { 'rg', '--files', '--hidden', '-g', '!.git' } })
   end, opts)
 
 keymap('n', '<space>fg', telescope_builtin.live_grep, opts)
