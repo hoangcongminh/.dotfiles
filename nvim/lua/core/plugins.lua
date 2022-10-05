@@ -167,7 +167,7 @@ return packer.startup(
 
 		-- lsp
 		use {
-			'junnplus/nvim-lsp-setup',
+			'junnplus/lsp-setup.nvim',
 			requires = {
 				'neovim/nvim-lspconfig',
 				'williamboman/mason.nvim',
