@@ -128,7 +128,7 @@ return packer.startup(
 		}
 		use { 'tpope/vim-rhubarb' } -- open github
 
-		-- lualine
+		-- lualine & winbar
 		use {
 			'nvim-lualine/lualine.nvim',
 			event = "BufWinEnter",
@@ -138,6 +138,11 @@ return packer.startup(
 			config = function()
 				require 'configs.lualine'
 			end
+		}
+
+		use {
+			'SmiteshP/nvim-navic',
+			requires = 'neovim/nvim-lspconfig'
 		}
 
 		-- icons

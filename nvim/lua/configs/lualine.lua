@@ -5,19 +5,34 @@ local lualine = require 'lualine'
 
 -- Color table for highlights
 local colors = {
-  -- bg = '#202328',
-  bg = 'none',
+  bg = '#303446',
+  -- bg = 'none',
   fg = '#bbc2cf',
-  yellow = '#ECBE7B',
-  cyan = '#008080',
-  darkblue = '#081633',
-  green = '#98be65',
-  orange = '#FF8800',
-  violet = '#a9a1e1',
-  magenta = '#c678dd',
-  blue = '#51afef',
-  red = '#ec5f67'
+  yellow = "#E5C890",
+  cyan = "#81C8BE",
+  darkblue = "#8CAAEE",
+  green = "#A6D189",
+  orange = "#EF9F76",
+  violet = "#BABBF1",
+  magenta = "#F4B8E4",
+  blue = "#85C1DC",
+  red = "#E78284",
 }
+
+-- local colors = {
+--   bg = '#202328',
+--   -- bg = 'none',
+--   fg = '#bbc2cf',
+--   yellow = '#ECBE7B',
+--   cyan = '#008080',
+--   darkblue = '#081633',
+--   green = '#98be65',
+--   orange = '#FF8800',
+--   violet = '#a9a1e1',
+--   magenta = '#c678dd',
+--   blue = '#51afef',
+--   red = '#ec5f67'
+-- }
 
 local conditions = {
   buffer_not_empty = function() return vim.fn.empty(vim.fn.expand('%:t')) ~= 1 end,

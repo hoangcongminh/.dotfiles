@@ -4,6 +4,9 @@ local function map(client, bufnr)
 
   local opts = { noremap = true, silent = true, buffer = bufnr }
   local keymap = vim.keymap.set
+  local navic = require("nvim-navic")
+
+  navic.attach(client, bufnr)
 
   keymap('n', '<space>e', vim.diagnostic.open_float, opts)
   keymap('n', '[d', vim.diagnostic.goto_prev, opts)
