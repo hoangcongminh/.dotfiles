@@ -33,6 +33,7 @@ PACKAGES=(
     fish
     yabai
     skhd
+    firefox
 )
 
 echo "Installing packages..."

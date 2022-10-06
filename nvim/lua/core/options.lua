@@ -31,7 +31,7 @@ vim.opt.showmode = false
 vim.opt.updatetime = 50
 vim.opt.mouse = "a"
 
-vim.o.winbar = "%y %f > %{%v:lua.require'nvim-navic'.get_location()%}"
+vim.o.winbar = "%m%y %f > %{%v:lua.require'nvim-navic'.get_location()%}"
 
 -- vim.opt.colorcolumn = "80"
 vim.opt.fillchars = { horiz = '━', horizup = '┻', horizdown = '┳', vert = '┃', vertleft = '┫', vertright = '┣',
