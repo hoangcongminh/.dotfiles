@@ -13,59 +13,23 @@ fi
 # Update homebrew recipes
 brew update
 
-PACKAGES=(
-    git
-    tmux
-    bat
-    exa
-    fd
-    neofetch
-    fzf
-    neovim
-    htop
-    sqlite
-    fvm
-    lazygit
-    nvm
-    wget
-    libyaml
-    rust-analyzer
-    fish
-    yabai
-    skhd
-    firefox
-)
-
 echo "Installing packages..."
-brew install ${PACKAGES[@]}
+brew bundle
 
-echo "Installing rust..."
-brew install rustup
+echo "Setup rust..."
 rustup-init
 
-echo "Installing flutter..."
+echo "Setup flutter..."
 fvm install stable
-
-echo "Installing cask..."
-CASKS=(
-    alacritty
-    iterm2
-    kitty
-    visual-studio-code
-    numi
-    font-sf-mono-nerd-font
-    font-fira-code-nerd-font
-    font-hack-nerd-font
-    karabiner-elements
-)
-echo "Installing cask apps..."
-brew install ${CASKS[@]} --cask 
 
 echo "Cleaning up..."
 brew cleanup
 
 echo "Installing oh-my-zsh..."
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+echo "Installing Tmux Plugin Manager..."
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 brew services start yabai
 brew services start skhd
