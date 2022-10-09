@@ -106,13 +106,13 @@ return packer.startup(
 		}
 
 		-- File and folder management
-		use {
-			'kyazdani42/nvim-tree.lua',
-			requires = 'kyazdani42/nvim-web-devicons',
-			config = function()
-				require 'configs.nvim-tree'
-			end,
-		}
+		-- use {
+		-- 	'kyazdani42/nvim-tree.lua',
+		-- 	requires = 'kyazdani42/nvim-web-devicons',
+		-- 	config = function()
+		-- 		require 'configs.nvim-tree'
+		-- 	end,
+		-- }
 
 		-- git
 		use 'tpope/vim-fugitive'
