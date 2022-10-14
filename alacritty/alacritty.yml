@@ -34,8 +34,8 @@ window:
   opacity: 0.8
   # startup_mode: simplefullscreen
   startup_mode: maximized 
-  decorations: buttonless
-  # decorations: full 
+  # decorations: buttonless
+  decorations: full 
   padding: 
     x: 10
     y: 10
