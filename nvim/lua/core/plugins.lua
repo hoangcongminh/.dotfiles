@@ -77,6 +77,11 @@ return packer.startup(
 						require('telescope').load_extension('ui-select')
 					end
 				},
+				{ "nvim-telescope/telescope-file-browser.nvim",
+					config = function()
+						require("telescope").load_extension "file_browser"
+					end
+				}
 			},
 			config = function()
 				require 'configs.telescope-config'
