@@ -1,5 +1,10 @@
+local status_ok, telescope = pcall(require, "telescope")
+if not status_ok then
+  return
+end
+
 local actions = require('telescope.actions')
-local fb_actions = require "telescope".extensions.file_browser.actions
+-- local fb_actions = require "telescope".extensions.file_browser.actions
 
 
 local search_dotfiles = function()
@@ -21,7 +26,7 @@ end
 --   end
 -- end
 
-require('telescope').setup {
+telescope.setup {
   igfile_ignore_patterns = { "node_modules" },
   pickers = {
     find_files = {
@@ -53,19 +58,19 @@ require('telescope').setup {
       override_file_sorter = true, -- override the file sorter
       case_mode = "smart_case", -- or "ignore_case" or "respect_case"
     },
-    file_browser = {
-      theme = "ivy",
-      -- disables netrw and use telescope-file-browser in its place
-      hijack_netrw = true,
-      mappings = {
-        ["i"] = {
-          -- your custom insert mode mappings
-        },
-        ["n"] = {
-          -- your custom normal mode mappings
-        },
-      },
-    },
+    -- file_browser = {
+    --   theme = "ivy",
+    --   -- disables netrw and use telescope-file-browser in its place
+    --   hijack_netrw = true,
+    --   mappings = {
+    --     ["i"] = {
+    --       -- your custom insert mode mappings
+    --     },
+    --     ["n"] = {
+    --       -- your custom normal mode mappings
+    --     },
+    --   },
+    -- },
   }
 }
 
@@ -108,4 +113,4 @@ keymap('n', '<space>fd', function() telescope_builtin.diagnostics(dropdown_theme
 
 keymap('n', '<space>t', function() vim.cmd 'Telescope' end, opts)
 keymap('n', '<leader>dff', function() search_dotfiles() end, opts)
-keymap('n', '<leader>b', ":Telescope file_browser<CR>", opts)
+-- keymap('n', '<leader>b', ":Telescope file_browser<CR>", opts)

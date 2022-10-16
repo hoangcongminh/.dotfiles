@@ -12,5 +12,6 @@ function R(name)
 end
 
 R('core.options')
+R('core.autocommands')
 R('core.mappings')
 R('core.plugins')

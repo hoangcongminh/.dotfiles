@@ -2,7 +2,7 @@ local lsp_mapping = require 'configs.lsp-keymaps'.map
 
 require('lsp-setup').setup({
 	on_attach = lsp_mapping,
-	capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities()),
+	capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities()),
 	servers = {
 		bashls = {},
 		pyright = {},

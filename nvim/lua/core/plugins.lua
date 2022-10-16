@@ -1,19 +1,40 @@
--- Auto install plugin manager
 local fn = vim.fn
-local install_path = fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
-local is_bootstrap = false
+
+-- Auto install plugin manager
+local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
 if fn.empty(fn.glob(install_path)) > 0 then
-	is_bootstrap = true
-	vim.fn.execute('!git clone https://github.com/wbthomason/packer.nvim ' .. install_path)
-	vim.cmd [[packadd packer.nvim]]
+	PACKER_BOOTSTRAP = fn.system({
+		"git",
+		"clone",
+		"--depth",
+		"1",
+		"https://github.com/wbthomason/packer.nvim",
+		install_path,
+	})
+	print("Installing packer close and reopen Neovim...")
+	vim.cmd([[packadd packer.nvim]])
 end
 
-local keymap_opts = { noremap = true, silent = true }
-vim.keymap.set('n', '<leader>sy', "<cmd>PackerSync<cr>", keymap_opts)
-vim.keymap.set('n', '<leader>cl', "<cmd>PackerClean<cr>", keymap_opts)
+-- Autocommand that reloads neovim whenever you save the plugins.lua file
+vim.cmd([[
+  augroup packer_user_config
+    autocmd!
+    autocmd BufWritePost plugins.lua source <afile> | PackerSync
+  augroup end
+]])
 
-local packer = require('packer')
+-- Use a protected call so we don't error out on first use
+local status_ok, packer = pcall(require, "packer")
+if not status_ok then
+	return
+end
+
 packer.init({
+	display = {
+		open_fn = function()
+			return require("packer.util").float({ border = "rounded" })
+		end,
+	},
 	git = {
 		clone_timeout = 600, -- Timeout, in seconds, for git clones
 	},
@@ -38,10 +59,6 @@ return packer.startup(
 		use { "lewis6991/impatient.nvim" }
 
 		--colorscheme
-		use { "navarasu/onedark.nvim" }
-		use { "Mofiqul/vscode.nvim" }
-		use { 'folke/tokyonight.nvim' }
-		use { "ellisonleao/gruvbox.nvim" }
 		use { "catppuccin/nvim",
 			as = "catppuccin",
 			run = ":CatppuccinCompile" }
@@ -77,11 +94,11 @@ return packer.startup(
 						require('telescope').load_extension('ui-select')
 					end
 				},
-				{ "nvim-telescope/telescope-file-browser.nvim",
-					config = function()
-						require("telescope").load_extension "file_browser"
-					end
-				}
+				-- { "nvim-telescope/telescope-file-browser.nvim",
+				-- 	config = function()
+				-- 		require("telescope").load_extension "file_browser"
+				-- 	end
+				-- }
 			},
 			config = function()
 				require 'configs.telescope-config'
@@ -95,9 +112,6 @@ return packer.startup(
 				'nvim-lua/plenary.nvim'
 			},
 			event = "BufEnter",
-			config = function()
-				require 'configs.harpoon'
-			end,
 		}
 
 		-- navigate
@@ -111,13 +125,13 @@ return packer.startup(
 		}
 
 		-- File and folder management
-		-- use {
-		-- 	'kyazdani42/nvim-tree.lua',
-		-- 	requires = 'kyazdani42/nvim-web-devicons',
-		-- 	config = function()
-		-- 		require 'configs.nvim-tree'
-		-- 	end,
-		-- }
+		use {
+			'kyazdani42/nvim-tree.lua',
+			requires = 'kyazdani42/nvim-web-devicons',
+			config = function()
+				require 'configs.nvim-tree'
+			end,
+		}
 
 		-- git
 		use 'tpope/vim-fugitive'
@@ -182,7 +196,6 @@ return packer.startup(
 				require 'configs.lsp-config'
 			end
 		}
-
 		use({
 			"glepnir/lspsaga.nvim",
 			branch = "main",
@@ -190,18 +203,22 @@ return packer.startup(
 				require 'configs.lspsaga'
 			end
 		})
-
 		use {
 			'ray-x/lsp_signature.nvim',
 			config = function()
 				require 'configs.lsp-signature'
 			end
 		}
-
 		use {
 			"antoinemadec/FixCursorHold.nvim",
 			event = { "BufRead", "BufNewFile" },
 			config = function() vim.g.cursorhold_updatetime = 100 end,
+		}
+		use { "jose-elias-alvarez/null-ls.nvim" } -- for formatters and linters
+		use { "RRethy/vim-illuminate",
+			config = function()
+				require 'configs.illuminate'
+			end
 		}
 
 		-- debugger
@@ -345,8 +362,8 @@ return packer.startup(
 
 		-- Automatically set up your configuration after cloning packer.nvim
 		-- Put this at the end after all plugins
-		if is_bootstrap then
-			require('packer').sync()
+		if PACKER_BOOTSTRAP then
+			require("packer").sync()
 		end
 
 	end

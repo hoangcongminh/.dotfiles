@@ -1,5 +1,8 @@
-require 'hop'.setup(
+local status_ok, hop = pcall(require, "hop")
+if not status_ok then
+  return
+end
+
+hop.setup(
   { keys = 'etovxqpdygfblzhckisuran' }
 )
-vim.keymap.set('n', 'fw', "<cmd>lua require'hop'.hint_words()<cr>", { silent = true })
-vim.keymap.set('n', 'fl', "<cmd>lua require'hop'.hint_lines()<cr>", { silent = true })

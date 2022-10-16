@@ -1,5 +1,5 @@
-import:
-  - ~/.dotfiles/alacritty/catppuccin-frappe.yml
+# import:
+#   - ~/.dotfiles/alacritty/catppuccin-frappe.yml
 
 cursor:
   style:
@@ -23,7 +23,6 @@ font:
     family: SFMono Nerd Font
     # family: Monaco Nerd Font
     # family: FiraCode Nerd Font
-  use_thin_strokes: true
 
 custom_cursor_colors: true
 

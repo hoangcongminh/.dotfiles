@@ -1,5 +1,9 @@
-local saga = require("lspsaga")
-saga.init_lsp_saga({
+local status_ok, lspsaga = pcall(require, "lspsaga")
+if not status_ok then
+  return
+end
+
+lspsaga.init_lsp_saga({
   border_style = "single",
   saga_winblend = 0,
   code_action_lightbulb = {

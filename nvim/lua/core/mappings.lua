@@ -1,15 +1,13 @@
-local opts = { noremap = true, silent = true }
-
 -- Shorten function name
 local keymap = vim.keymap.set
+
+-- Keymap option
+local opts = { noremap = true, silent = true }
 
 --Remap space as leader key
 keymap("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
-
-keymap("n", "<leader>/", ":Commentary<CR>", opts)
-keymap("v", "<leader>/", ":Commentary<CR>", opts)
 
 -- Normal --
 keymap("n", "<C-s>", ":write<CR>", opts)
@@ -73,3 +71,29 @@ keymap("n", "Y", "yg$", opts)
 keymap("n", "n", "nzzzv", opts)
 keymap("n", "N", "Nzzzv", opts)
 keymap("n", "J", "mzJ`z", opts)
+
+-- Plugins --
+
+-- Packer
+keymap('n', '<leader>sy', "<cmd>PackerSync<cr>", opts)
+keymap('n', '<leader>cl', "<cmd>PackerClean<cr>", opts)
+
+-- Commentary
+keymap("n", "<leader>/", ":Commentary<CR>", opts)
+keymap("v", "<leader>/", ":Commentary<CR>", opts)
+
+-- Harpoon
+keymap('n', '<leader>he', function() require("harpoon.ui").toggle_quick_menu() end, opts)
+keymap('n', "<leader>ha", function() require("harpoon.mark").add_file() end, opts)
+
+keymap('n', '<leader>h', function() require("harpoon.ui").nav_file(1) end, opts)
+keymap('n', '<leader>j', function() require("harpoon.ui").nav_file(2) end, opts)
+keymap('n', '<leader>k', function() require("harpoon.ui").nav_file(3) end, opts)
+keymap('n', '<leader>l', function() require("harpoon.ui").nav_file(4) end, opts)
+
+-- HOP
+keymap('n', 'fw', "<cmd>lua require'hop'.hint_words()<cr>", { silent = true })
+keymap('n', 'fl', "<cmd>lua require'hop'.hint_lines()<cr>", { silent = true })
+
+-- ToggleTerm
+keymap("n", "<leader>lg", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", opts)

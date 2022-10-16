@@ -1,7 +1,26 @@
-require("toggleterm").setup({
+local status_ok, toggleterm = pcall(require, "toggleterm")
+if not status_ok then
+  return
+end
+
+toggleterm.setup({
+  size = 20,
   open_mapping = [[<c-\>]],
-  shade_terminals = false,
+  hide_numbers = true,
+  shade_terminals = true,
+  shading_factor = 2,
+  start_in_insert = true,
+  insert_mappings = true,
+  persist_size = true,
+  direction = "horizontal",
+  close_on_exit = true,
+  shell = vim.o.shell,
+  float_opts = {
+    border = "curved",
+  },
+
 })
+
 local float_handler = function(term)
   if vim.fn.mapcheck('jk', 't') ~= '' then
     vim.api.nvim_buf_del_keymap(term.bufnr, 't', 'jk')
@@ -29,4 +48,6 @@ local htop = Terminal:new({
 vim.api.nvim_create_user_command('Htop', function() htop:toggle() end, {})
 vim.api.nvim_create_user_command('Lazygit', function() lazygit:toggle() end, {})
 
-vim.keymap.set('n', '<leader>lg', function() lazygit:toggle() end, { noremap = true, silent = true })
+function _LAZYGIT_TOGGLE()
+  lazygit:toggle()
+end
