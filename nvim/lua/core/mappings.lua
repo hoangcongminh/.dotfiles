@@ -97,3 +97,8 @@ keymap('n', 'fl', "<cmd>lua require'hop'.hint_lines()<cr>", { silent = true })
 
 -- ToggleTerm
 keymap("n", "<leader>lg", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", opts)
+
+-- NvimTree
+keymap('n', '<leader>b', ":NvimTreeToggle<CR>", opts)
+keymap('n', '<leader>n', ":NvimTreeFindFile<CR>", opts)
+keymap('n', '<leader>r', ":NvimTreeRefresh<CR>", opts)

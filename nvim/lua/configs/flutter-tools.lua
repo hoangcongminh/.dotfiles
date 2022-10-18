@@ -1,18 +1,17 @@
-local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
+local status_ok, flutter_tools = pcall(require, "flutter-tools")
+if not status_ok then
+  return
+end
 
 local function on_attach(client, bufnr)
   require("telescope").load_extension("flutter")
 
   local opts = { noremap = true, silent = true }
-
-  -- local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
   local keymap = vim.keymap.set
 
   keymap("n", "<space>vs", ":Telescope flutter fvm<CR>", opts)
   keymap("n", "<space>cm", ":Telescope flutter commands<CR>", opts)
-
   keymap('n', '<space>fa', ':FlutterRun<CR>', opts)
-
   keymap('n', '<space>fq', ':FlutterQuit<CR>', opts)
   keymap('n', '<space>fp', ':FlutterCopyProfilerUrl<CR>', opts)
   keymap('n', '<space>dv', ':FlutterDevices<CR>', opts)
@@ -44,14 +43,14 @@ local function on_attach(client, bufnr)
     vim.cmd 'Dispatch open -a Simulator.app'
   end, { force = true })
 
-  require 'configs.lsp-keymaps'.map(client, bufnr)
+  require("configs.lsp.handlers").on_attach(client, bufnr)
 end
 
-require("flutter-tools").setup {
+flutter_tools.setup {
   ui = {
     -- the border type to use for all floating windows, the same options/formats
     -- used for ":h nvim_open_win" e.g. "single" | "shadow" | {<table-of-eight-chars>}
-    border = "none",
+    border = "rounded",
     -- This determines whether notifications are show with `vim.notify` or with the plugin's custom UI
     -- please note that this option is eventually going to be deprecated and users will need to
     -- depend on plugins like `nvim-notify` instead.
@@ -127,7 +126,7 @@ require("flutter-tools").setup {
       virtual_text_str = "■", -- the virtual text character to highlight
     },
     on_attach = on_attach,
-    capabilities = capabilities, -- e.g. lsp_status capabilities
+    capabilities = require("configs.lsp.handlers").capabilities, -- e.g. lsp_status capabilities
     settings = {
       showTodos = true,
       completeFunctionCalls = true,

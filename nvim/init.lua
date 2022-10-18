@@ -15,3 +15,5 @@ R('core.options')
 R('core.autocommands')
 R('core.mappings')
 R('core.plugins')
+
+R("configs.lsp")

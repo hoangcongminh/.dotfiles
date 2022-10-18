@@ -1,18 +1,20 @@
-local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
-local rt = require("rust-tools")
+local status_ok, rt = pcall(require, "rust-tools")
+if not status_ok then
+  return
+end
 
 local function on_attach(client, bufnr)
   local opts = { noremap = true, silent = true }
   local keymap = vim.keymap.set
 
   -- Hover actions
-  vim.keymap.set("n", "<C-space>", rt.hover_actions.hover_actions, { buffer = bufnr })
+  keymap("n", "<C-space>", rt.hover_actions.hover_actions, { buffer = bufnr })
   -- Code action groups
-  vim.keymap.set("n", "<Leader>a", rt.code_action_group.code_action_group, { buffer = bufnr })
+  keymap("n", "<Leader>a", rt.code_action_group.code_action_group, { buffer = bufnr })
 
   keymap("n", "<space>fa", ':RustRun<CR>', opts)
 
-  require 'configs.lsp-keymaps'.map(client, bufnr)
+  require("configs.lsp.handlers").on_attach(client, bufnr)
 end
 
 local opts = {
@@ -166,7 +168,7 @@ local opts = {
   -- these override the defaults set by rust-tools.nvim
   -- see https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#rust_analyzer
   server = {
-    apabilities = capabilities,
+    capabilities = require("configs.lsp.handlers").capabilities,
     on_attach = on_attach,
     -- standalone file support
     -- setting it to false may improve startup time

@@ -9,11 +9,6 @@ if not config_status_ok then
 end
 
 local tree_cb = nvim_tree_config.nvim_tree_callback
-local keymap_opts = { noremap = true, silent = true }
-
-vim.keymap.set('n', '<leader>b', ":NvimTreeToggle<CR>", keymap_opts)
-vim.keymap.set('n', '<leader>n', ":NvimTreeFindFile<CR>", keymap_opts)
-vim.keymap.set('n', '<leader>r', ":NvimTreeRefresh<CR>", keymap_opts)
 
 nvim_tree.setup({
   open_on_setup = true,

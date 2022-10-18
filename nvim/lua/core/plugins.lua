@@ -64,8 +64,7 @@ return packer.startup(
 			run = ":CatppuccinCompile" }
 
 		-- treesitter
-		use {
-			'nvim-treesitter/nvim-treesitter',
+		use { 'nvim-treesitter/nvim-treesitter',
 			run = ':TSUpdate',
 			event = "BufWinEnter",
 			requires = {
@@ -73,10 +72,7 @@ return packer.startup(
 				{ 'nvim-treesitter/nvim-treesitter-textobjects', after = 'nvim-treesitter' },
 				{ 'p00f/nvim-ts-rainbow', after = 'nvim-treesitter' },
 			},
-			config = function()
-				require 'configs.treesitter'
-			end
-		}
+			config = function() require 'configs.treesitter' end }
 
 		-- telescope
 		use {
@@ -85,141 +81,72 @@ return packer.startup(
 			requires = {
 				'nvim-lua/plenary.nvim',
 				{ 'nvim-telescope/telescope-fzf-native.nvim', run = 'make', after =
-				'telescope.nvim', config = function()
-					require('telescope').load_extension('fzf')
-				end
-				},
+				'telescope.nvim', config = function() require('telescope').load_extension('fzf') end },
 				{ 'nvim-telescope/telescope-ui-select.nvim', after = 'telescope.nvim',
-					config = function()
-						require('telescope').load_extension('ui-select')
-					end
-				},
-				-- { "nvim-telescope/telescope-file-browser.nvim",
-				-- 	config = function()
-				-- 		require("telescope").load_extension "file_browser"
-				-- 	end
-				-- }
+					config = function() require('telescope').load_extension('ui-select') end },
 			},
-			config = function()
-				require 'configs.telescope-config'
-			end
+			config = function() require 'configs.telescope-config' end
 		}
 
 		-- ThePrimeagen harpoon
-		use {
-			'ThePrimeagen/harpoon',
-			requires = {
-				'nvim-lua/plenary.nvim'
-			},
-			event = "BufEnter",
-		}
+		use { 'ThePrimeagen/harpoon',
+			requires = 'nvim-lua/plenary.nvim',
+			event = "BufEnter", }
 
 		-- navigate
-		use {
-			'phaazon/hop.nvim',
+		use { 'phaazon/hop.nvim',
 			branch = 'v1', -- optional but strongly recommended
 			event = "BufEnter",
-			config = function()
-				require 'configs.hop'
-			end
-		}
+			config = function() require 'configs.hop' end }
 
 		-- File and folder management
-		use {
-			'kyazdani42/nvim-tree.lua',
+		use { 'kyazdani42/nvim-tree.lua',
 			requires = 'kyazdani42/nvim-web-devicons',
-			config = function()
-				require 'configs.nvim-tree'
-			end,
-		}
+			config = function() require 'configs.nvim-tree' end }
 
 		-- git
-		use 'tpope/vim-fugitive'
-		use {
-			'lewis6991/gitsigns.nvim',
+		use { 'tpope/vim-fugitive' }
+		use { 'lewis6991/gitsigns.nvim',
 			event = "BufEnter",
-			requires = {
-				'nvim-lua/plenary.nvim'
-			},
-			config = function()
-				require 'configs.gitsigns'
-			end
-		}
+			requires = 'nvim-lua/plenary.nvim',
+			config = function() require 'configs.gitsigns' end }
 		use { 'tpope/vim-rhubarb' } -- open github
 
 		-- lualine & winbar
-		use {
-			'nvim-lualine/lualine.nvim',
+		use { 'nvim-lualine/lualine.nvim',
 			event = "BufWinEnter",
-			requires = {
-				'arkav/lualine-lsp-progress',
-			},
-			config = function()
-				require 'configs.lualine'
-			end
-		}
-
-		use {
-			'SmiteshP/nvim-navic',
-			requires = 'neovim/nvim-lspconfig'
-		}
+			requires = 'arkav/lualine-lsp-progress',
+			config = function() require 'configs.lualine' end }
+		use { 'SmiteshP/nvim-navic',
+			requires = 'neovim/nvim-lspconfig' }
 
 		-- icons
 		use { "ryanoasis/vim-devicons",
-			event = "VimEnter",
-		}
+			event = "VimEnter" }
 		use { "kyazdani42/nvim-web-devicons",
-			event = "VimEnter",
-		}
+			event = "VimEnter" }
 
 		-- Show indent line
-		use {
-			"lukas-reineke/indent-blankline.nvim",
+		use { "lukas-reineke/indent-blankline.nvim",
 			event = "BufRead",
-			config = function()
-				require 'configs.indent-blankline'
-			end
-		}
+			config = function() require 'configs.indent-blankline' end }
 
 		-- comment
-		use 'tpope/vim-commentary'
+		use { 'tpope/vim-commentary' }
 
 		-- lsp
-		use {
-			'junnplus/lsp-setup.nvim',
+		use { 'junnplus/lsp-setup.nvim',
 			requires = {
 				'neovim/nvim-lspconfig',
 				'williamboman/mason.nvim',
 				'williamboman/mason-lspconfig.nvim',
-			},
-			config = function()
-				require 'configs.lsp-config'
-			end
-		}
-		use({
-			"glepnir/lspsaga.nvim",
-			branch = "main",
-			config = function()
-				require 'configs.lspsaga'
-			end
-		})
-		use {
-			'ray-x/lsp_signature.nvim',
-			config = function()
-				require 'configs.lsp-signature'
-			end
-		}
-		use {
-			"antoinemadec/FixCursorHold.nvim",
+			} }
+		use { 'ray-x/lsp_signature.nvim' }
+		use { "antoinemadec/FixCursorHold.nvim",
 			event = { "BufRead", "BufNewFile" },
-			config = function() vim.g.cursorhold_updatetime = 100 end,
-		}
+			config = function() vim.g.cursorhold_updatetime = 100 end }
 		use { "jose-elias-alvarez/null-ls.nvim" } -- for formatters and linters
-		use { "RRethy/vim-illuminate",
-			config = function()
-				require 'configs.illuminate'
-			end
-		}
+		use { "RRethy/vim-illuminate", config = function() require 'configs.illuminate' end }
 
 		-- debugger
 		-- use {
@@ -247,9 +174,7 @@ return packer.startup(
 				require 'configs.flutter-tools'
 			end
 		}
-
 		use { 'eliasreis54/vim-bloc-plugin' }
-
 		use {
 			'akinsho/pubspec-assist.nvim',
 			requires = 'plenary.nvim',
@@ -299,8 +224,6 @@ return packer.startup(
 				-- { 'tzachar/cmp-tabnine', run = './install.sh', requires = 'hrsh7th/nvim-cmp' }
 			}
 		}
-
-
 		use {
 			'L3MON4D3/LuaSnip',
 			requires = { 'rafamadriz/friendly-snippets' },
@@ -340,7 +263,6 @@ return packer.startup(
 		use 'tpope/vim-eunuch'
 		use 'tpope/vim-dispatch'
 		use 'romainl/vim-cool' -- Auto hide search highlight
-		use { 'mg979/vim-visual-multi', branch = 'master' }
 
 		use {
 			'norcalli/nvim-colorizer.lua',
