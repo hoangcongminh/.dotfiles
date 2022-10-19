@@ -149,6 +149,15 @@ return packer.startup(
 		use { "RRethy/vim-illuminate", config = function() require 'configs.illuminate' end }
 
 		-- debugger
+		use { "rcarriga/nvim-dap-ui",
+			requires = {
+				"mfussenegger/nvim-dap",
+				"ravenxrz/DAPInstall.nvim",
+			},
+			config = function()
+				require 'configs.dap-config'
+			end
+		}
 		-- use {
 		-- 	"rcarriga/nvim-dap-ui",
 		-- 	requires = { "mfussenegger/nvim-dap" },
@@ -161,7 +170,6 @@ return packer.startup(
 		-- flutter
 		use {
 			"akinsho/flutter-tools.nvim",
-			commit = '6b13345dd7ffe3b0a08536b8fadfa288af137616',
 			ft = { 'flutter', 'dart', 'yaml' },
 			requires = {
 				"nvim-lua/plenary.nvim",

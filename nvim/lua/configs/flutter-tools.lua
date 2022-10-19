@@ -89,7 +89,7 @@ flutter_tools.setup {
           program = "${workspaceFolder}/lib/main.dart",
           -- The nvim-dap plugin populates this variable with the editor's current working directory
           cwd = "${workspaceFolder}",
-          args = { '-d', '9FD96D5D-AC98-4D5A-8E73-802707579F42' }
+          args = { '-d', 'BD9F933A-D00E-4279-8AE9-B3F8322103DC' }
         },
       }
     end,
