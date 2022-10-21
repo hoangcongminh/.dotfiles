@@ -7,7 +7,7 @@ local actions = require('telescope.actions')
 local telescope_builtin = require 'telescope.builtin'
 
 local search_dotfiles = function()
-  require("telescope.builtin").find_files({
+  telescope_builtin.find_files({
     prompt_title = "< .dotfiles >",
     cwd = vim.env.DOTFILES,
     hidden = true,
