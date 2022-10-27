@@ -110,5 +110,8 @@ configs.setup {
       goto_node = '<cr>',
       show_help = '?',
     },
-  }
+  },
+  endwise = {
+    enable = true,
+  },
 }

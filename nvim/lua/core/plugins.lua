@@ -71,6 +71,7 @@ return packer.startup(
 				{ 'nvim-treesitter/playground', after = 'nvim-treesitter' },
 				{ 'nvim-treesitter/nvim-treesitter-textobjects', after = 'nvim-treesitter' },
 				{ 'p00f/nvim-ts-rainbow', after = 'nvim-treesitter' },
+				{ 'RRethy/nvim-treesitter-endwise', after = 'nvim-treesitter' }
 			},
 			config = function() require 'configs.treesitter' end }
 
