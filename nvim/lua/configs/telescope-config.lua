@@ -15,26 +15,23 @@ local search_dotfiles = function()
   })
 end
 
-local project_files = function()
-  local opts = {
-    find_command = { 'rg', '--files', '--hidden', '-g', '!.git' },
-    previewer = false
-  }
+-- local project_files = function()
+--   local opts = {
+--     find_command = { 'rg', '--files', '--hidden', '-g', '!.git' },
+--     previewer = false
+--   }
 
-  telescope_builtin.find_files(opts)
-  -- local ok = pcall(telescope_builtin.git_files)
-  -- if not ok then telescope_builtin.find_files(opts)
-  -- end
-end
+--   telescope_builtin.find_files(opts)
+--   local ok = pcall(telescope_builtin.git_files)
+--   if not ok then telescope_builtin.find_files(opts)
+--   end
+-- end
 
 telescope.setup {
-  igfile_ignore_patterns = { "node_modules" },
-  pickers = {
-    find_files = {
-      hidden = true
-    }
-  },
   defaults = {
+    path_display = { "absolute" },
+    igfile_ignore_patterns = { ".git/", "node_modules" },
+
     mappings = {
       i = {
         ["<C-q>"] = actions.send_to_qflist,
@@ -55,7 +52,7 @@ telescope.setup {
     },
     fzf = {
       fuzzy = true, -- false will only do exact matching
-      override_generic_sorter = false, -- override the generic sorter
+      override_generic_sorter = true, -- override the generic sorter
       override_file_sorter = true, -- override the file sorter
       case_mode = "smart_case", -- or "ignore_case" or "respect_case"
     },
@@ -67,23 +64,10 @@ local keymap = vim.keymap.set
 
 local opts = { noremap = true, silent = true }
 
--- keymap('n', '<space>P',
---   function()
---     telescope_builtin.find_files({ find_command = { 'rg', '--files', '--hidden', '-g', '!.git' }, previewer = false })
---   end,
---   opts
--- )
--- keymap('n', '<space>p', function() telescope_builtin.git_files({ previewer = false }) end, opts)
---
-keymap('n', '<leader>p', function() project_files() end, opts)
--- keymap('n', '<leader>ff',
---   function() require "telescope.builtin".find_files({ find_command = { 'rg', '--files', '--hidden', '-g', '!.git' },
---       previewer = false })
---   end, opts)
--- keymap('n', '<leader>p',
---   function() telescope_builtin.find_files({ find_command = { 'rg', '--files', '--hidden', '-g', '!.git' },
---       previewer = false })
---   end, opts)
+-- keymap('n', '<leader>p', function() project_files() end, opts)
+keymap('n', '<leader><leader>', telescope_builtin.find_files, opts)
+keymap('n', '<leader>p', telescope_builtin.git_files, opts)
+
 keymap('n', '<space>fg', telescope_builtin.live_grep, opts)
 keymap('n', '<space>fb', telescope_builtin.buffers, opts)
 keymap('n', '<space>fo', telescope_builtin.oldfiles, opts)
