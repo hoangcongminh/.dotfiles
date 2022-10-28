@@ -21,8 +21,8 @@ plugins=(
   zsh-vim-mode
 )
 
-ZSH_TMUX_AUTOSTART=true
-ZSH_TMUX_AUTOQUIT=false
+# ZSH_TMUX_AUTOSTART=true
+# ZSH_TMUX_AUTOQUIT=false
 
 source $ZSH/oh-my-zsh.sh
 
