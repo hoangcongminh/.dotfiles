@@ -1,7 +1,6 @@
-vim.o.winbar = "%m%y %f > %{%v:lua.require'nvim-navic'.get_location()%}"
+vim.o.winbar = "%m%y %{%v:lua.require'nvim-web-devicons'.get_icon_color_by_filetype(&filetype)%} %f > %{%v:lua.require'nvim-navic'.get_location()%}"
 vim.opt.signcolumn = "yes"
 vim.opt.laststatus = 3
-vim.opt.cmdheight = 1
 vim.opt.cmdheight = 0
 vim.opt.number = true
 vim.opt.relativenumber = true
@@ -24,7 +23,6 @@ vim.opt.showmode = false
 vim.opt.updatetime = 50
 vim.opt.mouse = "a"
 vim.opt.colorcolumn = "80"
--- vim.opt.clipboard = "unnamedplus"
 vim.opt.clipboard:append { 'unnamedplus' }
 vim.opt.completeopt = "menuone,noinsert,noselect"
 vim.opt.shortmess:append("c")
