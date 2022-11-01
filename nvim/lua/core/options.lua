@@ -1,31 +1,57 @@
-vim.o.winbar = "%m%y %{%v:lua.require'nvim-web-devicons'.get_icon_color_by_filetype(&filetype)%} %f > %{%v:lua.require'nvim-navic'.get_location()%}"
-vim.opt.signcolumn = "yes"
-vim.opt.laststatus = 3
-vim.opt.cmdheight = 0
-vim.opt.number = true
-vim.opt.relativenumber = true
-vim.opt.termguicolors = true
-vim.opt.expandtab = true
-vim.opt.smartindent = true
-vim.opt.smartcase = true
-vim.opt.ignorecase = true
-vim.opt.scrolloff = 8
-vim.opt.sidescrolloff = 8
-vim.opt.shiftround = true
-vim.opt.tabstop = 4
-vim.opt.softtabstop = 4
-vim.opt.shiftwidth = 4
-vim.opt.swapfile = false
-vim.opt.incsearch = true
--- vim.opt.cursorcolumn = true
-vim.opt.cursorline = true
-vim.opt.showmode = false
-vim.opt.updatetime = 50
-vim.opt.mouse = "a"
-vim.opt.colorcolumn = "80"
-vim.opt.clipboard:append { 'unnamedplus' }
-vim.opt.completeopt = "menuone,noinsert,noselect"
-vim.opt.shortmess:append("c")
+local opt = vim.opt -- for conciseness
 
--- Set colorscheme
-require 'configs.catppuccin'
+-- line numbers
+opt.relativenumber = true
+opt.number = true
+
+-- tab & indentation
+opt.tabstop = 4
+opt.softtabstop = 4
+opt.shiftwidth = 4
+opt.shiftround = true
+opt.expandtab = true
+opt.smartindent = true
+opt.autoindent = true
+
+-- scroll
+opt.scrolloff = 8
+opt.sidescrolloff = 8
+
+-- line wrapping
+opt.wrap = false
+
+-- search settings
+opt.ignorecase = true
+opt.smartcase = true
+opt.incsearch = true
+
+-- cursor
+opt.cursorline = true
+-- opt.cursorcolumn = true
+
+-- appearance
+vim.o.winbar = "%m%y %{%v:lua.require'nvim-web-devicons'.get_icon_color_by_filetype(&filetype)%} %f > %{%v:lua.require'nvim-navic'.get_location()%}"
+opt.termguicolors = true
+opt.signcolumn = "yes"
+opt.colorcolumn = "80"
+
+-- backspace
+opt.backspace = "indent,eol,start"
+
+-- clipboard
+opt.clipboard:append { 'unnamedplus' }
+
+-- split windows
+opt.splitright = true
+opt.splitbelow = true
+
+-- cmd
+opt.laststatus = 3
+opt.cmdheight = 0
+opt.shortmess:append("c")
+
+-- others
+opt.swapfile = false
+opt.updatetime = 50
+opt.mouse = "a"
+opt.completeopt = "menuone,noinsert,noselect"

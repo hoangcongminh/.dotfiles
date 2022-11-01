@@ -48,12 +48,7 @@ packer.init({
 return packer.startup(
 	function(use)
 		-- Let packer manage itself
-		use {
-			'wbthomason/packer.nvim',
-			config = function()
-				vim.cmd "autocmd BufWritePost init.lua source <afile> | PackerCompile"
-			end
-		}
+		use { 'wbthomason/packer.nvim' }
 
 		-- increase startup speed
 		use { "lewis6991/impatient.nvim" }
