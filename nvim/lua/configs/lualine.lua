@@ -5,8 +5,8 @@ end
 
 -- Color table for highlights
 local colors = {
-  bg = '#303446',
-  -- bg = 'none',
+  -- bg = '#303446',
+  bg = 'none',
   fg = '#bbc2cf',
   yellow = "#E5C890",
   cyan = "#81C8BE",

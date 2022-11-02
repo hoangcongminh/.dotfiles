@@ -58,7 +58,7 @@ catppuccin.setup({
     LineNr = { fg = colors.overlay1 },
     CursorLine = { bg = colors.none },
     CursorLineNr = { fg = colors.lavender },
-    VertSplit = { fg = colors.green },
+    VertSplit = { fg = colors.pink },
     DiagnosticVirtualTextError = { bg = colors.none },
     DiagnosticVirtualTextWarn = { bg = colors.none },
     DiagnosticVirtualTextInfo = { bg = colors.none },

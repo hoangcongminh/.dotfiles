@@ -76,10 +76,8 @@ return packer.startup(
 			event = "BufEnter",
 			requires = {
 				'nvim-lua/plenary.nvim',
-				{ 'nvim-telescope/telescope-fzf-native.nvim', run = 'make', after =
-				'telescope.nvim', config = function() require('telescope').load_extension('fzf') end },
-				{ 'nvim-telescope/telescope-ui-select.nvim', after = 'telescope.nvim',
-					config = function() require('telescope').load_extension('ui-select') end },
+				{ 'nvim-telescope/telescope-fzf-native.nvim', run = 'make', after = 'telescope.nvim' },
+				{ 'nvim-telescope/telescope-ui-select.nvim', after = 'telescope.nvim' },
 			},
 			config = function() require 'configs.telescope-config' end
 		}

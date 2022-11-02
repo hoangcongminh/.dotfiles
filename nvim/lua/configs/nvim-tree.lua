@@ -10,6 +10,9 @@ end
 
 local tree_cb = nvim_tree_config.nvim_tree_callback
 
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
 nvim_tree.setup({
   open_on_setup = true,
   sort_by = "case_sensitive",
@@ -36,9 +39,9 @@ nvim_tree.setup({
     group_empty = true,
     highlight_git = true,
     full_name = true,
-    indent_markers = {
-      enable = true,
-    },
+    -- indent_markers = {
+    --   enable = true,
+    -- },
     icons = {
       webdev_colors = true,
       git_placement = "before",
@@ -54,8 +57,10 @@ nvim_tree.setup({
         default = "",
         symlink = "",
         folder = {
-          arrow_closed = "",
-          arrow_open = "",
+          -- arrow_closed = "",
+          -- arrow_open = "",
+          arrow_closed = "",
+          arrow_open = "",
           default = "",
           open = "",
           empty = "",
@@ -91,6 +96,9 @@ nvim_tree.setup({
   },
   actions = {
     open_file = {
+      window_picker = {
+        enable = false,
+      },
       quit_on_open = true,
     },
   }
