@@ -31,7 +31,7 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 echo "Installing Tmux Plugin Manager..."
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
-brew services start yabai
-brew services start skhd
+# brew services start yabai
+# brew services start skhd
 
 echo "Macbook setup completed!"
