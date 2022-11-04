@@ -49,15 +49,20 @@ export MACOSX_DEPLOYMENT_TARGET=10.15
 export EDITOR='nvim'
 
 bindkey '^n' autosuggest-accept
+
 function gpp() {
-  git add .
+    git status
+    git add .
   if [ "$1" != "" ]
   then
-      git commit -m "$1"
+    echo "New commit message set to: $1\n"
+    git commit -m "$1"
   else
-      git commit -m update # default commit message is `update`
-  fi # closing statement of if-else block
-  git push
+    # default commit message is `update`
+    echo "New commit message set to: update\n"
+    git commit -m update 
+  fi 
+    git push
 }
 
 # Aliases
