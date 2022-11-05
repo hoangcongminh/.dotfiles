@@ -19,7 +19,7 @@ end
 
 local project_files = function()
   local opts = {
-    find_command = { 'fd', '--files', '--hidden', '-g', '!.git' },
+    find_command = { 'rg', '--files', '--hidden', '-g', '!.git' },
   }
   vim.fn.system('git rev-parse --is-inside-work-tree')
   if vim.v.shell_error == 0 then
