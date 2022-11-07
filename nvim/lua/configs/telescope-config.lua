@@ -31,6 +31,7 @@ end
 
 telescope.load_extension("fzf")
 telescope.load_extension("ui-select")
+telescope.load_extension('bookmarks')
 
 --Ignore files bigger than a threshold
 local new_maker = function(filepath, bufnr, opts)
@@ -89,6 +90,9 @@ telescope.setup {
       override_file_sorter = true, -- override the file sorter
       case_mode = "smart_case", -- or "ignore_case" or "respect_case"
     },
+    bookmarks = {
+      selected_browser = 'chrome',
+    },
   }
 }
 
@@ -116,3 +120,4 @@ keymap('n', '<space>fd', function() telescope_builtin.diagnostics(dropdown_theme
 
 keymap('n', '<space>t', function() vim.cmd 'Telescope' end, opts)
 keymap('n', '<leader>dff', function() search_dotfiles() end, opts)
+keymap('n', '<leader>bm', function() telescope.extensions.bookmarks.bookmarks(telescope_themes.get_ivy()) end, opts)

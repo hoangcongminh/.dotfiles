@@ -78,6 +78,7 @@ return packer.startup(
 				'nvim-lua/plenary.nvim',
 				{ 'nvim-telescope/telescope-fzf-native.nvim', run = 'make', after = 'telescope.nvim' },
 				{ 'nvim-telescope/telescope-ui-select.nvim', after = 'telescope.nvim' },
+				{ 'dhruvmanila/telescope-bookmarks.nvim' },
 			},
 			config = function() require 'configs.telescope-config' end
 		}
