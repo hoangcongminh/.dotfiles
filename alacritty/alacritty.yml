@@ -19,8 +19,11 @@ custom_cursor_colors: true
 env:
   TERM: xterm-256color
 
+mouse:
+  hide_when_typing: true
+
 window:
-  opacity: 0.8
+  opacity: 0.7
   # startup_mode: simplefullscreen
   startup_mode: maximized 
   # startup_mode: Windowed
