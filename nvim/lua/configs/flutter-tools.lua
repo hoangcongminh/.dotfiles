@@ -18,9 +18,13 @@ local function on_attach(client, bufnr)
   keymap('n', '<space>fl', vim.cmd.FlutterLogClear, opts)
   keymap('n', '<space>o', vim.cmd.FlutterOutlineToggle, opts)
   keymap('n', '<Space>rl', vim.cmd.FlutterReload, opts)
-  keymap('n', '<space>fR', vim.cmd.FlutterRestart, opts)
+  -- keymap('n', '<space>fR', vim.cmd.FlutterRestart, opts)
   keymap('n', '<space>fpg', vim.cmd.FlutterPubGet, opts)
   -- keymap('n', '<space>fm', ':DartFmt<CR>', opts)
+  keymap('n', '<space>fR', function()
+    vim.cmd 'FlutterLogClear'
+    vim.cmd 'FlutterRestart'
+  end, opts)
 
   vim.api.nvim_buf_create_user_command(bufnr, 'FlutterOpenLog', function()
     vim.cmd 'vsplit'
