@@ -94,7 +94,7 @@ local function lsp_keymaps(bufnr)
 	keymap('n', "<space>rn", vim.lsp.buf.rename, opts)
 	keymap('n', '<space>aw', vim.lsp.buf.code_action, opts)
 	keymap('v', '<space>ca', vim.lsp.buf.range_code_action, opts)
-	keymap('n', "<space>fm", vim.lsp.buf.formatting, opts)
+	keymap('n', "<space>fm", function() vim.lsp.buf.format({ async = true }) end, opts)
 end
 
 M.on_attach = function(client, bufnr)
