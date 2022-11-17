@@ -22,6 +22,9 @@ rustup-init
 echo "Setup flutter..."
 fvm install stable
 
+echo "Setup java..."
+sudo ln -sfn /usr/local/opt/java/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk.jdk
+
 echo "Cleaning up..."
 brew cleanup
 
