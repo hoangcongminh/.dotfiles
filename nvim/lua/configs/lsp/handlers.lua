@@ -122,6 +122,11 @@ M.on_attach = function(client, bufnr)
 
 	navic.attach(client, bufnr)
 
+	local ok, lsp_format = pcall(require, "lsp-format")
+	if ok then
+		lsp_format.on_attach(client)
+	end
+
 	-- Fotmat on save
 	-- vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.formatting_sync()]]
 	require('lsp-setup.utils').format_on_save(client)
