@@ -26,7 +26,8 @@ opt.smartcase = true
 opt.incsearch = true
 
 -- cursor
-opt.cursorline = true
+opt.guicursor = ""
+-- opt.cursorline = true
 -- opt.cursorcolumn = true
 
 -- appearance

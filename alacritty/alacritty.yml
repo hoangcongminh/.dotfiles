@@ -3,7 +3,7 @@ cursor:
     blinking: On
 
 font:
-  size: 11.0
+  size: 12
   normal:
     family: JetBrainsMono Nerd Font
     # family: UbuntuMono Nerd Font
@@ -20,7 +20,7 @@ mouse:
   hide_when_typing: true
 
 window:
-  opacity: 0.7
+  opacity: 0.83
   # startup_mode: simplefullscreen
   startup_mode: maximized 
   # startup_mode: Windowed

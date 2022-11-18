@@ -54,9 +54,13 @@ return packer.startup(
 		use { "lewis6991/impatient.nvim" }
 
 		--colorscheme
-		use { "catppuccin/nvim",
-			as = "catppuccin",
-			run = ":CatppuccinCompile" }
+		-- use { "catppuccin/nvim",
+		-- 	as = "catppuccin",
+		-- 	run = ":CatppuccinCompile" }
+		use({
+			'rose-pine/neovim',
+			as = 'rose-pine',
+		})
 
 		-- treesitter
 		use { 'nvim-treesitter/nvim-treesitter',
