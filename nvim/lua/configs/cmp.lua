@@ -97,7 +97,7 @@ cmp.setup({
     { name = 'path' },
     { name = "nvim_lsp_signature_help" },
     { name = "nvim_lua" },
-    { name = 'treesitter' },
+    -- { name = 'treesitter' },
     {
       name = 'tmux',
       option = {
@@ -107,7 +107,7 @@ cmp.setup({
         trigger_characters_ft = {} -- { filetype = { '.' } }
       }
     },
-    { name = 'copilot' },
+    -- { name = 'copilot' },
   }, {
     { name = 'buffer' },
   })

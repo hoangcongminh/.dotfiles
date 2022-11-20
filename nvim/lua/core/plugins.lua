@@ -224,11 +224,10 @@ return packer.startup(
 				{ "hrsh7th/cmp-nvim-lsp-signature-help" },
 				{ 'saadparwaiz1/cmp_luasnip' },
 				{ 'dmitmel/cmp-cmdline-history' },
-				{ 'ray-x/cmp-treesitter' },
-				{ 'hrsh7th/cmp-copilot' },
+				-- { 'ray-x/cmp-treesitter' },
+				-- { 'hrsh7th/cmp-copilot' },
 				{ 'andersevenrud/cmp-tmux' },
 				{ 'onsails/lspkind-nvim' },
-				-- { 'tzachar/cmp-tabnine', run = './install.sh', requires = 'hrsh7th/nvim-cmp' }
 			}
 		}
 		use {
