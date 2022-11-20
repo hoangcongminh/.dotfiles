@@ -42,6 +42,7 @@ rose_pine.setup({
     highlight_groups = {
         ColorColumn = { bg = 'rose' },
         WinSeparator = { fg = 'gold' },
+        Winbar = { fg = 'rose' },
     }
 })
 
