@@ -19,21 +19,6 @@ local colors = {
   red = "#E78284",
 }
 
--- local colors = {
---   bg = '#202328',
---   -- bg = 'none',
---   fg = '#bbc2cf',
---   yellow = '#ECBE7B',
---   cyan = '#008080',
---   darkblue = '#081633',
---   green = '#98be65',
---   orange = '#FF8800',
---   violet = '#a9a1e1',
---   magenta = '#c678dd',
---   blue = '#51afef',
---   red = '#ec5f67'
--- }
-
 local conditions = {
   buffer_not_empty = function() return vim.fn.empty(vim.fn.expand('%:t')) ~= 1 end,
   hide_in_width = function() return vim.fn.winwidth(0) > 80 end,
@@ -90,42 +75,11 @@ local function ins_right(component)
   table.insert(config.sections.lualine_x, component)
 end
 
--- Inserts a component in lualine_c at left inactive_sections
-local function ins_left_inactive_section(component)
-  table.insert(config.inactive_sections.lualine_c, component)
-end
-
--- Inserts a component in lualine_c at left inactive_sections
-local function ins_right_inactive_section(component)
-  table.insert(config.inactive_sections.lualine_x, component)
-end
-
-ins_left_inactive_section {
-  'filename',
-  condition = conditions.buffer_not_empty,
-  path = 1,
-  color = { fg = colors.magenta, gui = 'bold' }
-}
-
-ins_right_inactive_section {
-  'o:encoding', -- option component same as &encoding in viml
-  upper = true, -- I'm not sure why it's upper case either ;)
-  condition = conditions.hide_in_width,
-  color = { fg = colors.green, gui = 'bold' }
-}
-
-ins_right_inactive_section {
-  'fileformat',
-  upper = true,
-  icons_enabled = false, -- I think icons are cool but Eviline doesn't have them. sigh
-  color = { fg = colors.green, gui = 'bold' }
-}
-
-ins_left {
-  function() return '▊' end,
-  color = { fg = colors.blue }, -- Sets highlighting of component
-  left_padding = 0 -- We don't need space before this
-}
+-- ins_left {
+--   function() return '▊' end,
+--   color = { fg = colors.blue }, -- Sets highlighting of component
+--   left_padding = 0 -- We don't need space before this
+-- }
 
 ins_left {
   -- mode component
@@ -255,11 +209,11 @@ ins_right {
   condition = conditions.hide_in_width
 }
 
-ins_right {
-  function() return '▊' end,
-  color = { fg = colors.blue },
-  right_padding = 0
-}
+-- ins_right {
+--   function() return '▊' end,
+--   color = { fg = colors.blue },
+--   right_padding = 0
+-- }
 
 -- Now don't forget to initialize lualine
 lualine.setup(config)

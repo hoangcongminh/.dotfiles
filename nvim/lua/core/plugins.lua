@@ -157,14 +157,6 @@ return packer.startup(
 				require 'configs.dap-config'
 			end
 		}
-		-- use {
-		-- 	"rcarriga/nvim-dap-ui",
-		-- 	requires = { "mfussenegger/nvim-dap" },
-		-- 	after = 'nvim-dap',
-		-- 	config = function()
-		-- 		require 'configs.dap-config'
-		-- 	end
-		-- }
 
 		-- flutter
 		use {
