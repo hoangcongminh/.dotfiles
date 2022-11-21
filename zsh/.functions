@@ -1,0 +1,14 @@
+function gpp() {
+    git status
+    git add .
+  if [ "$1" != "" ]
+  then
+    echo "New commit message set to: $1\n"
+    git commit -m "$1"
+  else
+    # default commit message is `update`
+    echo "New commit message set to: update\n"
+    git commit -m update 
+  fi 
+    git push
+}

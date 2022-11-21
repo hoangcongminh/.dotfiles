@@ -54,25 +54,16 @@ export NVM_DIR="$HOME/.nvm"
 
 export JAVA_HOME="/usr/local/opt/java/bin:$PATH"
 
-bindkey '^n' autosuggest-accept
+export PATH="$DOTFILES_DIR/bin/:$PATH"
 
-function gpp() {
-    git status
-    git add .
-  if [ "$1" != "" ]
-  then
-    echo "New commit message set to: $1\n"
-    git commit -m "$1"
-  else
-    # default commit message is `update`
-    echo "New commit message set to: update\n"
-    git commit -m update 
-  fi 
-    git push
-}
+bindkey '^n' autosuggest-accept
+bindkey -s ^f "tmux-sessionizer\n"
 
 # Aliases
 source $HOME/.dotfiles/zsh/.aliases
+
+# Functions
+source $HOME/.dotfiles/zsh/.functions
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
