@@ -21,12 +21,13 @@ plugins=(
   zsh-vim-mode
 )
 
-# ZSH_TMUX_AUTOSTART=true
-# ZSH_TMUX_AUTOQUIT=false
-
 source $ZSH/oh-my-zsh.sh
 
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+export FZF_BASE=~/.fzf.zsh
+export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'
+export MACOSX_DEPLOYMENT_TARGET=10.15
+export EDITOR='nvim'
 
 export PATH="$PATH:$HOME/fvm/versions/stable/bin"
 export PATH="$PATH:$HOME/fvm/versions/stable/bin/cache/dart-sdk/bin"
@@ -38,22 +39,11 @@ export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH="$PATH:$HOME/.cargo/bin/"
 export PATH="$PATH:/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin"
-
 export DOTFILES_DIR="$HOME/.dotfiles"
-
-export FZF_BASE=~/.fzf.zsh
-export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'
-
-export MACOSX_DEPLOYMENT_TARGET=10.15
-
-export EDITOR='nvim'
-
 export NVM_DIR="$HOME/.nvm"
   [ -s "/usr/local/opt/nvm/nvm.sh" ] && \. "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
   [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
-
 export JAVA_HOME="/usr/local/opt/java/bin:$PATH"
-
 export PATH="$DOTFILES_DIR/bin/:$PATH"
 
 bindkey '^n' autosuggest-accept
