@@ -109,7 +109,6 @@ return packer.startup(
 			event = "BufEnter",
 			requires = 'nvim-lua/plenary.nvim',
 			config = function() require 'configs.gitsigns' end }
-		use { 'tpope/vim-rhubarb' } -- open github
 
 		-- lualine & winbar
 		use { 'nvim-lualine/lualine.nvim',
