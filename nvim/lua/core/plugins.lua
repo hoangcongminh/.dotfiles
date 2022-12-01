@@ -67,10 +67,10 @@ return packer.startup(
 			run = ':TSUpdate',
 			event = "BufWinEnter",
 			requires = {
-				{ 'nvim-treesitter/playground', after = 'nvim-treesitter' },
-				{ 'nvim-treesitter/nvim-treesitter-textobjects', after = 'nvim-treesitter' },
-				{ 'p00f/nvim-ts-rainbow', after = 'nvim-treesitter' },
-				{ 'RRethy/nvim-treesitter-endwise', after = 'nvim-treesitter' }
+				{ 'nvim-treesitter/playground' },
+				{ 'nvim-treesitter/nvim-treesitter-textobjects' },
+				{ 'p00f/nvim-ts-rainbow' },
+				{ 'RRethy/nvim-treesitter-endwise' }
 			},
 			config = function() require 'configs.treesitter' end }
 
@@ -80,8 +80,8 @@ return packer.startup(
 			event = "BufEnter",
 			requires = {
 				'nvim-lua/plenary.nvim',
-				{ 'nvim-telescope/telescope-fzf-native.nvim', run = 'make', after = 'telescope.nvim' },
-				{ 'nvim-telescope/telescope-ui-select.nvim', after = 'telescope.nvim' },
+				{ 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' },
+				{ 'nvim-telescope/telescope-ui-select.nvim' },
 				{ 'dhruvmanila/telescope-bookmarks.nvim' },
 			},
 			config = function() require 'configs.telescope-config' end
@@ -215,7 +215,6 @@ return packer.startup(
 				{ "hrsh7th/cmp-nvim-lsp-signature-help" },
 				{ 'saadparwaiz1/cmp_luasnip' },
 				{ 'dmitmel/cmp-cmdline-history' },
-				-- { 'ray-x/cmp-treesitter' },
 				-- { 'hrsh7th/cmp-copilot' },
 				{ 'andersevenrud/cmp-tmux' },
 				{ 'onsails/lspkind-nvim' },

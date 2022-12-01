@@ -15,7 +15,6 @@ local source_mapping = {
   buffer = "[Buffer]",
   path = "[Path]",
   nvim_lua = "[Lua]",
-  treesitter = "[TS]",
   copilot = "[Copilot]",
   tmux = "[Tmux]",
   cmdline = "[CMD]",
@@ -97,7 +96,6 @@ cmp.setup({
     { name = 'path' },
     { name = "nvim_lsp_signature_help" },
     { name = "nvim_lua" },
-    -- { name = 'treesitter' },
     {
       name = 'tmux',
       option = {
