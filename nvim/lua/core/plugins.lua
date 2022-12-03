@@ -99,11 +99,6 @@ return packer.startup(
 			event = "BufEnter",
 			config = function() require 'configs.hop' end }
 
-		-- File and folder management
-		use { 'kyazdani42/nvim-tree.lua',
-			requires = 'kyazdani42/nvim-web-devicons',
-			config = function() require 'configs.nvim-tree' end }
-
 		-- git
 		use { 'tpope/vim-fugitive' }
 		use { 'lewis6991/gitsigns.nvim',
