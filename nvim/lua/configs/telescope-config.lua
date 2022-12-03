@@ -29,10 +29,6 @@ local project_files = function()
   end
 end
 
-telescope.load_extension("fzf")
-telescope.load_extension("ui-select")
-telescope.load_extension('bookmarks')
-
 --Ignore files bigger than a threshold
 local new_maker = function(filepath, bufnr, opts)
   opts = opts or {}
@@ -95,6 +91,10 @@ telescope.setup {
     },
   }
 }
+
+telescope.load_extension("fzf")
+telescope.load_extension("ui-select")
+telescope.load_extension('bookmarks')
 
 local dropdown_theme = telescope_themes.get_dropdown();
 local keymap = vim.keymap.set

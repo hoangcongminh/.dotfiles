@@ -32,7 +32,7 @@ end
 packer.init({
 	display = {
 		open_fn = function()
-			return require("packer.util").float({ border = "rounded" })
+			return require("packer.util").float({ border = "single" })
 		end,
 	},
 	git = {
@@ -54,13 +54,14 @@ return packer.startup(
 		use { "lewis6991/impatient.nvim" }
 
 		--colorscheme
-		-- use { "catppuccin/nvim",
-		-- 	as = "catppuccin",
-		-- 	run = ":CatppuccinCompile" }
+		use { "catppuccin/nvim",
+			as = "catppuccin",
+			run = ":CatppuccinCompile" }
 		use({
 			'rose-pine/neovim',
 			as = 'rose-pine',
 		})
+		use("folke/tokyonight.nvim")
 
 		-- treesitter
 		use { 'nvim-treesitter/nvim-treesitter',

@@ -45,6 +45,3 @@ rose_pine.setup({
         Winbar = { fg = 'rose' },
     }
 })
-
--- set colorscheme after options
-vim.cmd.colorscheme 'rose-pine'

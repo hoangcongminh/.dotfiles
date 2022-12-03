@@ -67,6 +67,5 @@ catppuccin.setup({
 })
 
 vim.cmd [[
-  colorscheme catppuccin
   hi! CursorLine gui=underline cterm=underline guibg=none
 ]]
