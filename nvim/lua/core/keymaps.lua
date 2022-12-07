@@ -10,7 +10,7 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 -- Normal --
-keymap("n", "<C-s>", ":write<CR>", opts)
+keymap("n", "<C-s>", ":update<CR>", opts)
 keymap("n", "<C-q>", ":quit<CR>", opts)
 keymap("n", "<leader>r", ":%s///g<LEFT><LEFT>", opts) -- replace
 keymap("n", "<C-d>", "<C-d>zz", opts)
