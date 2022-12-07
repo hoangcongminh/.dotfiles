@@ -129,7 +129,7 @@ M.on_attach = function(client, bufnr)
 
 	-- Fotmat on save
 	-- vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.formatting_sync()]]
-	require('lsp-setup.utils').format_on_save(client)
+	-- require('lsp-setup.utils').format_on_save(client)
 end
 
 return M
