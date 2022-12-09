@@ -34,6 +34,10 @@ function ColorschemeSetup()
         fg = "#5eacd3"
     })
 
+    hl("WinSeparator", {
+        fg = "#5eacd3"
+    })
+
     hl("netrwDir", {
         fg = "#5eacd3"
     })
