@@ -73,7 +73,7 @@ keymap("n", "N", "Nzzzv", opts)
 keymap("n", "J", "mzJ`z", opts)
 
 -- Netrw
-keymap("n", "<leader>b", ":Lexplore<CR>", opts)
+keymap("n", "<C-p>", ":Lexplore<CR>", opts)
 keymap("n", "<leader>n", ":Lexplore %:p:h<CR>", opts)
 
 -- Plugins --
