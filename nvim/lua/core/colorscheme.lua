@@ -1,4 +1,4 @@
-vim.g.minh_colorscheme = "tokyonight"
+vim.g.minh_colorscheme = "catppuccin"
 
 
 function ColorschemeSetup()

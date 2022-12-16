@@ -30,11 +30,11 @@ if not status_ok then
 end
 
 packer.init({
-	display = {
-		open_fn = function()
-			return require("packer.util").float({ border = "single" })
-		end,
-	},
+	-- display = {
+	-- 	open_fn = function()
+	-- 		return require("packer.util").float({ border = "single" })
+	-- 	end,
+	-- },
 	git = {
 		clone_timeout = 600, -- Timeout, in seconds, for git clones
 	},
