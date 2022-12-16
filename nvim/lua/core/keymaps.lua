@@ -10,9 +10,11 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 -- Normal --
-keymap("n", "<C-s>", ":update<CR>", opts)
 keymap("n", "<C-q>", ":quit<CR>", opts)
-keymap("n", "<leader>r", ":%s///g<LEFT><LEFT>", opts) -- replace
+-- Update (:w if has edit)
+keymap("n", "<C-s>", ":update<CR>", opts)
+--keymap("n", "<leader>r", ":%s///g<LEFT><LEFT>", opts) -- replace
+keymap("n", "<leader>r", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>")
 keymap("n", "<C-d>", "<C-d>zz", opts)
 keymap("n", "<C-u>", "<C-u>zz", opts)
 
@@ -39,8 +41,6 @@ keymap('n', '<space>ll', ':lli<CR>', opts)
 -- Move text up and down
 keymap("n", "<A-j>", "<Esc>:m .+1<CR>==gi", opts)
 keymap("n", "<A-k>", "<Esc>:m .-2<CR>==gi", opts)
--- Update (:w if has edit)
-keymap('n', '<space>s', ':update<CR>', opts)
 
 -- Insert --
 -- Press jk fast to exit insert mode
@@ -71,13 +71,14 @@ keymap("n", "Y", "yg$", opts)
 keymap("n", "n", "nzzzv", opts)
 keymap("n", "N", "Nzzzv", opts)
 keymap("n", "J", "mzJ`z", opts)
+-- greatest remap ever
+keymap("x", "<leader>p", "\"_dP")
 
 -- Netrw
-keymap("n", "<C-p>", ":Lexplore<CR>", opts)
+keymap("n", "<leader>pv", ":Lexplore<CR>", opts)
 keymap("n", "<leader>n", ":Lexplore %:p:h<CR>", opts)
 
--- Plugins --
-
+------ Plugins ------
 -- Packer
 keymap('n', '<leader>sy', "<cmd>PackerSync<cr>", opts)
 keymap('n', '<leader>cl', "<cmd>PackerClean<cr>", opts)
