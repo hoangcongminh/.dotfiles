@@ -15,6 +15,7 @@ opt.softtabstop = 4
 opt.shiftwidth = 4
 opt.shiftround = true
 opt.expandtab = true
+
 opt.smartindent = true
 opt.autoindent = true
 
@@ -39,7 +40,7 @@ opt.guicursor = ""
 vim.o.winbar = "%m%y %{%v:lua.require'nvim-web-devicons'.get_icon_color_by_filetype(&filetype)%} %f > %{%v:lua.require'nvim-navic'.get_location()%}"
 opt.termguicolors = true
 opt.signcolumn = "yes"
--- opt.colorcolumn = "80"
+opt.colorcolumn = "80"
 
 -- backspace
 opt.backspace = "indent,eol,start"
@@ -58,7 +59,11 @@ opt.cmdheight = 1
 opt.shortmess:append("c")
 
 -- others
-opt.swapfile = false
+vim.opt.swapfile = false
+vim.opt.backup = false
+vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
+vim.opt.undofile = true
+
 opt.updatetime = 50
 opt.mouse = "a"
 opt.completeopt = "menuone,noinsert,noselect"

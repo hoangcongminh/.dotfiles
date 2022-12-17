@@ -11,10 +11,5 @@ function R(name)
     return require(name)
 end
 
-R('core.plugins')
-R('core.options')
-R('core.autocommands')
-R('core.keymaps')
-R('core.colorscheme')
-
+R('core')
 R("configs.lsp")
