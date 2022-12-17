@@ -245,6 +245,7 @@ return packer.startup(
 		}
 
 		-- other
+		use 'mbbill/undotree'
 		use 'mtdl9/vim-log-highlighting'
 		use 'szw/vim-g'
 		use 'tpope/vim-sleuth'

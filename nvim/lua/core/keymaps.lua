@@ -103,6 +103,9 @@ keymap('n', 'fl', "<cmd>lua require'hop'.hint_lines()<cr>", { silent = true })
 -- ToggleTerm
 keymap("n", "<leader>lg", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", opts)
 
+-- Undotree
+keymap("n", "<leader>u", vim.cmd.UndotreeToggle)
+
 -- DAP
 keymap("n", "<leader>db", "<cmd>lua require'dap'.toggle_breakpoint()<cr>", opts)
 keymap("n", "<leader>dc", "<cmd>lua require'dap'.continue()<cr>", opts)
