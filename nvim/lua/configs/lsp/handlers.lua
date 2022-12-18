@@ -128,6 +128,10 @@ M.on_attach = function(client, bufnr)
 		return
 	end
 
+	navic.setup {
+		highlight = true,
+	}
+
 	navic.attach(client, bufnr)
 
 	local ok, lsp_format = pcall(require, "lsp-format")

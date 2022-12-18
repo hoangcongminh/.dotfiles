@@ -34,6 +34,10 @@ catppuccin.setup({
     operators = {},
   },
   integrations = {
+    navic = {
+      enabled = true,
+      custom_bg = "NONE"
+    },
     -- For various plugins integrations see https://github.com/catppuccin/nvim#integrations
     native_lsp = {
       enabled = true,
