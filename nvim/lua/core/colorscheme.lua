@@ -1,4 +1,4 @@
-vim.g.minh_colorscheme = "catppuccin"
+vim.g.minh_colorscheme = "tokyonight"
 
 
 function ColorschemeSetup()
@@ -17,30 +17,30 @@ function ColorschemeSetup()
         bg = "none",
     })
 
-    -- hl("ColorColumn", {
-    --     ctermbg = 0,
-    --     bg = "#2B79A0",
-    -- })
+    hl("ColorColumn", {
+        ctermbg = 0,
+        bg = "#2B79A0",
+    })
 
     hl("CursorLineNR", {
         bg = "None"
     })
 
-    -- hl("Normal", {
-    --     bg = "none"
-    -- })
+    hl("Normal", {
+        bg = "none"
+    })
 
-    -- hl("LineNr", {
-    --     fg = "#5eacd3"
-    -- })
+    hl("LineNr", {
+        fg = "#5eacd3"
+    })
 
-    -- hl("WinSeparator", {
-    --     fg = "#5eacd3"
-    -- })
+    hl("WinSeparator", {
+        fg = "#5eacd3"
+    })
 
-    -- hl("netrwDir", {
-    --     fg = "#5eacd3"
-    -- })
+    hl("netrwDir", {
+        fg = "#5eacd3"
+    })
 
 end
 

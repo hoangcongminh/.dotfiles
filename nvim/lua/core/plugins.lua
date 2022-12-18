@@ -12,7 +12,7 @@ if fn.empty(fn.glob(install_path)) > 0 then
 		install_path,
 	})
 	print("Installing packer close and reopen Neovim...")
-	vim.cmd([[packadd packer.nvim]])
+	vim.cmd.packadd('packer.nvim')
 end
 
 -- Autocommand that reloads neovim whenever you save the plugins.lua file
@@ -272,6 +272,8 @@ return packer.startup(
 				require 'configs.autopairs'
 			end
 		}
+
+		use 'ThePrimeagen/vim-be-good'
 
 		-- Automatically set up your configuration after cloning packer.nvim
 		-- Put this at the end after all plugins
