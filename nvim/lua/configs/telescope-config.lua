@@ -45,7 +45,7 @@ local new_maker = function(filepath, bufnr, opts)
 end
 
 telescope.setup {
-  defaults = {
+  defaults = telescope_themes.get_ivy {
     buffer_previewer_maker = new_maker,
     path_display = { "absolute" },
     igfile_ignore_patterns = { ".git/", "node_modules" },
@@ -67,14 +67,6 @@ telescope.setup {
         ['q'] = actions.close,
       },
     },
-  },
-  pickers = {
-    find_files = {
-      theme = "ivy",
-    },
-    git_files = {
-      theme = "ivy",
-    }
   },
   extensions = {
     ["ui-select"] = {
@@ -98,7 +90,6 @@ telescope.load_extension('bookmarks')
 
 local dropdown_theme = telescope_themes.get_dropdown();
 local keymap = vim.keymap.set
-
 local opts = { noremap = true, silent = true }
 
 keymap('n', '<leader><leader>', function() project_files() end, opts)
