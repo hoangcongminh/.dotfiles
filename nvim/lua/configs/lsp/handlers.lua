@@ -58,6 +58,14 @@ local function lsp_keymaps(bufnr)
 	-- Enable completion triggered by <c-x><c-o>
 	vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 
+	vim.api.nvim_buf_create_user_command(bufnr, 'Format', function(_)
+		if vim.lsp.buf.format then
+			vim.lsp.buf.format({ async = true })
+		elseif vim.lsp.buf.formatting then
+			vim.lsp.buf.formatting({ async = true })
+		end
+	end, { desc = 'Format current buffer with LSP' })
+
 	local opts = { noremap = true, silent = true, buffer = bufnr }
 	local keymap = vim.keymap.set
 
@@ -94,7 +102,7 @@ local function lsp_keymaps(bufnr)
 	keymap('n', "<space>rn", vim.lsp.buf.rename, opts)
 	keymap('n', '<space>aw', vim.lsp.buf.code_action, opts)
 	keymap('v', '<space>ca', vim.lsp.buf.range_code_action, opts)
-	keymap('n', "<space>fm", function() vim.lsp.buf.format({ async = true }) end, opts)
+	keymap('n', "<space>fm", ':Format<CR>', opts)
 end
 
 M.on_attach = function(client, bufnr)
