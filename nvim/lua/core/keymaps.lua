@@ -9,6 +9,8 @@ keymap("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
+keymap("n", "Q", "<nop>")
+
 -- Normal --
 keymap("n", "<C-q>", ":quit<CR>", opts)
 -- Update (:w if has edit)
@@ -17,6 +19,9 @@ keymap("n", "<C-s>", ":update<CR>", opts)
 keymap("n", "<leader>r", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>")
 keymap("n", "<C-d>", "<C-d>zz", opts)
 keymap("n", "<C-u>", "<C-u>zz", opts)
+
+-- run tmux-sessionizer
+keymap("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
 
 -- Remap for dealing with word wrap
 keymap('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
@@ -35,12 +40,9 @@ keymap('n', '<leader>ci', ':cli<CR>', opts)
 keymap('n', '<leader>k', ':cp<CR>', opts)
 keymap('n', '<leader>j', ':cn<CR>', opts)
 
-keymap('n', '<space>lo', ':lopen<CR>', opts)
-keymap('n', '<space>lc', ':lcl<CR>', opts)
-keymap('n', '<space>ll', ':lli<CR>', opts)
--- Move text up and down
-keymap("n", "<A-j>", "<Esc>:m .+1<CR>==gi", opts)
-keymap("n", "<A-k>", "<Esc>:m .-2<CR>==gi", opts)
+keymap('n', '<leader>lo', ':lopen<CR>', opts)
+keymap('n', '<leader>lc', ':lcl<CR>', opts)
+keymap('n', '<leader>ll', ':lli<CR>', opts)
 
 -- Insert --
 -- Press jk fast to exit insert mode
