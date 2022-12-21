@@ -20,7 +20,7 @@ mouse:
   hide_when_typing: true
 
 window:
-  opacity: 0.9
+  opacity: 0.93
   # startup_mode: simplefullscreen
   startup_mode: maximized 
   # startup_mode: Windowed

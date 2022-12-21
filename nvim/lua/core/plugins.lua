@@ -81,7 +81,7 @@ packer.startup(function(use)
 			{ 'nvim-telescope/telescope-ui-select.nvim' },
 			{ 'dhruvmanila/telescope-bookmarks.nvim' },
 		},
-		config = function() require 'configs.telescope-config' end
+		config = function() require 'configs.telescope' end
 	}
 
 	-- ThePrimeagen harpoon
