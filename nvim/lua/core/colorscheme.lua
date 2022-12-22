@@ -19,7 +19,13 @@ function ColorschemeSetup()
 
     hl("ColorColumn", {
         ctermbg = 0,
-        bg = "#2B79A0",
+        bg = "#333333",
+    })
+
+    hl("CursorLine", {
+        underline = true,
+        bg = "None",
+        fg = "None",
     })
 
     hl("CursorLineNR", {
@@ -27,6 +33,10 @@ function ColorschemeSetup()
     })
 
     hl("Normal", {
+        bg = "none"
+    })
+
+    hl("NormalFloat", {
         bg = "none"
     })
 

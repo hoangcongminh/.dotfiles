@@ -33,7 +33,7 @@ opt.incsearch = true
 
 -- cursor
 opt.guicursor = ""
--- opt.cursorline = true
+opt.cursorline = true
 -- opt.cursorcolumn = true
 
 -- appearance

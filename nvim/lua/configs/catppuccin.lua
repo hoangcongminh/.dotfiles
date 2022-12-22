@@ -69,7 +69,3 @@ catppuccin.setup({
     DiagnosticVirtualTextHint = { bg = colors.none },
   }
 })
-
-vim.cmd [[
-  hi! CursorLine gui=underline cterm=underline guibg=none
-]]
