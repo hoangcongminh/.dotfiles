@@ -77,8 +77,7 @@ keymap("n", "J", "mzJ`z", opts)
 keymap("x", "<leader>p", "\"_dP")
 
 -- Netrw
-keymap("n", "<leader>pv", ":Lexplore<CR>", opts)
-keymap("n", "<leader>n", ":Lexplore %:p:h<CR>", opts)
+keymap("n", "<leader>pv", ":Ex<CR>", opts)
 
 ------ Plugins ------
 -- Packer
