@@ -3,21 +3,7 @@ if not status_ok then
   return
 end
 
--- Color table for highlights
-local colors = {
-  -- bg = '#303446',
-  bg = 'none',
-  fg = '#bbc2cf',
-  yellow = "#E5C890",
-  cyan = "#81C8BE",
-  darkblue = "#8CAAEE",
-  green = "#A6D189",
-  orange = "#EF9F76",
-  violet = "#BABBF1",
-  magenta = "#F4B8E4",
-  blue = "#85C1DC",
-  red = "#E78284",
-}
+local colors = require("core.colorscheme").lualine_colors
 
 local conditions = {
   buffer_not_empty = function() return vim.fn.empty(vim.fn.expand('%:t')) ~= 1 end,

@@ -1,6 +1,5 @@
 vim.g.minh_colorscheme = "tokyonight"
 
-
 function ColorschemeSetup()
     require 'configs.catppuccin'
     require 'configs.rose-pine'
@@ -55,3 +54,22 @@ function ColorschemeSetup()
 end
 
 ColorschemeSetup()
+
+local M = {}
+
+M.lualine_colors = {
+    -- bg = '#303446',
+    bg = 'none',
+    fg = '#bbc2cf',
+    yellow = "#E5C890",
+    cyan = "#81C8BE",
+    darkblue = "#8CAAEE",
+    green = "#A6D189",
+    orange = "#EF9F76",
+    violet = "#BABBF1",
+    magenta = "#F4B8E4",
+    blue = "#85C1DC",
+    red = "#E78284",
+}
+
+return M

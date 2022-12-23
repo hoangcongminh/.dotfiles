@@ -66,5 +66,5 @@ telescope.load_extension("fzf")
 telescope.load_extension("ui-select")
 telescope.load_extension('bookmarks')
 
-pcall(require("telescope").load_extension, "smart_history")
-pcall(require("telescope").load_extension, "frecency")
+pcall(telescope.load_extension, "smart_history")
+pcall(telescope.load_extension, "frecency")

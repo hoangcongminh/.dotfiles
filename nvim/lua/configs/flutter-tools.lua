@@ -3,8 +3,13 @@ if not status_ok then
   return
 end
 
+local telescope_ok, telescope = pcall(require, "telescope")
+if not telescope_ok then
+  return
+end
+
 local function on_attach(client, bufnr)
-  require("telescope").load_extension("flutter")
+  telescope.load_extension("flutter")
 
   local opts = { noremap = true, silent = true }
   local keymap = vim.keymap.set
