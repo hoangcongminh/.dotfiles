@@ -12,4 +12,3 @@ function R(name)
 end
 
 R('core')
-R("configs.lsp")

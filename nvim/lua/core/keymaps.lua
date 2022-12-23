@@ -80,10 +80,6 @@ keymap("x", "<leader>p", "\"_dP")
 keymap("n", "<leader>pv", ":Ex<CR>", opts)
 
 ------ Plugins ------
--- Packer
-keymap('n', '<leader>sy', "<cmd>PackerSync<cr>", opts)
-keymap('n', '<leader>cl', "<cmd>PackerClean<cr>", opts)
-
 -- Commentary
 keymap("n", "<leader>/", ":Commentary<CR>", opts)
 keymap("v", "<leader>/", ":Commentary<CR>", opts)

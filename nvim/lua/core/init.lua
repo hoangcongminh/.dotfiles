@@ -4,6 +4,8 @@ require('core.colorscheme')
 require('core.plugins')
 require('core.winbar')
 
+require('configs')
+
 -- Highlight on yank
 vim.api.nvim_create_autocmd('TextYankPost', {
     callback = function()
