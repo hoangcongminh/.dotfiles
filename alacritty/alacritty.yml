@@ -16,8 +16,8 @@ custom_cursor_colors: true
 env:
   TERM: xterm-256color
 
-mouse:
-  hide_when_typing: true
+# mouse:
+#   hide_when_typing: true
 
 window:
   opacity: 0.93
