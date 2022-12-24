@@ -57,7 +57,6 @@ packer.startup(function(use)
 	-- treesitter
 	use { 'nvim-treesitter/nvim-treesitter',
 		run = ':TSUpdate',
-		event = "BufWinEnter",
 		requires = {
 			{ 'nvim-treesitter/playground' },
 			{ 'nvim-treesitter/nvim-treesitter-textobjects' },
@@ -68,7 +67,6 @@ packer.startup(function(use)
 
 	-- telescope
 	use { 'nvim-telescope/telescope.nvim',
-		event = "BufEnter",
 		requires = {
 			'nvim-lua/plenary.nvim',
 			{ 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' },
@@ -80,35 +78,31 @@ packer.startup(function(use)
 	-- ThePrimeagen harpoon
 	use { 'ThePrimeagen/harpoon',
 		requires = 'nvim-lua/plenary.nvim',
-		event = "BufEnter",
 	}
 
 	-- navigate
 	use { 'phaazon/hop.nvim',
 		branch = 'v1', -- optional but strongly recommended
-		event = "BufEnter",
 	}
 
 	-- git
 	use { 'tpope/vim-fugitive' }
 	use { 'lewis6991/gitsigns.nvim',
-		event = "BufEnter",
 		requires = 'nvim-lua/plenary.nvim',
 	}
 
 	-- lualine & winbar
 	use { 'nvim-lualine/lualine.nvim',
-		event = "BufWinEnter",
 		requires = 'arkav/lualine-lsp-progress',
 	}
 	use { 'SmiteshP/nvim-navic', requires = 'neovim/nvim-lspconfig' }
 
 	-- icons
-	use { "ryanoasis/vim-devicons", event = "VimEnter" }
-	use { "kyazdani42/nvim-web-devicons", event = "VimEnter" }
+	use { "ryanoasis/vim-devicons" }
+	use { "kyazdani42/nvim-web-devicons" }
 
 	-- Show indent line
-	use { "lukas-reineke/indent-blankline.nvim", event = "BufRead" }
+	use { "lukas-reineke/indent-blankline.nvim" }
 	-- comment
 	use { 'tpope/vim-commentary' }
 
@@ -122,7 +116,6 @@ packer.startup(function(use)
 	}
 	use { 'ray-x/lsp_signature.nvim' }
 	use { "antoinemadec/FixCursorHold.nvim",
-		event = { "BufRead", "BufNewFile" },
 		config = function() vim.g.cursorhold_updatetime = 100 end
 	}
 	use { "jose-elias-alvarez/null-ls.nvim" } -- for formatters and linters
@@ -194,13 +187,12 @@ packer.startup(function(use)
 	}
 
 	use { "akinsho/toggleterm.nvim",
-		event = "BufEnter",
 		-- cmd = "ToggleTerm",
 		module = { "toggleterm", "toggleterm.terminal" },
 	}
 
 	-- copilot
-	use { 'github/copilot.vim', event = "BufWinEnter" }
+	use { 'github/copilot.vim' }
 
 	-- other
 	use 'mbbill/undotree'
@@ -216,13 +208,12 @@ packer.startup(function(use)
 	use 'romainl/vim-cool' -- Auto hide search highlight
 
 	use { 'norcalli/nvim-colorizer.lua',
-		event = { "BufRead", "BufNewFile" },
 		config = function()
 			require 'colorizer'.setup()
 		end
 	}
 
-	use { 'windwp/nvim-autopairs', event = "InsertEnter" }
+	use { 'windwp/nvim-autopairs' }
 
 	use 'ThePrimeagen/vim-be-good'
 

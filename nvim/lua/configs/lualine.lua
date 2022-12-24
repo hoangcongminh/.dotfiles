@@ -164,19 +164,21 @@ ins_right {
   color = { fg = colors.orange, gui = 'bold' },
 }
 
-ins_right {
-  'o:encoding', -- option component same as &encoding in viml
-  upper = true, -- I'm not sure why it's upper case either ;)
-  condition = conditions.hide_in_width,
-  color = { fg = colors.green, gui = 'bold' }
-}
+-- ins_right {
+--   'o:encoding', -- option component same as &encoding in viml
+--   upper = true, -- I'm not sure why it's upper case either ;)
+--   condition = conditions.hide_in_width,
+--   color = { fg = colors.green, gui = 'bold' }
+-- }
 
-ins_right {
-  'fileformat',
-  upper = true,
-  icons_enabled = false, -- I think icons are cool but Eviline doesn't have them. sigh
-  color = { fg = colors.green, gui = 'bold' }
-}
+-- ins_right {
+--   'fileformat',
+--   upper = true,
+--   icons_enabled = false, -- I think icons are cool but Eviline doesn't have them. sigh
+--   color = { fg = colors.green, gui = 'bold' }
+-- }
+
+ins_right { 'filetype' }
 
 ins_right {
   'branch',
