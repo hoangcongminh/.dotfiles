@@ -1,4 +1,4 @@
-vim.g.minh_colorscheme = "tokyonight"
+vim.g.minh_colorscheme = "catppuccin"
 
 function ColorschemeSetup()
     require 'configs.catppuccin'
@@ -43,13 +43,13 @@ function ColorschemeSetup()
         fg = "#5eacd3"
     })
 
-    hl("WinSeparator", {
-        fg = "#5eacd3"
-    })
+    -- hl("WinSeparator", {
+    --     fg = "#5eacd3"
+    -- })
 
-    hl("netrwDir", {
-        fg = "#5eacd3"
-    })
+    -- hl("netrwDir", {
+    --     fg = "#5eacd3"
+    -- })
 
 end
 
