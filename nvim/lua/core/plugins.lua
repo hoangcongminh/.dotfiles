@@ -121,6 +121,12 @@ packer.startup(function(use)
 	use { "jose-elias-alvarez/null-ls.nvim" } -- for formatters and linters
 	use { "RRethy/vim-illuminate" }
 
+	-- highlight todos comments
+	use {
+		"folke/todo-comments.nvim",
+		requires = "nvim-lua/plenary.nvim",
+	}
+
 	-- debugger
 	use { "rcarriga/nvim-dap-ui",
 		requires = {
