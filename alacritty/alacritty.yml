@@ -11,8 +11,6 @@ font:
     # family: Monaco Nerd Font
     # family: FiraCode Nerd Font
 
-custom_cursor_colors: true
-
 env:
   TERM: xterm-256color
 
@@ -21,14 +19,8 @@ env:
 
 window:
   opacity: 0.93
-  # startup_mode: simplefullscreen
-  startup_mode: maximized 
-  # startup_mode: Windowed
+  startup_mode: Maximized 
   decorations: buttonless
-  # decorations: full 
-  # padding: 
-  #   x: 10
-  #   y: 10
 
 selection:
   semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
