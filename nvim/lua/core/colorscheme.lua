@@ -1,4 +1,4 @@
-vim.g.minh_colorscheme = "catppuccin"
+vim.g.minh_colorscheme = "rose-pine"
 
 function ColorschemeSetup()
     require 'configs.catppuccin'
