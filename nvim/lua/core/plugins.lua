@@ -204,7 +204,7 @@ packer.startup(function(use)
 	use 'mtdl9/vim-log-highlighting'
 	use 'szw/vim-g'
 	use 'tpope/vim-sleuth'
-	use 'tpope/vim-sensible'
+	-- use 'tpope/vim-sensible'
 	use 'tpope/vim-surround'
 	use 'tpope/vim-rsi'
 	use 'tpope/vim-unimpaired'
