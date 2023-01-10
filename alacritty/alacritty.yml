@@ -6,7 +6,7 @@ selection:
   save_to_clipboard: true
 
 window:
-  opacity: 0.93
+  opacity: 0.8
   decorations: full
   startup_mode: Maximized
   dynamic_title: true
