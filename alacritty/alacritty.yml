@@ -7,8 +7,8 @@ selection:
 
 window:
   opacity: 0.8
-  decorations: full
-  startup_mode: Maximized
+  decorations: none
+  startup_mode: SimpleFullscreen
   dynamic_title: true
 
 scrolling:
@@ -39,6 +39,8 @@ font:
   glyph_offset:
     x: 0
     y: 0
+
+use_thin_strokes: true
 
 draw_bold_text_with_bright_colors: true 
 

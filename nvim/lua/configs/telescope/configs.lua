@@ -57,7 +57,7 @@ telescope.setup {
       case_mode = "smart_case", -- or "ignore_case" or "respect_case"
     },
     bookmarks = {
-      selected_browser = 'chrome',
+      selected_browser = 'brave',
     },
   }
 }
