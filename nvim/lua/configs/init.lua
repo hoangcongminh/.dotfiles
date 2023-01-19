@@ -1,5 +1,6 @@
-require("configs.lsp")
-require("configs.telescope")
+require('configs.lsp')
+require('configs.telescope')
+require('configs.nvim-tree')
 require('configs.treesitter')
 require('configs.hop')
 require('configs.gitsigns')

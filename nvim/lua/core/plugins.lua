@@ -65,6 +65,8 @@ packer.startup(function(use)
 		},
 	}
 
+	use { "https://github.com/nvim-tree/nvim-tree.lua" }
+
 	-- telescope
 	use { 'nvim-telescope/telescope.nvim',
 		requires = {
