@@ -86,7 +86,7 @@ keymap("v", "<leader>/", ":Commentary<CR>", opts)
 
 -- NvimTree
 keymap("n", "<leader>b", ":NvimTreeToggle<CR>", opts)
-keymap('n', '<leader>n', ":NvimTreeFindFile<CR>", opts)
+keymap('n', '<leader>n', ":NvimTreeFindFileToggle<CR>", opts)
 
 -- Harpoon
 keymap('n', '<leader>he', function() require("harpoon.ui").toggle_quick_menu() end, opts)
