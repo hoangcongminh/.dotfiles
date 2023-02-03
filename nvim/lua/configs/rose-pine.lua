@@ -4,13 +4,13 @@ if not status_ok then
 end
 
 rose_pine.setup({
-    --- @usage 'main' | 'moon'
     dark_variant = 'main',
     bold_vert_split = false,
     dim_nc_background = false,
     disable_background = true,
     disable_float_background = true,
     disable_italics = false,
+    transparent = false,
 
     --- @usage string hex value or named color from rosepinetheme.com/palette
     groups = {
