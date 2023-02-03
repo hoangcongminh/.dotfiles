@@ -47,8 +47,8 @@ export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'
 export MACOSX_DEPLOYMENT_TARGET=10.15
 export EDITOR='nvim'
 
-export PATH="$PATH:$HOME/fvm/versions/stable/bin"
-export PATH="$PATH:$HOME/fvm/versions/stable/bin/cache/dart-sdk/bin"
+export PATH="$PATH:$HOME/fvm/default/bin"
+export PATH="$PATH:$HOME/fvm/default/bin/cache/dart-sdk/bin"
 export PATH="$PATH":"$HOME/.pub-cache/bin"
 export ANDROID_HOME=$HOME/Library/Android/sdk
 export PATH=$PATH:$ANDROID_HOME/emulator
