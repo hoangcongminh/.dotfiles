@@ -14,7 +14,7 @@ require('lsp-setup').setup({
 			}
 		},
 		jsonls = {},
-		sumneko_lua = {
+		lua_ls = {
 			settings = {
 				Lua = {
 					diagnostics = {
