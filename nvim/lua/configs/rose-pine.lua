@@ -10,7 +10,7 @@ rose_pine.setup({
     disable_background = true,
     disable_float_background = true,
     disable_italics = false,
-    transparent = false,
+    transparent = true,
 
     --- @usage string hex value or named color from rosepinetheme.com/palette
     groups = {

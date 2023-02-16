@@ -3,7 +3,7 @@ if not status_ok then
   return
 end
 
-vim.g.catppuccin_flavour = "frappe" -- latte, frappe, macchiato, mocha
+vim.g.catppuccin_flavour = "mocha" -- latte, frappe, macchiato, mocha
 local colors = require("catppuccin.palettes").get_palette()
 colors.none = "NONE"
 
@@ -23,8 +23,8 @@ catppuccin.setup({
     comments = { "italic" },
     conditionals = { "italic" },
     loops = {},
-    functions = {},
-    keywords = {},
+    functions = { "italic" },
+    keywords = { "bold" },
     strings = {},
     variables = {},
     numbers = {},
@@ -34,6 +34,8 @@ catppuccin.setup({
     operators = {},
   },
   integrations = {
+    mason = true,
+    nvimtree = false,
     navic = {
       enabled = true,
       custom_bg = "NONE"
@@ -53,6 +55,7 @@ catppuccin.setup({
         warnings = { "underline" },
         information = { "underline" },
       },
+      dap = { enabled = true, enable_ui = true },
     },
   },
   color_overrides = {},

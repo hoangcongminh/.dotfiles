@@ -1,4 +1,4 @@
-vim.g.minh_colorscheme = "rose-pine"
+vim.g.minh_colorscheme = "catppuccin"
 
 function ColorschemeSetup()
     require 'configs.catppuccin'
@@ -12,36 +12,36 @@ function ColorschemeSetup()
         vim.api.nvim_set_hl(0, thing, opts)
     end
 
-    hl("SignColumn", {
-        bg = "none",
-    })
+    -- hl("SignColumn", {
+    --     bg = "none",
+    -- })
 
-    hl("ColorColumn", {
-        ctermbg = 0,
-        bg = "#333333",
-    })
+    -- hl("ColorColumn", {
+    --     ctermbg = 0,
+    --     bg = "#333333",
+    -- })
 
-    hl("CursorLine", {
-        underline = true,
-        bg = "None",
-        fg = "None",
-    })
+    -- hl("CursorLine", {
+    --     underline = true,
+    --     bg = "None",
+    --     fg = "None",
+    -- })
 
-    hl("CursorLineNR", {
-        bg = "None"
-    })
+    -- hl("CursorLineNR", {
+    --     bg = "None"
+    -- })
 
-    hl("Normal", {
-        bg = "none"
-    })
+    -- hl("Normal", {
+    --     bg = "none"
+    -- })
 
-    hl("NormalFloat", {
-        bg = "none"
-    })
+    -- hl("NormalFloat", {
+    --     bg = "none"
+    -- })
 
-    hl("LineNr", {
-        fg = "#5eacd3"
-    })
+    -- hl("LineNr", {
+    --     fg = "#5eacd3"
+    -- })
 
     -- hl("WinSeparator", {
     --     fg = "#5eacd3"
