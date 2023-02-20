@@ -1,7 +1,6 @@
 require('core.plugins')
 require('core.keymaps')
 require('core.options')
-require('core.colorscheme')
 require('core.winbar')
 
 -- Highlight on yank

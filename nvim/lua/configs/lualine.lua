@@ -3,7 +3,7 @@ if not status_ok then
   return
 end
 
-local colors = require("core.colorscheme").lualine_colors
+local colors = require("configs.colorscheme").lualine_colors
 
 local conditions = {
   buffer_not_empty = function() return vim.fn.empty(vim.fn.expand('%:t')) ~= 1 end,
