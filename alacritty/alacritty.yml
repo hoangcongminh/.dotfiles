@@ -8,7 +8,7 @@ selection:
 window:
   opacity: 0.8
   decorations: none
-  startup_mode: SimpleFullscreen
+  startup_mode: Maximized
   dynamic_title: true
 
 scrolling:
