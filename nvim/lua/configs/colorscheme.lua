@@ -37,7 +37,7 @@ catppuccin.setup({
     },
     integrations = {
         mason = true,
-        nvimtree = false,
+        nvimtree = true,
         navic = {
             enabled = true,
             custom_bg = "NONE"
