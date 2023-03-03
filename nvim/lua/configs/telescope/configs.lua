@@ -56,15 +56,11 @@ telescope.setup {
       override_file_sorter = true, -- override the file sorter
       case_mode = "smart_case", -- or "ignore_case" or "respect_case"
     },
-    bookmarks = {
-      selected_browser = 'brave',
-    },
   }
 }
 
 telescope.load_extension("fzf")
 telescope.load_extension("ui-select")
-telescope.load_extension('bookmarks')
 
 pcall(telescope.load_extension, "smart_history")
 pcall(telescope.load_extension, "frecency")

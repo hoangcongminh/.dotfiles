@@ -88,7 +88,6 @@ packer.startup(function(use)
 			'nvim-lua/plenary.nvim',
 			{ 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' },
 			{ 'nvim-telescope/telescope-ui-select.nvim' },
-			{ 'dhruvmanila/telescope-bookmarks.nvim' },
 		},
 		config = function()
 			require('configs.telescope')

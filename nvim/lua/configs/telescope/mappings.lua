@@ -31,4 +31,3 @@ keymap('n', '<space>fd', function() telescope_builtin.diagnostics(dropdown_theme
 
 keymap('n', '<space>t', function() vim.cmd 'Telescope' end, opts)
 keymap('n', '<leader>dff', functions.search_dotfiles, opts)
-keymap('n', '<leader>bm', function() telescope.extensions.bookmarks.bookmarks(telescope_themes.get_ivy()) end, opts)
