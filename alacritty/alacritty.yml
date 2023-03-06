@@ -15,8 +15,8 @@ scrolling:
   history: 10000
   multiplier: 3
 
-mouse:
-  hide_when_typing: true
+# mouse:
+  # hide_when_typing: true
 
 #UbuntuMono Nerd Font
 #SFMono Nerd Font
