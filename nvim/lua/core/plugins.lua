@@ -188,25 +188,18 @@ packer.startup(function(use)
 			'Nash0x7E2/awesome-flutter-snippets',
 			'hrsh7th/cmp-nvim-lsp',
 			'dart-lang/dart-vim-plugin',
-			'RobertBrunhage/flutter-riverpod-snippets'
+			'RobertBrunhage/flutter-riverpod-snippets',
+			'eliasreis54/vim-bloc-plugin',
 		},
 		config = function()
 			require('configs.flutter-tools')
 		end
 	}
-	use { 'eliasreis54/vim-bloc-plugin' }
 	use { 'akinsho/pubspec-assist.nvim',
 		requires = 'plenary.nvim',
-		rocks = {
-			{
-				'lyaml',
-				server = 'http://rocks.moonscript.org',
-				env = { YAML_DIR = '/usr/local/Cellar/libyaml/0.2.5/' },
-			},
-		},
 		config = function()
 			require('pubspec-assist').setup()
-		end
+		end,
 	}
 
 	--rust
