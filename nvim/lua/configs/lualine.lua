@@ -156,13 +156,13 @@ ins_left {
 -- Add components to right sections
 ins_right { 'lsp_progress', color = { fg = colors.blue, gui = 'bold' } }
 
-ins_right {
-  function()
-    return vim.g.flutter_tools_decorations.app_version
-  end,
-  icon = 'version:',
-  color = { fg = colors.orange, gui = 'bold' },
-}
+-- ins_right {
+--   function()
+--     return vim.g.flutter_tools_decorations.app_version
+--   end,
+--   icon = 'version:',
+--   color = { fg = colors.orange, gui = 'bold' },
+-- }
 
 -- ins_right {
 --   'o:encoding', -- option component same as &encoding in viml
