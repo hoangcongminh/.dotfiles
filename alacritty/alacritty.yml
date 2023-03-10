@@ -7,8 +7,8 @@ selection:
 
 window:
   opacity: 0.9
-  decorations: none
-  startup_mode: Maximized
+  # decorations: buttonless
+  # startup_mode: Maximized
   dynamic_title: true
 
 scrolling:
@@ -23,7 +23,7 @@ scrolling:
 #Monaco Nerd Font
 #FiraCode Nerd Font
 font:
-  size: 14
+  size: 12
   normal:
     family: JetBrainsMono Nerd Font
     style: Regular
