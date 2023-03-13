@@ -6,6 +6,7 @@ require('lsp-setup').setup({
 		pyright = {},
 		yamlls = {},
 		tsserver = {},
+		gopls = {},
 		eslint = {
 			settings = {
 				format = {
