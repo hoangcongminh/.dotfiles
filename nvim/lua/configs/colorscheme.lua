@@ -5,7 +5,7 @@ if not status_ok then
     return
 end
 
-vim.g.catppuccin_flavour = "mocha" -- latte, frappe, macchiato, mocha
+vim.g.catppuccin_flavour = "macchiato" -- latte, frappe, macchiato, mocha
 local colors = require("catppuccin.palettes").get_palette()
 colors.none = "NONE"
 
