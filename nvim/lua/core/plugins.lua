@@ -116,6 +116,15 @@ packer.startup(function(use)
 		end
 	}
 
+	-- using packer.nvim
+	use { 'akinsho/bufferline.nvim',
+		tag = "v3.*",
+		requires = 'nvim-tree/nvim-web-devicons',
+		config = function()
+			require('configs.bufferline')
+		end
+	}
+
 	-- lualine & winbar
 	use { 'nvim-lualine/lualine.nvim',
 		requires = 'arkav/lualine-lsp-progress',
