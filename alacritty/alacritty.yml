@@ -86,10 +86,13 @@ selection:
   save_to_clipboard: true
 
 window:
-  opacity: 0.9
+  opacity: 1
   # decorations: buttonless
   # startup_mode: Maximized
   dynamic_title: true
+  padding:
+    x: 10
+    y: 5
 
 scrolling:
   history: 10000
