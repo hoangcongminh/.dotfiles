@@ -21,6 +21,7 @@ configs.setup {
     'dart',
     'rust',
     'toml',
+    'go',
   },
   highlight = {
     enable = true,
