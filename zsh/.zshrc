@@ -20,7 +20,7 @@ plugins=(
   zsh-autosuggestions
   zsh-syntax-highlighting
   zsh-aliases-exa
-  zsh-vim-mode
+  # zsh-vi-mode
 )
 
 source $ZSH/oh-my-zsh.sh
