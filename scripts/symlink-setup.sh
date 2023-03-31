@@ -9,3 +9,4 @@ ln -sfn $HOME/.dotfiles/zsh/.p10k.zsh $HOME/.p10k.zsh
 ln -sfn $HOME/.dotfiles/tmux/.tmux.conf $HOME/.tmux.conf
 ln -sfn $HOME/.dotfiles/yabai/.yabairc $HOME/.yabairc
 ln -sfn $HOME/.dotfiles/skhd/.skhdrc $HOME/.skhdrc
+ln -sfn $HOME/.dotfiles/.gitconfig $HOME/.gitconfig
