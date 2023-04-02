@@ -65,7 +65,8 @@ packer.startup(function(use)
 			{ 'nvim-treesitter/playground' },
 			{ 'nvim-treesitter/nvim-treesitter-textobjects' },
 			{ 'p00f/nvim-ts-rainbow' },
-			{ 'RRethy/nvim-treesitter-endwise' }
+			{ 'RRethy/nvim-treesitter-endwise' },
+			{ 'nvim-treesitter/nvim-treesitter-context' }
 		},
 		config = function()
 			require('configs.treesitter')
@@ -198,7 +199,7 @@ packer.startup(function(use)
 			'hrsh7th/cmp-nvim-lsp',
 			'dart-lang/dart-vim-plugin',
 			'RobertBrunhage/flutter-riverpod-snippets',
-			'eliasreis54/vim-bloc-plugin',
+			-- 'eliasreis54/vim-bloc-plugin',
 		},
 		config = function()
 			require('configs.flutter-tools')
@@ -258,7 +259,9 @@ packer.startup(function(use)
 	-- copilot
 	use { 'github/copilot.vim',
 		config = function()
-			require('configs.copilot')
+			vim.keymap.set("i", "<C-k>", "copilot#Accept()", { silent = true, script = true, expr = true })
+			vim.g.copilot_no_tab_map = true
+			vim.g.copilot_assume_mapped = true
 		end
 	}
 
