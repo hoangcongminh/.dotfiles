@@ -10,7 +10,7 @@ local colors = require("catppuccin.palettes").get_palette()
 colors.none = "NONE"
 
 catppuccin.setup({
-    transparent_background = true,
+    transparent_background = false,
     term_colors = true,
     compile = {
         enabled = true,
@@ -40,7 +40,7 @@ catppuccin.setup({
         nvimtree = true,
         navic = {
             enabled = true,
-            custom_bg = "NONE"
+            -- custom_bg = "NONE"
         },
         -- For various plugins integrations see https://github.com/catppuccin/nvim#integrations
         native_lsp = {
@@ -76,7 +76,7 @@ catppuccin.setup({
 })
 
 function ColorschemeSetup()
-    vim.opt.background = "dark"
+    -- vim.opt.background = "dark"
     local colorscheme = "catppuccin"
     vim.cmd.colorscheme(colorscheme)
 
@@ -111,17 +111,17 @@ function ColorschemeSetup()
         bg = "none"
     })
 
-    hl("LineNr", {
-        fg = "#5eacd3"
-    })
+    -- hl("LineNr", {
+    --     fg = "#5eacd3"
+    -- })
 
-    hl("WinSeparator", {
-        fg = "#5eacd3"
-    })
+    -- hl("WinSeparator", {
+    --     fg = "#5eacd3"
+    -- })
 
-    hl("netrwDir", {
-        fg = "#5eacd3"
-    })
+    -- hl("netrwDir", {
+    --     fg = "#5eacd3"
+    -- })
 
 end
 
@@ -130,8 +130,8 @@ ColorschemeSetup()
 local M = {}
 
 M.lualine_colors = {
-    -- bg = '#303446',
-    bg = 'none',
+    bg = '#303446',
+    -- bg = 'none',
     fg = '#bbc2cf',
     yellow = "#E5C890",
     cyan = "#81C8BE",

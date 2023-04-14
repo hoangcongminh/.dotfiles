@@ -1,7 +1,7 @@
 local status_ok, lualine = pcall(require, "lualine")
 if not status_ok then
   return
-end
+    end
 
 local colors = require("configs.colorscheme").lualine_colors
 
@@ -68,6 +68,15 @@ end
 -- }
 
 ins_left {
+  'filename',
+  condition = conditions.buffer_not_empty,
+  -- path = 1,
+  path = 0,
+  color = { bg = colors.magenta, fg = colors.bg, gui = 'bold' }
+}
+
+
+ins_left {
   -- mode component
   function()
     -- auto change color according to neovims mode
@@ -108,14 +117,6 @@ ins_left {
   'filesize',
   cond = conditions.buffer_not_empty,
 }
-
--- ins_left {
---   'filename',
---   condition = conditions.buffer_not_empty,
---   path = 1,
---   -- path = 0,
---   color = { fg = colors.magenta, gui = 'bold' }
--- }
 
 ins_left { 'location' }
 
