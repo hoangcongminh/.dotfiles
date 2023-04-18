@@ -68,15 +68,6 @@ end
 -- }
 
 ins_left {
-  'filename',
-  condition = conditions.buffer_not_empty,
-  -- path = 1,
-  path = 0,
-  color = { bg = colors.magenta, fg = colors.bg, gui = 'bold' }
-}
-
-
-ins_left {
   -- mode component
   function()
     -- auto change color according to neovims mode
@@ -110,6 +101,14 @@ ins_left {
   end,
   color = "LualineMode",
   left_padding = 0
+}
+
+ins_left {
+  'filename',
+  condition = conditions.buffer_not_empty,
+  -- path = 1,
+  path = 0,
+  color = { bg = colors.magenta, fg = colors.bg, gui = 'bold' }
 }
 
 ins_left {
