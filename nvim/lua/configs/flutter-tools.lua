@@ -56,7 +56,7 @@ end
 
 flutter_tools.setup {
   ui = {
-    border = "rounded",
+    border = "none",
     notification_style = 'native'
   },
   decorations = {

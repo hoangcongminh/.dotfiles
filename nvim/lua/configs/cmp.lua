@@ -22,6 +22,7 @@ local source_mapping = {
 }
 
 local winhighlight = {
+  border = "none",
   winhighlight = "Normal:NormalFloat,FloatBorder:FloatBorder,CursorLine:PmenuSel",
 }
 

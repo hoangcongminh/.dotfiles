@@ -10,7 +10,7 @@ local colors = require("catppuccin.palettes").get_palette()
 colors.none = "NONE"
 
 catppuccin.setup({
-    transparent_background = false,
+    transparent_background = true,
     term_colors = true,
     compile = {
         enabled = true,
@@ -37,6 +37,9 @@ catppuccin.setup({
     },
     integrations = {
         mason = true,
+        cmp = true,
+        gitsigns = true,
+        telescope = true,
         nvimtree = true,
         navic = {
             enabled = true,
@@ -122,7 +125,6 @@ function ColorschemeSetup()
     -- hl("netrwDir", {
     --     fg = "#5eacd3"
     -- })
-
 end
 
 ColorschemeSetup()
@@ -130,8 +132,9 @@ ColorschemeSetup()
 local M = {}
 
 M.lualine_colors = {
-    bg = '#303446',
+    -- bg = '#303446',
     -- bg = 'none',
+    bg = '#333333',
     fg = '#bbc2cf',
     yellow = "#E5C890",
     cyan = "#81C8BE",
