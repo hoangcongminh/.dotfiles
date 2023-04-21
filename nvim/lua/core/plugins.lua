@@ -216,15 +216,15 @@ packer.startup(function(use)
 	}
 
 	--rust
-	use { 'simrat39/rust-tools.nvim',
-		require = {
-			'nvim-lua/plenary.nvim',
-			"nvim-lua/plenary.nvim",
-		},
-		config = function()
-			require('configs.rust-tools')
-		end
-	}
+	-- use { 'simrat39/rust-tools.nvim',
+	-- 	require = {
+	-- 		'nvim-lua/plenary.nvim',
+	-- 		"nvim-lua/plenary.nvim",
+	-- 	},
+	-- 	config = function()
+	-- 		require('configs.rust-tools')
+	-- 	end
+	-- }
 
 	-- completion
 	use { 'hrsh7th/nvim-cmp',
@@ -292,6 +292,8 @@ packer.startup(function(use)
 			require('configs.autopairs')
 		end
 	}
+
+	use { 'dstein64/vim-startuptime' }
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins

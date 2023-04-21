@@ -25,19 +25,19 @@ require('lsp-setup').setup({
 				},
 			}
 		},
-		rust_analyzer = require('lsp-setup.rust-tools').setup({
-			server = {
-				settings = {
-					['rust-analyzer'] = {
-						cargo = {
-							loadOutDirsFromCheck = true,
-						},
-						procMacro = {
-							enable = true,
-						},
-					},
-				},
-			},
-		})
+		-- rust_analyzer = require('lsp-setup.rust-tools').setup({
+		-- 	server = {
+		-- 		settings = {
+		-- 			['rust-analyzer'] = {
+		-- 				cargo = {
+		-- 					loadOutDirsFromCheck = true,
+		-- 				},
+		-- 				procMacro = {
+		-- 					enable = true,
+		-- 				},
+		-- 			},
+		-- 		},
+		-- 	},
+		-- })
 	}
 })
