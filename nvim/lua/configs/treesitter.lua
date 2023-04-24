@@ -15,6 +15,7 @@ end
 
 configs.setup {
   ensure_installed = {
+    'vimdoc',
     'vim',
     'lua',
     'http',

@@ -1,8 +1,3 @@
-local status_ok, telescope = pcall(require, "telescope")
-if not status_ok then
-  return
-end
-
 local functions = require('configs.telescope.functions')
 
 local telescope_builtin = require('telescope.builtin')
