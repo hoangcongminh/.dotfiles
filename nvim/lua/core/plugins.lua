@@ -53,9 +53,6 @@ packer.startup(function(use)
 	use { "catppuccin/nvim",
 		as = "catppuccin",
 		run = ":CatppuccinCompile",
-		config = function()
-			require('configs.colorscheme')
-		end
 	}
 
 	-- treesitter
@@ -68,19 +65,13 @@ packer.startup(function(use)
 			{ 'RRethy/nvim-treesitter-endwise' },
 			{ 'nvim-treesitter/nvim-treesitter-context' }
 		},
-		config = function()
-			require('configs.treesitter')
-		end
 	}
 
+	-- nvim tree
 	use { 'nvim-tree/nvim-tree.lua',
 		requires = {
 			'nvim-tree/nvim-web-devicons',
 		},
-		tag = 'nightly',
-		config = function()
-			require('configs.nvim-tree')
-		end
 	}
 
 	-- telescope
@@ -101,12 +92,7 @@ packer.startup(function(use)
 	}
 
 	-- navigate
-	use { 'phaazon/hop.nvim',
-		branch = 'v1', -- optional but strongly recommended
-		config = function()
-			require('configs.hop')
-		end
-	}
+	use { 'phaazon/hop.nvim', branch = 'v1' }
 
 	-- git
 	use { 'tpope/vim-fugitive',
@@ -114,39 +100,23 @@ packer.startup(function(use)
 	}
 	use { 'lewis6991/gitsigns.nvim',
 		requires = 'nvim-lua/plenary.nvim',
-		config = function()
-			require('configs.gitsigns')
-		end
-	}
-
-	-- using packer.nvim
-	use { 'akinsho/bufferline.nvim',
-		tag = "v3.*",
-		requires = 'nvim-tree/nvim-web-devicons',
-		config = function()
-			require('configs.bufferline')
-		end
 	}
 
 	-- lualine & winbar
 	use { 'nvim-lualine/lualine.nvim',
 		requires = 'arkav/lualine-lsp-progress',
-		config = function()
-			require('configs.lualine')
-		end
 	}
 	use { 'SmiteshP/nvim-navic', requires = 'neovim/nvim-lspconfig' }
+
+	use { 'akinsho/bufferline.nvim',
+		tag = "v3.*",
+		requires = 'nvim-tree/nvim-web-devicons',
+	}
 
 	-- icons
 	use { "ryanoasis/vim-devicons" }
 	use { "kyazdani42/nvim-web-devicons" }
 
-	-- Show indent line
-	use { "lukas-reineke/indent-blankline.nvim",
-		config = function()
-			require('configs.indent-blankline')
-		end
-	}
 	-- comment
 	use { 'tpope/vim-commentary' }
 
@@ -173,12 +143,8 @@ packer.startup(function(use)
 	}
 
 	-- highlight todos comments
-	use {
-		"folke/todo-comments.nvim",
+	use { "folke/todo-comments.nvim",
 		requires = "nvim-lua/plenary.nvim",
-		config = function()
-			require('configs.todo-comments')
-		end
 	}
 
 	-- debugger
@@ -186,10 +152,7 @@ packer.startup(function(use)
 		requires = {
 			"mfussenegger/nvim-dap",
 			"ravenxrz/DAPInstall.nvim",
-		},
-		config = function()
-			require('configs.dap-config')
-		end
+		}
 	}
 
 	-- flutter
@@ -252,47 +215,24 @@ packer.startup(function(use)
 		end
 	}
 
-	use { "akinsho/toggleterm.nvim",
-		tag = '*',
-		config = function()
-			require('configs.toggleterm')
-		end
-	}
+	-- terminal
+	use { "akinsho/toggleterm.nvim", tag = '*' }
 
 	-- copilot
-	use { 'github/copilot.vim',
-		config = function()
-			vim.keymap.set("i", "<C-k>", "copilot#Accept()", { silent = true, script = true, expr = true })
-			vim.g.copilot_no_tab_map = true
-			vim.g.copilot_assume_mapped = true
-		end
-	}
+	use { 'github/copilot.vim' }
 
 	-- other
-	use 'mbbill/undotree'
-	use 'mtdl9/vim-log-highlighting'
-	use 'szw/vim-g'
-	use 'tpope/vim-sleuth'
-	-- use 'tpope/vim-sensible'
-	use 'tpope/vim-surround'
-	use 'tpope/vim-rsi'
-	use 'tpope/vim-unimpaired'
-	use 'tpope/vim-eunuch'
-	use 'tpope/vim-dispatch'
-	use 'romainl/vim-cool' -- Auto hide search highlight
-
-	use { 'norcalli/nvim-colorizer.lua',
-		config = function()
-			require 'colorizer'.setup()
-		end
-	}
-
-	use { 'windwp/nvim-autopairs',
-		config = function()
-			require('configs.autopairs')
-		end
-	}
-
+	use { 'mbbill/undotree' }
+	use { 'mtdl9/vim-log-highlighting' }
+	use { 'tpope/vim-sleuth' }
+	use { 'tpope/vim-surround' }
+	use { 'tpope/vim-rsi' }
+	use { 'tpope/vim-unimpaired' }
+	use { 'tpope/vim-eunuch' }
+	use { 'tpope/vim-dispatch' }
+	use { 'romainl/vim-cool' } -- Auto hide search highlight
+	use { 'norcalli/nvim-colorizer.lua' }
+	use { 'windwp/nvim-autopairs' }
 	use { 'dstein64/vim-startuptime' }
 
 	-- Automatically set up your configuration after cloning packer.nvim
