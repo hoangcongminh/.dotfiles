@@ -1,7 +1,6 @@
 require('core.packer')
 require('core.keymaps')
 require('core.options')
-require('core.winbar')
 
 -- Highlight on yank
 vim.api.nvim_create_autocmd('TextYankPost', {

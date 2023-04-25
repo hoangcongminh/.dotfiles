@@ -27,11 +27,6 @@ if not status_ok then
 end
 
 packer.init({
-	display = {
-		open_fn = function()
-			return require("packer.util").float({ border = "single" })
-		end,
-	},
 	git = {
 		clone_timeout = 600, -- Timeout, in seconds, for git clones
 	},
@@ -68,11 +63,11 @@ packer.startup(function(use)
 	}
 
 	-- nvim tree
-	use { 'nvim-tree/nvim-tree.lua',
-		requires = {
-			'nvim-tree/nvim-web-devicons',
-		},
-	}
+	-- use { 'nvim-tree/nvim-tree.lua',
+	-- 	requires = {
+	-- 		'nvim-tree/nvim-web-devicons',
+	-- 	},
+	-- }
 
 	-- telescope
 	use { 'nvim-telescope/telescope.nvim',
@@ -81,9 +76,6 @@ packer.startup(function(use)
 			{ 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' },
 			{ 'nvim-telescope/telescope-ui-select.nvim' },
 		},
-		config = function()
-			require('configs.telescope')
-		end
 	}
 
 	-- ThePrimeagen harpoon
@@ -230,10 +222,8 @@ packer.startup(function(use)
 	use { 'tpope/vim-unimpaired' }
 	use { 'tpope/vim-eunuch' }
 	use { 'tpope/vim-dispatch' }
-	use { 'romainl/vim-cool' } -- Auto hide search highlight
 	use { 'norcalli/nvim-colorizer.lua' }
 	use { 'windwp/nvim-autopairs' }
-	use { 'dstein64/vim-startuptime' }
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins

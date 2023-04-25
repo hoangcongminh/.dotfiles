@@ -1,4 +1,8 @@
 vim.g.minh_colorscheme = "catppuccin"
+vim.o.winbar = "%m%y " ..
+    "%{%v:lua.require'nvim-web-devicons'.get_icon_color_by_filetype(&filetype)%} " ..
+    "%f > " ..
+    "%{%v:lua.require'nvim-navic'.get_location()%}"
 
 local status_ok, catppuccin = pcall(require, "catppuccin")
 if not status_ok then
@@ -10,7 +14,7 @@ local colors = require("catppuccin.palettes").get_palette()
 colors.none = "NONE"
 
 catppuccin.setup({
-    transparent_background = true,
+    transparent_background = false,
     term_colors = true,
     compile = {
         enabled = true,
@@ -87,9 +91,9 @@ function ColorschemeSetup()
         vim.api.nvim_set_hl(0, thing, opts)
     end
 
-    hl("SignColumn", {
-        bg = "none",
-    })
+    hl("SignColumn", { bg = "none" })
+    hl("Normal", { bg = "none" })
+    hl("NormalFloat", { bg = "none" })
 
     hl("ColorColumn", {
         ctermbg = 0,
@@ -98,19 +102,11 @@ function ColorschemeSetup()
 
     hl("CursorLine", {
         underline = true,
-        bg = "None",
-        fg = "None",
+        bg = "none",
+        fg = "none",
     })
 
     hl("CursorLineNR", {
-        bg = "None"
-    })
-
-    hl("Normal", {
-        bg = "none"
-    })
-
-    hl("NormalFloat", {
         bg = "none"
     })
 
@@ -128,4 +124,3 @@ function ColorschemeSetup()
 end
 
 ColorschemeSetup()
-
