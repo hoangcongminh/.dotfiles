@@ -1,4 +1,4 @@
-require('core.plugins')
+require('core.packer')
 require('core.keymaps')
 require('core.options')
 require('core.winbar')
