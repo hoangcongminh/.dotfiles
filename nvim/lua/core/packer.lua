@@ -137,12 +137,12 @@ packer.startup(function(use)
 	}
 
 	-- debugger
-	use { "rcarriga/nvim-dap-ui",
-		requires = {
-			"mfussenegger/nvim-dap",
-			"ravenxrz/DAPInstall.nvim",
-		}
-	}
+	-- use { "rcarriga/nvim-dap-ui",
+	-- 	requires = {
+	-- 		"mfussenegger/nvim-dap",
+	-- 		"ravenxrz/DAPInstall.nvim",
+	-- 	}
+	-- }
 
 	-- flutter
 	use { "akinsho/flutter-tools.nvim",
