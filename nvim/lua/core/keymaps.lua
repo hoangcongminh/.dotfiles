@@ -13,9 +13,7 @@ keymap("n", "Q", "<nop>")
 
 -- Normal --
 keymap("n", "<C-q>", ":quit<CR>", opts)
--- Update (:w if has edit)
 keymap("n", "<C-s>", ":update<CR>", opts)
---keymap("n", "<leader>r", ":%s///g<LEFT><LEFT>", opts) -- replace
 keymap("n", "<leader>r", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>")
 keymap("n", "<C-d>", "<C-d>zz", opts)
 keymap("n", "<C-u>", "<C-u>zz", opts)
@@ -91,12 +89,12 @@ keymap("n", "<leader>/", ":Commentary<CR>", opts)
 keymap("v", "<leader>/", ":Commentary<CR>", opts)
 
 -- NvimTree
-keymap("n", "<leader>b", ":NvimTreeToggle<CR>", opts)
-keymap('n', '<leader>n', ":NvimTreeFindFileToggle<CR>", opts)
+-- keymap("n", "<leader>b", ":NvimTreeToggle<CR>", opts)
+-- keymap('n', '<leader>n', ":NvimTreeFindFileToggle<CR>", opts)
 
 -- Harpoon
-keymap('n', '<leader>he', function() require("harpoon.ui").toggle_quick_menu() end, opts)
-keymap('n', "<leader>ha", function() require("harpoon.mark").add_file() end, opts)
+keymap('n', '<C-e>', function() require("harpoon.ui").toggle_quick_menu() end, opts)
+keymap('n', '<C-a>', function() require("harpoon.mark").add_file() end, opts)
 
 keymap('n', '<leader>h', function() require("harpoon.ui").nav_file(1) end, opts)
 keymap('n', '<leader>j', function() require("harpoon.ui").nav_file(2) end, opts)
@@ -114,12 +112,12 @@ keymap("n", "<leader>lg", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", opts)
 keymap("n", "<leader>u", vim.cmd.UndotreeToggle)
 
 -- DAP
-keymap("n", "<leader>db", "<cmd>lua require'dap'.toggle_breakpoint()<cr>", opts)
-keymap("n", "<leader>dc", "<cmd>lua require'dap'.continue()<cr>", opts)
-keymap("n", "<leader>di", "<cmd>lua require'dap'.step_into()<cr>", opts)
-keymap("n", "<leader>do", "<cmd>lua require'dap'.step_over()<cr>", opts)
-keymap("n", "<leader>dO", "<cmd>lua require'dap'.step_out()<cr>", opts)
-keymap("n", "<leader>dr", "<cmd>lua require'dap'.repl.toggle()<cr>", opts)
-keymap("n", "<leader>dl", "<cmd>lua require'dap'.run_last()<cr>", opts)
-keymap("n", "<leader>du", "<cmd>lua require'dapui'.toggle()<cr>", opts)
-keymap("n", "<leader>dt", "<cmd>lua require'dap'.terminate()<cr>", opts)
+-- keymap("n", "<leader>db", "<cmd>lua require'dap'.toggle_breakpoint()<cr>", opts)
+-- keymap("n", "<leader>dc", "<cmd>lua require'dap'.continue()<cr>", opts)
+-- keymap("n", "<leader>di", "<cmd>lua require'dap'.step_into()<cr>", opts)
+-- keymap("n", "<leader>do", "<cmd>lua require'dap'.step_over()<cr>", opts)
+-- keymap("n", "<leader>dO", "<cmd>lua require'dap'.step_out()<cr>", opts)
+-- keymap("n", "<leader>dr", "<cmd>lua require'dap'.repl.toggle()<cr>", opts)
+-- keymap("n", "<leader>dl", "<cmd>lua require'dap'.run_last()<cr>", opts)
+-- keymap("n", "<leader>du", "<cmd>lua require'dapui'.toggle()<cr>", opts)
+-- keymap("n", "<leader>dt", "<cmd>lua require'dap'.terminate()<cr>", opts)
