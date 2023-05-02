@@ -10,9 +10,9 @@ window:
   # decorations: buttonless
   # startup_mode: Maximized
   dynamic_title: true
-  padding:
-    x: 10
-    y: 5
+  # padding:
+  #   x: 10
+  #   y: 5
 
 scrolling:
   history: 10000
