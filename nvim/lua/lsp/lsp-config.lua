@@ -1,6 +1,15 @@
-require('lsp-setup').setup({
-	on_attach = require("configs.lsp.handlers").on_attach,
-	capabilities = require("configs.lsp.handlers").capabilities,
+local lsp_status_ok, _ = pcall(require, "lspconfig")
+if not lsp_status_ok then
+	return
+end
+
+local status_ok, lsp_setup = pcall(require, "lsp-setup")
+if not status_ok then
+	return
+end
+lsp_setup.setup({
+	on_attach = require("lsp.handlers").on_attach,
+	capabilities = require("lsp.handlers").capabilities,
 	servers = {
 		bashls = {},
 		pyright = {},

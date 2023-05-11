@@ -16,9 +16,9 @@ M.setup = function()
 		-- { name = "DiagnosticSignHint", text = "" },
 		-- { name = "DiagnosticSignInfo", text = "" },
 		{ name = "DiagnosticSignError", text = "E" },
-		{ name = "DiagnosticSignWarn", text = "W" },
-		{ name = "DiagnosticSignHint", text = "H" },
-		{ name = "DiagnosticSignInfo", text = "I" },
+		{ name = "DiagnosticSignWarn",  text = "W" },
+		{ name = "DiagnosticSignHint",  text = "H" },
+		{ name = "DiagnosticSignInfo",  text = "I" },
 	}
 
 	for _, sign in ipairs(signs) do
@@ -74,8 +74,10 @@ local function lsp_keymaps(bufnr)
 	keymap('n', ']d', vim.diagnostic.goto_next, opts)
 	keymap('n', '<space>la', vim.diagnostic.setloclist, opts)
 	keymap('n', '<space>qa', function()
-		vim.diagnostic.setqflist({ title = "warnings",
-			severity = vim.diagnostic.severity.WARN })
+		vim.diagnostic.setqflist({
+			title = "warnings",
+			severity = vim.diagnostic.severity.WARN
+		})
 	end, opts)
 	keymap('n', '<space>qe', function()
 		vim.diagnostic.setqflist({ severity = vim.diagnostic.severity.ERROR })

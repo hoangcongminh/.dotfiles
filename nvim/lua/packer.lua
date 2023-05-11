@@ -116,20 +116,12 @@ packer.startup(function(use)
 			'williamboman/mason.nvim',
 			'williamboman/mason-lspconfig.nvim',
 		},
-		config = function()
-			require('configs.lsp')
-		end
 	}
 	use { 'ray-x/lsp_signature.nvim' }
 	use { "antoinemadec/FixCursorHold.nvim",
 		config = function() vim.g.cursorhold_updatetime = 100 end
 	}
 	use { "jose-elias-alvarez/null-ls.nvim" } -- for formatters and linters
-	use { "RRethy/vim-illuminate",
-		config = function()
-			require('configs.illuminate')
-		end
-	}
 
 	-- highlight todos comments
 	use { "folke/todo-comments.nvim",
@@ -162,9 +154,6 @@ packer.startup(function(use)
 				end,
 			}
 		},
-		config = function()
-			require('configs.flutter-tools')
-		end
 	}
 
 	--rust
@@ -173,9 +162,6 @@ packer.startup(function(use)
 	-- 		'nvim-lua/plenary.nvim',
 	-- 		"nvim-lua/plenary.nvim",
 	-- 	},
-	-- 	config = function()
-	-- 		require('configs.rust-tools')
-	-- 	end
 	-- }
 
 	-- completion
@@ -193,9 +179,6 @@ packer.startup(function(use)
 			{ 'andersevenrud/cmp-tmux' },
 			{ 'onsails/lspkind-nvim' },
 		},
-		config = function()
-			require('configs.cmp')
-		end
 	}
 	use { 'L3MON4D3/LuaSnip',
 		requires = { 'rafamadriz/friendly-snippets' },

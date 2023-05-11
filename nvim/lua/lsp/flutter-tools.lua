@@ -51,7 +51,7 @@ local function on_attach(client, bufnr)
     vim.cmd 'Dispatch flutter clean; flutter pub get; flutter run --release'
   end, { force = true })
 
-  require("configs.lsp.handlers").on_attach(client, bufnr)
+  require("lsp.handlers").on_attach(client, bufnr)
 end
 
 flutter_tools.setup {
@@ -120,7 +120,7 @@ flutter_tools.setup {
       virtual_text_str = "■",
     },
     on_attach = on_attach,
-    capabilities = require("configs.lsp.handlers").capabilities,
+    capabilities = require("lsp.handlers").capabilities,
     settings = {
       showTodos = true,
       completeFunctionCalls = true,
