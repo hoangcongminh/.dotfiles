@@ -3,10 +3,17 @@ if not status_ok then
   return
 end
 
+local pubspec_ok, pubspec_assist = pcall(require, "pubspec-assist")
+if not pubspec_ok then
+  return
+end
+
 local telescope_ok, telescope = pcall(require, "telescope")
 if not telescope_ok then
   return
 end
+
+pubspec_assist.setup()
 
 local function on_attach(client, bufnr)
   telescope.load_extension("flutter")

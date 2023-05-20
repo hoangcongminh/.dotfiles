@@ -127,9 +127,6 @@ packer.startup(function(use)
 			{
 				'akinsho/pubspec-assist.nvim',
 				requires = 'plenary.nvim',
-				config = function()
-					require('pubspec-assist').setup()
-				end,
 			}
 		},
 	}
@@ -160,9 +157,6 @@ packer.startup(function(use)
 	}
 	use { 'L3MON4D3/LuaSnip',
 		requires = { 'rafamadriz/friendly-snippets' },
-		config = function()
-			require("luasnip.loaders.from_vscode").lazy_load()
-		end
 	}
 
 	-- terminal
