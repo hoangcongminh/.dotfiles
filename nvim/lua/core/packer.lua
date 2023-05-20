@@ -59,13 +59,6 @@ packer.startup(function(use)
 		},
 	}
 
-	-- nvim tree
-	-- use { 'nvim-tree/nvim-tree.lua',
-	-- 	requires = {
-	-- 		'nvim-tree/nvim-web-devicons',
-	-- 	},
-	-- }
-
 	-- telescope
 	use { 'nvim-telescope/telescope.nvim',
 		requires = {
