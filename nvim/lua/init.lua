@@ -1,6 +1,7 @@
-require('core.packer')
-require('core.keymaps')
-require('core.options')
+require('packer')
+require('lsp')
+require('keymaps')
+require('options')
 
 -- Highlight on yank
 vim.api.nvim_create_autocmd('TextYankPost', {

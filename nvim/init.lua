@@ -11,4 +11,4 @@ function R(name)
     return require(name)
 end
 
-R('core')
+R('init')

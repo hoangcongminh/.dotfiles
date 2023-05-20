@@ -28,11 +28,11 @@ end
 
 packer.init({
 	git = {
-		clone_timeout = 600, -- Timeout, in seconds, for git clones
+		clone_timeout = 600,
 	},
 	max_jobs = 10,
 	luarocks = {
-		python_cmd = 'python3' -- Set the python command to use for running hererocks
+		python_cmd = 'python3'
 	},
 })
 
@@ -69,31 +69,20 @@ packer.startup(function(use)
 	}
 
 	-- ThePrimeagen harpoon
-	use { 'ThePrimeagen/harpoon',
-		requires = 'nvim-lua/plenary.nvim',
-	}
+	use { 'ThePrimeagen/harpoon', requires = 'nvim-lua/plenary.nvim' }
 
 	-- navigate
 	use { 'phaazon/hop.nvim', branch = 'v1' }
 
 	-- git
-	use { 'tpope/vim-fugitive',
-		requires = 'tpope/vim-rhubarb',
-	}
-	use { 'lewis6991/gitsigns.nvim',
-		requires = 'nvim-lua/plenary.nvim',
-	}
+	use { 'tpope/vim-fugitive', requires = 'tpope/vim-rhubarb' }
+	use { 'lewis6991/gitsigns.nvim', requires = 'nvim-lua/plenary.nvim' }
 
 	-- lualine & winbar
-	use { 'nvim-lualine/lualine.nvim',
-		requires = 'arkav/lualine-lsp-progress',
-	}
+	use { 'nvim-lualine/lualine.nvim', requires = 'arkav/lualine-lsp-progress' }
 	use { 'SmiteshP/nvim-navic', requires = 'neovim/nvim-lspconfig' }
+	use { 'akinsho/bufferline.nvim', tag = "*", requires = 'nvim-tree/nvim-web-devicons' }
 
-	use { 'akinsho/bufferline.nvim',
-		tag = "v3.*",
-		requires = 'nvim-tree/nvim-web-devicons',
-	}
 
 	-- icons
 	use { "ryanoasis/vim-devicons" }
@@ -109,25 +98,13 @@ packer.startup(function(use)
 			'williamboman/mason.nvim',
 			'williamboman/mason-lspconfig.nvim',
 		},
-		config = function()
-			require('configs.lsp')
-		end
 	}
 	use { 'ray-x/lsp_signature.nvim' }
-	use { "antoinemadec/FixCursorHold.nvim",
-		config = function() vim.g.cursorhold_updatetime = 100 end
-	}
+	use { "antoinemadec/FixCursorHold.nvim", config = function() vim.g.cursorhold_updatetime = 100 end }
 	use { "jose-elias-alvarez/null-ls.nvim" } -- for formatters and linters
-	use { "RRethy/vim-illuminate",
-		config = function()
-			require('configs.illuminate')
-		end
-	}
 
 	-- highlight todos comments
-	use { "folke/todo-comments.nvim",
-		requires = "nvim-lua/plenary.nvim",
-	}
+	use { "folke/todo-comments.nvim", requires = "nvim-lua/plenary.nvim" }
 
 	-- debugger
 	-- use { "rcarriga/nvim-dap-ui",
@@ -155,9 +132,6 @@ packer.startup(function(use)
 				end,
 			}
 		},
-		config = function()
-			require('configs.flutter-tools')
-		end
 	}
 
 	--rust
@@ -166,9 +140,6 @@ packer.startup(function(use)
 	-- 		'nvim-lua/plenary.nvim',
 	-- 		"nvim-lua/plenary.nvim",
 	-- 	},
-	-- 	config = function()
-	-- 		require('configs.rust-tools')
-	-- 	end
 	-- }
 
 	-- completion
@@ -186,9 +157,6 @@ packer.startup(function(use)
 			{ 'andersevenrud/cmp-tmux' },
 			{ 'onsails/lspkind-nvim' },
 		},
-		config = function()
-			require('configs.cmp')
-		end
 	}
 	use { 'L3MON4D3/LuaSnip',
 		requires = { 'rafamadriz/friendly-snippets' },
@@ -221,12 +189,3 @@ packer.startup(function(use)
 		require("packer").sync()
 	end
 end)
-
-if packer_bootstrap then
-	print '=================================='
-	print '    Plugins are being installed'
-	print '    Wait until Packer completes,'
-	print '       then restart nvim'
-	print '=================================='
-	return
-end
