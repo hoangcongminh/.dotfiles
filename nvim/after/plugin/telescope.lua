@@ -57,7 +57,17 @@ telescope.setup {
       override_file_sorter = true,    -- override the file sorter
       case_mode = "smart_case",       -- or "ignore_case" or "respect_case"
     },
-  }
+  },
+  pickers = {
+    find_files = {
+      hidden = true,
+      no_ignore = true,
+      no_ignore_parent = true,
+    },
+    buffers = {
+      sort_mru = true,
+    },
+  },
 }
 
 telescope.load_extension("fzf")
@@ -104,7 +114,7 @@ vim.keymap.set('n', '<space>ts', telescope_builtin.treesitter, opts)
 vim.keymap.set('n', '<space>qf', function() telescope_builtin.quickfix(dropdown_theme) end, opts)
 vim.keymap.set('n', '<space>gr', function() telescope_builtin.lsp_references(dropdown_theme) end, opts)
 vim.keymap.set('n', '<space>gd', function() telescope_builtin.lsp_definitions(dropdown_theme) end, opts)
-vim.keymap.set('n', '<space>fd', function() telescope_builtin.diagnostics(dropdown_theme) end, opts)
+vim.keymap.set('n', '<space>ed', function() telescope_builtin.diagnostics(dropdown_theme) end, opts)
 
 vim.keymap.set('n', '<space>t', function() vim.cmd 'Telescope' end, opts)
 vim.keymap.set('n', '<leader>dff', search_dotfiles, opts)
