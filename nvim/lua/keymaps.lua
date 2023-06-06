@@ -94,7 +94,7 @@ keymap("v", "<leader>/", ":Commentary<CR>", opts)
 
 -- Harpoon
 keymap('n', '<C-e>', function() require("harpoon.ui").toggle_quick_menu() end, opts)
-keymap('n', '<C-a>', function() require("harpoon.mark").add_file() end, opts)
+keymap('n', '<C-h>', function() require("harpoon.mark").add_file() end, opts)
 
 keymap('n', '<leader>h', function() require("harpoon.ui").nav_file(1) end, opts)
 keymap('n', '<leader>j', function() require("harpoon.ui").nav_file(2) end, opts)
