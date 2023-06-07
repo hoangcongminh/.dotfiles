@@ -1,22 +1,38 @@
 local status_ok, lualine = pcall(require, "lualine")
 if not status_ok then
   return
-    end
+end
+
+-- local colors = {
+--     -- bg = '#303446',
+--     -- bg = 'none',
+--     bg = '#333333',
+--     fg = '#bbc2cf',
+--     yellow = "#E5C890",
+--     cyan = "#81C8BE",
+--     darkblue = "#8CAAEE",
+--     green = "#A6D189",
+--     orange = "#EF9F76",
+--     violet = "#BABBF1",
+--     magenta = "#F4B8E4",
+--     blue = "#85C1DC",
+--     red = "#E78284",
+-- }
 
 local colors = {
-    -- bg = '#303446',
-    -- bg = 'none',
-    bg = '#333333',
-    fg = '#bbc2cf',
-    yellow = "#E5C890",
-    cyan = "#81C8BE",
-    darkblue = "#8CAAEE",
-    green = "#A6D189",
-    orange = "#EF9F76",
-    violet = "#BABBF1",
-    magenta = "#F4B8E4",
-    blue = "#85C1DC",
-    red = "#E78284",
+  -- bg = '#303446',
+  -- bg = 'none',
+  bg = '#282828',
+  fg = '#EBDBB2',
+  yellow = "#FABD2F",
+  cyan = "#83A598",
+  darkblue = "#076678",
+  green = "#98971A",
+  orange = "#D65D0E",
+  aqua = "#8EC07C",
+  magenta = "#B16286",
+  blue = "#458588",
+  red = "#CC241D",
 }
 
 local conditions = {
@@ -75,11 +91,11 @@ local function ins_right(component)
   table.insert(config.sections.lualine_x, component)
 end
 
--- ins_left {
---   function() return '▊' end,
---   color = { fg = colors.blue }, -- Sets highlighting of component
---   left_padding = 0 -- We don't need space before this
--- }
+ins_left {
+  function() return '▊' end,
+  color = { fg = colors.cyan }, -- Sets highlighting of component
+  left_padding = 0                -- We don't need space before this
+}
 
 ins_left {
   -- mode component
@@ -89,22 +105,22 @@ ins_left {
       n = colors.red,
       i = colors.green,
       v = colors.blue,
-      [''] = colors.blue,
+          [''] = colors.blue,
       V = colors.blue,
       c = colors.magenta,
       no = colors.red,
       s = colors.orange,
       S = colors.orange,
-      [''] = colors.orange,
+          [''] = colors.orange,
       ic = colors.yellow,
-      R = colors.violet,
-      Rv = colors.violet,
+      R = colors.aqua,
+      Rv = colors.aqua,
       cv = colors.red,
       ce = colors.red,
       r = colors.cyan,
       rm = colors.cyan,
-      ['r?'] = colors.cyan,
-      ['!'] = colors.red,
+          ['r?'] = colors.cyan,
+          ['!'] = colors.red,
       t = colors.red
     }
     vim.api.nvim_command(
@@ -122,7 +138,7 @@ ins_left {
   condition = conditions.buffer_not_empty,
   -- path = 1,
   path = 0,
-  color = { bg = colors.magenta, fg = colors.bg, gui = 'bold' }
+  color = { bg = colors.yellow, fg = colors.bg, gui = 'bold' }
 }
 
 ins_left {
@@ -198,7 +214,7 @@ ins_right {
   'branch',
   icon = '',
   condition = conditions.check_git_workspace,
-  color = { fg = colors.violet, gui = 'bold' }
+  color = { fg = colors.aqua, gui = 'bold' }
 }
 
 ins_right {
@@ -211,11 +227,11 @@ ins_right {
   condition = conditions.hide_in_width
 }
 
--- ins_right {
---   function() return '▊' end,
---   color = { fg = colors.blue },
---   right_padding = 0
--- }
+ins_right {
+  function() return '▊' end,
+  color = { fg = colors.cyan },
+  right_padding = 0
+}
 
 -- Now don't forget to initialize lualine
 lualine.setup(config)
