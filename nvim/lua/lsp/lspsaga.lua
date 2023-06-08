@@ -4,7 +4,7 @@ if not status_ok then
 end
 
 lspsaga.init_lsp_saga({
-  border_style = "none",
+  border_style = "single",
   saga_winblend = 0,
   code_action_lightbulb = {
     enable = false,

@@ -36,7 +36,7 @@ M.setup = function()
 		float = {
 			focusable = true,
 			style = "minimal",
-			border = "none",
+			border = "single",
 			source = "always",
 			header = "",
 			prefix = "",
@@ -46,11 +46,11 @@ M.setup = function()
 	vim.diagnostic.config(config)
 
 	vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
-		border = "none",
+		border = "single",
 	})
 
 	vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
-		border = "none",
+		border = "single",
 	})
 end
 

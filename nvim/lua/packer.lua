@@ -35,7 +35,7 @@ packer.startup(function(use)
 	use { "lewis6991/impatient.nvim" }
 
 	--colorscheme
-	use({ 'rose-pine/neovim', as = 'rose-pine' })
+	-- use({ 'rose-pine/neovim', as = 'rose-pine' })
 	use { "ellisonleao/gruvbox.nvim" }
 
 	-- treesitter
@@ -72,8 +72,6 @@ packer.startup(function(use)
 	-- lualine & winbar
 	use { 'nvim-lualine/lualine.nvim', requires = 'arkav/lualine-lsp-progress' }
 	use { 'SmiteshP/nvim-navic', requires = 'neovim/nvim-lspconfig' }
-	use { 'akinsho/bufferline.nvim', tag = "*", requires = 'nvim-tree/nvim-web-devicons' }
-
 
 	-- icons
 	use { "ryanoasis/vim-devicons" }

@@ -1,13 +1,9 @@
--- local status_ok, rose_pine = pcall(require, "rose-pine")
--- if not status_ok then
---     return
--- end
+local status_ok, gruvbox = pcall(require, "gruvbox")
+if not status_ok then
+    return
+end
 
--- rose_pine.setup({
---     disable_background = true
--- })
-
-require("gruvbox").setup({
+gruvbox.setup({
   transparent_mode = true,
 })
 
