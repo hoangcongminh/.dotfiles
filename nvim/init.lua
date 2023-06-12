@@ -1,5 +1,4 @@
-local impatient_ok, impatient = pcall(require, "impatient")
-if impatient_ok then impatient.enable_profile() end
+vim.loader.enable()
 
 local ok, reload = pcall(require, 'plenary.reload')
 RELOAD = ok and reload.reload_module or function(...)

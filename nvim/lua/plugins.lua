@@ -12,9 +12,6 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
-	-- increase startup speed
-	{ "lewis6991/impatient.nvim" },
-
 	--colorscheme
 	{ "ellisonleao/gruvbox.nvim" },
 
