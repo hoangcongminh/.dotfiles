@@ -39,7 +39,7 @@ local plugins = {
 		},
 	},
 
-	-- run file manager
+	-- file manager
 	{ 'stevearc/oil.nvim' },
 
 	-- ThePrimeagen harpoon
@@ -54,7 +54,6 @@ local plugins = {
 
 	-- lualine & winbar
 	{ 'nvim-lualine/lualine.nvim',   dependencies = 'arkav/lualine-lsp-progress' },
-	{ 'SmiteshP/nvim-navic',         dependencies = 'neovim/nvim-lspconfig' },
 
 	-- icons
 	{ "ryanoasis/vim-devicons" },
@@ -76,7 +75,7 @@ local plugins = {
 	{ "jose-elias-alvarez/null-ls.nvim" }, -- for formatters and linters,
 
 	-- highlight todos comments
-	{ "folke/todo-comments.nvim",        dependencies = "nvim-lua/plenary.nvim" },
+	{ "folke/todo-comments.nvim",       dependencies = "nvim-lua/plenary.nvim" },
 
 	-- debugger
 	-- { "rcarriga/nvim-dap-ui",
@@ -162,6 +161,10 @@ local plugins = {
 	{ 'windwp/nvim-autopairs' },
 }
 
-local opts = {}
+local opts = {
+	ui = {
+		border = "single",
+	}
+}
 
 require("lazy").setup(plugins, opts)
