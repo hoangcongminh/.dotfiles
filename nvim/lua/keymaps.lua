@@ -4,11 +4,6 @@ local keymap = vim.keymap.set
 -- Keymap option
 local opts = { noremap = true, silent = true }
 
---Remap space as leader key
-keymap("", "<Space>", "<Nop>", opts)
-vim.g.mapleader = " "
-vim.g.maplocalleader = " "
-
 keymap("n", "Q", "<nop>")
 
 -- Normal --

@@ -1,3 +1,8 @@
+--Remap space as leader key
+vim.keymap.set("", "<Space>", "<Nop>", { silent = true })
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
+
 -- netrw
 vim.g.netrw_browse_split = 0
 vim.g.netrw_banner = 0
