@@ -63,19 +63,21 @@ end
 
 flutter_tools.setup {
   ui = {
-    border = "none",
-    notification_style = 'native'
+    border = "single",
+    notification_style = 'plugin'
   },
   decorations = {
     statusline = {
       app_version = true,
       device = true,
+      project_config = false,
     }
   },
   debugger = {
     enabled = false,
     run_via_dap = false,
-    register_configurations = function()
+    exception_breakpoints = {},
+    register_configurations = function(path)
       local dap_status_ok, dap = pcall(require, "dap")
       if not dap_status_ok then
         return
@@ -104,10 +106,13 @@ flutter_tools.setup {
     enabled = true,
   },
   closing_tags = {
+    -- highlight = "ErrorMsg",
+    -- prefix = ">",
     enabled = true
   },
   dev_log = {
     enabled = true,
+    notify_errors = true,
     open_cmd = "vnew",
   },
   dev_tools = {
@@ -122,20 +127,30 @@ flutter_tools.setup {
     color = {
       enabled = true,
       background = false,
+      background_color = nil,
       foreground = false,
       virtual_text = true,
       virtual_text_str = "■",
     },
     on_attach = on_attach,
     capabilities = require("lsp.handlers").capabilities,
+    root_dir = function()
+      return vim.loop.cwd()
+    end,
+    init_options = {
+      closingLabels = true,
+      flutterOutline = true,
+      outline = true,
+      onlyAnalyzeProjectsWithOpenFiles = true,
+      suggestFromUnimportedLibraries = true
+    },
     settings = {
       showTodos = true,
       completeFunctionCalls = true,
+      analysisExcludedFolders = {"!**/.pub-cache/**", "!**/fvm/**", "!**/.dart_tool/**"},
       renameFilesWithClasses = "always",
       enableSnippets = true,
       updateImportsOnRename = true,
-      onlyAnalyzeProjectsWithOpenFiles = true,
-      suggestFromUnimportedLibraries = true,
     }
   }
 }

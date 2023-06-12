@@ -88,10 +88,6 @@ keymap("n", "<leader>pv", ":Ex<CR>", opts)
 keymap("n", "<leader>/", ":Commentary<CR>", opts)
 keymap("v", "<leader>/", ":Commentary<CR>", opts)
 
--- NvimTree
--- keymap("n", "<leader>b", ":NvimTreeToggle<CR>", opts)
--- keymap('n', '<leader>n', ":NvimTreeFindFileToggle<CR>", opts)
-
 -- Harpoon
 keymap('n', '<C-e>', function() require("harpoon.ui").toggle_quick_menu() end, opts)
 keymap('n', '<C-h>', function() require("harpoon.mark").add_file() end, opts)

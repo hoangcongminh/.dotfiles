@@ -59,6 +59,9 @@ packer.startup(function(use)
 		},
 	}
 
+	-- file manager
+	use { 'stevearc/oil.nvim' }
+
 	-- ThePrimeagen harpoon
 	use { 'ThePrimeagen/harpoon', requires = 'nvim-lua/plenary.nvim' }
 
@@ -108,6 +111,7 @@ packer.startup(function(use)
 		ft = { 'flutter', 'dart', 'yaml' },
 		requires = {
 			"nvim-lua/plenary.nvim",
+			'stevearc/dressing.nvim', -- optional for vim.ui.select
 			'Nash0x7E2/awesome-flutter-snippets',
 			'hrsh7th/cmp-nvim-lsp',
 			'dart-lang/dart-vim-plugin',
