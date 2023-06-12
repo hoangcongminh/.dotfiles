@@ -73,7 +73,6 @@ local plugins = {
 		},
 	},
 	{ 'ray-x/lsp_signature.nvim' },
-	{ "antoinemadec/FixCursorHold.nvim", config = function() vim.g.cursorhold_updatetime = 100 end },
 	{ "jose-elias-alvarez/null-ls.nvim" }, -- for formatters and linters,
 
 	-- highlight todos comments
