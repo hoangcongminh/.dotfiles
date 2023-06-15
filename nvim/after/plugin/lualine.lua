@@ -184,7 +184,6 @@ ins_left {
 }
 
 -- Add components to right sections
-ins_right { 'lsp_progress', color = { fg = colors.blue, gui = 'bold' } }
 
 -- ins_right {
 --   function()

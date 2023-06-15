@@ -15,9 +15,15 @@ local plugins = {
 	--colorscheme
 	{ "ellisonleao/gruvbox.nvim" },
 
+	{
+		"stevearc/dressing.nvim",
+		event = "VeryLazy",
+	},
+
 	-- treesitter
 	{
 		'nvim-treesitter/nvim-treesitter',
+		commit = '402f1b8d3b424bb2379fc2fde522cd782de68cf4',
 		build = ':TSUpdate',
 		dependencies = {
 			{ 'nvim-treesitter/playground' },
@@ -43,17 +49,35 @@ local plugins = {
 	{ 'stevearc/oil.nvim' },
 
 	-- ThePrimeagen harpoon
-	{ 'ThePrimeagen/harpoon',        dependencies = 'nvim-lua/plenary.nvim' },
+	{
+		'ThePrimeagen/harpoon',
+		dependencies = 'nvim-lua/plenary.nvim',
+	},
 
 	-- navigate
-	{ 'phaazon/hop.nvim',            branch = 'v1' },
+	{
+		'phaazon/hop.nvim',
+		branch = 'v1',
+	},
 
 	-- git
-	{ 'tpope/vim-fugitive',          dependencies = 'tpope/vim-rhubarb' },
-	{ 'lewis6991/gitsigns.nvim',     dependencies = 'nvim-lua/plenary.nvim' },
+	{
+		'tpope/vim-fugitive',
+		dependencies = 'tpope/vim-rhubarb'
+		,
+	},
+	{
+		'lewis6991/gitsigns.nvim',
+		dependencies = 'nvim-lua/plenary.nvim'
+		,
+	},
 
 	-- lualine & winbar
-	{ 'nvim-lualine/lualine.nvim',   dependencies = 'arkav/lualine-lsp-progress' },
+	{
+		'nvim-lualine/lualine.nvim',
+		event = "VeryLazy",
+	},
+	-- { 'nvim-lualine/lualine.nvim',   dependencies = 'arkav/lualine-lsp-progress' },
 
 	-- icons
 	{ "ryanoasis/vim-devicons" },
@@ -74,16 +98,32 @@ local plugins = {
 	{ 'ray-x/lsp_signature.nvim' },
 	{ "jose-elias-alvarez/null-ls.nvim" }, -- for formatters and linters,
 
+	{
+		'j-hui/fidget.nvim',
+		tag = 'legacy',
+	},
+
 	-- highlight todos comments
-	{ "folke/todo-comments.nvim",       dependencies = "nvim-lua/plenary.nvim" },
+	{
+		"folke/todo-comments.nvim",
+		dependencies = "nvim-lua/plenary.nvim",
+	},
 
 	-- debugger
-	-- { "rcarriga/nvim-dap-ui",
-	-- 	dependencies = {
-	-- 		"mfussenegger/nvim-dap",
-	-- 		"ravenxrz/DAPInstall.nvim",
-	-- 	}
-	-- },
+	{
+		"https://github.com/mfussenegger/nvim-dap",
+		lazy = true,
+	},
+
+	{
+		"https://github.com/rcarriga/nvim-dap-ui",
+		lazy = true,
+	},
+
+	{
+		"https://github.com/ravenxrz/DAPInstall.nvim",
+		lazy = true,
+	},
 
 	-- flutter
 	{
@@ -131,6 +171,7 @@ local plugins = {
 	},
 	{
 		'L3MON4D3/LuaSnip',
+		event = "VeryLazy",
 		dependencies = { 'rafamadriz/friendly-snippets' },
 	},
 
@@ -158,7 +199,10 @@ local plugins = {
 	{ 'tpope/vim-eunuch' },
 	{ 'tpope/vim-dispatch' },
 	{ 'norcalli/nvim-colorizer.lua' },
-	{ 'windwp/nvim-autopairs' },
+	{
+		'windwp/nvim-autopairs',
+		event = { "BufReadPost", "BufNewFile" },
+	},
 }
 
 local opts = {
