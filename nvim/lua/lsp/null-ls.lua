@@ -3,17 +3,21 @@ if not null_ls_status_ok then
 	return
 end
 
-local formatting = null_ls.builtins.formatting
-local diagnostics = null_ls.builtins.diagnostics
-local completion = null_ls.builtins.completion
+local builtins = null_ls.builtins
+local formatting = builtins.formatting
+local diagnostics = builtins.diagnostics
+local completion = builtins.completion
+local code_actions = builtins.code_actions
 
 null_ls.setup({
-	debug = false,
 	sources = {
+		formatting.dart_format,
+		formatting.prettier,
 		formatting.eslint,
-		formatting.stylua,
+		-- formatting.stylua,
 		formatting.google_java_format,
 		diagnostics.eslint,
 		completion.spell,
+		code_actions.eslint,
 	},
 })

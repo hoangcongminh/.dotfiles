@@ -7,9 +7,12 @@ local status_ok, lsp_setup = pcall(require, "lsp-setup")
 if not status_ok then
 	return
 end
+
+local handlers = require("lsp.handlers")
+
 lsp_setup.setup({
-	on_attach = require("lsp.handlers").on_attach,
-	capabilities = require("lsp.handlers").capabilities,
+	on_attach = handlers.on_attach,
+	capabilities = handlers.capabilities,
 	servers = {
 		bashls = {},
 		pyright = {},
