@@ -13,7 +13,12 @@ vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
 	--colorscheme
-	{ "ellisonleao/gruvbox.nvim" },
+	{
+		"folke/tokyonight.nvim",
+		lazy = false,
+		priority = 1000,
+		opts = {},
+	},
 
 	{
 		"stevearc/dressing.nvim",

@@ -1,13 +1,14 @@
-local status_ok, gruvbox = pcall(require, "gruvbox")
-if not status_ok then
-    return
-end
+-- local status_ok, gruvbox = pcall(require, "gruvbox")
+-- if not status_ok then
+--     return
+-- end
 
-gruvbox.setup({
-  transparent_mode = true,
+require("tokyonight").setup({
+  transparent = true,
 })
 
-vim.cmd.colorscheme("gruvbox")
+-- vim.cmd.colorscheme("gruvbox")
+vim.cmd.colorscheme("tokyonight")
 vim.opt.background = "dark"
 vim.o.winbar = "%m%y " ..
 	"%{%v:lua.require'nvim-web-devicons'.get_icon_color_by_filetype(&filetype)%} " ..
