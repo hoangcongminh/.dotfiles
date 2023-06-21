@@ -1,13 +1,12 @@
--- local status_ok, gruvbox = pcall(require, "gruvbox")
--- if not status_ok then
---     return
--- end
+local status_ok, tokyonight = pcall(require, "tokyonight")
+if not status_ok then
+	return
+end
 
-require("tokyonight").setup({
-  transparent = true,
+tokyonight.setup({
+	transparent = true,
 })
 
--- vim.cmd.colorscheme("gruvbox")
 vim.cmd.colorscheme("tokyonight")
 vim.opt.background = "dark"
 vim.o.winbar = "%m%y " ..
