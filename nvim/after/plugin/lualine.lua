@@ -1,61 +1,58 @@
 local status_ok, lualine = pcall(require, "lualine")
 if not status_ok then
   return
-    end
+end
 
 local colors = {
-    -- bg = '#303446',
-    -- bg = 'none',
-    bg = '#333333',
-    fg = '#bbc2cf',
-    yellow = "#E5C890",
-    cyan = "#81C8BE",
-    darkblue = "#8CAAEE",
-    green = "#A6D189",
-    orange = "#EF9F76",
-    violet = "#BABBF1",
-    magenta = "#F4B8E4",
-    blue = "#85C1DC",
-    red = "#E78284",
+  -- bg = '#303446',
+  -- bg = 'none',
+  bg = '#333333',
+  fg = '#bbc2cf',
+  yellow = "#E5C890",
+  cyan = "#81C8BE",
+  darkblue = "#8CAAEE",
+  green = "#A6D189",
+  orange = "#EF9F76",
+  violet = "#BABBF1",
+  magenta = "#F4B8E4",
+  blue = "#85C1DC",
+  red = "#E78284",
 }
 
 local conditions = {
-  buffer_not_empty = function() return vim.fn.empty(vim.fn.expand('%:t')) ~= 1 end,
-  hide_in_width = function() return vim.fn.winwidth(0) > 80 end,
+  buffer_not_empty = function()
+    return vim.fn.empty(vim.fn.expand('%:t')) ~= 1
+  end,
+  hide_in_width = function()
+    return vim.fn.winwidth(0) > 80
+  end,
   check_git_workspace = function()
     local filepath = vim.fn.expand('%:p:h')
     local gitdir = vim.fn.finddir('.git', filepath .. ';')
     return gitdir and #gitdir > 0 and #gitdir < #filepath
-  end
+  end,
 }
 
 -- Config
 local config = {
   options = {
     globalstatus = true,
-    -- Disable sections and component separators
     component_separators = "",
     section_separators = "",
     theme = {
-      -- We are going to use lualine_c an lualine_x as left and
-      -- right section. Both are highlighted by c theme .  So we
-      -- are just setting default looks o statusline
       normal = { c = { fg = colors.fg, bg = colors.bg } },
       inactive = { c = { fg = colors.fg, bg = colors.bg } }
     }
   },
   sections = {
-    -- these are to remove the defaults
     lualine_a = {},
     lualine_b = {},
     lualine_y = {},
     lualine_z = {},
-    -- These will be filled later
     lualine_c = {},
     lualine_x = {}
   },
   inactive_sections = {
-    -- these are to remove the defaults
     lualine_a = {},
     lualine_v = {},
     lualine_y = {},
@@ -65,26 +62,22 @@ local config = {
   }
 }
 
--- Inserts a component in lualine_c at left section
 local function ins_left(component)
   table.insert(config.sections.lualine_c, component)
 end
 
--- Inserts a component in lualine_x ot right section
 local function ins_right(component)
   table.insert(config.sections.lualine_x, component)
 end
 
--- ins_left {
---   function() return '▊' end,
---   color = { fg = colors.blue }, -- Sets highlighting of component
---   left_padding = 0 -- We don't need space before this
--- }
+ins_left {
+  function() return '▊' end,
+  color = { fg = colors.blue }, -- Sets highlighting of component
+  left_padding = 0              -- We don't need space before this
+}
 
 ins_left {
-  -- mode component
   function()
-    -- auto change color according to neovims mode
     local mode_color = {
       n = colors.red,
       i = colors.green,
@@ -120,16 +113,14 @@ ins_left {
 ins_left {
   'filename',
   condition = conditions.buffer_not_empty,
-  -- path = 1,
-  path = 0,
-  color = { bg = colors.magenta, fg = colors.bg, gui = 'bold' }
+  path = 0, -- 0 = just filename, 1 = relative path, 2 = absolute path
+  -- color = { bg = colors.magenta, fg = colors.bg, gui = 'bold' }
 }
 
-ins_left {
-  -- filesize component
-  'filesize',
-  cond = conditions.buffer_not_empty,
-}
+-- ins_left {
+--   'filesize',
+--   cond = conditions.buffer_not_empty,
+-- }
 
 ins_left { 'location' }
 
@@ -140,6 +131,13 @@ ins_left {
   color_error = colors.red,
   color_warn = colors.yellow,
   color_info = colors.cyan
+}
+
+ins_left {
+  function()
+    return '[' .. vim.g.flutter_tools_decorations.app_version .. ']'
+  end,
+  color = { fg = colors.blue, gui = 'bold' },
 }
 
 -- Insert mid section. You can make any number of sections in neovim :)
@@ -164,9 +162,6 @@ ins_left {
   icon = ' LSP:',
   color = { fg = colors.fg, gui = 'bold' }
 }
-
--- Add components to right sections
-ins_right { 'lsp_progress', color = { fg = colors.blue, gui = 'bold' } }
 
 -- ins_right {
 --   function()
@@ -201,19 +196,17 @@ ins_right {
 
 ins_right {
   'diff',
-  -- Is it me or the symbol for modified us really weird
   symbols = { added = ' ', modified = '柳 ', removed = ' ' },
   color_added = colors.green,
-  color_modified = colors.blue,
+  color_modified = colors.orange,
   color_removed = colors.red,
   condition = conditions.hide_in_width
 }
 
--- ins_right {
---   function() return '▊' end,
---   color = { fg = colors.blue },
---   right_padding = 0
--- }
+ins_right {
+  function() return '▊' end,
+  color = { fg = colors.blue },
+  right_padding = 0
+}
 
--- Now don't forget to initialize lualine
 lualine.setup(config)
