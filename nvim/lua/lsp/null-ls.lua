@@ -13,11 +13,11 @@ null_ls.setup({
 	sources = {
 		formatting.dart_format,
 		formatting.prettier,
-		formatting.eslint,
+		-- formatting.eslint,
 		-- formatting.stylua,
 		formatting.google_java_format,
-		diagnostics.eslint,
+		-- diagnostics.eslint,
 		completion.spell,
-		code_actions.eslint,
+		-- code_actions.eslint,
 	},
 })

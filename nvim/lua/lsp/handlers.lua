@@ -71,6 +71,7 @@ local function lsp_keymaps(bufnr)
 		elseif vim.lsp.buf.formatting then
 			vim.lsp.buf.formatting({ async = true })
 		end
+		print("Formatted!")
 	end, { desc = 'Format current buffer with LSP' })
 
 	local opts = { noremap = true, silent = true, buffer = bufnr }

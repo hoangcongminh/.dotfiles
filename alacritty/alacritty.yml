@@ -41,7 +41,7 @@ selection:
 window:
   # opacity: 0.85
   # decorations: buttonless
-  # startup_mode: Maximized
+  startup_mode: Maximized
   padding:
     x: 10
     # y: 5
