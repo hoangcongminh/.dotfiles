@@ -12,6 +12,18 @@ local lsp = vim.lsp.buf
 local handlers = vim.lsp.handlers
 local diagnostic = vim.diagnostic
 
+local function format_buffer(is_print_formated)
+	if vim.lsp.buf.format then
+		vim.lsp.buf.format({ async = true })
+	elseif vim.lsp.buf.formatting then
+		vim.lsp.buf.formatting({ async = true })
+	end
+
+	if not is_print_formated then
+		print("Formated!")
+	end
+end
+
 local setup = function()
 	local signs = {
 		-- { name = "DiagnosticSignError", text = "" },
@@ -63,15 +75,6 @@ local function lsp_keymaps(bufnr)
 	-- Enable completion triggered by <c-x><c-o>
 	vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 
-	-- Format command
-	vim.api.nvim_buf_create_user_command(bufnr, 'Format', function(_)
-		if vim.lsp.buf.format then
-			vim.lsp.buf.format({ async = true })
-		elseif vim.lsp.buf.formatting then
-			vim.lsp.buf.formatting({ async = true })
-		end
-		print("Formatted!")
-	end, { desc = 'Format current buffer with LSP' })
 
 	local opts = { noremap = true, silent = true, buffer = bufnr }
 	local keymap = vim.keymap.set
@@ -105,7 +108,7 @@ local function lsp_keymaps(bufnr)
 		function()
 			lsp.references({ includeDeclaration = false })
 		end, opts)
-	keymap('n', '<space>fm', vim.cmd.Format, opts)
+	keymap('n', '<space>fm', format_buffer, opts)
 	keymap('n', "<space>ws", lsp.workspace_symbol, opts)
 	keymap('n', "<space>ds", lsp.document_symbol, opts)
 	keymap('n', '<space>wl', lsp.list_workspace_folders, opts)
@@ -115,24 +118,19 @@ local function lsp_keymaps(bufnr)
 end
 
 local on_attach = function(client, bufnr)
-	if client.name == "tsserver" then
-		client.server_capabilities.document_formatting = false
-	end
+	-- Format command
+	vim.api.nvim_buf_create_user_command(bufnr, 'Format', format_buffer, { desc = 'Format current buffer with LSP' })
 
-	if client.name == "lua_ls" then
-		client.server_capabilities.document_formatting = false
-	end
+	-- Format on save
+	vim.api.nvim_create_autocmd('BufWritePre', {
+		callback = function()
+			format_buffer(false)
+		end,
+		group = vim.api.nvim_create_augroup('FormatOnSave', { clear = true }),
+		pattern = { "*.lua", "*.ts", "*.js", "*.go", "*.rs", "*.c", "*.cpp" },
+	})
 
 	lsp_keymaps(bufnr)
-
-	local ok, lsp_format = pcall(require, "lsp-format")
-	if ok then
-		lsp_format.on_attach(client)
-	end
-
-	-- Fotmat on save
-	-- vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.formatting_sync()]]
-	-- require('lsp-setup.utils').format_on_save(client)
 end
 
 return {
