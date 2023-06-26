@@ -17,7 +17,6 @@ local plugins = {
 		"folke/tokyonight.nvim",
 		lazy = false,
 		priority = 1000,
-		opts = {},
 	},
 
 	{
@@ -28,6 +27,7 @@ local plugins = {
 	-- treesitter
 	{
 		'nvim-treesitter/nvim-treesitter',
+		event = { "BufReadPost", "BufNewFile" },
 		commit = '33eb472b459f1d2bf49e16154726743ab3ca1c6d',
 		build = ':TSUpdate',
 		dependencies = {
@@ -51,7 +51,11 @@ local plugins = {
 	},
 
 	-- file manager
-	{ 'stevearc/oil.nvim' },
+	{
+		'stevearc/oil.nvim',
+		cmd = "Oil",
+	},
+
 
 	-- ThePrimeagen harpoon
 	{
@@ -59,9 +63,10 @@ local plugins = {
 		dependencies = 'nvim-lua/plenary.nvim',
 	},
 
-	-- navigate
+	-- motions
 	{
 		'phaazon/hop.nvim',
+		event = "VeryLazy",
 		branch = 'v1',
 	},
 
@@ -73,8 +78,8 @@ local plugins = {
 	},
 	{
 		'lewis6991/gitsigns.nvim',
-		dependencies = 'nvim-lua/plenary.nvim'
-		,
+		event = "VeryLazy",
+		dependencies = 'nvim-lua/plenary.nvim',
 	},
 
 	-- lualine & winbar
@@ -82,29 +87,36 @@ local plugins = {
 		'nvim-lualine/lualine.nvim',
 		event = "VeryLazy",
 	},
-	-- { 'nvim-lualine/lualine.nvim',   dependencies = 'arkav/lualine-lsp-progress' },
 
 	-- icons
-	{ "ryanoasis/vim-devicons" },
-	{ "kyazdani42/nvim-web-devicons" },
+	{
+		"ryanoasis/vim-devicons",
+		lazy = true,
+	},
+	{
+		"kyazdani42/nvim-web-devicons",
+		lazy = true,
+	},
 
 	-- comment
-	{ 'tpope/vim-commentary' },
+	{
+		'tpope/vim-commentary',
+		event = "VeryLazy",
+	},
 
 	-- lsp
 	{
-		'junnplus/lsp-setup.nvim',
+		"williamboman/mason-lspconfig.nvim",
+		event = { "BufReadPost", "BufNewFile" },
 		dependencies = {
-			'neovim/nvim-lspconfig',
-			'williamboman/mason.nvim',
-			'williamboman/mason-lspconfig.nvim',
+			{ 'neovim/nvim-lspconfig' },
+			{ 'williamboman/mason.nvim', run = ":MasonUpdate" }
 		},
 	},
-	{ 'ray-x/lsp_signature.nvim' },
-	{ "jose-elias-alvarez/null-ls.nvim" }, -- for formatters and linters,
 
 	{
 		'j-hui/fidget.nvim',
+		event = "VeryLazy",
 		tag = 'legacy',
 	},
 
@@ -160,6 +172,7 @@ local plugins = {
 	-- completion
 	{
 		'hrsh7th/nvim-cmp',
+		event = "VeryLazy",
 		dependencies = {
 			{ 'hrsh7th/cmp-nvim-lsp' },
 			{ 'hrsh7th/cmp-buffer' },
@@ -184,18 +197,26 @@ local plugins = {
 	{ "akinsho/toggleterm.nvim" },
 
 	-- copilot
-	{ 'github/copilot.vim' },
+	{
+		'github/copilot.vim',
+		event = { "BufReadPost", "BufNewFile" },
+	},
 
 	-- markdown
 	{
 		"iamcco/markdown-preview.nvim",
-		build = "cd app && npm install",
-		config = function() vim.g.mkdp_filetypes = { "markdown" } end,
 		ft = { "markdown" },
+		build = "cd app && npm install",
 	},
 
 	-- other
-	{ 'mbbill/undotree' },
+	{
+		'mbbill/undotree',
+		cmd = {
+			"UndotreeShow",
+			"UndotreeToggle",
+		}
+	},
 	{ 'mtdl9/vim-log-highlighting' },
 	{ 'tpope/vim-sleuth' },
 	{ 'tpope/vim-surround' },
