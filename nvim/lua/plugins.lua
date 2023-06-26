@@ -28,7 +28,7 @@ local plugins = {
 	-- treesitter
 	{
 		'nvim-treesitter/nvim-treesitter',
-		commit = '402f1b8d3b424bb2379fc2fde522cd782de68cf4',
+		commit = '33eb472b459f1d2bf49e16154726743ab3ca1c6d',
 		build = ':TSUpdate',
 		dependencies = {
 			{ 'nvim-treesitter/playground' },

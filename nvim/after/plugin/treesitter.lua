@@ -38,7 +38,7 @@ configs.setup {
 		enable = true,
 	},
 	indent = {
-		enable = false,
+		enable = true,
 		disable = { "yaml" },
 	},
 	incremental_selection = {
