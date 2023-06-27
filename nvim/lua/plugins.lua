@@ -24,6 +24,8 @@ local plugins = {
 		event = "VeryLazy",
 	},
 
+	{ 'rcarriga/nvim-notify' },
+
 	-- treesitter
 	{
 		'nvim-treesitter/nvim-treesitter',

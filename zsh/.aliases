@@ -1,5 +1,4 @@
 # Navigating
-alias wp='cd ~/Documents/Workspace'
 alias h='cd ~'
 alias df='cd ~/.dotfiles'
 
