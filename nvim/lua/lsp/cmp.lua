@@ -78,7 +78,15 @@ cmp.setup({
       mode = "symbol_text",
       maxwidth = 40,
       before = function(entry, vim_item)
-        vim_item.kind = require 'lspkind'.presets.default[vim_item.kind]
+        if vim.tbl_contains({ 'path' }, entry.source.name) then
+          local icon, hl_group = require('nvim-web-devicons').get_icon(entry:get_completion_item().label)
+          if icon then
+            vim_item.kind = icon
+            vim_item.kind_hl_group = hl_group
+          end
+        else
+          vim_item.kind = require 'lspkind'.presets.default[vim_item.kind]
+        end
 
         local menu = source_mapping[entry.source.name]
         vim_item.menu = menu

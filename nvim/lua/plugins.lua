@@ -147,6 +147,7 @@ local plugins = {
 	{
 		"akinsho/flutter-tools.nvim",
 		ft = { 'flutter', 'dart', 'yaml' },
+		event = { "BufReadPost", "BufNewFile" },
 		dependencies = {
 			"nvim-lua/plenary.nvim",
 			'stevearc/dressing.nvim', -- optional for vim.ui.select
