@@ -12,7 +12,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
-	--colorscheme
+	-- colorscheme
 	{
 		"folke/tokyonight.nvim",
 		lazy = false,
@@ -73,6 +73,7 @@ local plugins = {
 	-- git
 	{
 		'tpope/vim-fugitive',
+		cmd = "G",
 		dependencies = 'tpope/vim-rhubarb'
 		,
 	},
@@ -172,7 +173,6 @@ local plugins = {
 	-- completion
 	{
 		'hrsh7th/nvim-cmp',
-		event = "VeryLazy",
 		dependencies = {
 			{ 'hrsh7th/cmp-nvim-lsp' },
 			{ 'hrsh7th/cmp-buffer' },
@@ -183,7 +183,6 @@ local plugins = {
 			{ 'saadparwaiz1/cmp_luasnip' },
 			{ 'dmitmel/cmp-cmdline-history' },
 			-- { 'hrsh7th/cmp-copilot' },
-			{ 'andersevenrud/cmp-tmux' },
 			{ 'onsails/lspkind-nvim' },
 		},
 	},
@@ -217,14 +216,14 @@ local plugins = {
 			"UndotreeToggle",
 		}
 	},
-	{ 'mtdl9/vim-log-highlighting' },
-	{ 'tpope/vim-sleuth' },
-	{ 'tpope/vim-surround' },
-	{ 'tpope/vim-rsi' },
-	{ 'tpope/vim-unimpaired' },
-	{ 'tpope/vim-eunuch' },
-	{ 'tpope/vim-dispatch' },
-	{ 'norcalli/nvim-colorizer.lua' },
+	{ 'mtdl9/vim-log-highlighting',  event = "VeryLazy" },
+	{ 'tpope/vim-sleuth',            event = "VeryLazy" },
+	{ 'tpope/vim-surround',          event = "VeryLazy" },
+	{ 'tpope/vim-rsi',               event = "VeryLazy" },
+	{ 'tpope/vim-unimpaired',        event = "VeryLazy" },
+	{ 'tpope/vim-eunuch',            event = "VeryLazy" },
+	{ 'tpope/vim-dispatch',          event = "VeryLazy" },
+	{ 'norcalli/nvim-colorizer.lua', event = "VeryLazy" },
 	{
 		'windwp/nvim-autopairs',
 		event = { "BufReadPost", "BufNewFile" },

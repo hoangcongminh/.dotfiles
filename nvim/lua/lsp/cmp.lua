@@ -14,11 +14,10 @@ require("luasnip.loaders.from_vscode").lazy_load()
 local source_mapping = {
   nvim_lsp = "[LSP]",
   luasnip = "[LuaSnip]",
-  buffer = "[Buffer]",
   path = "[Path]",
+  buffer = "[Buffer]",
   nvim_lua = "[Lua]",
-  copilot = "[Copilot]",
-  tmux = "[Tmux]",
+  -- copilot = "[Copilot]",
   cmdline = "[CMD]",
   cmdline_history = "[History]",
 }
@@ -39,18 +38,18 @@ cmp.setup({
     documentation = cmp.config.window.bordered(winhighlight),
   },
   mapping = {
-        ['<C-n>'] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),
-        ['<C-p>'] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }),
-        ['<Down>'] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Select }),
-        ['<Up>'] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Select }),
-        ['<C-d>'] = cmp.mapping.scroll_docs(-4),
-        ['<C-f>'] = cmp.mapping.scroll_docs(4),
-        ['<C-Space>'] = cmp.mapping.complete(),
-        ['<C-e>'] = cmp.mapping({
+    ['<C-n>'] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),
+    ['<C-p>'] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }),
+    ['<Down>'] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Select }),
+    ['<Up>'] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Select }),
+    ['<C-d>'] = cmp.mapping.scroll_docs(-4),
+    ['<C-f>'] = cmp.mapping.scroll_docs(4),
+    ['<C-Space>'] = cmp.mapping.complete(),
+    ['<C-e>'] = cmp.mapping({
       i = cmp.mapping.abort(),
       c = cmp.mapping.close(),
     }),
-        ['<CR>'] = cmp.mapping.confirm({
+    ['<CR>'] = cmp.mapping.confirm({
       behavior = cmp.ConfirmBehavior.Replace,
       select = true,
     }),
@@ -76,10 +75,8 @@ cmp.setup({
   },
   formatting = {
     format = require 'lspkind'.cmp_format({
-      mode = "symbol_text", -- options: 'text', 'text_symbol', 'symbol_text', 'symbol'
-      maxwidth = 40,        -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
-      -- The function below will be called before any actual modifications from lspkind
-      -- so that you can provide more controls on popup customization. (See [#30](https://github.com/onsails/lspkind-nvim/pull/30))
+      mode = "symbol_text",
+      maxwidth = 40,
       before = function(entry, vim_item)
         vim_item.kind = require 'lspkind'.presets.default[vim_item.kind]
 
@@ -91,46 +88,28 @@ cmp.setup({
     }),
     with_text = true,
   },
-  sources = cmp.config.sources({
+  confirmation = { completeopt = 'menu,menuone,noinsert' },
+  sources = {
     { name = 'nvim_lsp' },
     { name = 'luasnip' }, -- For luasnip users.
-    { name = 'buffer' },
     { name = 'path' },
+    { name = 'buffer' },
     { name = "nvim_lsp_signature_help" },
     { name = "nvim_lua" },
-    {
-      name = 'tmux',
-      option = {
-        all_panes = false,
-        label = '[tmux]',
-        trigger_characters = { '.' },
-        trigger_characters_ft = {} -- { filetype = { '.' } }
-      }
-    },
     -- { name = 'copilot' },
-  }, {
+  },
+  {
     { name = 'buffer' },
-  })
+  }
 })
 
--- Set configuration for specific filetype.
-cmp.setup.filetype('gitcommit', {
-  sources = cmp.config.sources({
-    { name = 'cmp_git' }, -- You can specify the `cmp_git` source if you were installed it.
-  }, {
-    { name = 'buffer' },
-  })
-})
-
--- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).
-cmp.setup.cmdline('/', {
+cmp.setup.cmdline({ '/', '?' }, {
   mapping = cmp.mapping.preset.cmdline(),
   sources = {
     { name = 'buffer' }
   }
 })
 
--- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
 cmp.setup.cmdline(':', {
   mapping = cmp.mapping.preset.cmdline(),
   sources = cmp.config.sources({
