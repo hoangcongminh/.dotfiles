@@ -21,7 +21,7 @@ local plugins = {
 
 	{
 		"stevearc/dressing.nvim",
-		event = "VeryLazy",
+		lazy = true,
 	},
 
 	{ 'rcarriga/nvim-notify' },
@@ -126,6 +126,8 @@ local plugins = {
 	-- highlight todos comments
 	{
 		"folke/todo-comments.nvim",
+		cmd = { "TodoTrouble", "TodoTelescope" },
+		event = { "BufReadPost", "BufNewFile" },
 		dependencies = "nvim-lua/plenary.nvim",
 	},
 

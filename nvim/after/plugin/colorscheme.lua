@@ -4,6 +4,7 @@ if not status_ok then
 end
 
 tokyonight.setup({
+	style = "moon",
 	transparent = true,
 })
 
