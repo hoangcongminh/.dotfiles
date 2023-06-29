@@ -1,9 +1,4 @@
-local status_ok, oil = pcall(require, "oil")
-if not status_ok then
-	return
-end
-
-oil.setup({
+require("oil").setup({
 	columns = {
 		"icon",
 		-- "permissions",
@@ -15,4 +10,4 @@ oil.setup({
 	},
 })
 
-vim.keymap.set("n", "-", oil.open, { desc = "Open parent directory" })
+vim.keymap.set("n", "-", require("oil").open, { desc = "Open parent directory" })

@@ -1,22 +1,7 @@
-local status_ok, flutter_tools = pcall(require, "flutter-tools")
-if not status_ok then
-  return
-end
-
-local pubspec_ok, pubspec_assist = pcall(require, "pubspec-assist")
-if not pubspec_ok then
-  return
-end
-
-local telescope_ok, telescope = pcall(require, "telescope")
-if not telescope_ok then
-  return
-end
-
-pubspec_assist.setup()
+require("pubspec-assist").setup()
 
 local function on_attach(client, bufnr)
-  telescope.load_extension("flutter")
+  require("telescope").load_extension("flutter")
 
   local opts = { noremap = true, silent = true, buffer = bufnr }
   local keymap = vim.keymap.set
@@ -61,7 +46,7 @@ local function on_attach(client, bufnr)
   require("lsp.handlers").on_attach(client, bufnr)
 end
 
-flutter_tools.setup {
+require("flutter-tools").setup {
   ui = {
     border = "single",
     notification_style = 'plugin'
@@ -78,10 +63,7 @@ flutter_tools.setup {
     run_via_dap = false,
     exception_breakpoints = {},
     register_configurations = function(path)
-      local dap_status_ok, dap = pcall(require, "dap")
-      if not dap_status_ok then
-        return
-      end
+      local dap = require("dap")
 
       dap.adapters.dart = {
         type = 'executable',

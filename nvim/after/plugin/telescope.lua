@@ -1,8 +1,3 @@
-local status_ok, telescope = pcall(require, "telescope")
-if not status_ok then
-  return
-end
-
 local actions = require('telescope.actions')
 local previewers = require("telescope.previewers")
 local telescope_themes = require('telescope.themes')
@@ -23,7 +18,8 @@ local new_maker = function(filepath, bufnr, opts)
   end)
 end
 
-telescope.setup {
+
+require("telescope").setup {
   defaults = telescope_themes.get_ivy {
     buffer_previewer_maker = new_maker,
     path_display = { "absolute" },
@@ -70,11 +66,8 @@ telescope.setup {
   },
 }
 
-telescope.load_extension("fzf")
-telescope.load_extension("ui-select")
-
-pcall(telescope.load_extension, "smart_history")
-pcall(telescope.load_extension, "frecency")
+require("telescope").load_extension("fzf")
+require("telescope").load_extension("ui-select")
 
 local opts = { noremap = true, silent = true }
 

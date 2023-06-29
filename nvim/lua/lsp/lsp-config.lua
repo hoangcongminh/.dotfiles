@@ -1,22 +1,7 @@
-local ok, lspconfig = pcall(require, "lspconfig")
-if not ok then
-	return
-end
-
-local status_ok, mason = pcall(require, "mason")
-if not status_ok then
-	return
-end
-
-local lsp_status_ok, mason_lspconfig = pcall(require, "mason-lspconfig")
-if not lsp_status_ok then
-	return
-end
-
 local handlers = require("lsp.handlers")
 
-mason.setup()
-mason_lspconfig.setup({
+require("mason").setup()
+require("mason-lspconfig").setup({
 	ensure_installed = {
 		"bashls",
 		"cssls",
@@ -35,7 +20,7 @@ mason_lspconfig.setup({
 	},
 	handlers = {
 		function(server_name)
-			lspconfig[server_name].setup({
+			require("lspconfig")[server_name].setup({
 				on_attach = handlers.on_attach,
 				capabilities = handlers.capabilities,
 				flags = {

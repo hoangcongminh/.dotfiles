@@ -1,8 +1,3 @@
-local status_ok, lualine = pcall(require, "lualine")
-if not status_ok then
-  return
-end
-
 local colors = {
   -- bg = '#303446',
   -- bg = 'none',
@@ -209,4 +204,4 @@ ins_right {
   right_padding = 0
 }
 
-lualine.setup(config)
+require("lualine").setup(config)

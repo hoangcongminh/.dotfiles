@@ -1,9 +1,4 @@
-local status_ok, toggleterm = pcall(require, "toggleterm")
-if not status_ok then
-  return
-end
-
-toggleterm.setup({
+require("toggleterm").setup({
   size = 20,
   open_mapping = [[<c-\>]],
   hide_numbers = true,
@@ -18,7 +13,6 @@ toggleterm.setup({
   float_opts = {
     border = "curved",
   },
-
 })
 
 local float_handler = function(term)
