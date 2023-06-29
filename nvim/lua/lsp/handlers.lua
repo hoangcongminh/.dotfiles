@@ -94,7 +94,7 @@ local function lsp_keymaps(bufnr)
 	keymap('n', 'gi', lsp.implementation, opts)
 	keymap('n', 'K', lsp.hover, opts)
 
-	keymap('n', '<C-k>', lsp.signature_help, opts)
+	keymap({ 'n', 'i' }, '<C-k>', lsp.signature_help, opts)
 	keymap('n', '<space>wa', lsp.add_workspace_folder, opts)
 	keymap('n', '<space>wr', lsp.remove_workspace_folder, opts)
 	keymap('n', '<space>wl', lsp.list_workspace_folders, opts)
