@@ -20,7 +20,8 @@ require("mason-lspconfig").setup({
 	},
 	handlers = {
 		function(server_name)
-			require("lspconfig")[server_name].setup({
+			local lsp = require("lspconfig")
+			lsp[server_name].setup({
 				on_attach = handlers.on_attach,
 				capabilities = handlers.capabilities,
 				flags = {
@@ -34,6 +35,10 @@ require("mason-lspconfig").setup({
 					}
 				}
 			})
+			lsp['sourcekit'].setup {
+				on_attach = handlers.on_attach,
+				capabilities = handlers.capabilities,
+			}
 		end,
 	},
 })
