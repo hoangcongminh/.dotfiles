@@ -15,7 +15,7 @@ local source_mapping = {
 }
 
 local winhighlight = {
-  border = "single",
+  border = require("global").border,
   winhighlight = "Normal:NormalFloat,FloatBorder:FloatBorder,CursorLine:PmenuSel",
 }
 

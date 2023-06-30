@@ -1,10 +1,14 @@
-require("tokyonight").setup({
-	style = "moon",
-	transparent = true,
+-- require("tokyonight").setup({
+-- 	style = "moon",
+-- 	transparent = true,
+-- })
+
+require("everforest").setup({
+  transparent_background_level = 1
 })
 
-vim.cmd.colorscheme("tokyonight")
-vim.opt.background = "dark"
+vim.cmd.colorscheme("everforest")
+-- vim.opt.background = "dark"
 vim.o.winbar = "%m%y " ..
 	"%{%v:lua.require'nvim-web-devicons'.get_icon_color_by_filetype(&filetype)%} " ..
 	"%f"

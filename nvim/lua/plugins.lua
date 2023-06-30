@@ -18,6 +18,12 @@ local plugins = {
 		lazy = false,
 		priority = 1000,
 	},
+	{
+		"neanias/everforest-nvim",
+		version = false,
+		lazy = false,
+		priority = 1000,
+	},
 
 	{
 		"stevearc/dressing.nvim",
@@ -233,11 +239,12 @@ local plugins = {
 		'windwp/nvim-autopairs',
 		event = { "BufReadPost", "BufNewFile" },
 	},
+
 }
 
 local opts = {
 	ui = {
-		border = "single",
+		border = require("global").border,
 	}
 }
 

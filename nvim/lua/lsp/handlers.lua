@@ -42,7 +42,7 @@ local setup = function()
 		float = {
 			focusable = true,
 			style = "minimal",
-			border = "single",
+			border = require("global").border,
 			source = "always",
 			header = "",
 			prefix = "",
@@ -53,12 +53,12 @@ local setup = function()
 
 	handlers["textDocument/hover"] = vim.lsp.with(
 		handlers.hover, {
-			border = "single",
+			border = require("global").border,
 		})
 
 	handlers["textDocument/signatureHelp"] = vim.lsp.with(
 		handlers.signature_help, {
-			border = "single",
+			border = require("global").border,
 		})
 end
 

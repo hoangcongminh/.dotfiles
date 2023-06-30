@@ -48,7 +48,7 @@ end
 
 require("flutter-tools").setup {
   ui = {
-    border = "single",
+    border = require("global").border,
     notification_style = 'plugin'
   },
   decorations = {
