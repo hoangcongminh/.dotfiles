@@ -4,14 +4,14 @@
 -- })
 
 require("everforest").setup({
-  transparent_background_level = 1
+	transparent_background_level = 0
 })
 
 vim.cmd.colorscheme("everforest")
 -- vim.opt.background = "dark"
 vim.o.winbar = "%m%y " ..
-	"%{%v:lua.require'nvim-web-devicons'.get_icon_color_by_filetype(&filetype)%} " ..
-	"%f"
+		"%{%v:lua.require'nvim-web-devicons'.get_icon_color_by_filetype(&filetype)%} " ..
+		"%f"
 
 vim.api.nvim_set_hl(0, "SignColumn", { bg = "none" })
 -- vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
