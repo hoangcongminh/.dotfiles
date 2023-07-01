@@ -39,7 +39,6 @@ local plugins = {
 		commit = '33eb472b459f1d2bf49e16154726743ab3ca1c6d',
 		build = ':TSUpdate',
 		dependencies = {
-			{ 'nvim-treesitter/playground' },
 			{ 'nvim-treesitter/nvim-treesitter-textobjects' },
 			{ 'p00f/nvim-ts-rainbow' },
 			{ 'RRethy/nvim-treesitter-endwise' },
@@ -204,7 +203,10 @@ local plugins = {
 	},
 
 	-- terminal
-	{ "akinsho/toggleterm.nvim" },
+	{
+		"akinsho/toggleterm.nvim",
+		cmd = "ToggleTerm"
+	},
 
 	-- copilot
 	{
