@@ -1,5 +1,4 @@
-local M = {}
-
-M.border = "none"
-
-return M
+return {
+    border = "solid",
+    coloscheme = "everforest",
+}

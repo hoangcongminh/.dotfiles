@@ -204,4 +204,16 @@ ins_right {
 --   right_padding = 0
 -- }
 
-require("lualine").setup(config)
+
+return {
+
+  -- lualine & winbar
+  {
+    'nvim-lualine/lualine.nvim',
+    event = "VeryLazy",
+    config = function()
+      require("lualine").setup(config)
+    end
+  },
+
+}

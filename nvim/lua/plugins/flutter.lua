@@ -1,3 +1,23 @@
+return {
+	-- flutter
+	{
+		"akinsho/flutter-tools.nvim",
+		ft = { 'flutter', 'dart', 'yaml' },
+		event = { "BufReadPost", "BufNewFile" },
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+			'stevearc/dressing.nvim', -- optional for vim.ui.select
+			'Nash0x7E2/awesome-flutter-snippets',
+			'hrsh7th/cmp-nvim-lsp',
+			'dart-lang/dart-vim-plugin',
+			'RobertBrunhage/flutter-riverpod-snippets',
+			-- 'eliasreis54/vim-bloc-plugin',
+			{
+				'akinsho/pubspec-assist.nvim',
+				dependencies = 'plenary.nvim',
+			}
+		},
+    config = function()
 require("pubspec-assist").setup()
 
 local function on_attach(client, bufnr)
@@ -43,7 +63,7 @@ local function on_attach(client, bufnr)
     vim.cmd 'Dispatch flutter clean; flutter pub get; flutter run --release'
   end, { force = true })
 
-  require("lsp.handlers").on_attach(client, bufnr)
+  require("plugins.lsp.handlers").on_attach(client, bufnr)
 end
 
 require("flutter-tools").setup {
@@ -115,7 +135,7 @@ require("flutter-tools").setup {
       virtual_text_str = "■",
     },
     on_attach = on_attach,
-    capabilities = require("lsp.handlers").capabilities,
+    capabilities = require("plugins.lsp.handlers").capabilities,
     root_dir = function()
       return vim.loop.cwd()
     end,
@@ -135,4 +155,8 @@ require("flutter-tools").setup {
       updateImportsOnRename = true,
     }
   }
+}
+    end
+	},
+
 }
