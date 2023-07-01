@@ -1,8 +1,3 @@
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities.textDocument.completion.completionItem.snippetSupport = true
-
-local custom_capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
-
 local lsp = vim.lsp.buf
 local handlers = vim.lsp.handlers
 local diagnostic = vim.diagnostic
@@ -123,6 +118,11 @@ local on_attach = function(client, bufnr)
 
 	lsp_keymaps(bufnr)
 end
+
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.textDocument.completion.completionItem.snippetSupport = true
+
+local custom_capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
 
 return {
 	setup = setup,

@@ -10,6 +10,7 @@ return {
     },
     config = function()
       local handlers = require("plugins.lsp.handlers")
+      handlers.setup()
 
       require("mason").setup()
       require("mason-lspconfig").setup({

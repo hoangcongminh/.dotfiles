@@ -3,7 +3,7 @@ return {
   -- terminal
   {
     "akinsho/toggleterm.nvim",
-    cmd = "ToggleTerm",
+    event = 'VeryLazy',
     config = function()
       require("toggleterm").setup({
         size = 20,
