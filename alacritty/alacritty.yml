@@ -9,8 +9,8 @@ selection:
   save_to_clipboard: true
 
 window:
-  # opacity: 0.85
-  # decorations: buttonless
+  opacity: 0.9
+  decorations: buttonless
   startup_mode: Maximized
   padding:
     x: 10
@@ -28,7 +28,7 @@ scrolling:
 #Monaco Nerd Font
 #FiraCode Nerd Font
 font:
-  size: 18
+  size: 14
   normal:
     family: JetBrainsMono Nerd Font
     style: Regular

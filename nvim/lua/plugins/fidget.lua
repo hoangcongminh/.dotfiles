@@ -5,7 +5,10 @@ return {
 	config = function()
 		require("fidget").setup {
 			text = {
-				spinner = "dots",
+				spinner = "meter",
+			},
+			window = {
+				blend = 0,
 			},
 		}
 	end

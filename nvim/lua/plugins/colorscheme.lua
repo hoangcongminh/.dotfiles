@@ -18,7 +18,7 @@ return {
 			})
 
 			require("everforest").setup({
-				transparent_background_level = 0
+				transparent_background_level = 1
 			})
 
 			vim.cmd.colorscheme(require("global").coloscheme)
