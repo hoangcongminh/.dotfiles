@@ -11,6 +11,8 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+vim.keymap.set("n", "<leader>lz", "<cmd>Lazy <CR>", { noremap = true, silent = true })
+
 require("lazy").setup("plugins", {
 	ui = {
 		border = require("global").border,

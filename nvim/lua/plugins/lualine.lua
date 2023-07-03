@@ -206,14 +206,10 @@ ins_right {
 
 
 return {
-
   -- lualine & winbar
-  {
-    'nvim-lualine/lualine.nvim',
-    event = "VeryLazy",
-    config = function()
-      require("lualine").setup(config)
-    end
-  },
-
+  'nvim-lualine/lualine.nvim',
+  event = "VeryLazy",
+  config = function()
+    require("lualine").setup(config)
+  end
 }

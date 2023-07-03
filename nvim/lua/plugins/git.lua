@@ -4,8 +4,7 @@ return {
   {
     'tpope/vim-fugitive',
     cmd = "G",
-    dependencies = 'tpope/vim-rhubarb'
-    ,
+    dependencies = 'tpope/vim-rhubarb',
   },
 
   {

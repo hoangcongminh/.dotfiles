@@ -1,6 +1,4 @@
 local function config()
-	require("pubspec-assist").setup()
-
 	local function on_attach(client, bufnr)
 		require("telescope").load_extension("flutter")
 
@@ -153,12 +151,16 @@ return {
 			'dart-lang/dart-vim-plugin',
 			'RobertBrunhage/flutter-riverpod-snippets',
 			-- 'eliasreis54/vim-bloc-plugin',
-			{
-				'akinsho/pubspec-assist.nvim',
-				dependencies = 'plenary.nvim',
-			}
 		},
 		config = config,
 	},
 
+
+	{
+		'akinsho/pubspec-assist.nvim',
+		dependencies = 'plenary.nvim',
+		config = function()
+			require("pubspec-assist").setup()
+		end
+	}
 }
