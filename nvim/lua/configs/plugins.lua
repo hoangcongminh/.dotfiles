@@ -11,10 +11,23 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-vim.keymap.set("n", "<leader>lz", "<cmd>Lazy <CR>", { noremap = true, silent = true })
-
 require("lazy").setup("plugins", {
 	ui = {
 		border = require("global").border,
-	}
+	},
+	change_detection = { notify = false },
+	checker = {
+		enabled = true,
+		concurrency = 30,
+		notify = false,
+		frequency = 3600, -- check for updates every hour
+	},
+	performance = {
+		rtp = {
+			paths = { vim.fn.stdpath('data') .. '/site' },
+			disabled_plugins = { 'netrw', 'netrwPlugin' },
+		},
+	},
 })
+
+vim.keymap.set("n", "<leader>pl", "<cmd>Lazy <CR>", { noremap = true, silent = true })
