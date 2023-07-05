@@ -3,11 +3,12 @@ return {
   event = { "BufReadPre", "BufNewFile" },
   dependencies = { "mason.nvim" },
   opts = function()
-    local nls = require("null-ls")
+    local null_ls = require("null-ls")
     return {
-      root_dir = require("null-ls.utils").root_pattern(".null-ls-root", ".neoconf.json", "Makefile", ".git"),
       sources = {
-        nls.builtins.formatting.stylua,
+        null_ls.builtins.formatting.stylua,
+        null_ls.builtins.formatting.dart_format,
+        null_ls.builtins.formatting.prettier,
       },
     }
   end,
