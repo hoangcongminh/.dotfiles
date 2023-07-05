@@ -157,6 +157,8 @@ return {
 
 	{
 		"akinsho/pubspec-assist.nvim",
+		ft = { "dart" },
+		event = "BufEnter pubspec.yaml",
 		dependencies = "plenary.nvim",
 		config = function()
 			require("pubspec-assist").setup()
