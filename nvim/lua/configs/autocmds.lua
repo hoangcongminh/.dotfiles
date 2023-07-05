@@ -1,13 +1,13 @@
 -- Highlight on yank
-vim.api.nvim_create_autocmd('TextYankPost', {
+vim.api.nvim_create_autocmd("TextYankPost", {
 	callback = function()
 		vim.highlight.on_yank({
-			higroup = 'IncSearch',
+			higroup = "IncSearch",
 			timeout = 40,
 		})
 	end,
-	group = vim.api.nvim_create_augroup('YankHighlight', { clear = true }),
-	pattern = '*',
+	group = vim.api.nvim_create_augroup("YankHighlight", { clear = true }),
+	pattern = "*",
 })
 
 -- show cursor line only in active window
@@ -23,16 +23,7 @@ vim.api.nvim_create_autocmd(
 )
 
 -- Unset relativenumber in insert mode
-vim.api.nvim_create_autocmd(
-	"InsertEnter",
-	{ pattern = "*", command = "set norelativenumber" }
-)
-vim.api.nvim_create_autocmd(
-	"InsertLeave",
-	{ pattern = "*", command = "set relativenumber" }
-)
+vim.api.nvim_create_autocmd("InsertEnter", { pattern = "*", command = "set norelativenumber" })
+vim.api.nvim_create_autocmd("InsertLeave", { pattern = "*", command = "set relativenumber" })
 -- Unset paste mode when leaving insert mode
-vim.api.nvim_create_autocmd(
-	"InsertLeave",
-	{ pattern = "*", command = "set nopaste" }
-)
+vim.api.nvim_create_autocmd("InsertLeave", { pattern = "*", command = "set nopaste" })

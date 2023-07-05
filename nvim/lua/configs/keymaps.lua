@@ -19,8 +19,8 @@ keymap("n", "<C-l>", "<C-w>l", opts)
 keymap("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
 
 -- Remap for dealing with word wrap
-keymap('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
-keymap('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
+keymap("n", "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
+keymap("n", "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 
 -- Resize with arrows
 keymap("n", "<M-J>", ":resize -2<CR>", opts)
@@ -29,19 +29,19 @@ keymap("n", "<M-H>", ":vertical resize -2<CR>", opts)
 keymap("n", "<M-L>", ":vertical resize +2<CR>", opts)
 
 -- quickfix
-keymap('n', '<leader>co', ':copen<CR>', opts)
-keymap('n', '<leader>cc', ':ccl<CR>', opts)
-keymap('n', '<leader>ci', ':cli<CR>', opts)
-keymap('n', '<leader>k', ':cp<CR>', opts)
-keymap('n', '<leader>j', ':cn<CR>', opts)
+keymap("n", "<leader>co", ":copen<CR>", opts)
+keymap("n", "<leader>cc", ":ccl<CR>", opts)
+keymap("n", "<leader>ci", ":cli<CR>", opts)
+keymap("n", "<leader>k", ":cp<CR>", opts)
+keymap("n", "<leader>j", ":cn<CR>", opts)
 
-keymap('n', '<leader>lo', ':lopen<CR>', opts)
-keymap('n', '<leader>lc', ':lcl<CR>', opts)
-keymap('n', '<leader>ll', ':lli<CR>', opts)
+keymap("n", "<leader>lo", ":lopen<CR>", opts)
+keymap("n", "<leader>lc", ":lcl<CR>", opts)
+keymap("n", "<leader>ll", ":lli<CR>", opts)
 
 --buffers
-keymap('n', '<C-t>', ':bnext<CR>', opts)
-keymap('n', '<C-y>', ':bprevious<CR>', opts)
+keymap("n", "<C-t>", ":bnext<CR>", opts)
+keymap("n", "<C-y>", ":bprevious<CR>", opts)
 
 -- Insert --
 -- Press jk fast to exit insert mode
@@ -49,8 +49,8 @@ keymap("i", "jk", "<ESC>", opts)
 -- Map Emacs like movement in Insert mode
 -- keymap('i','<C-p>','<Up>',opts)
 -- keymap('i','<C-n>','<Down>',opts)
-keymap('i', '<C-f>', '<Right>', opts)
-keymap('i', '<C-b>', '<Left>', opts)
+keymap("i", "<C-f>", "<Right>", opts)
+keymap("i", "<C-b>", "<Left>", opts)
 -- keymap('i','<C-e>','<C-o>$',opts)
 -- keymap('i','<C-a>','<C-o>^',opts)
 
@@ -73,7 +73,7 @@ keymap("n", "n", "nzzzv", opts)
 keymap("n", "N", "Nzzzv", opts)
 keymap("n", "J", "mzJ`z", opts)
 -- greatest remap ever
-keymap("x", "<leader>p", "\"_dP")
+keymap("x", "<leader>p", '"_dP')
 
 -- Netrw
 keymap("n", "<leader>pv", ":Ex<CR>", opts)

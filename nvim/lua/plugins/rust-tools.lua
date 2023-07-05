@@ -1,5 +1,5 @@
 return {
-  {}
+  {},
   --rust
   -- { 'simrat39/rust-tools.nvim',
   -- 	require = {
@@ -175,5 +175,4 @@ return {
   -- require('rust-tools').setup(opts)
   -- 	end
   -- },
-
 }

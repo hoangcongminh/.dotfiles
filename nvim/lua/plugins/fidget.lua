@@ -1,15 +1,15 @@
 return {
-	'j-hui/fidget.nvim',
+	"j-hui/fidget.nvim",
 	event = "VeryLazy",
-	tag = 'legacy',
+	tag = "legacy",
 	config = function()
-		require("fidget").setup {
+		require("fidget").setup({
 			text = {
 				spinner = "meter",
 			},
 			window = {
 				blend = 0,
 			},
-		}
-	end
+		})
+	end,
 }

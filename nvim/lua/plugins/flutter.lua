@@ -6,56 +6,56 @@ local function config()
 		local keymap = vim.keymap.set
 
 		keymap("n", "<space>vs", function()
-			vim.cmd.Telescope { 'flutter', 'fvm' }
+			vim.cmd.Telescope({ "flutter", "fvm" })
 		end, opts)
 		keymap("n", "<space>cm", function()
-			vim.cmd.Telescope { 'flutter', 'commands' }
+			vim.cmd.Telescope({ "flutter", "commands" })
 		end, opts)
-		keymap('n', '<space>fa', vim.cmd.FlutterRun, opts)
-		keymap('n', '<space>fq', vim.cmd.FlutterQuit, opts)
-		keymap('n', '<space>fR', vim.cmd.FlutterRestart, opts)
-		keymap('n', '<space>dv', vim.cmd.FlutterDevices, opts)
-		keymap('n', '<space>fl', vim.cmd.FlutterLogClear, opts)
-		keymap('n', '<space>o', vim.cmd.FlutterOutlineToggle, opts)
-		keymap('n', '<Space>rl', vim.cmd.FlutterReload, opts)
-		keymap('n', '<space>fpg', vim.cmd.FlutterPubGet, opts)
+		keymap("n", "<space>fa", vim.cmd.FlutterRun, opts)
+		keymap("n", "<space>fq", vim.cmd.FlutterQuit, opts)
+		keymap("n", "<space>fR", vim.cmd.FlutterRestart, opts)
+		keymap("n", "<space>dv", vim.cmd.FlutterDevices, opts)
+		keymap("n", "<space>fl", vim.cmd.FlutterLogClear, opts)
+		keymap("n", "<space>o", vim.cmd.FlutterOutlineToggle, opts)
+		keymap("n", "<Space>rl", vim.cmd.FlutterReload, opts)
+		keymap("n", "<space>fpg", vim.cmd.FlutterPubGet, opts)
 		-- keymap('n', '<space>fm', vim.cmd.DartFmt, opts)
 		-- keymap('n', '<space>fR', function()
 		--   vim.cmd 'FlutterLogClear'
 		--   vim.cmd 'FlutterRestart'
 		-- end, opts)
-		keymap('n', '<space>fd', vim.cmd.FlutterOpenLog, opts)
+		keymap("n", "<space>fd", vim.cmd.FlutterOpenLog, opts)
 
-		vim.api.nvim_buf_create_user_command(bufnr, 'FlutterOpenLog', function()
-			vim.cmd.vnew '__FLUTTER_DEV_LOG__'
+		vim.api.nvim_buf_create_user_command(bufnr, "FlutterOpenLog", function()
+			vim.cmd.vnew("__FLUTTER_DEV_LOG__")
 		end, {})
 
-		vim.api.nvim_buf_create_user_command(bufnr, 'FlutterBuildRunner', function()
-			vim.cmd 'Dispatch flutter pub get; flutter pub run build_runner build --delete-conflicting-outputs'
+		vim.api.nvim_buf_create_user_command(bufnr, "FlutterBuildRunner", function()
+			vim.cmd("Dispatch flutter pub get; flutter pub run build_runner build --delete-conflicting-outputs")
 		end, { force = true })
 
-		vim.api.nvim_buf_create_user_command(bufnr, 'FlutterCLean', function()
-			vim.cmd 'Dispatch flutter clean'
+		vim.api.nvim_buf_create_user_command(bufnr, "FlutterCLean", function()
+			vim.cmd("Dispatch flutter clean")
 		end, { force = true })
 
-		vim.api.nvim_buf_create_user_command(bufnr, 'FlutterRunRelease', function()
-			vim.cmd 'Dispatch flutter clean; flutter pub get; flutter run --release'
+		vim.api.nvim_buf_create_user_command(bufnr, "FlutterRunRelease", function()
+			vim.cmd("Dispatch flutter clean; flutter pub get; flutter run --release")
 		end, { force = true })
 
 		require("plugins.lsp.handlers").on_attach(client, bufnr)
 	end
 
-	require("flutter-tools").setup {
+	require("flutter-tools").setup({
 		ui = {
 			border = require("global").border,
-			notification_style = 'plugin'
+			notification_style = "plugin",
 		},
 		decorations = {
 			statusline = {
 				app_version = true,
 				device = true,
 				project_config = false,
-			}
+			},
 		},
 		debugger = {
 			enabled = false,
@@ -65,9 +65,9 @@ local function config()
 				local dap = require("dap")
 
 				dap.adapters.dart = {
-					type = 'executable',
-					command = 'fvm',
-					args = { 'flutter', 'debug_adapter' }
+					type = "executable",
+					command = "fvm",
+					args = { "flutter", "debug_adapter" },
 				}
 
 				dap.configurations.dart = {
@@ -77,7 +77,7 @@ local function config()
 						name = "Launch Flutter Program",
 						program = "${file}",
 						cwd = "${workspaceFolder}",
-					}
+					},
 				}
 			end,
 		},
@@ -89,7 +89,7 @@ local function config()
 		closing_tags = {
 			-- highlight = "ErrorMsg",
 			-- prefix = ">",
-			enabled = true
+			enabled = true,
 		},
 		dev_log = {
 			enabled = true,
@@ -102,7 +102,7 @@ local function config()
 		},
 		outline = {
 			open_cmd = "vnew",
-			auto_open = false
+			auto_open = false,
 		},
 		lsp = {
 			color = {
@@ -123,7 +123,7 @@ local function config()
 				flutterOutline = true,
 				outline = true,
 				onlyAnalyzeProjectsWithOpenFiles = true,
-				suggestFromUnimportedLibraries = true
+				suggestFromUnimportedLibraries = true,
 			},
 			settings = {
 				showTodos = true,
@@ -132,35 +132,34 @@ local function config()
 				renameFilesWithClasses = "always",
 				enableSnippets = true,
 				updateImportsOnRename = true,
-			}
-		}
-	}
+			},
+		},
+	})
 end
 
 return {
 	-- flutter
 	{
 		"akinsho/flutter-tools.nvim",
-		ft = { 'flutter', 'dart', 'yaml' },
+		ft = { "flutter", "dart", "yaml" },
 		event = { "BufReadPost", "BufNewFile" },
 		dependencies = {
 			"nvim-lua/plenary.nvim",
-			'stevearc/dressing.nvim', -- optional for vim.ui.select
-			'Nash0x7E2/awesome-flutter-snippets',
-			'hrsh7th/cmp-nvim-lsp',
-			'dart-lang/dart-vim-plugin',
-			'RobertBrunhage/flutter-riverpod-snippets',
+			"stevearc/dressing.nvim", -- optional for vim.ui.select
+			"Nash0x7E2/awesome-flutter-snippets",
+			"hrsh7th/cmp-nvim-lsp",
+			"dart-lang/dart-vim-plugin",
+			"RobertBrunhage/flutter-riverpod-snippets",
 			-- 'eliasreis54/vim-bloc-plugin',
 		},
 		config = config,
 	},
 
-
 	{
-		'akinsho/pubspec-assist.nvim',
-		dependencies = 'plenary.nvim',
+		"akinsho/pubspec-assist.nvim",
+		dependencies = "plenary.nvim",
 		config = function()
 			require("pubspec-assist").setup()
-		end
-	}
+		end,
+	},
 }

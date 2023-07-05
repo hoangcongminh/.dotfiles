@@ -3,8 +3,8 @@ return {
   "williamboman/mason-lspconfig.nvim",
   event = { "BufReadPost", "BufNewFile" },
   dependencies = {
-    { 'neovim/nvim-lspconfig' },
-    { 'williamboman/mason.nvim', run = ":MasonUpdate" }
+    { "neovim/nvim-lspconfig" },
+    { "williamboman/mason.nvim", run = ":MasonUpdate" },
   },
   config = function()
     local handlers = require("plugins.lsp.handlers")
@@ -40,17 +40,17 @@ return {
             settings = {
               Lua = {
                 diagnostics = {
-                  globals = { 'vim' }
-                }
-              }
-            }
+                  globals = { "vim" },
+                },
+              },
+            },
           })
-          lsp['sourcekit'].setup {
+          lsp["sourcekit"].setup({
             on_attach = handlers.on_attach,
             capabilities = handlers.capabilities,
-          }
+          })
         end,
       },
     })
-  end
+  end,
 }

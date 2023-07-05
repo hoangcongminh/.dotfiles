@@ -27,8 +27,8 @@ require("lazy").setup("plugins", {
 	},
 	performance = {
 		rtp = {
-			paths = { vim.fn.stdpath('data') .. '/site' },
-			disabled_plugins = { 'netrw', 'netrwPlugin' },
+			paths = { vim.fn.stdpath("data") .. "/site" },
+			disabled_plugins = { "netrw", "netrwPlugin" },
 		},
 	},
 })
