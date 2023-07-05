@@ -15,6 +15,9 @@ require("lazy").setup("plugins", {
 	ui = {
 		border = require("global").border,
 	},
+	defaults = {
+		lazy = true,
+	},
 	change_detection = { notify = false },
 	checker = {
 		enabled = true,

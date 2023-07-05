@@ -1,6 +1,7 @@
 return {
 	-- file manager
 	'stevearc/oil.nvim',
+	lazy = false,
 	config = function()
 		require("oil").setup({
 			columns = {

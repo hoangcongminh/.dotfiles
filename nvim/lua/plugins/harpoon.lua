@@ -1,6 +1,7 @@
 return {
   -- ThePrimeagen harpoon
   'ThePrimeagen/harpoon',
+  event = "VeryLazy",
   dependencies = 'nvim-lua/plenary.nvim',
   config = function()
     local opts = { noremap = true, silent = true }
