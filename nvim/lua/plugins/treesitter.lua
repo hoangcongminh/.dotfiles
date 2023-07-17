@@ -42,7 +42,7 @@ return {
 				enable = true,
 			},
 			indent = {
-				enable = true,
+				enable = false,
 				disable = { "yaml" },
 			},
 			incremental_selection = {
