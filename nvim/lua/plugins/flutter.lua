@@ -128,7 +128,7 @@ local function config()
 			settings = {
 				showTodos = true,
 				completeFunctionCalls = true,
-				analysisExcludedFolders = { "!**/.pub-cache/**", "!**/fvm/**", "!**/.dart_tool/**" },
+				analysisExcludedFolders = { "**/.pub-cache/**", "**/fvm/**", "**/.dart_tool/**" },
 				renameFilesWithClasses = "always",
 				enableSnippets = true,
 				updateImportsOnRename = true,
