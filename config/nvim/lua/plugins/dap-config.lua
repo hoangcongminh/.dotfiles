@@ -1,20 +1,9 @@
 -- TODO: CONFiGURE DAP
 return {
   -- debugger
-  {
-    "https://github.com/mfussenegger/nvim-dap",
-    lazy = true,
-  },
-
-  {
-    "https://github.com/rcarriga/nvim-dap-ui",
-    lazy = true,
-  },
-
-  {
-    "https://github.com/ravenxrz/DAPInstall.nvim",
-    lazy = true,
-  },
+  { "https://github.com/mfussenegger/nvim-dap" },
+  { "https://github.com/rcarriga/nvim-dap-ui" },
+  { "https://github.com/ravenxrz/DAPInstall.nvim" },
 }
 
 -- DAP
