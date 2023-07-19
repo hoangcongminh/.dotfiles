@@ -2,7 +2,7 @@ colors:
   cursor:
     cursor: "#afb0ad"
     text: "#afb0ad"
-    # text: "#5a595b"
+    # # text: "#5a595b"
 
 cursor:
   style:
@@ -41,8 +41,8 @@ font:
     y: 0
   size: 14
 
-# import:
-#   - ~/.dotfiles/alacritty/themes/everforest.yml
+import:
+  - ~/.dotfiles/alacritty/themes/everforest.yml
 
 key_bindings:
   - { action: SpawnNewInstance, key: Return, mods: Option|Shift }
