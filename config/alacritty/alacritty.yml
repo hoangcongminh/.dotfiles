@@ -42,7 +42,7 @@ font:
   size: 14
 
 import:
-  - ~/.dotfiles/alacritty/themes/everforest.yml
+  - ~/.dotfiles/config/alacritty/themes/everforest.yml
 
 key_bindings:
   - { action: SpawnNewInstance, key: Return, mods: Option|Shift }
