@@ -1,8 +1,44 @@
 colors:
+  primary:
+    background: "#000000"
+    foreground: "#d3c6aa"
   cursor:
     cursor: "#afb0ad"
-    text: "#afb0ad"
-    # # text: "#5a595b"
+    text: "#5a595b"
+  vi_mode_cursor:
+    cursor: "#afb0ad"
+    text: "#5a595b"
+  line_indicator:
+    foreground: None
+    background: None
+  selection:
+    text: "0xe0def4"
+    background: "0x44415a"
+  normal:
+    black: "#475258"
+    red: "#e67e80"
+    green: "#a7c080"
+    yellow: "#dbbc7f"
+    blue: "#7fbbb3"
+    magenta: "#d699b6"
+    cyan: "#83c092"
+    white: "#d3c6aa"
+  bright:
+    black: "#475258"
+    red: "#e67e80"
+    green: "#a7c080"
+    yellow: "#dbbc7f"
+    blue: "#7fbbb3"
+    magenta: "#d699b6"
+    cyan: "#83c092"
+    white: "#d3c6aa"
+  hints:
+    start:
+      foreground: "#908caa"
+      background: "#2a273f"
+    end:
+      foreground: "#6e6a86"
+      background: "#2a273f"
 
 cursor:
   style:
@@ -40,9 +76,6 @@ font:
     x: 0
     y: 0
   size: 14
-
-import:
-  - ~/.dotfiles/config/alacritty/themes/everforest.yml
 
 key_bindings:
   - { action: SpawnNewInstance, key: Return, mods: Option|Shift }
@@ -123,9 +156,9 @@ selection:
 
 use_thin_strokes: true
 
-# window:
-#   decorations: buttonless
-#   opacity: 0.7
+window:
+  decorations: buttonless
+  # opacity: 0.7
 #   padding:
 #     x: 10
 #     y: 5
