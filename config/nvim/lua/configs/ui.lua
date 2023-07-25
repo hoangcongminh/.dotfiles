@@ -5,6 +5,7 @@ require("tokyonight").setup({
 
 require("everforest").setup({
 	transparent_background_level = 1,
+	italics = true,
 })
 
 local global = require("global")

@@ -2,7 +2,7 @@ return {
 	-- treesitter
 	"nvim-treesitter/nvim-treesitter",
 	event = { "BufReadPost", "BufNewFile" },
-	commit = "33eb472b459f1d2bf49e16154726743ab3ca1c6d",
+	-- commit = "33eb472b459f1d2bf49e16154726743ab3ca1c6d",
 	build = ":TSUpdate",
 	dependencies = {
 		{ "nvim-treesitter/nvim-treesitter-textobjects" },
@@ -25,7 +25,7 @@ return {
 				"yaml",
 				"bash",
 				"dart",
-				"rust",
+				-- "rust",
 				"toml",
 				"go",
 				"cpp",
