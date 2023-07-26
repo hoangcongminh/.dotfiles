@@ -1,11 +1,24 @@
 require("tokyonight").setup({
 	style = "moon",
-	transparent = false,
+	transparent = true,
 })
 
 require("everforest").setup({
 	transparent_background_level = 1,
 	italics = true,
+})
+
+require("rose-pine").setup({
+	--- @usage 'auto'|'main'|'moon'|'dawn'
+	variant = "auto",
+	--- @usage 'main'|'moon'|'dawn'
+	dark_variant = "main",
+	bold_vert_split = false,
+	dim_nc_background = false,
+	disable_background = true,
+	disable_float_background = false,
+	disable_italics = false,
+	transparent = true,
 })
 
 local global = require("global")

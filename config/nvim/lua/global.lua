@@ -1,4 +1,4 @@
 return {
     border = "solid",
-    coloscheme = "everforest",
+    coloscheme = "rose-pine",
 }

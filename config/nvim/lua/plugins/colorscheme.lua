@@ -1,9 +1,7 @@
 return {
 	-- colorscheme
-	{
-		"folke/tokyonight.nvim",
-	},
-
+	{ "folke/tokyonight.nvim" },
+	{ "rose-pine/neovim",     name = "rose-pine" },
 	{
 		"neanias/everforest-nvim",
 		version = false,
