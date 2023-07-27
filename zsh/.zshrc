@@ -10,6 +10,8 @@ export ZSH="$HOME/.oh-my-zsh"
 # ZSH_THEME="powerlevel10k/powerlevel10k"
 ZSH_THEME="robbyrussell"
 
+# export PS1='%n %F{1}::%f %F{2}%~%f %F{1}%(?..%? )%f%F{4}'$'\U00BB''%f '
+
 plugins=(
   git
   tmux
@@ -20,7 +22,7 @@ plugins=(
   zsh-autosuggestions
   zsh-syntax-highlighting
   zsh-aliases-exa
-  # zsh-vi-mode
+  vi-mode
 )
 
 source $ZSH/oh-my-zsh.sh
