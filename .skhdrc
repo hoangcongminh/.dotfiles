@@ -49,8 +49,7 @@ alt - t : yabai -m window --toggle float;\
           yabai -m window --grid 4:4:1:1:2:2
 
 # toggle window fullscreen zoom
-alt - f : yabai -m window --focus mouse && \
-          yabai -m window --toggle zoom-fullscreen
+alt - f : yabai -m window --toggle zoom-fullscreen
 
 # toggle window native fullscreen
 shift + alt - f : yabai -m window --toggle native-fullscreen
@@ -62,15 +61,15 @@ alt - g : yabai -m space --gap rel:10
 shift + alt - g : yabai -m space --gap rel:-10
 
 # create a new space and follow focus
-alt - n : yabai -m space --create && \
-                  index="$(yabai -m query --displays --display | jq '.spaces[-1]')" && \
-                  yabai -m space --focus "${index}"
+# alt - n : yabai -m space --create && \
+#                   index="$(yabai -m query --displays --display | jq '.spaces[-1]')" && \
+#                   yabai -m space --focus "${index}"
 
 # create a new space, move window and follow focus
-shift + alt - n : yabai -m space --create && \
-                  index="$(yabai -m query --displays --display | jq '.spaces[-1]')" && \
-                  yabai -m window --space "${index}" && \
-                  yabai -m space --focus "${index}"
+# shift + alt - n : yabai -m space --create && \
+#                   index="$(yabai -m query --displays --display | jq '.spaces[-1]')" && \
+#                   yabai -m window --space "${index}" && \
+#                   yabai -m space --focus "${index}"
 
 # balance size of windows
 shift + alt - 0 : yabai -m space --balance

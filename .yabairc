@@ -43,8 +43,8 @@ yabai -m config window_gap                   $gap
 
 # window rules
 yabai -m rule --add app="^(Archive Utility|System Preferences||Activity Monitor|Installer)" manage=off
-# yabai -m rule --add app="^Simulator$" manage=off
-# yabai -m rule --add app="^Skype$" manage=off
+yabai -m rule --add app="^Simulator$" manage=off
+yabai -m rule --add app="^Skype$" manage=off
 yabai -m rule --add app="^System Preferences$" manage=off
 
 echo "yabai configuration loaded.."
