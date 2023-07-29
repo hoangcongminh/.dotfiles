@@ -32,7 +32,7 @@ yabai -m config mouse_action2                resize
 yabai -m config mouse_drop_action            swap
 
 # general space settings
-gap=10
+gap=12
 yabai -m config layout                       bsp
 yabai -m config top_padding                  $gap
 yabai -m config bottom_padding               $gap
@@ -45,6 +45,5 @@ yabai -m config window_gap                   $gap
 yabai -m rule --add app="^(Archive Utility|System Preferences||Activity Monitor|Installer)" manage=off
 yabai -m rule --add app="^Simulator$" manage=off
 yabai -m rule --add app="^Skype$" manage=off
-yabai -m rule --add app="^System Preferences$" manage=off
 
 echo "yabai configuration loaded.."
