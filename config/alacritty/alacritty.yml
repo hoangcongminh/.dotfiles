@@ -2,7 +2,6 @@ colors:
   primary:
     background: "#000000"
     foreground: "0xe0def4"
-  cursor:
     cursor: "#afb0ad"
     text: "#5a595b"
   vi_mode_cursor:
@@ -43,6 +42,7 @@ colors:
 cursor:
   style:
     shape: Block
+    blinking: On
   unfocused_hollow: true
   vi_mode_style:
     shape: Beam
@@ -59,18 +59,19 @@ env:
 # - Monaco Nerd Font
 # - FiraCode Nerd Font
 # - JetBrainsMono Nerd Font
+# - MesloLGL Nerd Font
 font:
   bold:
-    family: JetBrainsMono Nerd Font
+    family: MesloLGS Nerd Font
     style: Bold
   glyph_offset:
     x: 0
     y: 0
   italic:
-    family: JetBrainsMono Nerd Font
+    family: MesloLGS Nerd Font
     style: Italic
   normal:
-    family: JetBrainsMono Nerd Font
+    family: MesloLGS Nerd Font
     style: Regular
   offset:
     x: 0
@@ -158,10 +159,9 @@ use_thin_strokes: true
 
 window:
   decorations: buttonless
-  opacity: 0.8
-#   padding:
-#     x: 10
-#     y: 5
-#   startup_mode: Maximized
+  opacity: 0.9
+  padding:
+    x: 5
+  # startup_mode: Maximized
 
 working_directory: None
