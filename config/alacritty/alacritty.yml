@@ -2,6 +2,7 @@ colors:
   primary:
     background: "#000000"
     foreground: "0xe0def4"
+  cursor:
     cursor: "#afb0ad"
     text: "#5a595b"
   vi_mode_cursor:
@@ -62,16 +63,16 @@ env:
 # - MesloLGL Nerd Font
 font:
   bold:
-    family: MesloLGS Nerd Font
+    family: FiraCode Nerd Font
     style: Bold
   glyph_offset:
     x: 0
     y: 0
   italic:
-    family: MesloLGS Nerd Font
+    family: FiraCode Nerd Font
     style: Italic
   normal:
-    family: MesloLGS Nerd Font
+    family: FiraCode Nerd Font
     style: Regular
   offset:
     x: 0
