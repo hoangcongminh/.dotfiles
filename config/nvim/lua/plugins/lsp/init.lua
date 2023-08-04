@@ -2,6 +2,7 @@ return {
   -- lsp
   "williamboman/mason-lspconfig.nvim",
   event = { "BufReadPost", "BufNewFile" },
+  cmd = { "LspInfo", "LspInstall", "LspUninstall" },
   dependencies = {
     { "neovim/nvim-lspconfig" },
     { "williamboman/mason.nvim", run = ":MasonUpdate" },
