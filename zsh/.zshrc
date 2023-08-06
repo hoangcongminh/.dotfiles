@@ -44,36 +44,25 @@ zstyle :bracketed-paste-magic paste-init pasteinit
 zstyle :bracketed-paste-magic paste-finish pastefinish
 ### End fix slowness of pastes
 
-export FZF_BASE=~/.fzf.zsh
-export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'
-export MACOSX_DEPLOYMENT_TARGET=10.15
 export EDITOR='nvim'
+export MACOSX_DEPLOYMENT_TARGET=10.15
+
+export DOTFILES_DIR="$HOME/.dotfiles"
+export PATH="$DOTFILES_DIR/bin/:$PATH"
 
 export PATH="$PATH:$HOME/fvm/default/bin"
 export PATH="$PATH:$HOME/fvm/default/bin/cache/dart-sdk/bin"
 export PATH="$PATH":"$HOME/.pub-cache/bin"
+
 export ANDROID_HOME=$HOME/Library/Android/sdk
 export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/tools/bin
-export PATH="$PATH:$HOME/.cargo/bin/"
-export PATH="$PATH:/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin"
-export DOTFILES_DIR="$HOME/.dotfiles"
+
 export NVM_DIR="$HOME/.nvm"
 [ -s "/usr/local/opt/nvm/nvm.sh" ] && \. "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
 [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
-export PATH="/usr/local/opt/java/bin:$PATH"
-export PATH="$DOTFILES_DIR/bin/:$PATH"
 
 bindkey '^n' autosuggest-accept
 bindkey -s ^f "tmux-sessionizer\n"
-
-# Aliases
-source $HOME/.dotfiles/zsh/.aliases
-
-# Functions
-source $HOME/.dotfiles/zsh/.functions
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-# [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
