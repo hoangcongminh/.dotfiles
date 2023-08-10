@@ -1,17 +1,30 @@
+-- local colors = {
+--   -- bg = '#303446',
+--   bg = "none",
+--   fg = "#bbc2cf",
+--   yellow = "#E5C890",
+--   cyan = "#81C8BE",
+--   darkblue = "#8CAAEE",
+--   green = "#A6D189",
+--   orange = "#EF9F76",
+--   violet = "#BABBF1",
+--   magenta = "#F4B8E4",
+--   blue = "#85C1DC",
+--   red = "#E78284",
+-- }
+
 local colors = {
-  -- bg = '#303446',
   bg = "none",
-  -- bg = "#333333",
-  fg = "#bbc2cf",
-  yellow = "#E5C890",
-  cyan = "#81C8BE",
-  darkblue = "#8CAAEE",
-  green = "#A6D189",
-  orange = "#EF9F76",
-  violet = "#BABBF1",
-  magenta = "#F4B8E4",
-  blue = "#85C1DC",
-  red = "#E78284",
+  fg = "#e0def4",
+  yellow = "#f6c177",
+  cyan = "#31748f",
+  darkblue = "#081633",
+  green = "#98BB6C",
+  orange = "#FF8800",
+  violet = "#938AA9",
+  magenta = "#c4a7e7",
+  blue = "#9ccfd8",
+  red = "#eb6f92",
 }
 
 local conditions = {
@@ -65,11 +78,13 @@ local function ins_right(component)
   table.insert(config.sections.lualine_x, component)
 end
 
--- ins_left {
---   function() return '▊' end,
---   color = { fg = colors.blue }, -- Sets highlighting of component
---   left_padding = 0              -- We don't need space before this
--- }
+ins_left({
+  function()
+    return "▊"
+  end,
+  color = { fg = colors.blue }, -- Sets highlighting of component
+  left_padding = 0,            -- We don't need space before this
+})
 
 ins_left({
   function()
@@ -190,7 +205,7 @@ ins_right({
   "branch",
   icon = "",
   condition = conditions.check_git_workspace,
-  color = { fg = colors.violet, gui = "bold" },
+  color = { fg = colors.magenta, gui = "bold" },
 })
 
 ins_right({
@@ -202,17 +217,21 @@ ins_right({
   condition = conditions.hide_in_width,
 })
 
--- ins_right {
---   function() return '▊' end,
---   color = { fg = colors.blue },
---   right_padding = 0
+ins_right({
+  function()
+    return "▊"
+  end,
+  color = { fg = colors.blue },
+  right_padding = 0,
+})
+
+-- return {
+--   -- lualine & winbar
+--   "nvim-lualine/lualine.nvim",
+--   event = "VeryLazy",
+--   config = function()
+--     require("lualine").setup(config)
+--   end,
 -- }
 
-return {
-  -- lualine & winbar
-  "nvim-lualine/lualine.nvim",
-  event = "VeryLazy",
-  config = function()
-    require("lualine").setup(config)
-  end,
-}
+return {}

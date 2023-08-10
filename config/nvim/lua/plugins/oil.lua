@@ -13,6 +13,9 @@ return {
 			view_options = {
 				show_hidden = true,
 			},
+			win_options = {
+				concealcursor = "nvic",
+			},
 		})
 
 		vim.keymap.set("n", "-", require("oil").open, { desc = "Open parent directory" })
