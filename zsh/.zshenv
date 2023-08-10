@@ -65,3 +65,12 @@ function gpp() {
     git push
 }
 
+# I want to use $@ for all arguments but they don't contain space for me
+function flutter-watch(){
+  tmux send-keys "flutter run $1 $2 $3 $4 --pid-file=/tmp/tf1.pid" Enter \;\
+  neww -n flutter-watcher bash -c 'npx -y nodemon -e dart -x "cat /tmp/tf1.pid | xargs kill -s USR1" & while [ : ]; do sleep 1; done' \;\
+  # neww -n flutter-watcher \;\
+  # send-keys 'npx -y nodemon -e dart -x "cat /tmp/tf1.pid | xargs kill -s USR1" | less' Enter \;\
+  # resize-pane -y 5 -t 1 \;\
+  # select-pane -t 0 \;
+}
