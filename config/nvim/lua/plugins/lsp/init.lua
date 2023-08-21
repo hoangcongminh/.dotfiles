@@ -28,6 +28,7 @@ return {
         "tsserver",
         "eslint",
         "yamlls",
+        "lemminx",
       },
       handlers = {
         function(server_name)
