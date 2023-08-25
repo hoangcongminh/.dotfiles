@@ -166,8 +166,8 @@ selection:
 use_thin_strokes: true
 
 window:
-  decorations: buttonless
-  opacity: 0.83
+  # decorations: buttonless
+  # opacity: 0.83
   padding:
     x: 5
   # startup_mode: Maximized
