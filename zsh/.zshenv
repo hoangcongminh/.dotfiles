@@ -1,5 +1,10 @@
 export PATH="$PATH:$HOME/.cargo/bin/"
 
+## Go
+export GOPATH="$HOME/go/"
+export PATH="$PATH:$HOME/go/bin"
+
+## Java
 export PATH="/usr/local/opt/java/bin:$PATH"
 
 ## Aliases
