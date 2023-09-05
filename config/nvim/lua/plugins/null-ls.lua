@@ -12,7 +12,7 @@ return {
       require("mason-null-ls").setup({
         automatic_setup = true,
         automatic_installation = true,
-        ensure_installed = { "buf", "goimports", "golangci_lint", "stylua", "prettier", "dart_format" },
+        ensure_installed = { "buf", "goimports", "gofmt", "golangci_lint", "stylua", "prettier", "dart_format" },
         handlers = {
           stylua = function()
             null_ls.register(null_ls.builtins.formatting.stylua)
