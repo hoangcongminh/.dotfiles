@@ -93,7 +93,7 @@ local function config()
 		},
 		dev_log = {
 			enabled = true,
-			notify_errors = true,
+			-- notify_errors = true,
 			open_cmd = "vnew",
 		},
 		dev_tools = {
@@ -141,7 +141,7 @@ return {
 	-- flutter
 	{
 		"akinsho/flutter-tools.nvim",
-		ft = { "flutter", "dart", "yaml" },
+		ft = { "dart", "yaml" },
 		event = { "BufReadPost", "BufNewFile" },
 		dependencies = {
 			"nvim-lua/plenary.nvim",
@@ -157,7 +157,7 @@ return {
 
 	{
 		"akinsho/pubspec-assist.nvim",
-		ft = { "dart" },
+		ft = { "dart", "yaml" },
 		event = "BufEnter pubspec.yaml",
 		dependencies = "plenary.nvim",
 		config = function()

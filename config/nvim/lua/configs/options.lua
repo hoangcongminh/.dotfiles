@@ -67,5 +67,6 @@ vim.opt.undofile = true
 
 opt.updatetime = 50
 opt.mouse = "a"
-opt.completeopt = "menuone,noinsert,noselect"
+-- opt.completeopt = "menuone,noinsert,noselect"
+opt.completeopt = "menuone"
 opt.timeoutlen = 500 -- time to wait for a mapped sequence to complete (in milliseconds)
