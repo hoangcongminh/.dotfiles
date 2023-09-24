@@ -1,59 +1,38 @@
-# colors:
-#   bright:
-#     black: "#4c566a"
-#     blue: "#81a1c1"
-#     cyan: "#8fbcbb"
-#     green: "#a3be8c"
-#     magenta: "#b48ead"
-#     red: "#bf616a"
-#     white: "#eceff4"
-#     yellow: "#ebcb8b"
-#   cursor:
-#     cursor: "#d8dee9"
-#     text: "#2e3440"
-#   dim:
-#     black: "#373e4d"
-#     blue: "#68809a"
-#     cyan: "#6d96a5"
-#     green: "#809575"
-#     magenta: "#8c738c"
-#     red: "#94545d"
-#     white: "#aeb3bb"
-#     yellow: "#b29e75"
-#   normal:
-#     black: "#3b4252"
-#     blue: "#81a1c1"
-#     cyan: "#88c0d0"
-#     green: "#a3be8c"
-#     magenta: "#b48ead"
-#     red: "#bf616a"
-#     white: "#e5e9f0"
-#     yellow: "#ebcb8b"
-#   primary:
-#     background: "#2e3440"
-#     dim_foreground: "#a5abb6"
-#     foreground: "#d8dee9"
-#   search:
-#     fotter_bar:
-#       background: "#434c5e"
-#       foreground: "#d8dee9"
-#     matches:
-#       background: "#88c0d0"
-#       foreground: CellBackground
-#   selection:
-#     background: "#4c566a"
-#     text: CellForeground
-#   vi_mode_cursor:
-#     cursor: "#d8dee9"
-#     text: "#2e3440"
+colors:
+  name: vscode (dark)
+  author: senpai-10
+  primary:
+    background: "#1E1E1E"
+    foreground: "#D4D4D4"
+  cursor:
+    text: "#1d1f21"
+    cursor: "#cccccc"
+  normal:
+    black: "#000000"
+    red: "#cd3131"
+    green: "#0dbc79"
+    yellow: "#e5e510"
+    blue: "#2472c8"
+    magenta: "#bc3fbc"
+    cyan: "#11a8cd"
+    white: "#e5e5e5"
+  bright:
+    black: "#666666"
+    red: "#f14c4c"
+    green: "#23d18b"
+    yellow: "#f5f543"
+    blue: "#3b8eea"
+    magenta: "#d670d6"
+    cyan: "#29b8db"
+    white: "#e5e5e5"
 
-# cursor:
-#   style:
-#     blinking: On
-#     shape: Block
-#   unfocused_hollow: true
-#   vi_mode_style:
-#     shape: Beam
+cursor:
+  style:
+    blinking: On
+    shape: Block
+  unfocused_hollow: true
+  vi_mode_style:
+    shape: Beam
 
 custom_cursor_colors: true
 draw_bold_text_with_bright_colors: true
@@ -70,21 +49,21 @@ env:
 # - MesloLGL Nerd Font
 font:
   bold:
-    family: FiraCode Nerd Font
+    family: JetBrainsMono Nerd Font
     style: Bold
   glyph_offset:
     x: 0
     y: 0
   italic:
-    family: FiraCode Nerd Font
+    family: JetBrainsMono Nerd Font
     style: Italic
   normal:
-    family: FiraCode Nerd Font
+    family: JetBrainsMono Nerd Font
     style: Regular
   offset:
     x: 0
     y: 0
-  size: 14
+  size: 12
 
 key_bindings:
   - { action: SpawnNewInstance, key: Return, mods: Option|Shift }
@@ -166,10 +145,10 @@ selection:
 use_thin_strokes: true
 
 window:
-  decorations: buttonless
-  opacity: 0.83
+  # decorations: buttonless
+  # opacity: 0.9
   padding:
     x: 5
-  startup_mode: Maximized
+  # startup_mode: Maximized
 
 working_directory: None
