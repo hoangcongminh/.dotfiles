@@ -40,6 +40,7 @@ opt.incsearch = true
 -- cursor
 opt.guicursor = ""
 opt.cursorline = true
+opt.cursorlineopt = "number"
 -- opt.cursorcolumn = true
 
 -- appearance
