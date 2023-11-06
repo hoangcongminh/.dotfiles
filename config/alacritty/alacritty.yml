@@ -145,8 +145,15 @@ selection:
 use_thin_strokes: true
 
 window:
-  # decorations: buttonless
-  # opacity: 0.9
+  # Window dimensions (changes require restart)
+  #
+  # Specified in number of columns/lines, not pixels. If both are zero this
+  # setting is ignored.
+  dimensions:
+    columns: 300
+    lines: 100
+  decorations: buttonless
+  opacity: 0.9
   padding:
     x: 5
   # startup_mode: Maximized
