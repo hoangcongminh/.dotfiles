@@ -46,7 +46,7 @@ opt.cursorlineopt = "number,line"
 -- appearance
 opt.termguicolors = true
 opt.signcolumn = "yes"
-opt.colorcolumn = "80"
+-- opt.colorcolumn = "80"
 
 -- backspace
 opt.backspace = "indent,eol,start"

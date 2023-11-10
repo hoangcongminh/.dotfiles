@@ -1,6 +1,8 @@
+local global = require("global")
+
 require("tokyonight").setup({
 	style = "moon",
-	transparent = true,
+	transparent = global.transparent,
 })
 
 require("everforest").setup({
@@ -18,10 +20,8 @@ require("rose-pine").setup({
 	disable_background = true,
 	disable_float_background = false,
 	disable_italics = false,
-	transparent = true,
+	transparent = global.transparent,
 })
-
-local global = require("global")
 
 vim.cmd.colorscheme(global.coloscheme)
 vim.opt.background = "dark"

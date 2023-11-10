@@ -1,4 +1,5 @@
 return {
+    transparent = false,
     border = "solid",
-    coloscheme = "tokyonight",
+    coloscheme = "rose-pine",
 }
