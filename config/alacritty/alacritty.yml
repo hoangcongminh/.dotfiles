@@ -152,8 +152,8 @@ window:
   # dimensions:
   #   columns: 300
   #   lines: 100
-  decorations: buttonless
-  # opacity: 0.9
+  # decorations: buttonless
+  opacity: 0.9
   padding:
     x: 5
   startup_mode: Maximized

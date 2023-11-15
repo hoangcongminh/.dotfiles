@@ -23,6 +23,10 @@ require("rose-pine").setup({
 	transparent = global.transparent,
 })
 
+require("solarized-osaka").setup({
+	transparent = global.transparent,
+})
+
 vim.cmd.colorscheme(global.coloscheme)
 vim.opt.background = "dark"
 vim.o.winbar = "%m%y " .. "%{%v:lua.require'nvim-web-devicons'.get_icon_color_by_filetype(&filetype)%} " .. "%f"

@@ -1,5 +1,5 @@
 return {
-    transparent = false,
+    transparent = true,
     border = "solid",
-    coloscheme = "rose-pine",
+    coloscheme = "solarized-osaka",
 }
