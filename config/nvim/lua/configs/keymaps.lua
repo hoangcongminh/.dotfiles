@@ -42,8 +42,8 @@ keymap("n", "<leader>lc", ":lcl<CR>", opts)
 keymap("n", "<leader>ll", ":lli<CR>", opts)
 
 --buffers
-keymap("n", "<C-t>", ":bnext<CR>", opts)
-keymap("n", "<C-y>", ":bprevious<CR>", opts)
+keymap("n", "<tab>", ":bnext<CR>", opts)
+keymap("n", "<s-tab>", ":bprevious<CR>", opts)
 
 -- Insert --
 -- Press jk fast to exit insert mode
