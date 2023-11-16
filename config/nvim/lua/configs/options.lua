@@ -71,3 +71,7 @@ opt.mouse = "a"
 -- opt.completeopt = "menuone,noinsert,noselect"
 opt.completeopt = "menuone"
 opt.timeoutlen = 500 -- time to wait for a mapped sequence to complete (in milliseconds)
+
+-- Undercurl
+vim.cmd([[let &t_Cs = "\e[4:3m"]])
+vim.cmd([[let &t_Ce = "\e[4:0m"]])
