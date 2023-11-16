@@ -1,6 +1,5 @@
 colors:
   name: vscode (dark)
-  author: senpai-10
   primary:
     background: "#1E1E1E"
     foreground: "#D4D4D4"
@@ -37,8 +36,8 @@ cursor:
 custom_cursor_colors: true
 draw_bold_text_with_bright_colors: true
 
-env:
-  TERM: xterm-256color
+# env:
+#   TERM: xterm-256color
 
 #Available font:
 # - UbuntuMono Nerd Font

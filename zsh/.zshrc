@@ -45,6 +45,7 @@ zstyle :bracketed-paste-magic paste-finish pastefinish
 ### End fix slowness of pastes
 
 export EDITOR='nvim'
+export TERM="alacritty"
 export MACOSX_DEPLOYMENT_TARGET=10.15
 
 export DOTFILES_DIR="$HOME/.dotfiles"
