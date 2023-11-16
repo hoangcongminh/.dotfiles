@@ -17,9 +17,9 @@ end
 local setup = function()
 	local signs = {
 		{ name = "DiagnosticSignError", text = " " },
-		{ name = "DiagnosticSignWarn",  text = " " },
-		{ name = "DiagnosticSignHint",  text = " " },
-		{ name = "DiagnosticSignInfo",  text = " " },
+		{ name = "DiagnosticSignWarn", text = " " },
+		{ name = "DiagnosticSignHint", text = " " },
+		{ name = "DiagnosticSignInfo", text = " " },
 	}
 
 	for _, sign in ipairs(signs) do
@@ -109,7 +109,7 @@ local on_attach = function(client, bufnr)
 			format_buffer(false)
 		end,
 		group = vim.api.nvim_create_augroup("FormatOnSave", { clear = true }),
-		pattern = { "*.lua", "*.ts", "*.js", "*.go", "*.rs", "*.c", "*.cpp" },
+		pattern = { "*.lua", "*.ts", "*.js", "*.go", "*.rs", "*.c", "*.cpp", "*.dart" },
 	})
 
 	lsp_keymaps(bufnr)
