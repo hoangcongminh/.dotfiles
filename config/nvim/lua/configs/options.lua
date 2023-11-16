@@ -56,8 +56,8 @@ opt.clipboard:append({ "unnamedplus" })
 
 -- cmd
 opt.laststatus = 3
--- opt.cmdheight = 0
-opt.cmdheight = 1
+opt.cmdheight = 0
+-- opt.cmdheight = 1
 opt.shortmess:append("c")
 
 -- others
