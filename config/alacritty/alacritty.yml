@@ -36,8 +36,9 @@ cursor:
 custom_cursor_colors: true
 draw_bold_text_with_bright_colors: true
 
-# env:
-#   TERM: xterm-256color
+env:
+  # TERM: xterm-256color
+  TERM: alacritty
 
 #Available font:
 # - UbuntuMono Nerd Font
@@ -47,22 +48,19 @@ draw_bold_text_with_bright_colors: true
 # - JetBrainsMono Nerd Font
 # - MesloLGL Nerd Font
 font:
-  bold:
-    family: JetBrainsMono Nerd Font
-    style: Bold
-  glyph_offset:
-    x: 0
-    y: 0
-  italic:
-    family: JetBrainsMono Nerd Font
-    style: Italic
   normal:
-    family: JetBrainsMono Nerd Font
-    style: Regular
-  offset:
-    x: 0
-    y: 0
-  size: 12
+    family: "JetBrainsMono Nerd Font"
+    style: Medium
+  bold:
+    family: "JetBrainsMono Nerd Font"
+    style: Bold
+  italic:
+    family: "JetBrainsMono Nerd Font"
+    style: MediumItalic
+  bold_italic:
+    family: "JetBrainsMono Nerd Font"
+    style: BoldItalic
+  size: 12.00
 
 key_bindings:
   - { action: SpawnNewInstance, key: Return, mods: Option|Shift }
@@ -144,17 +142,11 @@ selection:
 use_thin_strokes: true
 
 window:
-  # Window dimensions (changes require restart)
-  #
-  # Specified in number of columns/lines, not pixels. If both are zero this
-  # setting is ignored.
-  # dimensions:
-  #   columns: 300
-  #   lines: 100
-  # decorations: buttonless
-  opacity: 0.9
+  opacity: 0.850
   padding:
     x: 5
-  startup_mode: Maximized
+    y: 0
+  # decorations: buttonless
+  # startup_mode: Maximized
 
 working_directory: None
