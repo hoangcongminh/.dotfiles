@@ -70,6 +70,7 @@ return {
           hidden = true,
           no_ignore = true,
           no_ignore_parent = true,
+          find_command = { "rg", "--files", "--hidden", "-g", "!.git" },
         },
         buffers = {
           sort_mru = true,
