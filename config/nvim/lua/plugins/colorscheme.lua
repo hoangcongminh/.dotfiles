@@ -4,11 +4,12 @@ return {
   {
     "folke/tokyonight.nvim",
     lazy = true,
-    otps = {
-
-      style = "moon",
-      transparent = global.transparent,
-    },
+    config = function()
+      require("tokyonight").setup({
+        style = "moon",
+        transparent = global.transparent,
+      })
+    end,
   },
   {
     "rose-pine/neovim",
@@ -16,7 +17,6 @@ return {
     name = "rose-pine",
     priority = 1000,
     opts = {
-
       --- @usage 'auto'|'main'|'moon'|'dawn'
       variant = "auto",
       --- @usage 'main'|'moon'|'dawn'
@@ -34,11 +34,12 @@ return {
     lazy = true,
     version = false,
     priority = 1000,
-    opts = {
-
-      transparent_background_level = 1,
-      italics = true,
-    },
+    config = function()
+      require("everforest").setup({
+        transparent_background_level = 1,
+        italics = true,
+      })
+    end,
   },
   {
     "craftzdog/solarized-osaka.nvim",
