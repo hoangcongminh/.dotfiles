@@ -1,6 +1,9 @@
 return {
 	{ "nvim-lua/plenary.nvim" },
-	{ "stevearc/dressing.nvim" },
+	{
+		"stevearc/dressing.nvim",
+		event = "VeryLazy",
+	},
 
 	-- icons
 	{ "ryanoasis/vim-devicons" },

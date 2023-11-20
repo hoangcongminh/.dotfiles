@@ -1,6 +1,6 @@
 return {
   "windwp/nvim-autopairs",
-  event = { "BufReadPost", "BufNewFile" },
+  event = "InsertEnter",
   config = function()
     require("nvim-autopairs").setup({
       check_ts = true, -- treesitter integration
@@ -8,7 +8,7 @@ return {
       ts_config = {
         lua = { "string" }, -- it will not add a pair on that treesitter node
         javascript = { "template_string" },
-        java = false,   -- don't check treesitter on java
+        java = false,       -- don't check treesitter on java
       },
       fast_wrap = {
         map = "<M-e>",
