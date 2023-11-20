@@ -7,6 +7,9 @@ export PATH="$PATH:$HOME/go/bin"
 ## Java
 export PATH="/usr/local/opt/java/bin:$PATH"
 
+## Python
+export PATH="/usr/local/opt/python/libexec/bin:$PATH"
+
 ## Aliases
 # Navigating
 alias h='cd ~'
