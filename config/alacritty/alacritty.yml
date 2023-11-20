@@ -49,16 +49,16 @@ env:
 # - MesloLGL Nerd Font
 font:
   normal:
-    family: "JetBrainsMono Nerd Font"
+    family: SFMono Nerd Font
     style: Medium
   bold:
-    family: "JetBrainsMono Nerd Font"
+    family: SFMono Nerd Font
     style: Bold
   italic:
-    family: "JetBrainsMono Nerd Font"
+    family: SFMono Nerd Font
     style: MediumItalic
   bold_italic:
-    family: "JetBrainsMono Nerd Font"
+    family: SFMono Nerd Font
     style: BoldItalic
   size: 12.00
 
@@ -145,8 +145,8 @@ window:
   opacity: 0.850
   padding:
     x: 5
-    y: 0
-  # decorations: buttonless
+    y: 5
+  decorations: buttonless
   # startup_mode: Maximized
 
 working_directory: None
