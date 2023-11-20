@@ -29,6 +29,7 @@ return {
         "eslint",
         "yamlls",
         "lemminx",
+        "kotlin_language_server",
       },
       handlers = {
         function(server_name)

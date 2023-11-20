@@ -1,5 +1,5 @@
 return {
     transparent = true,
     border = "solid",
-    coloscheme = "tokyonight",
+    coloscheme = "solarized-osaka",
 }

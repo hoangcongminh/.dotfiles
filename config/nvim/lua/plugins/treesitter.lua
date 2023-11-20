@@ -32,6 +32,7 @@ return {
 				"c",
 				"make",
 				"swift",
+				"kotlin",
 			},
 			highlight = {
 				enable = true,
