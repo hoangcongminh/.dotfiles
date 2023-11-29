@@ -2,9 +2,13 @@ return {
 
   -- git
   {
-    "tpope/vim-fugitive",
-    cmd = "G",
-    dependencies = "tpope/vim-rhubarb",
+    "https://github.com/NeogitOrg/neogit",
+    cmd = "Neogit",
+    config = function()
+      require("neogit").setup({
+        disable_commit_confirmation = true,
+      })
+    end,
   },
 
   {
@@ -47,8 +51,8 @@ return {
           },
         },
         signcolumn = true, -- Toggle with `:Gitsigns toggle_signs`
-        numhl = false, -- Toggle with `:Gitsigns toggle_numhl`
-        linehl = false, -- Toggle with `:Gitsigns toggle_linehl`
+        numhl = false,     -- Toggle with `:Gitsigns toggle_numhl`
+        linehl = false,    -- Toggle with `:Gitsigns toggle_linehl`
         word_diff = false, -- Toggle with `:Gitsigns toggle_word_diff`
         watch_gitdir = {
           interval = 1000,
