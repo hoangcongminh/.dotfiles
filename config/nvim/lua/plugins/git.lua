@@ -1,6 +1,4 @@
 return {
-
-  -- git
   {
     "https://github.com/NeogitOrg/neogit",
     cmd = "Neogit",
@@ -10,7 +8,6 @@ return {
       })
     end,
   },
-
   {
     "lewis6991/gitsigns.nvim",
     event = "VeryLazy",

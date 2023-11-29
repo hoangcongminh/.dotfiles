@@ -1,5 +1,8 @@
 return {
-	{ "nvim-lua/plenary.nvim" },
+	{
+		"nvim-lua/plenary.nvim",
+		lazy = true,
+	},
 	{
 		"stevearc/dressing.nvim",
 		event = "VeryLazy",
