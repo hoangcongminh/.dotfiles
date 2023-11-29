@@ -1,9 +1,7 @@
 return {
-  -- comment
-  "tpope/vim-commentary",
+  "numToStr/Comment.nvim",
   event = "VeryLazy",
   config = function()
-    vim.keymap.set("n", "<leader>/", ":Commentary<CR>", { noremap = true, silent = true })
-    vim.keymap.set("v", "<leader>/", ":Commentary<CR>", { noremap = true, silent = true })
+    require("Comment").setup()
   end,
 }
