@@ -10,7 +10,6 @@ local keymap = vim.keymap.set
 local opts = { noremap = true, silent = true }
 
 keymap("n", "Q", "<nop>")
-
 keymap("n", "<leader>ee", "oif err != null {<CR>}<Esc>Oreturn err", {})
 
 -- Normal --
@@ -73,7 +72,6 @@ keymap("v", "<A-k>", ":m .-2<CR>==", opts)
 -- Move text up and down
 keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
-
 -- Enhance keymaps --
 keymap("n", "Y", "yg$", opts)
 keymap("n", "n", "nzzzv", opts)
@@ -81,6 +79,3 @@ keymap("n", "N", "Nzzzv", opts)
 keymap("n", "J", "mzJ`z", opts)
 -- greatest remap ever
 keymap("x", "<leader>p", '"_dP')
-
--- Netrw
-keymap("n", "<leader>pv", ":Ex<CR>", opts)
