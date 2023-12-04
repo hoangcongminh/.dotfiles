@@ -48,7 +48,7 @@ local function config()
 	require("flutter-tools").setup({
 		ui = {
 			border = require("global").border,
-			notification_style = "plugin",
+			notification_style = 'native' -- 'native'/'plugin'
 		},
 		decorations = {
 			statusline = {
