@@ -10,7 +10,7 @@ local function format_buffer(is_print_formated)
 	end
 
 	if not is_print_formated then
-		print("Formated!")
+		vim.notify("Formated!")
 	end
 end
 
