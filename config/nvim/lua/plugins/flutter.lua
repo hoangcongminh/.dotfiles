@@ -1,4 +1,5 @@
 local function config()
+	local lsp_zero = require("lsp-zero")
 	local function on_attach(client, bufnr)
 		require("telescope").load_extension("flutter")
 
@@ -42,7 +43,7 @@ local function config()
 			vim.cmd("Dispatch flutter clean; flutter pub get; flutter run --release")
 		end, { force = true })
 
-		require("plugins.lsp.handlers").on_attach(client, bufnr)
+		lsp_zero.on_attach(client, bufnr)
 	end
 
 	require("flutter-tools").setup({
@@ -114,7 +115,8 @@ local function config()
 				virtual_text_str = "■",
 			},
 			on_attach = on_attach,
-			capabilities = require("plugins.lsp.handlers").capabilities,
+			capabilities = lsp_zero.get_capabilities()
+			,
 			root_dir = function()
 				return vim.loop.cwd()
 			end,

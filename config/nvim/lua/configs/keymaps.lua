@@ -46,16 +46,15 @@ keymap("n", "<leader>ll", ":lli<CR>", opts)
 keymap("n", "<tab>", ":bnext<CR>", opts)
 keymap("n", "<s-tab>", ":bprevious<CR>", opts)
 
+-- Enhance keymaps --
+keymap("n", "Y", "yg$", opts)
+keymap("n", "n", "nzzzv", opts)
+keymap("n", "N", "Nzzzv", opts)
+keymap("n", "J", "mzJ`z", opts)
+
 -- Insert --
 -- Press jk fast to exit insert mode
 keymap("i", "jk", "<ESC>", opts)
--- Map Emacs like movement in Insert mode
--- keymap('i','<C-p>','<Up>',opts)
--- keymap('i','<C-n>','<Down>',opts)
-keymap("i", "<C-f>", "<Right>", opts)
-keymap("i", "<C-b>", "<Left>", opts)
--- keymap('i','<C-e>','<C-o>$',opts)
--- keymap('i','<C-a>','<C-o>^',opts)
 
 -- Visual --
 -- Stay in indent mode
@@ -69,10 +68,5 @@ keymap("v", "<A-k>", ":m .-2<CR>==", opts)
 -- Move text up and down
 keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
--- Enhance keymaps --
-keymap("n", "Y", "yg$", opts)
-keymap("n", "n", "nzzzv", opts)
-keymap("n", "N", "Nzzzv", opts)
-keymap("n", "J", "mzJ`z", opts)
 -- greatest remap ever
 keymap("x", "<leader>p", '"_dP')
