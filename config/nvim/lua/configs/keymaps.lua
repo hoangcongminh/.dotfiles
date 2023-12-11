@@ -9,9 +9,6 @@ local keymap = vim.keymap.set
 -- Keymap option
 local opts = { noremap = true, silent = true }
 
-keymap("n", "Q", "<nop>")
-keymap("n", "<leader>ee", "oif err != null {<CR>}<Esc>Oreturn err", {})
-
 -- Normal --
 keymap("n", "<C-q>", ":quit<CR>", opts)
 keymap("n", "<C-s>", ":update<CR>", opts)

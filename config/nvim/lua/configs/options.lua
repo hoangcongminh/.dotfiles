@@ -3,70 +3,72 @@ vim.g.netrw_browse_split = 0
 vim.g.netrw_banner = 0
 vim.g.netrw_winsize = 25
 
-local opt = vim.opt -- for conciseness
-
--- line numbers
-opt.relativenumber = true
-opt.number = true
-
--- tab & indentation
-opt.tabstop = 4
-opt.softtabstop = 4
-opt.shiftwidth = 4
-opt.shiftround = true
-opt.expandtab = true
-
-opt.smartindent = true
-opt.autoindent = true
-
--- scroll
-opt.scrolloff = 8
-opt.sidescrolloff = 8
-
--- line wrapping
-opt.wrap = false
-
--- search settings
-opt.ignorecase = true
-opt.smartcase = true
-opt.hlsearch = false
-opt.incsearch = true
-
--- cursor
-opt.guicursor = ""
-opt.cursorline = true
-opt.cursorlineopt = "number,line"
--- opt.cursorcolumn = true
-
--- appearance
-opt.termguicolors = true
-opt.signcolumn = "yes"
--- opt.colorcolumn = "80"
-
--- backspace
-opt.backspace = "indent,eol,start"
-
--- clipboard
-opt.clipboard:append({ "unnamedplus" })
-
--- cmd
--- opt.laststatus = 3
-opt.cmdheight = 0
--- opt.cmdheight = 1
-opt.shortmess:append("c")
-
--- others
-vim.opt.swapfile = false
-vim.opt.backup = false
-vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
-vim.opt.undofile = true
-
-opt.updatetime = 50
-opt.mouse = "a"
--- opt.completeopt = "menuone,noinsert,noselect"
-opt.completeopt = "menuone"
-opt.timeoutlen = 500 -- time to wait for a mapped sequence to complete (in milliseconds)
-
 -- Undercurl
 vim.cmd([[let &t_Cs = "\e[4:3m"]])
 vim.cmd([[let &t_Ce = "\e[4:0m"]])
+
+local options = {
+	-- line numbers
+	relativenumber = true,
+	number = true,
+
+	-- tab & indentation
+	tabstop = 4,
+	softtabstop = 4,
+	shiftwidth = 4,
+	shiftround = true,
+	expandtab = true,
+
+	smartindent = true,
+	autoindent = true,
+
+	-- scroll
+	scrolloff = 8,
+	sidescrolloff = 8,
+
+	-- line wrapping
+	wrap = false,
+
+	-- search settings
+	ignorecase = true,
+	smartcase = true,
+	hlsearch = false,
+	incsearch = true,
+
+	-- cursor
+	guicursor = "",
+	cursorline = true,
+	cursorlineopt = "number,line",
+	-- opt.cursorcolumn = true
+
+	-- appearance
+	termguicolors = true,
+	signcolumn = "yes",
+	-- opt.colorcolumn = "80"
+
+	-- backspace
+	backspace = "indent,eol,start",
+
+	-- cmd
+	-- opt.laststatus = 3
+	cmdheight = 0,
+	-- opt.cmdheight = 1
+
+	-- others
+	swapfile = false,
+	backup = false,
+	undodir = os.getenv("HOME") .. "/.vim/undodir",
+	undofile = true,
+
+	updatetime = 50,
+	mouse = "a",
+	completeopt = "menuone,noinsert,noselect",
+	timeoutlen = 500 -- time to wait for a mapped sequence to complete (in milliseconds),
+}
+
+vim.opt.shortmess:append("c")
+vim.opt.clipboard:append({ "unnamedplus" })
+
+for option, value in pairs(options) do
+	vim.opt[option] = value
+end
