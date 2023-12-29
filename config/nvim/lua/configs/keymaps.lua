@@ -18,6 +18,8 @@ keymap("n", "<C-u>", "<C-u>zz", opts)
 keymap("n", "<C-h>", "<C-w>h", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
 
+keymap("n", "<leader>pv", ":Explore<CR>", opts)
+
 -- run tmux-sessionizer
 keymap("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
 
