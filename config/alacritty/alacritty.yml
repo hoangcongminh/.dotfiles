@@ -49,16 +49,16 @@ env:
 # - MesloLGL Nerd Font
 font:
   normal:
-    family: SFMono Nerd Font
+    family: FiraCode Nerd Font
     style: Medium
   bold:
-    family: SFMono Nerd Font
+    family: FiraCode Nerd Font
     style: Bold
   italic:
-    family: SFMono Nerd Font
+    family: FiraCode Nerd Font
     style: MediumItalic
   bold_italic:
-    family: SFMono Nerd Font
+    family: FiraCode Nerd Font
     style: BoldItalic
   size: 12.00
 
@@ -128,8 +128,8 @@ key_bindings:
   - { chars: "\x1b8", key: Key8, mods: Command }
   - { chars: "\x1b9", key: Key9, mods: Command }
 
-mouse:
-  hide_when_typing: true
+# mouse:
+#   hide_when_typing: true
 
 scrolling:
   history: 10000
@@ -142,7 +142,7 @@ selection:
 use_thin_strokes: true
 
 window:
-  # opacity: 0.9
+  opacity: 0.9
   padding:
     x: 5
     y: 5
