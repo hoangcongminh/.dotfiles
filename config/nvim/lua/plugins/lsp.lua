@@ -70,7 +70,7 @@ return {
         cmp.setup({
             preselect = 'item',
             completion = {
-                completeopt = 'menu,menuone,noinsert'
+                completeopt = "menuone,noinsert,noselect",
             },
             sources = {
                 { name = "nvim_lsp" },
