@@ -26,7 +26,7 @@ alias cp='cp -v'
 
 # Git
 alias g='git'
-alias glog='git log --oneline --decorate --graph'
+alias glog='git log --all --oneline --decorate --graph'
 alias gs='git status --short'
 alias gS='git status'
 alias gd='git diff'
