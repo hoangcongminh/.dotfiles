@@ -1,9 +1,14 @@
-vim.cmd.colorscheme(require("global").coloscheme)
+vim.cmd.colorscheme("solarized-osaka")
 vim.opt.background = "dark"
-vim.o.winbar = "%m%y " .. "%{%v:lua.require'nvim-web-devicons'.get_icon_color_by_filetype(&filetype)%} " .. "%f"
+
+-- Custom winbar
+vim.o.winbar =
+	"%m%y " ..
+	"%{%v:lua.require'nvim-web-devicons'.get_icon_color_by_filetype(&filetype)%} " ..
+	"%f"
 
 -- Custom statusline
-vim.opt.laststatus = 3     -- global statusline
+vim.opt.laststatus = 3
 vim.opt.statusline =
 	"%#Substitute# %Y %0*" .. -- filetype
 	" %f " ..              -- path to file

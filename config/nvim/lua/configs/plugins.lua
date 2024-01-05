@@ -12,9 +12,6 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup("plugins", {
-	ui = {
-		border = require("global").border,
-	},
 	defaults = {
 		lazy = true,
 		version = false,
