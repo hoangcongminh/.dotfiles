@@ -1,8 +1,23 @@
 return {
+	{ "nvim-lua/plenary.nvim" },
+
 	{
-		"nvim-lua/plenary.nvim",
-		lazy = true,
+		"rose-pine/neovim",
+		lazy = false,
+		as = "rose-pine",
+		config = function()
+			require('rose-pine').setup({
+				variant = "moon",
+				styles = {
+					bold = true,
+					italic = true,
+					transparency = true,
+				},
+			})
+			vim.cmd.colorscheme("rose-pine")
+		end
 	},
+
 	{
 		"stevearc/dressing.nvim",
 		event = "VeryLazy",
