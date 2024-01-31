@@ -1,11 +1,10 @@
 return {
   -- telescope
   "nvim-telescope/telescope.nvim",
+  tag = '0.1.5',
   event = "VeryLazy",
   dependencies = {
-    { "nvim-lua/plenary.nvim" },
     { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
-    { "nvim-telescope/telescope-ui-select.nvim" },
   },
   config = function()
     local actions = require("telescope.actions")
@@ -55,14 +54,11 @@ return {
         },
       }),
       extensions = {
-        ["ui-select"] = {
-          telescope_themes.get_cursor(),
-        },
         fzf = {
-          fuzzy = true,              -- false will only do exact matching
+          fuzzy = true,                   -- false will only do exact matching
           override_generic_sorter = true, -- override the generic sorter
-          override_file_sorter = true, -- override the file sorter
-          case_mode = "smart_case",  -- or "ignore_case" or "respect_case"
+          override_file_sorter = true,    -- override the file sorter
+          case_mode = "smart_case",       -- or "ignore_case" or "respect_case"
         },
       },
       pickers = {
@@ -79,18 +75,8 @@ return {
     })
 
     require("telescope").load_extension("fzf")
-    require("telescope").load_extension("ui-select")
 
     local opts = { noremap = true, silent = true }
-
-    local search_dotfiles = function()
-      telescope_builtin.find_files({
-        prompt_title = "~ .dotfiles ~",
-        cwd = vim.env.DOTFILES,
-        hidden = true,
-        find_command = { "rg", "--files", "--hidden", "-g", "!.git" },
-      })
-    end
 
     local project_files = function()
       local options = {
@@ -115,7 +101,6 @@ return {
     vim.keymap.set("n", "<leader>fr", telescope_builtin.resume, opts)
     vim.keymap.set("n", "<leader>lj", telescope_builtin.jumplist, opts)
     vim.keymap.set("n", "<leader>ts", telescope_builtin.treesitter, opts)
-
     vim.keymap.set("n", "<leader>qf", function()
       telescope_builtin.quickfix(dropdown_theme)
     end, opts)
@@ -132,6 +117,5 @@ return {
     vim.keymap.set("n", "<leader>t", function()
       vim.cmd("Telescope")
     end, opts)
-    vim.keymap.set("n", "<leader>dff", search_dotfiles, opts)
   end,
 }
