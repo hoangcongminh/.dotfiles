@@ -1,4 +1,4 @@
-vim.cmd.colorscheme("rose-pine")
+-- vim.cmd.colorscheme("rose-pine")
 vim.opt.background = "dark"
 
 -- Custom winbar

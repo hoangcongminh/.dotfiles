@@ -1,6 +1,5 @@
 return {
     "VonHeikemen/lsp-zero.nvim",
-    event = "VeryLazy",
     dependencies = {
         "neovim/nvim-lspconfig",
         "williamboman/mason.nvim",
@@ -17,6 +16,7 @@ return {
         "L3MON4D3/LuaSnip",
         "rafamadriz/friendly-snippets",
     },
+    event = "VeryLazy",
     config = function()
         local lsp_zero = require('lsp-zero')
         require("mason").setup({})
