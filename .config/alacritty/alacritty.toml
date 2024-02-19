@@ -45,7 +45,7 @@ shape = "Beam"
 TERM = "alacritty"
 
 [font]
-size = 14.0
+size = 12.0
 
 [font.bold]
 family = "JetBrainsMono Nerd Font"
@@ -71,9 +71,10 @@ multiplier = 3
 save_to_clipboard = true
 semantic_escape_chars = ",│`|:\"' ()[]{}<>\t"
 
-# [window]
-# decorations = "buttonless"
-# opacity = 0.9
+[window]
+# opacity = 0.8
+# startup_mode = "Maximized"
+# decorations = "None"
 
 # [window.padding]
 # x = 5
