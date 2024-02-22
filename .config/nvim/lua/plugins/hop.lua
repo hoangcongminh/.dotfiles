@@ -1,14 +1,18 @@
 return {
-  -- motions
-  "phaazon/hop.nvim",
-  event = "VeryLazy",
-  branch = "v1",
+  'phaazon/hop.nvim',
+  event = 'VeryLazy',
+  branch = 'v2',
   config = function()
-    require("hop").setup({
-      keys = "etovxqpdygfblzhckisuran",
-    })
+    local hop = require 'hop'
+    hop.setup {
+      keys = 'etovxqpdygfblzhckisuran',
+    }
 
-    vim.keymap.set("n", "fw", "<cmd>lua require'hop'.hint_words()<cr>", { silent = true })
-    vim.keymap.set("n", "fl", "<cmd>lua require'hop'.hint_lines()<cr>", { silent = true })
+    vim.keymap.set('n', 'fw', function()
+      hop.hint_words()
+    end)
+    vim.keymap.set('n', 'fl', function()
+      hop.hint_lines()
+    end)
   end,
 }
