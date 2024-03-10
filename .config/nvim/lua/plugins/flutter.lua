@@ -8,7 +8,8 @@ return {
       'RobertBrunhage/flutter-riverpod-snippets',
     },
     config = function()
-      local capabilities = vim.tbl_deep_extend('force', {}, vim.lsp.protocol.make_client_capabilities(), require('cmp_nvim_lsp').default_capabilities())
+      local capabilities = vim.lsp.protocol.make_client_capabilities()
+      capabilities = vim.tbl_deep_extend('force', capabilities, require('cmp_nvim_lsp').default_capabilities())
 
       local function on_attach(_, bufnr)
         require('telescope').load_extension 'flutter'
@@ -48,8 +49,6 @@ return {
         command(bufnr, 'FlutterRunRelease', function()
           vim.cmd 'Dispatch flutter clean; flutter pub get; flutter run --release'
         end, { force = true })
-
-        OnAttachLsp(bufnr)
       end
 
       require('flutter-tools').setup {
