@@ -1,6 +1,4 @@
 local wezterm = require("wezterm")
-local colors = require("lua/rose-pine").colors()
-local window_frame = require("lua/rose-pine").window_frame()
 
 local config = {
 	font = wezterm.font_with_fallback({
@@ -10,9 +8,10 @@ local config = {
 	font_size = 12,
 	window_background_opacity = 0.8,
 	macos_window_background_blur = 10,
-	-- color_scheme = "Dracula",
-	colors = colors,
-	window_frame = window_frame,
+	color_scheme = "rose-pine",
+	colors = {
+		background = "black",
+	},
 
 	adjust_window_size_when_changing_font_size = false,
 	enable_tab_bar = false,
