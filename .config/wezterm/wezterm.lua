@@ -8,7 +8,7 @@ local config = {
 	font_size = 12,
 	window_background_opacity = 0.8,
 	macos_window_background_blur = 10,
-	color_scheme = "rose-pine",
+	color_scheme = "Tokyo Night Storm",
 	colors = {
 		background = "black",
 	},

@@ -1,19 +1,16 @@
 return {
-  'rose-pine/neovim',
-  name = 'rose-pine',
+  'folke/tokyonight.nvim',
   priority = 1000,
+  opts = {},
   config = function()
-    require('rose-pine').setup {
-      styles = {
-        transparency = true,
-      },
+    require('tokyonight').setup {
+      transparent = true,
     }
+    vim.cmd.colorscheme 'tokyonight-storm'
 
-    vim.cmd.colorscheme 'rose-pine'
-
-    -- vim.api.nvim_set_hl(0, 'Normal', { bg = 'none' })
-    -- vim.api.nvim_set_hl(0, 'NormalFloat', { bg = 'none' })
-    -- vim.api.nvim_set_hl(0, 'SignColumn', { bg = 'none' })
+    vim.api.nvim_set_hl(0, 'Normal', { bg = 'none' })
+    vim.api.nvim_set_hl(0, 'NormalFloat', { bg = 'none' })
+    vim.api.nvim_set_hl(0, 'SignColumn', { bg = 'none' })
     vim.api.nvim_set_hl(0, 'CursorLine', { underline = true, bg = 'none', fg = 'none' })
   end,
 }
