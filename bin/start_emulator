@@ -1,0 +1,11 @@
+#!/bin/bash
+
+EMULATOR=~/Library/Android/sdk/tools/emulator
+
+selected=$($EMULATOR -list-avds | fzf )
+
+if [[ -z $selected ]]; then
+	exit 0
+fi
+
+tmux neww bash -c "$EMULATOR -avd $selected -dns-server 8.8.8.8,8.8.4.4 | less "

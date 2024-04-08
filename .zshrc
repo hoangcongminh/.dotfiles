@@ -64,3 +64,12 @@ export NVM_DIR="$HOME/.nvm"
 
 bindkey '^n' autosuggest-accept
 bindkey -s ^f "tmux-sessionizer\n"
+bindkey -s ^u "open-url\n"
+
+export PATH="/Users/congminh/.shorebird/bin:$PATH"
+
+## [Completion]
+## Completion scripts setup. Remove the following line to uninstall
+[[ -f /Users/congminh/.dart-cli-completion/zsh-config.zsh ]] && . /Users/congminh/.dart-cli-completion/zsh-config.zsh || true
+## [/Completion]
+
