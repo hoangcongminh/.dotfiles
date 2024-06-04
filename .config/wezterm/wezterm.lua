@@ -8,10 +8,10 @@ local config = {
 	font_size = 13,
 	window_background_opacity = 0.9,
 	macos_window_background_blur = 10,
-	color_scheme = "Tokyo Night",
-	-- colors = {
-	-- 	background = "black",
-	-- },
+	color_scheme = "rose-pine-moon",
+	colors = {
+		background = "black",
+	},
 
 	adjust_window_size_when_changing_font_size = false,
 	enable_tab_bar = false,
