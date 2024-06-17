@@ -14,7 +14,7 @@ return {
     event = 'VeryLazy',
     keys = {
       { 'gn', '<cmd>Gitsigns next_hunk<cr>' },
-      { 'gp', '<cmd>Gitsigns prev_hunk<cr>' },
+      { 'gN', '<cmd>Gitsigns prev_hunk<cr>' },
     },
     config = function()
       require('gitsigns').setup {
