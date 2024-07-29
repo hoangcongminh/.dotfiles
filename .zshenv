@@ -1,4 +1,6 @@
+## Rust
 export PATH="$PATH:$HOME/.cargo/bin/"
+export PATH="/usr/local/opt/rustup/bin:$PATH"
 
 ## Go
 export GOPATH="$HOME/go/"
@@ -6,6 +8,7 @@ export PATH="$PATH:$HOME/go/bin"
 
 ## Java
 export PATH="/usr/local/opt/java/bin:$PATH"
+export PATH="/usr/local/opt/openjdk/bin:$PATH"
 
 ## Python
 export PATH="/usr/local/opt/python/libexec/bin:$PATH"

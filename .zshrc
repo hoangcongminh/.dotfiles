@@ -50,6 +50,7 @@ export PATH="$DOTFILES_DIR/bin/:$PATH"
 export PATH="$PATH:$HOME/fvm/default/bin"
 export PATH="$PATH:$HOME/fvm/default/bin/cache/dart-sdk/bin"
 export PATH="$PATH":"$HOME/.pub-cache/bin"
+export PATH="$PATH":"$HOME/.shorebird/bin:$PATH"
 
 export ANDROID_HOME=$HOME/Library/Android/sdk
 export PATH=$PATH:$ANDROID_HOME/emulator
@@ -65,10 +66,7 @@ bindkey '^n' autosuggest-accept
 bindkey -s ^f "tmux-sessionizer\n"
 bindkey -s ^u "open-url\n"
 
-export PATH="/Users/congminh/.shorebird/bin:$PATH"
-
 ## [Completion]
 ## Completion scripts setup. Remove the following line to uninstall
 [[ -f /Users/congminh/.dart-cli-completion/zsh-config.zsh ]] && . /Users/congminh/.dart-cli-completion/zsh-config.zsh || true
 ## [/Completion]
-
