@@ -15,11 +15,10 @@ plugins=(
   fzf
   fzf-tab
   z
-  fd
   zsh-autosuggestions
   zsh-syntax-highlighting
-  zsh-aliases-exa
   vi-mode
+  zsh-lsd
 )
 
 source $ZSH/oh-my-zsh.sh
