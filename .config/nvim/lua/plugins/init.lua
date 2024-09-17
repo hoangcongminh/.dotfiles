@@ -4,7 +4,7 @@ return {
     lazy = true,
   },
 
-  { 'github/copilot.vim' },
+  -- { 'github/copilot.vim' },
 
   {
     'lukas-reineke/indent-blankline.nvim',

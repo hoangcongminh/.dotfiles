@@ -1,7 +1,8 @@
-vim.g.mapleader = ' '
-vim.g.maplocalleader = ' '
-
-vim.opt.shortmess:append 'c'
+-- netwr options
+vim.g.netrw_browse_split = 0
+vim.g.netrw_banner = 0
+vim.g.netrw_winsize = 25
+vim.g.netrw_bufsettings = 'noma nomod nu nowrap ro nobl'
 
 local options = {
   guicursor = '',
@@ -27,14 +28,14 @@ local options = {
 
   wrap = false,
 
-  ignorecase = true,
   smartcase = true,
+  ignorecase = true,
   hlsearch = false,
   incsearch = true,
 
   termguicolors = true,
   signcolumn = 'yes',
-  colorcolumn = '80',
+  -- colorcolumn = '80',
   cmdheight = 0,
   laststatus = 3,
 
@@ -45,21 +46,6 @@ local options = {
 
   updatetime = 50,
   mouse = 'a',
-  -- winbar = '%m%y ' .. "%{%v:lua.require'nvim-web-devicons'.get_icon_color_by_filetype(&filetype)%} " .. '%f',
-
-  statusline = ''
-    -- .. '%#Substitute# %Y %0*' -- filetype
-    .. '%m%y ' -- filetype
-    .. "%{%v:lua.require'nvim-web-devicons'.get_icon_color_by_filetype(&filetype)%} " -- icon
-    .. '%f' -- path
-    .. '%m' -- modifed
-    .. '%r' -- readonly
-    .. '%=' -- separator
-    .. ' %{&fileencoding} ' -- file encoding
-    .. '|' -- padding
-    .. ' %{&fileformat} ' -- file format
-    .. '|' -- padding
-    .. ' %c:%l/%L ', -- column at line per total lines
 }
 
 for option, value in pairs(options) do

@@ -1,8 +1,6 @@
 return {
   { -- lsp
     'neovim/nvim-lspconfig',
-    event = { 'BufReadPost', 'BufNewFile' },
-    cmd = { 'LspInfo', 'LspInstall', 'LspUninstall' },
     dependencies = {
       'williamboman/mason.nvim',
       'williamboman/mason-lspconfig.nvim',
@@ -49,14 +47,13 @@ return {
         'pyright',
         'clangd',
         'rust_analyzer',
-        'tsserver',
+        'ts_ls',
         'eslint',
         'yamlls',
         'lemminx',
         'kotlin_language_server',
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
-
       require('mason-lspconfig').setup {
         handlers = {
           function(server_name)
@@ -85,6 +82,49 @@ return {
           prefix = '',
         },
       }
+
+      -- LspAttach
+      vim.api.nvim_create_autocmd('LspAttach', {
+        callback = function(e)
+          local opts = { buffer = e.buf }
+
+          vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
+          vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
+          vim.keymap.set('n', '<space>e', vim.diagnostic.open_float, opts)
+          vim.keymap.set('n', '<space>la', vim.diagnostic.setloclist, opts)
+          vim.keymap.set('n', '<space>a', vim.diagnostic.setqflist, opts)
+          vim.keymap.set('n', '<space>qa', function()
+            vim.diagnostic.setqflist {
+              title = 'Warnings',
+              severity = vim.diagnostic.severity.WARN,
+            }
+          end, opts)
+          vim.keymap.set('n', '<space>qe', function()
+            vim.diagnostic.setqflist {
+              title = 'Errors',
+              severity = vim.diagnostic.severity.ERROR,
+            }
+          end, opts)
+
+          vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
+          vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
+          vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
+          vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
+
+          vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, opts)
+          vim.keymap.set('n', '<space>D', vim.lsp.buf.type_definition, opts)
+          vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
+          vim.keymap.set('n', '<space>ws', vim.lsp.buf.workspace_symbol, opts)
+          vim.keymap.set('n', '<space>ds', vim.lsp.buf.document_symbol, opts)
+          vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, opts)
+          vim.keymap.set('n', '<space>ca', vim.lsp.buf.code_action, opts)
+          vim.keymap.set('n', '<space>fm', require('conform').format, opts)
+
+          vim.keymap.set('n', '<space>wa', vim.lsp.buf.add_workspace_folder, opts)
+          vim.keymap.set('n', '<space>wr', vim.lsp.buf.remove_workspace_folder, opts)
+          vim.keymap.set('n', '<space>wl', vim.lsp.buf.list_workspace_folders, opts)
+        end,
+      })
     end,
   },
 
@@ -101,57 +141,7 @@ return {
       { 'dmitmel/cmp-cmdline-history' },
     },
     config = function()
-      local cmp = require 'cmp'
-
-      cmp.setup {
-        snippet = {
-          expand = function(args)
-            require('luasnip').lsp_expand(args.body)
-          end,
-        },
-        completion = {
-          completeopt = 'menu,menuone,noinsert,noselect',
-        },
-        mapping = {
-          ['<C-n>'] = cmp.mapping.select_next_item { behavior = cmp.SelectBehavior.Insert },
-          ['<C-p>'] = cmp.mapping.select_prev_item { behavior = cmp.SelectBehavior.Insert },
-          ['<Down>'] = cmp.mapping.select_next_item { behavior = cmp.SelectBehavior.Select },
-          ['<Up>'] = cmp.mapping.select_prev_item { behavior = cmp.SelectBehavior.Select },
-          ['<C-d>'] = cmp.mapping.scroll_docs(-4),
-          ['<C-f>'] = cmp.mapping.scroll_docs(4),
-          ['<C-Space>'] = cmp.mapping.complete(),
-          ['<C-e>'] = cmp.mapping {
-            i = cmp.mapping.abort(),
-            c = cmp.mapping.close(),
-          },
-          ['<CR>'] = cmp.mapping.confirm {
-            behavior = cmp.ConfirmBehavior.Replace,
-          },
-        },
-        sources = {
-          { name = 'nvim_lsp' },
-          { name = 'luasnip' },
-          { name = 'path' },
-          { name = 'buffer' },
-          { name = 'nvim_lua' },
-          { name = 'buffer' },
-        },
-      }
-
-      cmp.setup.cmdline({ '/', '?' }, {
-        mapping = cmp.mapping.preset.cmdline(),
-        sources = {
-          { name = 'buffer' },
-        },
-      })
-
-      cmp.setup.cmdline(':', {
-        mapping = cmp.mapping.preset.cmdline(),
-        sources = cmp.config.sources {
-          { name = 'path' },
-          { name = 'cmdline' },
-        },
-      })
+      require 'custom.completion'
     end,
   },
 
