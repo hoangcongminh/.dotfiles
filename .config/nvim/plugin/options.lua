@@ -35,7 +35,7 @@ local options = {
 
   termguicolors = true,
   signcolumn = 'yes',
-  -- colorcolumn = '80',
+  colorcolumn = '80',
   cmdheight = 0,
   laststatus = 3,
 

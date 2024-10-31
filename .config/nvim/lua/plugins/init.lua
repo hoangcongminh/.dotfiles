@@ -4,23 +4,23 @@ return {
     lazy = true,
   },
 
-  -- { 'github/copilot.vim' },
+  { 'github/copilot.vim' },
 
-  {
-    'lukas-reineke/indent-blankline.nvim',
-    event = 'VeryLazy',
-    config = function()
-      require('ibl').setup {
-        indent = {
-          char = '▏',
-          tab_char = '→',
-        },
-        scope = {
-          enabled = false,
-        },
-      }
-    end,
-  },
+  -- {
+  --   'lukas-reineke/indent-blankline.nvim',
+  --   event = 'VeryLazy',
+  --   config = function()
+  --     require('ibl').setup {
+  --       indent = {
+  --         char = '▏',
+  --         tab_char = '→',
+  --       },
+  --       scope = {
+  --         enabled = false,
+  --       },
+  --     }
+  --   end,
+  -- },
 
   {
     'stevearc/dressing.nvim',

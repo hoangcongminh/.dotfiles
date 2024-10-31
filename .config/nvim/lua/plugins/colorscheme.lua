@@ -1,20 +1,8 @@
 return {
-  'rose-pine/neovim',
-  name = 'rose-pine',
+  'ellisonleao/gruvbox.nvim',
   lazy = false,
   priority = 1000,
-  opts = {},
   config = function()
-    require('rose-pine').setup {
-      styles = {
-        bold = true,
-        italic = true,
-        transparency = true,
-      },
-    }
-
-    vim.cmd 'colorscheme rose-pine-moon'
-
-    require 'custom.ui'
+    require 'custom.colorscheme'
   end,
 }
