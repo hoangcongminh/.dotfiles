@@ -53,6 +53,7 @@ alias fl='fvm flutter clean'
 alias fpg='fvm flutter pub get'
 alias fr='fvm flutter run'
 alias fb='fvm flutter pub run build_runner build --delete-conflicting-outputs'
+alias fbw='fvm flutter pub run build_runner watch --delete-conflicting-outputs'
 alias fbl='fvm flutter pub run build_runner clean'
 
 # Another
