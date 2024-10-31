@@ -12,11 +12,12 @@ config.font = wezterm.font_with_fallback({
 })
 
 config.font_size = 14
-config.color_scheme = "Ubuntu"
+-- config.color_scheme = "Ubuntu"
+config.color_scheme = "Gruvbox Dark (Gogh)"
 config.window_background_opacity = 0.9
-config.colors = {
-	background = "#111111",
-}
+
+config.colors = {}
+-- config.colors.background = "#111111"
 
 config.enable_tab_bar = true
 config.use_fancy_tab_bar = true
