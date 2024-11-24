@@ -18,15 +18,12 @@ local function on_attach(_, bufnr)
   keymap('n', '<space>fq', vim.cmd.FlutterQuit, opts)
   keymap('n', '<space>fR', vim.cmd.FlutterRestart, opts)
   keymap('n', '<space>dv', vim.cmd.FlutterDevices, opts)
-  keymap('n', '<space>fl', vim.cmd.FlutterLogClear, opts)
   keymap('n', '<space>o', vim.cmd.FlutterOutlineToggle, opts)
   keymap('n', '<Space>rl', vim.cmd.FlutterReload, opts)
   keymap('n', '<space>fpg', vim.cmd.FlutterPubGet, opts)
-  keymap('n', '<space>fd', vim.cmd.FlutterOpenLog, opts)
-
-  command(bufnr, 'FlutterOpenLog', function()
-    vim.cmd.vnew '__FLUTTER_DEV_LOG__'
-  end, {})
+  keymap('n', '<space>fd', vim.cmd.FlutterLogToggle, opts)
+  keymap('n', '<space>fl', vim.cmd.FlutterLogClear, opts)
+  keymap('n', '<space>rn', vim.cmd.FlutterRename, opts)
 
   command(bufnr, 'FlutterBuildRunner', function()
     vim.cmd 'Dispatch flutter pub get; flutter pub run build_runner build --delete-conflicting-outputs'
@@ -57,6 +54,7 @@ require('flutter-tools').setup {
     enabled = false,
     run_via_dap = false,
     exception_breakpoints = {},
+    evaluate_to_string_in_debug_views = true,
     register_configurations = function(path)
       local dap = require 'dap'
 
@@ -90,15 +88,19 @@ require('flutter-tools').setup {
   },
   dev_log = {
     enabled = true,
-    -- notify_errors = true,
-    open_cmd = 'vnew',
+    filter = nil, -- optional callback to filter the log
+    -- takes a log_line as string argument; returns a boolean or nil;
+    -- the log_line is only added to the output if the function returns true
+    notify_errors = false, -- if there is an error whilst running then notify the user
+    open_cmd = '15split', -- command to use to open the log buffer
+    focus_on_open = true, -- focus on the newly opened log window
   },
   dev_tools = {
     autostart = true,
     auto_open_browser = false,
   },
   outline = {
-    open_cmd = 'vnew',
+    open_cmd = '30vnew',
     auto_open = false,
   },
   lsp = {
