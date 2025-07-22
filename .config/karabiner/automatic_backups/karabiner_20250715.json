@@ -114,14 +114,6 @@
                         "vendor_id": 9639
                     },
                     "ignore": false
-                },
-                {
-                    "identifiers": {
-                        "is_pointing_device": true,
-                        "product_id": 4229,
-                        "vendor_id": 14139
-                    },
-                    "ignore": false
                 }
             ],
             "fn_function_keys": [
