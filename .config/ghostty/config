@@ -1,5 +1,6 @@
-font-family = JetBrainsMono Nerd Font
-font-size = 12
-window-theme = auto
-background-opacity=0.8
+theme=GruvboxDark
+font-family=JetBrainsMono Nerd Font
+font-size=12
+window-theme=auto
+background-opacity=0.85
 background-blur=true
