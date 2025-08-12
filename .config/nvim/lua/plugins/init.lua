@@ -1,43 +1,10 @@
 return {
-  {
-    'nvim-lua/plenary.nvim',
-    lazy = true,
-  },
-
-  { 'github/copilot.vim' },
-
-  -- {
-  --   'lukas-reineke/indent-blankline.nvim',
-  --   event = 'VeryLazy',
-  --   config = function()
-  --     require('ibl').setup {
-  --       indent = {
-  --         char = '▏',
-  --         tab_char = '→',
-  --       },
-  --       scope = {
-  --         enabled = false,
-  --       },
-  --     }
-  --   end,
-  -- },
-
-  {
-    'stevearc/dressing.nvim',
-    event = 'VeryLazy',
-  },
-
-  {
-    'windwp/nvim-autopairs',
-    event = 'InsertEnter',
-    config = function()
-      require('nvim-autopairs').setup()
-    end,
-  },
+  { 'nvim-lua/plenary.nvim', lazy = true },
+  { 'github/copilot.vim', event = 'InsertEnter' },
 
   {
     'numToStr/Comment.nvim',
-    event = 'VeryLazy',
+    event = { 'BufReadPost', 'BufNewFile' },
     config = function()
       require('Comment').setup()
     end,
@@ -45,19 +12,17 @@ return {
 
   {
     'folke/todo-comments.nvim',
-    cmd = { 'TodoTrouble', 'TodoTelescope' },
     event = { 'BufReadPost', 'BufNewFile' },
-    opts = {},
+    opts = { signs = false },
   },
 
   -- other
-  { 'ryanoasis/vim-devicons' },
-  { 'kyazdani42/nvim-web-devicons' },
+  { 'stevearc/dressing.nvim', lazy = true },
+  { 'nvim-tree/nvim-web-devicons', lazy = true },
 
-  { 'tpope/vim-sleuth', event = 'VeryLazy' },
+  { 'tpope/vim-sleuth', event = { 'BufReadPost', 'BufNewFile' } },
   { 'tpope/vim-surround', event = 'VeryLazy' },
-  { 'tpope/vim-eunuch', event = 'VeryLazy' },
-  { 'tpope/vim-dispatch', event = 'VeryLazy' },
-
-  { 'mtdl9/vim-log-highlighting', event = 'VeryLazy' },
+  { 'tpope/vim-eunuch', lazy = true },
+  { 'tpope/vim-dispatch', lazy = true },
+  { 'mtdl9/vim-log-highlighting', event = { 'BufReadPost', 'BufNewFile' } },
 }
