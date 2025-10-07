@@ -2,4 +2,7 @@ nvim/plugin/packer_compiled.lua
 
 .DS_Store
 Brewfile.lock.json
-config/karabiner/automatic_backups/
+.config/karabiner/automatic_backups/
+.config/configstore/
+.config/flutter/
+.config/github-copilot/

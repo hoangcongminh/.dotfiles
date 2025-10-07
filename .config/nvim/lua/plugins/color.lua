@@ -1,33 +1,19 @@
 return {
-  'ellisonleao/gruvbox.nvim',
-  lazy = false,
+  "catppuccin/nvim",
+  name = "catppuccin",
   priority = 1000,
+  lazy = false,
   config = function()
-    require('gruvbox').setup {
-      transparent_mode = true,
-    }
+    require("catppuccin").setup({
+      flavour = "mocha",
+      transparent_background = true,
+    })
 
-    vim.cmd.colorscheme 'gruvbox'
+    vim.cmd.colorscheme "catppuccin"
 
     -- vim.api.nvim_set_hl(0, 'Normal', { bg = 'none' })
     -- vim.api.nvim_set_hl(0, 'NormalFloat', { bg = 'none' })
     vim.api.nvim_set_hl(0, 'CursorLine', { underline = true, bg = 'none', fg = 'none' })
-
-    vim.opt.statusline = table.concat({
-      '%m%y ',
-      '%{luaeval("require\'nvim-web-devicons\'.get_icon_color_by_filetype(vim.bo.filetype)")}',
-      '%f',
-      '%m',
-      '%r',
-      '%=',
-      '%{v:lua.LspStatus()}',
-      '|',
-      '%{&fileencoding}',
-      '|',
-      '%{&fileformat}',
-      '|',
-      '%c:%l/%L',
-    }, ' ')
 
     function LspStatus()
       local buf_ft = vim.api.nvim_buf_get_option(0, 'filetype')

@@ -1,6 +1,8 @@
-theme=GruvboxDark
+theme=catppuccin-mocha
 font-family=JetBrainsMono Nerd Font
-font-size=12
-window-theme=auto
-background-opacity=0.85
+font-size=14
+background-blur-radius=20
+mouse-hide-while-typing=true
+background-opacity=0.7
 background-blur=true
+window-decoration=true

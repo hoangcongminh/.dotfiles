@@ -1,6 +1,6 @@
 return {
   { 'nvim-lua/plenary.nvim', lazy = true },
-  { 'github/copilot.vim', event = 'InsertEnter' },
+  { 'github/copilot.vim',    event = 'InsertEnter' },
 
   {
     'numToStr/Comment.nvim',
@@ -17,12 +17,34 @@ return {
   },
 
   -- other
-  { 'stevearc/dressing.nvim', lazy = true },
-  { 'nvim-tree/nvim-web-devicons', lazy = true },
+  { 'stevearc/dressing.nvim',     lazy = true },
+  {
+    'nvim-tree/nvim-web-devicons',
+    lazy = true,
+    config = function()
+      local icon         = require 'nvim-web-devicons'.get_icon_color_by_filetype(vim.bo.filetype)
 
-  { 'tpope/vim-sleuth', event = { 'BufReadPost', 'BufNewFile' } },
-  { 'tpope/vim-surround', event = 'VeryLazy' },
-  { 'tpope/vim-eunuch', lazy = true },
-  { 'tpope/vim-dispatch', lazy = true },
+      vim.opt.statusline = table.concat({
+        '%m%y ',
+        '%{luaeval("require\'nvim-web-devicons\'.get_icon_color_by_filetype(vim.bo.filetype)")}',
+        '%f',
+        '%m',
+        '%r',
+        '%=',
+        '%{v:lua.LspStatus()}',
+        '|',
+        '%{&fileencoding}',
+        '|',
+        '%{&fileformat}',
+        '|',
+        '%c:%l/%L',
+      }, ' ')
+    end
+  },
+
+  { 'tpope/vim-sleuth',           event = { 'BufReadPost', 'BufNewFile' } },
+  { 'tpope/vim-surround',         event = 'VeryLazy' },
+  { 'tpope/vim-eunuch',           lazy = true },
+  { 'tpope/vim-dispatch',         lazy = true },
   { 'mtdl9/vim-log-highlighting', event = { 'BufReadPost', 'BufNewFile' } },
 }
