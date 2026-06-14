@@ -1,5 +1,7 @@
 tap "cmacrae/formulae"
 tap "epk/epk"
+tap "homebrew/bundle"
+tap "homebrew/services"
 tap "koekeishiya/formulae"
 tap "leoafarias/fvm"
 tap "nikitabobko/tap"
@@ -68,6 +70,8 @@ brew "stow"
 brew "telnet"
 # Terminal multiplexer
 brew "tmux"
+# Parser generator tool
+brew "tree-sitter-cli"
 # Internet file retriever
 brew "wget"
 # AeroSpace is an i3-like tiling window manager for macOS
@@ -76,6 +80,8 @@ cask "nikitabobko/tap/aerospace"
 cask "android-studio"
 # Display management tool
 cask "betterdisplay"
+# Anthropic's official Claude AI desktop app
+cask "claude"
 # Terminal-based AI coding assistant
 cask "claude-code"
 # Write, edit, and chat about your code with AI
@@ -100,12 +106,16 @@ cask "font-ubuntu-nerd-font"
 cask "fork"
 # Terminal emulator that uses platform-native UI and GPU acceleration
 cask "ghostty"
+# System monitoring app
+cask "istat-menus"
 # Keyboard customiser
 cask "karabiner-elements"
 # Interactive tool for analyzing MongoDB data
 cask "mongodb-compass"
 # Calculator and converter application
 cask "numi"
+# Knowledge base that works on top of a local folder of plain text Markdown files
+cask "obsidian"
 # Replacement for Docker Desktop
 cask "orbstack"
 # Collaboration platform for API development
@@ -122,5 +132,6 @@ cask "visual-studio-code"
 cask "vlc"
 # GPU-accelerated cross-platform terminal emulator and multiplexer
 cask "wezterm"
+npm "corepack"
 npm "gitnexus"
 npm "pnpm"
