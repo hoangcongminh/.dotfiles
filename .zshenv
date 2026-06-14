@@ -1,4 +1,7 @@
-## Rust
+## Ruby
+export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
+
+## Rustzsh
 export PATH="$PATH:$HOME/.cargo/bin/"
 export PATH="/usr/local/opt/rustup/bin:$PATH"
 
@@ -11,7 +14,8 @@ export PATH="/usr/local/opt/java/bin:$PATH"
 export PATH="/usr/local/opt/openjdk/bin:$PATH"
 
 ## Python
-export PATH="/usr/local/opt/python/libexec/bin:$PATH"
+export PATH="/opt/homebrew/bin:$PATH"
+## export PATH="/opt/homebrew/opt/python@3.x/libexec/bin:$PATH"
 
 ## Aliases
 # Navigating
