@@ -29,8 +29,8 @@ normal_mode('N', 'Nzzzv')
 normal_mode('<leader>co', ':copen<CR>')
 normal_mode('<leader>cc', ':ccl<CR>')
 normal_mode('<leader>ci', ':cli<CR>')
-normal_mode('<C-j>', ':cn<CR>')
-normal_mode('<C-k>', ':cp<CR>')
+normal_mode('<C-j>', '<cmd>cnext<CR>zz')
+normal_mode('<C-k>', '<cmd>cprev<CR>zz')
 
 normal_mode('<leader>lo', ':lopen<CR>')
 normal_mode('<leader>lc', ':lcl<CR>')
@@ -43,6 +43,12 @@ normal_mode('<s-tab>', ':bprevious<CR>')
 -- Enhance keymaps --
 normal_mode('Y', 'yg$')
 normal_mode('J', 'mzJ`z')
+
+-- Disable Ex mode (accidental trigger)
+normal_mode('Q', '<nop>')
+
+-- chmod +x current file
+normal_mode('<leader>x', '<cmd>!chmod +x %<CR>', { silent = true })
 
 -- Press jk fast to exit insert mode
 insert_mode('jk', '<ESC>')

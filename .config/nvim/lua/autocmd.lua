@@ -20,14 +20,21 @@ vim.api.nvim_create_autocmd({ 'InsertLeave', 'WinEnter' }, {
 vim.api.nvim_create_autocmd({ 'InsertEnter', 'WinLeave' }, { pattern = '*', command = 'set nocursorline', group = cursorGrp })
 
 -- Auto resize windows
+local resizeGrp = vim.api.nvim_create_augroup('AutoResize', { clear = true })
 vim.api.nvim_create_autocmd('VimResized', {
   pattern = '*',
   command = 'wincmd =',
+  group = resizeGrp,
 })
 
 -- Unset relativenumber in insert mode
-vim.api.nvim_create_autocmd('InsertEnter', { pattern = '*', command = 'set norelativenumber' })
-vim.api.nvim_create_autocmd('InsertLeave', { pattern = '*', command = 'set relativenumber' })
+local relnumGrp = vim.api.nvim_create_augroup('RelNumberInsert', { clear = true })
+vim.api.nvim_create_autocmd('InsertEnter', { pattern = '*', command = 'set norelativenumber', group = relnumGrp })
+vim.api.nvim_create_autocmd('InsertLeave', { pattern = '*', command = 'set relativenumber', group = relnumGrp })
 
--- Unset paste mode when leaving insert mode
-vim.api.nvim_create_autocmd('InsertLeave', { pattern = '*', command = 'set nopaste' })
+-- Trim trailing whitespace on save
+vim.api.nvim_create_autocmd('BufWritePre', {
+  pattern = '*',
+  command = [[%s/\s\+$//e]],
+  group = vim.api.nvim_create_augroup('TrimTrailingWhitespace', { clear = true }),
+})
