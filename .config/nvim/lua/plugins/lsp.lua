@@ -20,9 +20,13 @@ return {
 
           local opts = { buffer = event.buf }
 
-          vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
-          vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
-          vim.keymap.set('n', '<space>e', vim.diagnostic.open_float, opts)
+          vim.keymap.set('n', '[d', function()
+            vim.diagnostic.jump { count = -1, float = true }
+          end, opts)
+          vim.keymap.set('n', ']d', function()
+            vim.diagnostic.jump { count = 1, float = true }
+          end, opts)
+          vim.keymap.set('n', '<space>vd', vim.diagnostic.open_float, opts)
           vim.keymap.set('n', '<space>la', vim.diagnostic.setloclist, opts)
           vim.keymap.set('n', '<space>a', vim.diagnostic.setqflist, opts)
           vim.keymap.set('n', '<space>qa', function()
@@ -41,9 +45,8 @@ return {
           vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
           vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
           vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
-          vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
 
-          vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, opts)
+          vim.keymap.set('i', '<C-k>', vim.lsp.buf.signature_help, opts)
           vim.keymap.set('n', '<space>D', vim.lsp.buf.type_definition, opts)
           vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
           vim.keymap.set('n', '<space>ws', vim.lsp.buf.workspace_symbol, opts)
@@ -56,16 +59,8 @@ return {
           vim.keymap.set('n', '<space>wr', vim.lsp.buf.remove_workspace_folder, opts)
           vim.keymap.set('n', '<space>wl', vim.lsp.buf.list_workspace_folders, opts)
 
-          local function client_supports_method(client, method, bufnr)
-            if vim.fn.has 'nvim-0.11' == 1 then
-              return client:supports_method(method, bufnr)
-            else
-              return client.supports_method(method, { bufnr = bufnr })
-            end
-          end
-
           local client = vim.lsp.get_client_by_id(event.data.client_id)
-          if client and client_supports_method(client, vim.lsp.protocol.Methods.textDocument_documentHighlight, event.buf) then
+          if client and client:supports_method(vim.lsp.protocol.Methods.textDocument_documentHighlight, event.buf) then
             local highlight_augroup = vim.api.nvim_create_augroup('kickstart-lsp-highlight', { clear = false })
             vim.api.nvim_create_autocmd({ 'CursorHold', 'CursorHoldI' }, {
               buffer = event.buf,
@@ -92,10 +87,17 @@ return {
           -- code, if the language server you are using supports them
           --
           -- This may be unwanted, since they displace some of your code
-          if client and client_supports_method(client, vim.lsp.protocol.Methods.textDocument_inlayHint, event.buf) then
+          if client and client:supports_method(vim.lsp.protocol.Methods.textDocument_inlayHint, event.buf) then
             map('<leader>th', function()
               vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled { bufnr = event.buf })
             end, '[T]oggle Inlay [H]ints')
+          end
+
+          -- Nvim 0.12+ auto-enables vim.lsp.document_color for any client with colorProvider.
+          -- dartls advertises colorProvider in Flutter projects, then races analysis warmup,
+          -- producing -32007 "File is not being analyzed" popups from flutter-tools' handler.
+          if client and client.name == 'dartls' and vim.lsp.document_color then
+            pcall(vim.lsp.document_color.enable, false, { client_id = client.id })
           end
         end,
       })
@@ -127,14 +129,11 @@ return {
         },
       }
 
-      local capabilities = require('blink.cmp').get_lsp_capabilities()
-
       local servers = {
         bashls = {},
         cssls = {},
         dockerls = {},
         gopls = {},
-        grammarly = {},
         html = {},
         jsonls = {},
         pyright = {},
@@ -145,40 +144,35 @@ return {
         yamlls = {},
         lemminx = {},
         kotlin_language_server = {},
-        lua_ls = {},
-      }
-
-      vim.lsp.config('lua_ls', {
-        settings = {
-          Lua = {
-            completion = {
-              callSnippet = 'Replace',
-            },
-            diagnostics = {
-              globals = { 'bit', 'vim', 'it', 'describe', 'before_each', 'after_each' },
+        lua_ls = {
+          settings = {
+            Lua = {
+              completion = { callSnippet = 'Replace' },
+              diagnostics = {
+                globals = { 'bit', 'vim', 'it', 'describe', 'before_each', 'after_each' },
+              },
             },
           },
         },
-      })
-
-      local ensure_installed = vim.tbl_keys(servers or {})
-      vim.list_extend(ensure_installed, {
-        'stylua', -- Used to format Lua code
-      })
-
-      require('mason-tool-installer').setup { ensure_installed = ensure_installed }
-
-      require('mason-lspconfig').setup {
-        ensure_installed = {}, -- explicitly set to an empty table (populates installs via mason-tool-installer)
-        automatic_installation = true,
-        handlers = {
-          function(server_name)
-            local server = servers[server_name] or {}
-            server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
-            require('lspconfig')[server_name].setup(server)
-          end,
-        },
+        -- dartls intentionally omitted — flutter-tools.nvim registers it
       }
+
+      vim.lsp.config('*', {
+        capabilities = require('blink.cmp').get_lsp_capabilities(),
+      })
+
+      for name, cfg in pairs(servers) do
+        vim.lsp.config(name, cfg)
+      end
+
+      local server_names = vim.tbl_keys(servers)
+      local ensure_installed = vim.list_extend(vim.deepcopy(server_names), { 'stylua', 'prettier' })
+      require('mason-tool-installer').setup {
+        ensure_installed = ensure_installed,
+        run_on_start = false,
+      }
+
+      vim.lsp.enable(server_names)
     end,
   },
 
@@ -195,7 +189,16 @@ return {
       formatters_by_ft = {
         lua = { 'stylua' },
         javascript = { 'prettier' },
+        javascriptreact = { 'prettier' },
+        typescript = { 'prettier' },
+        typescriptreact = { 'prettier' },
         go = { 'goimports', 'gofmt', 'golines' },
+        json = { 'prettier' },
+        jsonc = { 'prettier' },
+        yaml = { 'prettier' },
+        html = { 'prettier' },
+        css = { 'prettier' },
+        markdown = { 'prettier' },
       },
     },
   },
@@ -204,9 +207,14 @@ return {
     'saghen/blink.cmp',
     event = 'InsertEnter',
     version = '1.*',
+    dependencies = { 'L3MON4D3/LuaSnip' },
     opts = {
       keymap = {
         preset = 'enter',
+      },
+      snippets = { preset = 'luasnip' },
+      sources = {
+        default = { 'lsp', 'path', 'snippets', 'buffer' },
       },
     },
   },

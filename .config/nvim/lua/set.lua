@@ -15,8 +15,6 @@ vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 
-vim.opt.clipboard = 'unnamedplus'
-
 vim.opt.wrap = false
 
 vim.opt.smartindent = true
@@ -42,5 +40,10 @@ vim.opt.undofile = true
 vim.opt.undodir = os.getenv 'HOME' .. '/.vim/undodir'
 
 vim.opt.updatetime = 50
+
+-- Trim ShaDa: keep marks/registers/jumplist short, skip search-history persist.
+-- !  = uppercased globals; '100 = marks for 100 files; <50 = 50 lines/register;
+-- s10 = 10 KB per item; h = no hlsearch persistence.
+vim.opt.shada = "!,'100,<50,s10,h"
 
 vim.opt.mouse = 'a'

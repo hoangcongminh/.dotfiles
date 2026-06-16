@@ -59,7 +59,7 @@ return {
           },
         },
         debugger = {
-          enabled = false,
+          enabled = true,
           run_via_dap = false,
           exception_breakpoints = {},
           evaluate_to_string_in_debug_views = true,
@@ -113,7 +113,7 @@ return {
         },
         lsp = {
           color = {
-            enabled = true,
+            enabled = false, -- deprecated on Nvim 0.12+; was firing -32007 "File is not being analyzed" errors
             background = false,
             background_color = nil,
             foreground = false,
@@ -144,13 +144,4 @@ return {
       }
     end,
   },
-
-  -- {
-  --   'akinsho/pubspec-assist.nvim',
-  --   ft = { 'dart', 'yaml' },
-  --   event = 'BufEnter pubspec.yaml',
-  --   config = function()
-  --     require('pubspec-assist').setup()
-  --   end,
-  -- },
 }
