@@ -1,6 +1,28 @@
-macos-titlebar-style = tabs
-macos-titlebar-proxy-icon = hidden
-background-opacity=0.9
-font-family=JetBrainsMono Nerd Font
-font-size=12
-mouse-hide-while-typing=true
+window-colorspace = display-p3
+
+font-family = JetBrainsMono Nerd Font Mono
+font-size = 12
+
+alpha-blending = linear-corrected
+font-thicken = true
+font-thicken-strength = 40
+
+background-opacity = 0.85
+background-blur = macos-glass-clear
+macos-window-shadow = false
+
+window-padding-x = 8
+window-padding-y = 8
+window-padding-balance = true
+window-save-state = never
+macos-option-as-alt = true
+resize-overlay = never
+macos-non-native-fullscreen = padded-notch
+
+cursor-style-blink = false
+unfocused-split-opacity = 0.9
+
+shell-integration-features = no-cursor,sudo
+
+mouse-hide-while-typing = true
+confirm-close-surface = false
