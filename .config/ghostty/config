@@ -1,6 +1,33 @@
-macos-titlebar-style = tabs
+theme = Catppuccin Mocha
+
+font-family = JetBrains Mono
+font-size = 12
+font-thicken = true
+
+background-opacity = 0.7
+background-blur = true
+window-padding-x = 8
+window-padding-y = 8
+window-padding-balance = true
 macos-titlebar-proxy-icon = hidden
-background-opacity=0.9
-font-family=JetBrainsMono Nerd Font
-font-size=12
-mouse-hide-while-typing=true
+window-theme = ghostty
+
+#macos-titlebar-style = hidden
+window-decoration = true
+window-save-state = never
+macos-option-as-alt = true
+
+cursor-style = block
+cursor-style-blink = false
+
+window-vsync = true
+scrollback-limit = 10000000
+
+shell-integration = detect
+shell-integration-features = no-cursor,sudo,title
+
+mouse-hide-while-typing = true
+copy-on-select = true
+confirm-close-surface = false
+quit-after-last-window-closed = false
+clipboard-trim-trailing-spaces = true
