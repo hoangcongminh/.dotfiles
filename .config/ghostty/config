@@ -1,33 +1,28 @@
-theme = Catppuccin Mocha
+window-colorspace = display-p3
 
-font-family = JetBrains Mono
+font-family = JetBrainsMono Nerd Font Mono
 font-size = 12
-font-thicken = true
 
-background-opacity = 0.7
-background-blur = true
+alpha-blending = linear-corrected
+font-thicken = true
+font-thicken-strength = 40
+
+background-opacity = 0.85
+background-blur = macos-glass-clear
+macos-window-shadow = false
+
 window-padding-x = 8
 window-padding-y = 8
 window-padding-balance = true
-macos-titlebar-proxy-icon = hidden
-window-theme = ghostty
-
-#macos-titlebar-style = hidden
-window-decoration = true
 window-save-state = never
 macos-option-as-alt = true
+resize-overlay = never
+macos-non-native-fullscreen = padded-notch
 
-cursor-style = block
 cursor-style-blink = false
+unfocused-split-opacity = 0.9
 
-window-vsync = true
-scrollback-limit = 10000000
-
-shell-integration = detect
-shell-integration-features = no-cursor,sudo,title
+shell-integration-features = no-cursor,sudo
 
 mouse-hide-while-typing = true
-copy-on-select = true
 confirm-close-surface = false
-quit-after-last-window-closed = false
-clipboard-trim-trailing-spaces = true
